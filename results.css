@@ -1,0 +1,495 @@
+﻿*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --blue-deep: #004f96;
+    --blue-mid: #0878d4;
+    --blue-light: #1ba4df;
+    --gold: #f5c842;
+    --gold-light: #ffe98a;
+    --red-soft: #e05c5c;
+    --white: #ffffff;
+    --glass-bg: rgba(255, 255, 255, 0.10);
+    --glass-border: rgba(255, 255, 255, 0.22);
+    --shadow: 0 32px 80px rgba(0, 30, 80, 0.45);
+}
+
+body {
+    min-height: 100vh;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'DM Sans', sans-serif;
+    overflow: hidden;
+}
+
+.bg-image {
+    position: fixed;
+    inset: 0;
+    background-image: url('https://cdn.creazilla.com/digital-illustrations/1719878/background-blue-background-blue-design-illustration-xl.png');
+    
+    background-size: cover;
+    background-position: center;
+    background-color: #0a2a50;
+    z-index: 0;
+}
+
+.bg-overlay {
+    position: fixed;
+    inset: 0;
+    background: linear-gradient(135deg,
+            rgba(0, 40, 100, 0.75) 0%,
+            rgba(0, 100, 180, 0.58) 100%);
+    backdrop-filter: blur(2px);
+    z-index: 1;
+    transition: background 0.8s ease;
+}
+
+.bg-overlay.overlay-pass {
+    background: linear-gradient(135deg,
+            rgba(0, 60, 20, 0.78) 0%,
+            rgba(0, 130, 60, 0.60) 100%);
+}
+
+.bg-overlay.overlay-fail {
+    background: linear-gradient(135deg,
+            rgba(80, 10, 10, 0.78) 0%,
+            rgba(160, 40, 40, 0.58) 100%);
+}
+
+.particles {
+    position: fixed;
+    inset: 0;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.particle {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.6);
+    animation: float linear infinite;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0) rotate(0deg);
+    }
+
+    50% {
+        transform: translateY(-40px) rotate(180deg);
+    }
+
+    100% {
+        transform: translateY(0) rotate(360deg);
+    }
+}
+
+.results-wrapper {
+    position: relative;
+    z-index: 3;
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card {
+    background: url("");
+    border: 1px solid var(--glass-border);
+    backdrop-filter: blur(22px);
+    -webkit-backdrop-filter: blur(22px);
+    border-radius: 28px;
+    transition: background-image 0.5s ease;
+    padding: 52px 48px 48px;
+    width: 100%;
+    max-width: 440px;
+    box-shadow: var(--shadow);
+    text-align: center;
+    animation: card-in 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.card {
+    background-image: url('');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.card.result-bg {
+    background-image: url('graduation-card-ssantoandreas.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.card-exit {
+    animation: card-out 0.4s cubic-bezier(0.55, 0, 1, 0.45) forwards;
+}
+
+.card-enter {
+    animation: card-in 0.6s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@keyframes card-in {
+    from {
+        opacity: 0;
+        transform: translateY(28px) scale(0.96);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@keyframes card-out {
+    from {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+
+    to {
+        opacity: 0;
+        transform: translateY(-24px) scale(0.96);
+    }
+}
+
+.brand {
+    margin-bottom: 24px;
+}
+
+.brand-logo {
+    width: 180px;
+    height: auto;
+    filter: drop-shadow(0 4px 16px rgba(0, 0, 0, 0.35));
+}
+
+.welcome-text {
+    margin-bottom: 24px;
+}
+
+.welcome-label {
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.55);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+}
+
+.welcome-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 34px;
+    font-weight: 700;
+    color: var(--white);
+    line-height: 1.1;
+    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.3);
+}
+
+.welcome-level {
+    margin-top: 6px;
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.50);
+    font-style: italic;
+}
+
+.divider {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--glass-border), transparent);
+    margin: 0 0 24px;
+}
+
+.check-hint {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.60);
+    margin-bottom: 28px;
+    line-height: 1.6;
+}
+
+.check-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    padding: 16px 36px;
+    border: none;
+    border-radius: 60px;
+    background: linear-gradient(120deg, var(--blue-deep), var(--blue-light));
+    color: var(--white);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    letter-spacing: 0.03em;
+    cursor: pointer;
+    box-shadow: 0 8px 32px rgba(0, 100, 200, 0.45);
+    transition: transform 0.25s ease, box-shadow 0.25s ease, filter 0.25s ease;
+}
+
+.check-btn:hover {
+    transform: translateY(-3px) scale(1.03);
+    box-shadow: 0 16px 40px rgba(0, 120, 220, 0.55);
+    filter: brightness(1.1);
+}
+
+.check-btn:active {
+    transform: scale(0.98);
+}
+
+.check-btn i {
+    font-size: 16px;
+    color: var(--white);
+    transition: transform 0.3s ease;
+}
+
+.check-btn:hover i {
+    transform: rotate(12deg) scale(1.15);
+}
+
+.result-card {
+    padding: 56px 48px 52px;
+}
+
+.result-state {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+}
+
+.result-icon {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 38px;
+    margin-bottom: 8px;
+    animation: icon-pop 0.5s 0.2s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+}
+
+@keyframes icon-pop {
+    from {
+        transform: scale(0) rotate(-20deg);
+        opacity: 0;
+    }
+
+    to {
+        transform: scale(1) rotate(0deg);
+        opacity: 1;
+    }
+}
+
+.pass-icon {
+    background: radial-gradient(circle, rgba(255, 210, 50, 0.25), rgba(255, 180, 0, 0.08));
+    border: 2px solid rgba(255, 210, 50, 0.4);
+    box-shadow: 0 0 40px rgba(255, 200, 0, 0.25);
+    color: var(--gold);
+}
+
+.fail-icon {
+    background: radial-gradient(circle, rgba(220, 80, 80, 0.20), rgba(200, 50, 50, 0.06));
+    border: 2px solid rgba(220, 80, 80, 0.35);
+    box-shadow: 0 0 40px rgba(220, 80, 80, 0.20);
+    color: var(--red-soft);
+}
+
+.pass-icon i,
+.fail-icon i {
+    color: inherit;
+}
+
+.result-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 42px;
+    font-weight: 700;
+    line-height: 1.1;
+    animation: fade-up 0.5s 0.3s both;
+}
+
+.pass-title {
+    color: var(--gold-light);
+    text-shadow: 0 0 30px rgba(255, 210, 50, 0.4);
+}
+
+.fail-title {
+    color: #ffb3b3;
+    text-shadow: 0 0 30px rgba(220, 80, 80, 0.3);
+}
+
+.result-subtitle {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.62);
+    line-height: 1.6;
+    max-width: 280px;
+    animation: fade-up 0.5s 0.4s both;
+}
+
+.result-name {
+    font-size: 20px;
+    color: rgba(255, 255, 255, 0.822);
+    font-style: italic;
+    letter-spacing: 0.03em;
+    animation: fade-up 0.5s 0.45s both;
+}
+
+.result-actions {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 10px;
+    animation: fade-up 0.5s 0.5s both;
+}
+
+.action-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 13px 26px;
+    border-radius: 50px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    border: none;
+    text-decoration: none;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
+}
+
+.action-btn i {
+    font-size: 13px;
+    color: inherit;
+}
+
+.action-btn.primary {
+    background: linear-gradient(120deg, #1a7a3a, #27ae60);
+    color: var(--white);
+    box-shadow: 0 8px 28px rgba(30, 140, 70, 0.4);
+}
+
+.action-btn.primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 14px 36px rgba(30, 140, 70, 0.55);
+    filter: brightness(1.08);
+}
+
+.action-btn.secondary {
+    background: rgba(255, 255, 255, 0.10);
+    color: rgba(255, 255, 255, 0.80);
+    border: 1px solid rgba(255, 255, 255, 0.20);
+}
+
+.action-btn.secondary:hover {
+    background: rgba(255, 255, 255, 0.18);
+    transform: translateY(-2px);
+    color: var(--white);
+}
+
+@keyframes fade-up {
+    from {
+        opacity: 0;
+        transform: translateY(14px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 480px) {
+    .card {
+        padding: 40px 28px 36px;
+        border-radius: 22px;
+    }
+
+    .welcome-name {
+        font-size: 26px;
+    }
+
+    .result-title {
+        font-size: 32px;
+    }
+
+    .result-icon {
+        width: 72px;
+        height: 72px;
+        font-size: 28px;
+    }
+
+    .brand-logo {
+        width: 150px;
+    }
+
+    .check-btn {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+.bg-overlay.level-sd {
+    background: linear-gradient(135deg,
+            rgba(110, 12, 12, 0.80) 0%,
+            rgba(185, 42, 32, 0.62) 100%);
+}
+
+.bg-overlay.level-sd.overlay-pass {
+    background: linear-gradient(135deg,
+            rgba(60, 12, 6, 0.82) 0%,
+            rgba(150, 52, 18, 0.66) 100%);
+}
+
+.bg-overlay.level-sd.overlay-fail {
+    background: linear-gradient(135deg,
+            rgba(70, 5, 5, 0.88) 0%,
+            rgba(130, 28, 28, 0.68) 100%);
+}
+
+.confetti-piece {
+    position: fixed;
+    top: -18px;
+    z-index: 9999;
+    pointer-events: none;
+    will-change: transform, opacity;
+}
+
+@keyframes confettiFall {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+    }
+
+    20% {
+        transform: translateY(20vh) rotate(144deg);
+    }
+
+    40% {
+        transform: translateY(40vh) rotate(288deg);
+    }
+
+    60% {
+        transform: translateY(60vh) rotate(432deg);
+        opacity: 0.9;
+    }
+
+    80% {
+        transform: translateY(82vh) rotate(576deg);
+        opacity: 0.5;
+    }
+
+    100% {
+        transform: translateY(112vh) rotate(720deg);
+        opacity: 0;
+    }
+}

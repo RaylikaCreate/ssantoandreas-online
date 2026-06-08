@@ -1,0 +1,796 @@
+﻿<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pendaftaran — Sekolah Santo Andreas</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="pendaftaran.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.7.2/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body class="pd-body">
+
+<nav class="nav-bar nav-scrolled">
+        <div class="nav-container">
+            <div class="logo">
+                <a href="index.html"><img src="https://i.ibb.co.com/V033MvMm/St-Andreas-Logo.png" alt="St-Andreas-Logo"
+                        width="290px" height="70px"></a>
+            </div>
+            <ul class="nav-links">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link">Halaman Utama</a>
+                </li>
+                <li class="nav-item">
+                    <a href="tentang-kami.html" class="nav-link">Tentang Kami<i class="fas fa-chevron-down"></i></a>
+                    <div class="dropdown-menu">
+                        <a href="tentang-kami.html#visi-misi">Visi &amp; Misi</a>
+                        <a href="tentang-kami.html#sejarah">Sejarah</a>
+                        <a href="tentang-kami.html#fasilitas">Fasilitas</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a href="jenjang.html" class="nav-link">Jenjang Pendidikan<i class="fas fa-chevron-down"></i></a>
+                    <div class="dropdown-menu">
+                        <a href="tk.html">TK / Nursery</a>
+                        <a href="sd.html">SD</a>
+                        <a href="smp.html">SMP</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a href="#" onclick="event.preventDefault()" class="nav-link">Portal<i class="fas fa-chevron-down"></i></a>
+                    <div class="dropdown-menu">
+                        <a href="login.html">Portal Siswa</a>
+                        <a href="login-teacher.html">Portal Guru</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a href="pendaftaran.html" class="nav-link">Pendaftaran</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" onclick="event.preventDefault()" class="nav-link">Informasi<i class="fas fa-chevron-down"></i></a>
+                    <div class="dropdown-menu">
+                        <a href="berita.html">Berita</a>
+                        <a href="kalendar-akademik.html">Kalender Akademik</a>
+                        <a href="prestasi.html">Prestasi</a>
+                        <a href="contact.html">Hubungi Kami</a>
+                    </div>
+                </li>
+            </ul>
+            <div class="social-links">
+                <a href="https://www.facebook.com/sstandreas" class="social-link"><i class="fab fa-facebook"></i></a>
+                <a href="https://www.instagram.com/sstandreas/" class="social-link"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.youtube.com/channel/UC2fmVdeHtxnXl1LMYu7WAAQ" class="social-link"><i
+                        class="fab fa-youtube"></i></a>
+            </div>
+            
+            <button class="hamburger" id="hamburgerBtn" aria-label="Menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+        
+        <div class="mobile-nav" id="mobileNav">
+            <ul class="mobile-nav-links">
+                <li><a href="index.html">Halaman Utama</a></li>
+                <li class="mobile-dropdown">
+                    <a href="tentang-kami.html">Tentang Kami</a>
+                    <div class="mobile-sub">
+                        <a href="tentang-kami.html#visi-misi">Visi &amp; Misi</a>
+                        <a href="tentang-kami.html#sejarah">Sejarah</a>
+                        <a href="tentang-kami.html#fasilitas">Fasilitas</a>
+                    </div>
+                </li>
+                <li class="mobile-dropdown">
+                    <a href="jenjang.html">Jenjang Pendidikan</a>
+                    <div class="mobile-sub">
+                        <a href="tk.html">TK / Nursery</a>
+                        <a href="sd.html">SD</a>
+                        <a href="smp.html">SMP</a>
+                    </div>
+                </li>
+                <li class="mobile-dropdown">
+                    <a href="#">Portal</a>
+                    <div class="mobile-sub">
+                        <a href="login.html">Portal Siswa</a>
+                        <a href="login-teacher.html">Portal Guru</a>
+                    </div>
+                </li>
+                <li><a href="pendaftaran.html">Pendaftaran</a></li>
+                <li class="mobile-dropdown">
+                    <a href="#">Informasi</a>
+                    <div class="mobile-sub">
+                        <a href="berita.html">Berita</a>
+                        <a href="kalendar-akademik.html">Kalender Akademik</a>
+                        <a href="prestasi.html">Prestasi</a>
+                        <a href="contact.html">Hubungi Kami</a>
+                    </div>
+                </li>
+            </ul>
+            <div class="mobile-nav-social">
+                <a href="https://www.facebook.com/sstandreas" aria-label="Facebook"><i
+                        class="fab fa-facebook-f"></i></a>
+                <a href="https://www.instagram.com/sstandreas/" aria-label="Instagram"><i
+                        class="fab fa-instagram"></i></a>
+                <a href="https://www.youtube.com/channel/UC2fmVdeHtxnXl1LMYu7WAAQ" aria-label="YouTube"><i
+                        class="fab fa-youtube"></i></a>
+            </div>
+        </div>
+    </nav>
+
+<header class="pd-hero">
+        <div class="pd-hero-bg">
+            <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjheDDI-EvefCKbtGy7Cgein7pGQ1oAjo5MC4snxcHahwjwsJygV4PCNOku_F252XWL1M4MhiS6wtp5xzCWCb6z7PKpHZ2p48iuRCCNx-EJRmtHU6ajCnmcTn_Om5r4NvixSwUjliHJDtE/w1200-h630-p-k-no-nu/IMG_2775.jpg"
+                alt="Hero">
+            <div class="pd-hero-overlay"></div>
+        </div>
+
+<div class="pd-orb pd-orb-1"></div>
+        <div class="pd-orb pd-orb-2"></div>
+        <div class="pd-orb pd-orb-3"></div>
+
+        <div class="pd-hero-content">
+            <div class="pd-hero-chip">
+                <i class="fas fa-circle-check"></i>
+                Penerimaan Siswa Baru 2026/2027 Dibuka
+            </div>
+            <h1 class="pd-hero-title">
+                Daftarkan Putra-Putri Anda<br>di <em>Sekolah Santo Andreas</em>
+            </h1>
+            <p class="pd-hero-sub">Bergabunglah dengan lebih dari 1.000 keluarga yang telah mempercayakan pendidikan
+                terbaik bagi anak-anak mereka bersama kami.</p>
+
+<div class="pd-hero-jumps">
+                <a href="#card-tk" class="pd-jump pd-jump--blue">
+                    <span class="pd-jump-num">01</span>
+                    <span class="pd-jump-label">Taman Kanak-Kanak</span>
+                    <i class="fas fa-arrow-down"></i>
+                </a>
+                <a href="#card-sd" class="pd-jump pd-jump--yellow">
+                    <span class="pd-jump-num">02</span>
+                    <span class="pd-jump-label">Sekolah Dasar</span>
+                    <i class="fas fa-arrow-down"></i>
+                </a>
+                <a href="#card-smp" class="pd-jump pd-jump--red">
+                    <span class="pd-jump-num">03</span>
+                    <span class="pd-jump-label">Sekolah Menengah Pertama</span>
+                    <i class="fas fa-arrow-down"></i>
+                </a>
+            </div>
+        </div>
+
+        <div class="pd-hero-cut"></div>
+    </header>
+
+<section class="pd-process">
+        <div class="pd-process-inner">
+            <p class="pd-eyebrow"><span class="pd-eyebrow-bar"></span> Alur Pendaftaran</p>
+            <div class="pd-steps">
+                <div class="pd-step">
+                    <div class="pd-step-circle">
+                        <i class="fas fa-file-pen"></i>
+                        <span class="pd-step-ring"></span>
+                    </div>
+                    <div class="pd-step-connector"></div>
+                    <h4 class="pd-step-title">Isi Formulir</h4>
+                    <p class="pd-step-desc">Lengkapi data siswa secara online atau datang langsung ke sekolah</p>
+                </div>
+                <div class="pd-step">
+                    <div class="pd-step-circle">
+                        <i class="fas fa-folder-open"></i>
+                        <span class="pd-step-ring"></span>
+                    </div>
+                    <div class="pd-step-connector"></div>
+                    <h4 class="pd-step-title">Kirim Dokumen</h4>
+                    <p class="pd-step-desc">Serahkan dokumen persyaratan sesuai jenjang yang dipilih</p>
+                </div>
+                <div class="pd-step">
+                    <div class="pd-step-circle">
+                        <i class="fas fa-comments"></i>
+                        <span class="pd-step-ring"></span>
+                    </div>
+                    <div class="pd-step-connector"></div>
+                    <h4 class="pd-step-title">Wawancara</h4>
+                    <p class="pd-step-desc">Orang tua &amp; calon siswa mengikuti sesi wawancara singkat</p>
+                </div>
+                <div class="pd-step">
+                    <div class="pd-step-circle pd-step-circle--last">
+                        <i class="fas fa-party-horn"></i>
+                        <span class="pd-step-ring"></span>
+                    </div>
+                    <h4 class="pd-step-title">Diterima!</h4>
+                    <p class="pd-step-desc">Terima surat keputusan dan selesaikan administrasi awal</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<section class="pd-cards-section">
+        <div class="pd-cards-inner">
+
+            <div class="pd-cards-header">
+                <p class="pd-eyebrow pd-eyebrow--center"><span class="pd-eyebrow-bar"></span> Jenjang Pendidikan <span
+                        class="pd-eyebrow-bar"></span></p>
+                <h2 class="pd-section-title">Pilih Jenjang <em>Putra-Putri Anda</em></h2>
+            </div>
+
+<div class="pd-card pd-card--tk" id="card-tk">
+
+<div class="pd-card-banner">
+                    <img class="pd-card-img" src="tk-hero-santoandreas.jpg" alt="TK">
+                    <div class="pd-card-banner-overlay pd-overlay--blue"></div>
+
+<div class="pd-card-float-num">01</div>
+
+                    <div class="pd-card-banner-body">
+                        <div class="pd-card-banner-left">
+                            <span class="pd-card-level-tag pd-tag--blue">Taman Kanak-Kanak</span>
+                            <h2 class="pd-card-name">TK</h2>
+                            <p class="pd-card-meta"><i class="fas fa-child"></i> Usia 4–6 Tahun &nbsp;·&nbsp; <i
+                                    class="fas fa-users"></i> TK A &amp; TK B</p>
+                        </div>
+                        <div class="pd-card-banner-right">
+                            <a href="tk.html" class="pd-learn-btn pd-learn-btn--blue">
+                                Pelajari Program <i class="fas fa-arrow-right"></i>
+                            </a>
+                            <button class="pd-toggle-btn" onclick="toggleCard('tk')" aria-expanded="false">
+                                <i class="fas fa-chevron-down"></i>
+                                <span>Lihat Detail</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+<div class="pd-card-drawer" id="drawer-tk">
+                    <div class="pd-drawer-grid">
+
+<div class="pd-drawer-col">
+                            <h4 class="pd-drawer-heading"><span class="pd-drawer-heading-dot pd-dot--blue"></span>
+                                Tentang Program</h4>
+                            <p class="pd-drawer-text">Program TK Santo Andreas dirancang untuk membangun fondasi
+                                kognitif, sosial, dan emosional anak melalui pendekatan
+                                <strong>bermain-sambil-belajar</strong> yang menyenangkan dan penuh kasih. Rasio guru
+                                yang ideal memastikan setiap anak mendapat perhatian penuh.
+                            </p>
+
+<div class="pd-feat-grid">
+                                <div class="pd-feat pd-feat--blue"><i class="fas fa-palette"></i> Seni &amp; Kreativitas
+                                </div>
+                                <div class="pd-feat pd-feat--blue"><i class="fas fa-music"></i> Musik &amp; Gerak</div>
+                                <div class="pd-feat pd-feat--blue"><i class="fas fa-globe"></i> Bahasa Inggris</div>
+                                <div class="pd-feat pd-feat--blue"><i class="fas fa-pray"></i> Pembinaan Rohani</div>
+                                <div class="pd-feat pd-feat--blue"><i class="fas fa-running"></i> Olahraga</div>
+                                <div class="pd-feat pd-feat--blue"><i class="fas fa-utensils"></i> Makan Siang</div>
+                            </div>
+                        </div>
+
+<div class="pd-drawer-col">
+                            <h4 class="pd-drawer-heading"><span class="pd-drawer-heading-dot pd-dot--blue"></span>
+                                Syarat Dokumen</h4>
+                            <ul class="pd-req-list">
+                                <li><i class="fas fa-check pd-check--blue"></i> Usia 4–6 tahun per Juli tahun ajaran
+                                </li>
+                                <li><i class="fas fa-check pd-check--blue"></i> Fotokopi Akta Kelahiran (2 lembar)</li>
+                                <li><i class="fas fa-check pd-check--blue"></i> Fotokopi Kartu Keluarga (2 lembar)</li>
+                                <li><i class="fas fa-check pd-check--blue"></i> Pas foto 3×4 (4 lbr) &amp; 2×3 (2 lbr)
+                                </li>
+                                <li><i class="fas fa-check pd-check--blue"></i> Fotokopi KTP kedua orang tua</li>
+                                <li><i class="fas fa-check pd-check--blue"></i> Surat Keterangan Sehat dari dokter</li>
+                                <li><i class="fas fa-check pd-check--blue"></i> Rapor Nursery / laporan perkembangan
+                                </li>
+                            </ul>
+                        </div>
+
+<div class="pd-drawer-col">
+                            <h4 class="pd-drawer-heading"><span class="pd-drawer-heading-dot pd-dot--blue"></span>
+                                Jadwal Penerimaan</h4>
+                            <div class="pd-schedule">
+                                <div class="pd-sched-row">
+                                    <div class="pd-sched-dot pd-sched-dot--blue"></div>
+                                    <div>
+                                        <span class="pd-sched-phase">Gelombang I</span>
+                                        <span class="pd-sched-date">Januari – Februari 2026</span>
+                                    </div>
+                                </div>
+                                <div class="pd-sched-row">
+                                    <div class="pd-sched-dot pd-sched-dot--blue"></div>
+                                    <div>
+                                        <span class="pd-sched-phase">Gelombang II</span>
+                                        <span class="pd-sched-date">Maret – April 2026</span>
+                                    </div>
+                                </div>
+                                <div class="pd-sched-row">
+                                    <div class="pd-sched-dot pd-sched-dot--blue"></div>
+                                    <div>
+                                        <span class="pd-sched-phase">Pengumuman</span>
+                                        <span class="pd-sched-date">Mei 2026</span>
+                                    </div>
+                                </div>
+                                <div class="pd-sched-row">
+                                    <div class="pd-sched-dot pd-sched-dot--blue pd-sched-dot--active"></div>
+                                    <div>
+                                        <span class="pd-sched-phase">Tahun Ajaran Baru</span>
+                                        <span class="pd-sched-date">Juli 2026</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <a href="pendaftaran-form.html" class="pd-apply-btn pd-apply-btn--blue">
+                                <i class="fas fa-paper-plane"></i> Daftar TK Sekarang
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+<div class="pd-card pd-card--sd" id="card-sd">
+                <div class="pd-card-banner">
+                    <img class="pd-card-img" src="sd-hero-placeholder-ssantoandreas.jpg" alt="SD">
+                    <div class="pd-card-banner-overlay pd-overlay--yellow"></div>
+                    <div class="pd-card-float-num pd-float-num--dark">02</div>
+                    <div class="pd-card-banner-body">
+                        <div class="pd-card-banner-left">
+                            <span class="pd-card-level-tag pd-tag--yellow">Sekolah Dasar</span>
+                            <h2 class="pd-card-name">SD</h2>
+                            <p class="pd-card-meta"><i class="fas fa-child"></i> Usia 6–12 Tahun &nbsp;·&nbsp; <i
+                                    class="fas fa-chalkboard-teacher"></i> Kelas 1–6</p>
+                        </div>
+                        <div class="pd-card-banner-right">
+                            <a href="sd.html" class="pd-learn-btn pd-learn-btn--yellow">
+                                Pelajari Program <i class="fas fa-arrow-right"></i>
+                            </a>
+                            <button class="pd-toggle-btn pd-toggle-btn--yellow" onclick="toggleCard('sd')"
+                                aria-expanded="false">
+                                <i class="fas fa-chevron-down"></i>
+                                <span>Lihat Detail</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="pd-card-drawer" id="drawer-sd">
+                    <div class="pd-drawer-grid">
+                        <div class="pd-drawer-col">
+                            <h4 class="pd-drawer-heading"><span class="pd-drawer-heading-dot pd-dot--yellow"></span>
+                                Tentang Program</h4>
+                            <p class="pd-drawer-text">SD Santo Andreas menggabungkan <strong>Kurikulum Merdeka</strong>
+                                dengan pendekatan holistik berbasis nilai Kristiani. Selama enam tahun, siswa dibimbing
+                                untuk unggul secara akademik sekaligus berkembang dalam karakter, kreativitas, dan
+                                kepemimpinan.</p>
+                            <div class="pd-feat-grid">
+                                <div class="pd-feat pd-feat--yellow"><i class="fas fa-flask"></i> Lab Sains</div>
+                                <div class="pd-feat pd-feat--yellow"><i class="fas fa-laptop"></i> Lab Komputer</div>
+                                <div class="pd-feat pd-feat--yellow"><i class="fas fa-trophy"></i> Science Club</div>
+                                <div class="pd-feat pd-feat--yellow"><i class="fas fa-futbol"></i> Olahraga</div>
+                                <div class="pd-feat pd-feat--yellow"><i class="fas fa-globe"></i> English Club</div>
+                                <div class="pd-feat pd-feat--yellow"><i class="fas fa-church"></i> Rohani</div>
+                            </div>
+                        </div>
+
+                        <div class="pd-drawer-col">
+                            <h4 class="pd-drawer-heading"><span class="pd-drawer-heading-dot pd-dot--yellow"></span>
+                                Syarat Dokumen</h4>
+                            <ul class="pd-req-list">
+                                <li><i class="fas fa-check pd-check--yellow"></i> Usia min. 6 tahun per 1 Juli ajaran
+                                </li>
+                                <li><i class="fas fa-check pd-check--yellow"></i> Ijazah / SKTLB TK (asli + fotokopi)
+                                </li>
+                                <li><i class="fas fa-check pd-check--yellow"></i> Akta Kelahiran (fotokopi 2 lembar)
+                                </li>
+                                <li><i class="fas fa-check pd-check--yellow"></i> Kartu Keluarga (fotokopi 2 lembar)
+                                </li>
+                                <li><i class="fas fa-check pd-check--yellow"></i> Pas foto 3×4 (4 lbr) &amp; 2×3 (2 lbr)
+                                </li>
+                                <li><i class="fas fa-check pd-check--yellow"></i> Fotokopi KTP kedua orang tua</li>
+                                <li><i class="fas fa-check pd-check--yellow"></i> Rapor TK semester terakhir</li>
+                            </ul>
+                        </div>
+
+                        <div class="pd-drawer-col">
+                            <h4 class="pd-drawer-heading"><span class="pd-drawer-heading-dot pd-dot--yellow"></span>
+                                Jadwal Penerimaan</h4>
+                            <div class="pd-schedule">
+                                <div class="pd-sched-row">
+                                    <div class="pd-sched-dot pd-sched-dot--yellow"></div>
+                                    <div><span class="pd-sched-phase">Gelombang I</span><span
+                                            class="pd-sched-date">Januari – Februari 2026</span></div>
+                                </div>
+                                <div class="pd-sched-row">
+                                    <div class="pd-sched-dot pd-sched-dot--yellow"></div>
+                                    <div><span class="pd-sched-phase">Gelombang II</span><span
+                                            class="pd-sched-date">Maret – April 2026</span></div>
+                                </div>
+                                <div class="pd-sched-row">
+                                    <div class="pd-sched-dot pd-sched-dot--yellow"></div>
+                                    <div><span class="pd-sched-phase">Tes Masuk</span><span class="pd-sched-date">April
+                                            2026</span></div>
+                                </div>
+                                <div class="pd-sched-row">
+                                    <div class="pd-sched-dot pd-sched-dot--yellow pd-sched-dot--active"></div>
+                                    <div><span class="pd-sched-phase">Tahun Ajaran Baru</span><span
+                                            class="pd-sched-date">Juli 2026</span></div>
+                                </div>
+                            </div>
+                            <a href="pendaftaran-form.html" class="pd-apply-btn pd-apply-btn--yellow">
+                                <i class="fas fa-paper-plane"></i> Daftar SD Sekarang
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+<div class="pd-card pd-card--smp" id="card-smp">
+                <div class="pd-card-banner">
+                    <img class="pd-card-img" src="smp-hero-ssantoandreas.jpg" alt="SMP">
+                    <div class="pd-card-banner-overlay pd-overlay--red"></div>
+                    <div class="pd-card-float-num">03</div>
+                    <div class="pd-card-banner-body">
+                        <div class="pd-card-banner-left">
+                            <span class="pd-card-level-tag pd-tag--red">Sekolah Menengah Pertama</span>
+                            <h2 class="pd-card-name">SMP</h2>
+                            <p class="pd-card-meta"><i class="fas fa-child"></i> Usia 12–15 Tahun &nbsp;·&nbsp; <i
+                                    class="fas fa-chalkboard-teacher"></i> Kelas 7–9</p>
+                        </div>
+                        <div class="pd-card-banner-right">
+                            <a href="smp.html" class="pd-learn-btn pd-learn-btn--red">
+                                Pelajari Program <i class="fas fa-arrow-right"></i>
+                            </a>
+                            <button class="pd-toggle-btn pd-toggle-btn--red" onclick="toggleCard('smp')"
+                                aria-expanded="false">
+                                <i class="fas fa-chevron-down"></i>
+                                <span>Lihat Detail</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="pd-card-drawer" id="drawer-smp">
+                    <div class="pd-drawer-grid">
+                        <div class="pd-drawer-col">
+                            <h4 class="pd-drawer-heading"><span class="pd-drawer-heading-dot pd-dot--red"></span>
+                                Tentang Program</h4>
+                            <p class="pd-drawer-text">SMP Santo Andreas mempersiapkan remaja menghadapi tantangan
+                                akademik dan kehidupan nyata. Dengan program <strong>kepemimpinan, OSIS, dan
+                                    ekstrakurikuler lengkap</strong>, siswa tumbuh menjadi generasi yang berkarakter,
+                                kritis, dan siap bersaing.</p>
+                            <div class="pd-feat-grid">
+                                <div class="pd-feat pd-feat--red"><i class="fas fa-users"></i> OSIS</div>
+                                <div class="pd-feat pd-feat--red"><i class="fas fa-flask"></i> Lab Sains</div>
+                                <div class="pd-feat pd-feat--red"><i class="fas fa-code"></i> Lab IT</div>
+                                <div class="pd-feat pd-feat--red"><i class="fas fa-award"></i> Kompetisi</div>
+                                <div class="pd-feat pd-feat--red"><i class="fas fa-music"></i> Paduan Suara</div>
+                                <div class="pd-feat pd-feat--red"><i class="fas fa-basketball-ball"></i> Tim Olahraga
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="pd-drawer-col">
+                            <h4 class="pd-drawer-heading"><span class="pd-drawer-heading-dot pd-dot--red"></span> Syarat
+                                Dokumen</h4>
+                            <ul class="pd-req-list">
+                                <li><i class="fas fa-check pd-check--red"></i> Ijazah SD / SKHU (asli + fotokopi)</li>
+                                <li><i class="fas fa-check pd-check--red"></i> Rapor SD Kelas 4, 5, 6 (asli + kopi)</li>
+                                <li><i class="fas fa-check pd-check--red"></i> Akta Kelahiran (fotokopi 2 lembar)</li>
+                                <li><i class="fas fa-check pd-check--red"></i> Kartu Keluarga (fotokopi 2 lembar)</li>
+                                <li><i class="fas fa-check pd-check--red"></i> Pas foto 3×4 (4 lbr) &amp; 2×3 (2 lbr)
+                                </li>
+                                <li><i class="fas fa-check pd-check--red"></i> Fotokopi KTP kedua orang tua</li>
+                                <li><i class="fas fa-check pd-check--red"></i> Sertifikat prestasi (jika ada)</li>
+                            </ul>
+                        </div>
+
+                        <div class="pd-drawer-col">
+                            <h4 class="pd-drawer-heading"><span class="pd-drawer-heading-dot pd-dot--red"></span> Jadwal
+                                Penerimaan</h4>
+                            <div class="pd-schedule">
+                                <div class="pd-sched-row">
+                                    <div class="pd-sched-dot pd-sched-dot--red"></div>
+                                    <div><span class="pd-sched-phase">Gelombang I</span><span
+                                            class="pd-sched-date">Januari – Februari 2026</span></div>
+                                </div>
+                                <div class="pd-sched-row">
+                                    <div class="pd-sched-dot pd-sched-dot--red"></div>
+                                    <div><span class="pd-sched-phase">Gelombang II</span><span
+                                            class="pd-sched-date">Maret – April 2026</span></div>
+                                </div>
+                                <div class="pd-sched-row">
+                                    <div class="pd-sched-dot pd-sched-dot--red"></div>
+                                    <div><span class="pd-sched-phase">Tes &amp; Wawancara</span><span
+                                            class="pd-sched-date">April – Mei 2026</span></div>
+                                </div>
+                                <div class="pd-sched-row">
+                                    <div class="pd-sched-dot pd-sched-dot--red pd-sched-dot--active"></div>
+                                    <div><span class="pd-sched-phase">Tahun Ajaran Baru</span><span
+                                            class="pd-sched-date">Juli 2026</span></div>
+                                </div>
+                            </div>
+                            <a href="pendaftaran-form.html" class="pd-apply-btn pd-apply-btn--red">
+                                <i class="fas fa-paper-plane"></i> Daftar SMP Sekarang
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+<section class="pd-faq-section">
+        <div class="pd-faq-inner">
+            <div class="pd-faq-left">
+                <p class="pd-eyebrow"><span class="pd-eyebrow-bar"></span> FAQ</p>
+                <h2 class="pd-faq-title">Pertanyaan yang<br>Sering Ditanyakan</h2>
+                <p class="pd-faq-sub">Masih ada pertanyaan lain? Hubungi kami langsung.</p>
+                <a href="tel:0215804058" class="pd-contact-btn">
+                    <i class="fas fa-phone"></i> 021 – 580 4058
+                </a>
+            </div>
+            <div class="pd-faq-right">
+                <div class="pd-faq-item">
+                    <button class="pd-faq-q" onclick="toggleFaq(this)">
+                        <span>Kapan pendaftaran dibuka?</span>
+                        <i class="fas fa-plus"></i>
+                    </button>
+                    <div class="pd-faq-a">
+                        <p>Pendaftaran umumnya dibuka pada bulan <strong>Januari – April</strong> setiap tahunnya. Kami
+                            menyarankan mendaftar di Gelombang I untuk memastikan kuota tersedia.</p>
+                    </div>
+                </div>
+                <div class="pd-faq-item">
+                    <button class="pd-faq-q" onclick="toggleFaq(this)">
+                        <span>Apakah ada tes masuk?</span>
+                        <i class="fas fa-plus"></i>
+                    </button>
+                    <div class="pd-faq-a">
+                        <p>Untuk jenjang <strong>SD dan SMP</strong> terdapat tes sederhana sebagai pemetaan kemampuan
+                            awal — bukan seleksi ketat. TK tidak memerlukan tes akademik.</p>
+                    </div>
+                </div>
+                <div class="pd-faq-item">
+                    <button class="pd-faq-q" onclick="toggleFaq(this)">
+                        <span>Apakah sekolah ini hanya untuk Katolik?</span>
+                        <i class="fas fa-plus"></i>
+                    </button>
+                    <div class="pd-faq-a">
+                        <p>Tidak. Santo Andreas terbuka untuk semua latar belakang agama. Nilai-nilai kasih, kejujuran,
+                            dan kepedulian yang kami tanamkan bersifat universal.</p>
+                    </div>
+                </div>
+                <div class="pd-faq-item">
+                    <button class="pd-faq-q" onclick="toggleFaq(this)">
+                        <span>Bagaimana cara menghubungi sekolah?</span>
+                        <i class="fas fa-plus"></i>
+                    </button>
+                    <div class="pd-faq-a">
+                        <p>Hubungi kami di <strong>021 – 580 4058</strong> (Senin–Jumat, 06.00–15.00) atau kunjungi
+                            langsung di Jl. Komplek Green Garden, Kedoya Selatan, Jakarta Barat.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<footer class="site-footer">
+
+<div class="footer-bg-ring ring-a"></div>
+        <div class="footer-bg-ring ring-b"></div>
+
+        <div class="footer-inner">
+
+<div class="footer-col footer-col--brand">
+                <img src="logo-landscape-ssantoandreas.png" alt="Logo Sekolah Santo Andreas" class="footer-logo">
+                <p class="footer-about">Lembaga pendidikan Katolik di Jakarta Barat yang telah membentuk generasi unggul
+                    sejak 1990 — dari Nursery hingga SMP.</p>
+                
+                <div class="footer-socials">
+                    <a href="https://www.facebook.com/sstandreas" class="footer-social" aria-label="Facebook">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="https://www.instagram.com/sstandreas/" class="footer-social" aria-label="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://www.youtube.com/channel/UC2fmVdeHtxnXl1LMYu7WAAQ" class="footer-social"
+                        aria-label="YouTube">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                </div>
+            </div>
+
+<div class="footer-col">
+                <h4 class="footer-col-title">Tentang Kami</h4>
+                <ul class="footer-links">
+                    <li><a href="tentang-kami.html" class="footer-link footer-link--parent">
+                            <i class="fas fa-chevron-right"></i> Tentang Kami
+                        </a></li>
+                    <li><a href="tentang-kami.html#visi-misi" class="footer-link footer-link--child">
+                            <i class="fas fa-minus"></i> Visi &amp; Misi
+                        </a></li>
+                    <li><a href="tentang-kami.html#sejarah" class="footer-link footer-link--child">
+                            <i class="fas fa-minus"></i> Sejarah
+                        </a></li>
+                    <li><a href="tentang-kami.html#fasilitas" class="footer-link footer-link--child">
+                            <i class="fas fa-minus"></i> Fasilitas
+                        </a></li>
+                </ul>
+
+                <h4 class="footer-col-title" style="margin-top: 28px;">Jenjang Pendidikan</h4>
+                <ul class="footer-links">
+                    <li><a href="jenjang.html" class="footer-link footer-link--parent">
+                            <i class="fas fa-chevron-right"></i> Jenjang Pendidikan
+                        </a></li>
+                    <li><a href="tk.html" class="footer-link footer-link--child">
+                            <i class="fas fa-minus"></i> TK
+                        </a></li>
+                    <li><a href="sd.html" class="footer-link footer-link--child">
+                            <i class="fas fa-minus"></i> SD
+                        </a></li>
+                    <li><a href="smp.html" class="footer-link footer-link--child">
+                            <i class="fas fa-minus"></i> SMP
+                        </a></li>
+                </ul>
+            </div>
+
+<div class="footer-col">
+                <h4 class="footer-col-title">Portal</h4>
+                <ul class="footer-links">
+                    <li><a href="portal-guru.html" class="footer-link footer-link--parent">
+                            <i class="fas fa-chevron-right"></i> Portal Guru
+                        </a></li>
+                    <li><a href="login.html" class="footer-link footer-link--parent">
+                            <i class="fas fa-chevron-right"></i> Portal Siswa
+                        </a></li>
+                </ul>
+
+                <h4 class="footer-col-title" style="margin-top: 28px;">Informasi</h4>
+                <ul class="footer-links">
+                    <li><a href="pendaftaran.html" class="footer-link footer-link--parent">
+                            <i class="fas fa-chevron-right"></i> Pendaftaran
+                        </a></li>
+                    <li><a href="kalendar-akademik.html" class="footer-link footer-link--parent">
+                            <i class="fas fa-chevron-right"></i> Kalender Akademik
+                        </a></li>
+                    <li><a href="berita.html" class="footer-link footer-link--parent">
+                            <i class="fas fa-chevron-right"></i> Berita
+                        </a></li>
+                    <li><a href="prestasi.html" class="footer-link footer-link--parent">
+                            <i class="fas fa-chevron-right"></i> Prestasi
+                        </a></li>
+                    <li><a href="contact.html" class="footer-link footer-link--parent">
+                            <i class="fas fa-chevron-right"></i> Hubungi Kami
+                        </a></li>
+                </ul>
+            </div>
+
+<div class="footer-col footer-col--contact">
+                <h4 class="footer-col-title">Hubungi Kami</h4>
+
+                <ul class="footer-contact-list">
+                    <li class="footer-contact-item">
+                        <div class="footer-contact-icon"><i class="fas fa-location-dot"></i></div>
+                        <p>Jl. Komplek Green Garden,<br>Kedoya Selatan, Kebon Jeruk<br>Jakarta Barat 11520</p>
+                    </li>
+                    <li class="footer-contact-item">
+                        <div class="footer-contact-icon"><i class="fas fa-phone"></i></div>
+                        <p>021 – 580 4058</p>
+                    </li>
+                    <li class="footer-contact-item">
+                        <div class="footer-contact-icon"><i class="fas fa-clock"></i></div>
+                        <p>Senin – Jumat<br>06.00 – 15.00 WIB</p>
+                    </li>
+                    <li class="footer-contact-item">
+                        <div class="footer-contact-icon"><i class="fas fa-envelope"></i></div>
+                        <p>info@sstandreas.sch.id</p>
+                    </li>
+                </ul>
+
+                <a href="pendaftaran.html" class="footer-cta-btn">
+                    Daftar Sekarang <i class="fas fa-paper-plane"></i>
+                </a>
+            </div>
+
+        </div>
+
+<div class="footer-divider"></div>
+
+<div class="footer-bottom">
+            <p class="footer-copyright">© 2026 Sekolah Santo Andreas. All Rights Reserved.</p>
+            <p class="footer-credit"><i class="fas fa-code"></i> Dikembangkan oleh Raylika L.</p>
+        </div>
+
+    </footer>
+
+    <script>
+
+        document.querySelectorAll('a[href^="#"]').forEach(a => {
+            a.addEventListener('click', e => {
+                e.preventDefault();
+                const t = document.querySelector(a.getAttribute('href'));
+                if (t) t.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            });
+        });
+
+function toggleCard(id) {
+            const drawer = document.getElementById('drawer-' + id);
+            const card = document.getElementById('card-' + id);
+            const btn = card.querySelector('.pd-toggle-btn');
+            const isOpen = card.classList.contains('pd-card--open');
+
+document.querySelectorAll('.pd-card').forEach(c => {
+                c.classList.remove('pd-card--open');
+                c.querySelector('.pd-card-drawer').style.maxHeight = '0';
+                c.querySelector('.pd-toggle-btn').setAttribute('aria-expanded', 'false');
+            });
+
+            if (!isOpen) {
+                card.classList.add('pd-card--open');
+                drawer.style.maxHeight = drawer.scrollHeight + 'px';
+                btn.setAttribute('aria-expanded', 'true');
+                setTimeout(() => card.scrollIntoView({ behavior: 'smooth', block: 'start' }), 120);
+            }
+        }
+
+function toggleFaq(btn) {
+            const item = btn.closest('.pd-faq-item');
+            const answer = item.querySelector('.pd-faq-a');
+            const isOpen = item.classList.contains('pd-faq--open');
+
+            document.querySelectorAll('.pd-faq-item.pd-faq--open').forEach(i => {
+                i.classList.remove('pd-faq--open');
+                i.querySelector('.pd-faq-a').style.maxHeight = '0';
+            });
+
+            if (!isOpen) {
+                item.classList.add('pd-faq--open');
+                answer.style.maxHeight = answer.scrollHeight + 'px';
+            }
+        }
+
+document.querySelectorAll('.pd-step-circle').forEach(c => {
+            c.addEventListener('mouseenter', () => {
+                const ring = c.querySelector('.pd-step-ring');
+                ring.classList.remove('pd-ring-animate');
+                void ring.offsetWidth;
+                ring.classList.add('pd-ring-animate');
+            });
+        });
+
+const obs = new IntersectionObserver(entries => {
+            entries.forEach(e => {
+                if (e.isIntersecting) { e.target.classList.add('pd-revealed'); obs.unobserve(e.target); }
+            });
+        }, { threshold: 0.12 });
+
+        document.querySelectorAll('.pd-card, .pd-step, .pd-faq-item').forEach(el => obs.observe(el));
+    </script>
+
+    <script src="session-banner.js"></script>
+    <script>
+        (function () {
+            var btn = document.getElementById('hamburgerBtn');
+            var nav = document.getElementById('mobileNav');
+            if (!btn || !nav) return;
+            btn.addEventListener('click', function () {
+                btn.classList.toggle('open');
+                nav.classList.toggle('open');
+            });
+            nav.querySelectorAll('a').forEach(function (a) {
+                a.addEventListener('click', function () {
+                    btn.classList.remove('open');
+                    nav.classList.remove('open');
+                });
+            });
+            document.addEventListener('click', function (e) {
+                if (!btn.contains(e.target) && !nav.contains(e.target)) {
+                    btn.classList.remove('open');
+                    nav.classList.remove('open');
+                }
+            });
+        })();
+    </script>
+</body>
+
+</html>

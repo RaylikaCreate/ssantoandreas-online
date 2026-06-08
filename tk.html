@@ -1,0 +1,908 @@
+﻿<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TK &amp; Nursery — Sekolah Santo Andreas</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="tk.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.7.2/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+<nav class="nav-bar nav-scrolled">
+        <div class="nav-container">
+            <div class="logo">
+                <a href="index.html"><img src="https://i.ibb.co.com/V033MvMm/St-Andreas-Logo.png" alt="St-Andreas-Logo"
+                        width="290px" height="70px"></a>
+            </div>
+            <ul class="nav-links">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link">Halaman Utama</a>
+                </li>
+                <li class="nav-item">
+                    <a href="tentang-kami.html" class="nav-link">Tentang Kami<i class="fas fa-chevron-down"></i></a>
+                    <div class="dropdown-menu">
+                        <a href="tentang-kami.html#visi-misi">Visi &amp; Misi</a>
+                        <a href="tentang-kami.html#sejarah">Sejarah</a>
+                        <a href="tentang-kami.html#fasilitas">Fasilitas</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a href="jenjang.html" class="nav-link">Jenjang Pendidikan<i class="fas fa-chevron-down"></i></a>
+                    <div class="dropdown-menu">
+                        <a href="tk.html">TK / Nursery</a>
+                        <a href="sd.html">SD</a>
+                        <a href="smp.html">SMP</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a href="#" onclick="event.preventDefault()" class="nav-link">Portal<i class="fas fa-chevron-down"></i></a>
+                    <div class="dropdown-menu">
+                        <a href="login.html">Portal Siswa</a>
+                        <a href="login-teacher.html">Portal Guru</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a href="pendaftaran.html" class="nav-link">Pendaftaran</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" onclick="event.preventDefault()" class="nav-link">Informasi<i class="fas fa-chevron-down"></i></a>
+                    <div class="dropdown-menu">
+                        <a href="berita.html">Berita</a>
+                        <a href="kalendar-akademik.html">Kalender Akademik</a>
+                        <a href="prestasi.html">Prestasi</a>
+                        <a href="contact.html">Hubungi Kami</a>
+                    </div>
+                </li>
+            </ul>
+            <div class="social-links">
+                <a href="https://www.facebook.com/sstandreas" class="social-link"><i class="fab fa-facebook"></i></a>
+                <a href="https://www.instagram.com/sstandreas/" class="social-link"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.youtube.com/channel/UC2fmVdeHtxnXl1LMYu7WAAQ" class="social-link"><i
+                        class="fab fa-youtube"></i></a>
+            </div>
+            
+            <button class="hamburger" id="hamburgerBtn" aria-label="Menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+        
+        <div class="mobile-nav" id="mobileNav">
+            <ul class="mobile-nav-links">
+                <li><a href="index.html">Halaman Utama</a></li>
+                <li class="mobile-dropdown">
+                    <a href="tentang-kami.html">Tentang Kami</a>
+                    <div class="mobile-sub">
+                        <a href="tentang-kami.html#visi-misi">Visi &amp; Misi</a>
+                        <a href="tentang-kami.html#sejarah">Sejarah</a>
+                        <a href="tentang-kami.html#fasilitas">Fasilitas</a>
+                    </div>
+                </li>
+                <li class="mobile-dropdown">
+                    <a href="jenjang.html">Jenjang Pendidikan</a>
+                    <div class="mobile-sub">
+                        <a href="tk.html">TK / Nursery</a>
+                        <a href="sd.html">SD</a>
+                        <a href="smp.html">SMP</a>
+                    </div>
+                </li>
+                <li class="mobile-dropdown">
+                    <a href="#">Portal</a>
+                    <div class="mobile-sub">
+                        <a href="login.html">Portal Siswa</a>
+                        <a href="login-teacher.html">Portal Guru</a>
+                    </div>
+                </li>
+                <li><a href="pendaftaran.html">Pendaftaran</a></li>
+                <li class="mobile-dropdown">
+                    <a href="#">Informasi</a>
+                    <div class="mobile-sub">
+                        <a href="berita.html">Berita</a>
+                        <a href="kalendar-akademik.html">Kalender Akademik</a>
+                        <a href="prestasi.html">Prestasi</a>
+                        <a href="contact.html">Hubungi Kami</a>
+                    </div>
+                </li>
+            </ul>
+            <div class="mobile-nav-social">
+                <a href="https://www.facebook.com/sstandreas" aria-label="Facebook"><i
+                        class="fab fa-facebook-f"></i></a>
+                <a href="https://www.instagram.com/sstandreas/" aria-label="Instagram"><i
+                        class="fab fa-instagram"></i></a>
+                <a href="https://www.youtube.com/channel/UC2fmVdeHtxnXl1LMYu7WAAQ" aria-label="YouTube"><i
+                        class="fab fa-youtube"></i></a>
+            </div>
+        </div>
+    </nav>
+
+<header class="tk-hero">
+        <div class="tk-hero-bg">
+            <img src="tk-hero-santoandreas.jpg" alt="TK &amp; Nursery Santo Andreas">
+            <div class="tk-hero-overlay"></div>
+        </div>
+
+        <div class="tk-hero-content">
+            <div class="tk-hero-badge">
+                <span class="tk-hero-badge-dot"></span>
+                Jenjang TK · Nursery &amp; Kelas TK A / B
+            </div>
+            <span class="tk-hero-eyebrow">Taman Kanak-Kanak &amp; Nursery</span>
+            <h1 class="tk-hero-title">
+                TK &amp; Nursery<br><em>Santo Andreas</em>
+            </h1>
+            <p class="tk-hero-sub">
+                Awal yang penuh kasih — di sinilah hari-hari pertama yang tak terlupakan dimulai.
+                Kami hadir untuk memastikan setiap anak merasa aman, bahagia, dan
+                siap tumbuh menjadi dirinya yang terbaik.
+            </p>
+            <div class="tk-hero-pills">
+                <a href="#keunggulan" class="tk-pill"><i class="fas fa-star"></i> Program</a>
+                <a href="#guru" class="tk-pill"><i class="fas fa-chalkboard-teacher"></i> Guru</a>
+                <a href="#testimoni" class="tk-pill"><i class="fas fa-quote-left"></i> Testimoni</a>
+                <a href="#galeri" class="tk-pill"><i class="fas fa-images"></i> Galeri</a>
+                <a href="pendaftaran.html" class="tk-pill tk-pill--solid"><i class="fas fa-paper-plane"></i> Daftar
+                    Sekarang</a>
+            </div>
+        </div>
+
+        <div class="tk-hero-accent"></div>
+        <div class="tk-hero-bottom-line"></div>
+
+        <div class="tk-hero-scroll">
+            <span class="tk-hero-scroll-line"></span>
+            Scroll ke Bawah
+        </div>
+    </header>
+
+<section class="tk-sec tk-about">
+        <div class="tk-sec-inner">
+            <div class="tk-about-grid">
+                
+                <div>
+                    <span class="tk-about-tag">Tentang TK &amp; Nursery St. Andreas</span>
+                    <h2 class="tk-about-title">
+                        Tempat Pertama Anak<br>Jatuh Cinta pada <em>Belajar</em>
+                    </h2>
+                    <p class="tk-about-body">
+                        TK & Nursery Santo Andreas adalah tempat di mana setiap hari adalah petualangan baru.
+                        Dengan pendekatan bermain sambil belajar, kami menciptakan lingkungan yang hangat,
+                        aman, dan penuh stimulasi — sehingga anak-anak dapat berkembang sesuai tahap
+                        tumbuh kembang mereka masing-masing.
+                    </p>
+                    <p class="tk-about-body">
+                        Dipandu oleh guru-guru berpengalaman dan berdedikasi, setiap kelas dirancang
+                        untuk memupuk rasa ingin tahu, kreativitas, dan nilai-nilai Kristiani sejak usia
+                        paling dini. Inilah fondasi terkuat untuk perjalanan belajar seumur hidup.
+                    </p>
+                    <div class="tk-about-features">
+                        <div class="tk-about-feat">
+                            <i class="fas fa-check"></i> Pendekatan bermain sambil belajar (play-based learning)
+                        </div>
+                        <div class="tk-about-feat">
+                            <i class="fas fa-check"></i> Rasio guru–siswa kecil untuk perhatian yang optimal
+                        </div>
+                        <div class="tk-about-feat">
+                            <i class="fas fa-check"></i> Program bilingual pengenalan bahasa Inggris sejak Nursery
+                        </div>
+                        <div class="tk-about-feat">
+                            <i class="fas fa-check"></i> Ruang kelas yang aman, bersih, dan penuh stimulasi kreatif
+                        </div>
+                        <div class="tk-about-feat">
+                            <i class="fas fa-check"></i> Keterlibatan aktif orang tua dalam proses tumbuh kembang
+                        </div>
+                    </div>
+                </div>
+
+<div class="tk-about-stats">
+                    <div class="tk-stat-box">
+                        <span class="tk-stat-num">200+</span>
+                        <span class="tk-stat-label">Siswa Aktif</span>
+                    </div>
+                    <div class="tk-stat-box">
+                        <span class="tk-stat-num">20+</span>
+                        <span class="tk-stat-label">Guru Terlatih</span>
+                    </div>
+                    <div class="tk-stat-box">
+                        <span class="tk-stat-num">100%</span>
+                        <span class="tk-stat-label">Siap Masuk SD</span>
+                    </div>
+                    <div class="tk-stat-box">
+                        <span class="tk-stat-num">30+</span>
+                        <span class="tk-stat-label">Tahun Berdiri</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<section class="tk-sec tk-keunggulan" id="keunggulan">
+        <div class="tk-sec-inner">
+            <div class="tk-keunggulan-header">
+                <p class="tk-eyebrow tk-eyebrow--light"><i class="fas fa-star"></i> Mengapa TK St. Andreas</p>
+                <h2 class="tk-heading tk-heading--light">
+                    Program Unggulan<br><em>TK &amp; Nursery</em>
+                </h2>
+                <div class="tk-title-line tk-title-line--light" style="margin: 0 auto 24px;"></div>
+                <p class="tk-desc tk-desc--light">
+                    Setiap program kami dirancang dengan satu tujuan — memastikan anak-anak
+                    tumbuh bahagia, percaya diri, dan siap menapaki tahap berikutnya dengan senyuman.
+                </p>
+            </div>
+
+            <div class="tk-keunggulan-grid">
+
+<div class="tk-ku-card">
+                    <div class="tk-ku-num">01</div>
+                    <div class="tk-ku-icon-wrap">
+                        <i class="fas fa-puzzle-piece tk-ku-icon"></i>
+                    </div>
+                    <h3 class="tk-ku-title">Belajar Sambil Bermain</h3>
+                    <p class="tk-ku-text">
+                        Kurikulum kami menempatkan bermain sebagai media utama belajar. Melalui
+                        aktivitas yang terstruktur namun menyenangkan, anak-anak membangun kemampuan
+                        kognitif, bahasa, dan sosial secara alami dan bermakna setiap harinya.
+                    </p>
+                    <span class="tk-ku-tag">Play-Based · Aktif · Eksplorasi</span>
+                </div>
+
+<div class="tk-ku-card">
+                    <div class="tk-ku-num">02</div>
+                    <div class="tk-ku-icon-wrap">
+                        <i class="fas fa-paint-brush tk-ku-icon"></i>
+                    </div>
+                    <h3 class="tk-ku-title">Seni &amp; Ekspresi Diri</h3>
+                    <p class="tk-ku-text">
+                        Dari menggambar, mewarnai, menyanyi, hingga menari — kami memberi ruang
+                        seluas-luasnya bagi anak untuk mengekspresikan diri, mengembangkan imajinasi,
+                        dan menemukan cara unik mereka dalam bercerita tentang dunia.
+                    </p>
+                    <span class="tk-ku-tag">Seni · Musik · Kreativitas</span>
+                </div>
+
+<div class="tk-ku-card">
+                    <div class="tk-ku-num">03</div>
+                    <div class="tk-ku-icon-wrap">
+                        <i class="fas fa-heart tk-ku-icon"></i>
+                    </div>
+                    <h3 class="tk-ku-title">Pembentukan Karakter</h3>
+                    <p class="tk-ku-text">
+                        Nilai-nilai Kristiani seperti kasih, kejujuran, dan berbagi ditanamkan sejak
+                        hari pertama — bukan sebagai pelajaran, melainkan sebagai kebiasaan hidup
+                        yang menjadi bagian dari identitas setiap anak sejak dini.
+                    </p>
+                    <span class="tk-ku-tag">Iman · Kasih · Kejujuran</span>
+                </div>
+
+<div class="tk-ku-card">
+                    <div class="tk-ku-num">04</div>
+                    <div class="tk-ku-icon-wrap">
+                        <i class="fas fa-language tk-ku-icon"></i>
+                    </div>
+                    <h3 class="tk-ku-title">Pengenalan Bahasa</h3>
+                    <p class="tk-ku-text">
+                        Program bilingual kami memperkenalkan bahasa Inggris melalui lagu, cerita,
+                        dan percakapan sehari-hari — membangun kepercayaan diri berbahasa sejak usia
+                        paling dini secara fun, natural, dan tanpa tekanan.
+                    </p>
+                    <span class="tk-ku-tag">Bilingual · Bahasa Inggris · Literasi</span>
+                </div>
+
+<div class="tk-ku-card">
+                    <div class="tk-ku-num">05</div>
+                    <div class="tk-ku-icon-wrap">
+                        <i class="fas fa-running tk-ku-icon"></i>
+                    </div>
+                    <h3 class="tk-ku-title">Gerak &amp; Motorik</h3>
+                    <p class="tk-ku-text">
+                        Aktivitas fisik harian — dari senam pagi, bermain di taman, hingga latihan
+                        motorik halus — memastikan tubuh dan otak anak berkembang secara seimbang
+                        dan optimal di setiap tahap usianya.
+                    </p>
+                    <span class="tk-ku-tag">Motorik · Fisik · Koordinasi</span>
+                </div>
+
+<div class="tk-ku-card">
+                    <div class="tk-ku-num">06</div>
+                    <div class="tk-ku-icon-wrap">
+                        <i class="fas fa-hands-holding-child tk-ku-icon"></i>
+                    </div>
+                    <h3 class="tk-ku-title">Kemitraan Orang Tua</h3>
+                    <p class="tk-ku-text">
+                        Kami percaya tumbuh kembang terbaik terjadi ketika sekolah dan keluarga berjalan
+                        bersama. Melalui laporan berkala, pertemuan rutin, dan kegiatan bersama,
+                        orang tua selalu menjadi bagian aktif perjalanan anak.
+                    </p>
+                    <span class="tk-ku-tag">Parenting · Kolaborasi · Komunikasi</span>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+<section class="tk-sec tk-guru" id="guru">
+        <div class="tk-sec-inner">
+
+<div class="tk-guru-header">
+                <p class="tk-eyebrow tk-eyebrow--light">
+                    <i class="fas fa-chalkboard-teacher"></i> Tim Pengajar
+                </p>
+                <h2 class="tk-heading tk-heading--light">
+                    Guru-Guru <em>Berpengalaman</em>
+                </h2>
+                <div class="tk-title-line tk-title-line--light" style="margin: 0 auto 24px;"></div>
+                <p class="tk-desc tk-desc--light">
+                    Para pendidik kami yang berdedikasi memberikan yang terbaik bagi setiap siswa —
+                    dengan hati, ilmu, dan pengalaman.
+                </p>
+            </div>
+
+<div class="tk-guru-carousel-wrap">
+
+                <button class="tk-guru-btn" id="guruPrev" aria-label="Sebelumnya" disabled>
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+
+                <div class="tk-guru-track-outer">
+                    <div class="tk-guru-track" id="guruTrack">
+
+                        <div class="tk-guru-card">
+                            <div class="tk-guru-img-wrap">
+                                <img src="https://santoandreas.sch.id/wp-content/uploads/2024/11/Web-Andreas-5.jpg"
+                                    alt="Sr. Theresia Luan KYM, S.pd" loading="lazy">
+                            </div>
+                        </div>
+
+                        <div class="tk-guru-card">
+                            <div class="tk-guru-img-wrap">
+                                <img src="https://santoandreas.sch.id/wp-content/uploads/2024/11/Teacher-Profile.jpg"
+                                    alt="Suhartini, S.pd" loading="lazy">
+                            </div>
+                        </div>
+
+                        <div class="tk-guru-card">
+                            <div class="tk-guru-img-wrap">
+                                <img src="https://santoandreas.sch.id/wp-content/uploads/2024/11/Teacher-Profile-1.jpg"
+                                    alt="Hotmaida Theresia Simatupang, S.pd" loading="lazy">
+                            </div>
+                        </div>
+
+                        <div class="tk-guru-card">
+                            <div class="tk-guru-img-wrap">
+                                <img src="https://santoandreas.sch.id/wp-content/uploads/2024/11/Teacher-Profile-2.jpg"
+                                    alt="Aurelia Karen Widyaputri, S.pd" loading="lazy">
+                            </div>
+                        </div>
+
+                        <div class="tk-guru-card">
+                            <div class="tk-guru-img-wrap">
+                                <img src="https://santoandreas.sch.id/wp-content/uploads/2024/11/Teacher-Profile-3.jpg"
+                                    alt="Elisabeth Brestalina, S.pd" loading="lazy">
+                            </div>
+                        </div>
+
+                        <div class="tk-guru-card">
+                            <div class="tk-guru-img-wrap">
+                                <img src="https://santoandreas.sch.id/wp-content/uploads/2024/11/Teacher-Profile-4.jpg"
+                                    alt="Sr. Soraida Luti, HSHJ" loading="lazy">
+                            </div>
+                        </div>
+
+                        <div class="tk-guru-card">
+                            <div class="tk-guru-img-wrap">
+                                <img src="https://santoandreas.sch.id/wp-content/uploads/2024/11/Teacher-Profile-5.jpg"
+                                    alt="Sr. Kristina Anin, HSHJ" loading="lazy">
+                            </div>
+                        </div>
+
+                        <div class="tk-guru-card">
+                            <div class="tk-guru-img-wrap">
+                                <img src="https://santoandreas.sch.id/wp-content/uploads/2024/11/Teacher-Profile-7.jpg"
+                                    alt="Ria Rahmayanti" loading="lazy">
+                            </div>
+                        </div>
+
+                        <div class="tk-guru-card">
+                            <div class="tk-guru-img-wrap">
+                                <img src="https://santoandreas.sch.id/wp-content/uploads/2024/11/Teacher-Profile-8.jpg"
+                                    alt="Jason Wayne Chilvers" loading="lazy">
+                            </div>
+                        </div>
+
+                        <div class="tk-guru-card">
+                            <div class="tk-guru-img-wrap">
+                                <img src="https://santoandreas.sch.id/wp-content/uploads/2024/11/Teacher-Profile-8.jpg"
+                                    alt="Jason Wayne Chilvers" loading="lazy">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <button class="tk-guru-btn" id="guruNext" aria-label="Selanjutnya">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+
+            </div>
+
+<div class="tk-guru-dots" id="guruDots"></div>
+
+        </div>
+    </section>
+
+    <script>
+        (function () {
+            const track = document.getElementById('guruTrack');
+            const prev = document.getElementById('guruPrev');
+            const next = document.getElementById('guruNext');
+            const dotsEl = document.getElementById('guruDots');
+            const cards = Array.from(track.querySelectorAll('.tk-guru-card'));
+
+            function visibleCount() {
+                return window.innerWidth <= 560 ? 1 : window.innerWidth <= 900 ? 2 : 3;
+            }
+
+            let current = 0;
+
+            function maxIdx() { return Math.max(0, cards.length - visibleCount()); }
+
+            function buildDots() {
+                dotsEl.innerHTML = '';
+                for (let i = 0; i <= maxIdx(); i++) {
+                    const d = document.createElement('button');
+                    d.className = 'tk-guru-dot' + (i === current ? ' active' : '');
+                    d.addEventListener('click', () => goTo(i));
+                    dotsEl.appendChild(d);
+                }
+            }
+
+            function goTo(idx) {
+                current = Math.max(0, Math.min(idx, maxIdx()));
+                const card = cards[0];
+                const gap = 24;
+                const step = card.offsetWidth + gap;
+                track.style.transform = `translateX(-${current * step}px)`;
+                prev.disabled = current === 0;
+                next.disabled = current >= maxIdx();
+                dotsEl.querySelectorAll('.tk-guru-dot').forEach((d, i) => {
+                    d.classList.toggle('active', i === current);
+                });
+            }
+
+            prev.addEventListener('click', () => goTo(current - 1));
+            next.addEventListener('click', () => goTo(current + 1));
+
+            let resizeTimer;
+            window.addEventListener('resize', () => {
+                clearTimeout(resizeTimer);
+                resizeTimer = setTimeout(() => {
+                    buildDots();
+                    goTo(Math.min(current, maxIdx()));
+                }, 120);
+            });
+
+            buildDots();
+            goTo(0);
+        })();
+    </script>
+
+<section class="tk-sec tk-testi" id="testimoni">
+        <div class="tk-testi-deco-q">"</div>
+        <div class="tk-sec-inner">
+            <div class="tk-testi-header">
+                <p class="tk-eyebrow tk-eyebrow--light"><i class="fas fa-quote-left"></i> Suara Mereka</p>
+                <h2 class="tk-heading tk-heading--light">
+                    Apa Kata<br><em>Orang Tua Murid TK</em>
+                </h2>
+                <div class="tk-title-line tk-title-line--light" style="margin: 0 auto 24px;"></div>
+                <p class="tk-desc tk-desc--light">
+                    Kepercayaan keluarga adalah mahkota kami. Inilah cerita nyata dari para orang tua
+                    yang telah menitipkan buah hati paling berharga mereka kepada kami.
+                </p>
+            </div>
+
+            <div class="tk-testi-grid">
+
+<div class="tk-testi-card">
+                    <span class="tk-testi-quote-icon">"</span>
+                    <div class="tk-testi-stars">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="tk-testi-text">
+                        Leo sempat menangis setiap hari di minggu pertama. Tapi guru-guru di TK St. Andreas
+                        sangat sabar dan hangat tidak pernah memaksanya, selalu memberi semangat dengan
+                        kelembutan. Dua minggu ini, Leo justru yang tidak mau pulang sekolah!
+                    </p>
+                    <div class="tk-testi-author">
+                        <div class="tk-testi-avatar">
+                            <img src="https://i.pinimg.com/236x/1d/ec/e2/1dece2c8357bdd7cee3b15036344faf5.jpg"
+                                alt="Ibu Yohana">
+                        </div>
+                        <div>
+                            <span class="tk-testi-name">Ibu Yohana Santoso</span>
+                            <span class="tk-testi-role">Orang tua Leo · TK A</span>
+                        </div>
+                    </div>
+                </div>
+
+<div class="tk-testi-card">
+                    <span class="tk-testi-quote-icon">"</span>
+                    <div class="tk-testi-stars">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="tk-testi-text">
+                        Yang membuat kami terkesan adalah bagaimana guru-guru di sini benar-benar
+                        mengenal Celine secara personal, tahu apa yang ia sukai, apa yang membuatnya
+                        cemas, dan bagaimana cara terbaik mendekatinya.
+                    </p>
+                    <div class="tk-testi-author">
+                        <div class="tk-testi-avatar">
+                            <img src="https://i.pinimg.com/236x/1d/ec/e2/1dece2c8357bdd7cee3b15036344faf5.jpg"
+                                alt="Bapak Richard">
+                        </div>
+                        <div>
+                            <span class="tk-testi-name">Orang tua Celine</span>
+                            <span class="tk-testi-role">Orang tua Celine · TK B</span>
+                        </div>
+                    </div>
+                </div>
+
+<div class="tk-testi-card">
+                    <span class="tk-testi-quote-icon">"</span>
+                    <div class="tk-testi-stars">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="tk-testi-text">
+                        Nathan masuk Nursery di usia 3 tahun dan saya khawatir sekali ia terlalu kecil.
+                        Ternyata justru sebaliknya, ia cepat beradaptasi, mulai berbicara lebih banyak,
+                        dan setiap pulang selalu bercerita tentang teman barunya. Perkembangan Nathan
+                        dalam satu semester pertama benar-benar di luar dugaan saya.
+                    </p>
+                    <div class="tk-testi-author">
+                        <div class="tk-testi-avatar">
+                            <img src="https://i.pinimg.com/236x/1d/ec/e2/1dece2c8357bdd7cee3b15036344faf5.jpg"
+                                alt="Ibu Dewi">
+                        </div>
+                        <div>
+                            <span class="tk-testi-name">Ibu Dewi Kurniawati</span>
+                            <span class="tk-testi-role">Orang tua Nathan · Nursery</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+<section class="tk-gallery" id="galeri">
+        <div class="tk-gallery-inner">
+            <div class="tk-gallery-header">
+                <p class="tk-eyebrow tk-eyebrow--light"><i class="fas fa-images"></i> Galeri Foto</p>
+                <h2 class="tk-heading tk-heading--light">
+                    Momen &amp; Kenangan<br><em>TK St. Andreas</em>
+                </h2>
+                <div class="tk-title-line tk-title-line--light" style="margin: 0 auto 24px;"></div>
+                <p class="tk-desc tk-desc--light">
+                    Setiap foto adalah bukti nyata — bahwa belajar bisa terasa seperti bermain,
+                    dan sekolah bisa terasa seperti rumah.
+                </p>
+            </div>
+
+            <div class="tk-gallery-scroll-hint">
+                <i class="fas fa-hand-point-left"></i>
+                Geser untuk Melihat Lebih
+                <i class="fas fa-hand-point-right"></i>
+            </div>
+        </div>
+
+        <div class="tk-gallery-track" id="tkGalleryTrack">
+
+            <div class="tk-gallery-item tk-gallery-item--wide">
+                <img src="tkm-gereja1-ssantoandreas.jpg" alt="Foto bersama di gereja">
+                <div class="tk-gallery-item-cap">Foto bersama di Gereja St. Andreas</div>
+            </div>
+
+            <div class="tk-gallery-item tk-gallery-item--wide">
+                <img src="tkm-makan-ssantoandreas.jpg" alt="Makan Bersama">
+                <div class="tk-gallery-item-cap">Makan bersama</div>
+            </div>
+
+            <div class="tk-gallery-item tk-gallery-item--wide">
+                <img src="tkm-swimming-ssantoandreas.jpg" alt="Berenang Bersama">
+                <div class="tk-gallery-item-cap">Berenang bersama</div>
+            </div>
+
+            <div class="tk-gallery-item tk-gallery-item--wide">
+                <img src="tkm-fieldtrip-ssantoandreas.jpg" alt="Fieldtrip TK ke Safari">
+                <div class="tk-gallery-item-cap">Kunjungan Fieltrip ke Safari</div>
+            </div>
+
+            <div class="tk-gallery-item tk-gallery-item--wide">
+                <img src="tkm-cosplay3-ssantoandreas.jpg" alt="cosplay TK">
+                <div class="tk-gallery-item-cap">Cosplay Cita-cita 3/3</div>
+            </div>
+
+            <div class="tk-gallery-item tk-gallery-item--wide">
+                <img src="tkm-cosplay2-ssantoandreas.jpg" alt="cosplay TK">
+                <div class="tk-gallery-item-cap">Cosplay Cita-cita 2/3</div>
+            </div>
+
+            <div class="tk-gallery-item tk-gallery-item--wide">
+                <img src="tkm-cosplay1-ssantoandreas.jpg" alt="cosplay TK">
+                <div class="tk-gallery-item-cap">Cosplay Cita-cita 1/3</div>
+            </div>
+
+            <div class="tk-gallery-item tk-gallery-item--wide">
+                <img src="tkm-prize2-ssantoandreas.jpg" alt="perayaan paskah">
+                <div class="tk-gallery-item-cap">Perayaan Paskah TK 2/2</div>
+            </div>
+
+            <div class="tk-gallery-item tk-gallery-item--wide">
+                <img src="tkm-prize1-ssantoandreas.jpg" alt="perayaan paskah">
+                <div class="tk-gallery-item-cap">Perayaan Paskah TK 1/2</div>
+            </div>
+
+</section>
+
+<section class="tk-cta-strip">
+        <div class="tk-cta-strip-inner">
+            <p class="tk-cta-label">PPDB 2026/2027 · Kuota Terbatas</p>
+            <h2 class="tk-cta-title">
+                Mulai Perjalanan Belajar<br><em>yang Menyenangkan</em>
+            </h2>
+            <p class="tk-cta-sub">
+                Daftarkan putra-putri Anda sekarang dan berikan mereka awal terbaik —
+                penuh kasih, penuh tawa, dan penuh makna bersama TK &amp; Nursery Santo Andreas.
+            </p>
+            <div class="tk-cta-btns">
+                <a href="pendaftaran.html" class="tk-cta-btn tk-cta-btn--solid">
+                    <i class="fas fa-paper-plane"></i> Daftar Sekarang
+                </a>
+                <a href="tentang-kami.html" class="tk-cta-btn tk-cta-btn--outline">
+                    <i class="fas fa-info-circle"></i> Pelajari Lebih Lanjut
+                </a>
+            </div>
+        </div>
+    </section>
+
+<footer class="site-footer">
+
+<div class="footer-bg-ring ring-a"></div>
+        <div class="footer-bg-ring ring-b"></div>
+
+        <div class="footer-inner">
+
+<div class="footer-col footer-col--brand">
+                <img src="logo-landscape-ssantoandreas.png" alt="Logo Sekolah Santo Andreas" class="footer-logo">
+                <p class="footer-about">Lembaga pendidikan Katolik di Jakarta Barat yang telah membentuk generasi unggul
+                    sejak 1990 — dari Nursery hingga SMP.</p>
+                
+                <div class="footer-socials">
+                    <a href="https://www.facebook.com/sstandreas" class="footer-social" aria-label="Facebook">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="https://www.instagram.com/sstandreas/" class="footer-social" aria-label="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://www.youtube.com/channel/UC2fmVdeHtxnXl1LMYu7WAAQ" class="footer-social"
+                        aria-label="YouTube">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                </div>
+            </div>
+
+<div class="footer-col">
+                <h4 class="footer-col-title">Tentang Kami</h4>
+                <ul class="footer-links">
+                    <li><a href="tentang-kami.html" class="footer-link footer-link--parent">
+                            <i class="fas fa-chevron-right"></i> Tentang Kami
+                        </a></li>
+                    <li><a href="tentang-kami.html#visi-misi" class="footer-link footer-link--child">
+                            <i class="fas fa-minus"></i> Visi &amp; Misi
+                        </a></li>
+                    <li><a href="tentang-kami.html#sejarah" class="footer-link footer-link--child">
+                            <i class="fas fa-minus"></i> Sejarah
+                        </a></li>
+                    <li><a href="tentang-kami.html#fasilitas" class="footer-link footer-link--child">
+                            <i class="fas fa-minus"></i> Fasilitas
+                        </a></li>
+                </ul>
+
+                <h4 class="footer-col-title" style="margin-top: 28px;">Jenjang Pendidikan</h4>
+                <ul class="footer-links">
+                    <li><a href="jenjang.html" class="footer-link footer-link--parent">
+                            <i class="fas fa-chevron-right"></i> Jenjang Pendidikan
+                        </a></li>
+                    <li><a href="tk.html" class="footer-link footer-link--child">
+                            <i class="fas fa-minus"></i> TK
+                        </a></li>
+                    <li><a href="sd.html" class="footer-link footer-link--child">
+                            <i class="fas fa-minus"></i> SD
+                        </a></li>
+                    <li><a href="smp.html" class="footer-link footer-link--child">
+                            <i class="fas fa-minus"></i> SMP
+                        </a></li>
+                </ul>
+            </div>
+
+<div class="footer-col">
+                <h4 class="footer-col-title">Portal</h4>
+                <ul class="footer-links">
+                    <li><a href="portal-guru.html" class="footer-link footer-link--parent">
+                            <i class="fas fa-chevron-right"></i> Portal Guru
+                        </a></li>
+                    <li><a href="login.html" class="footer-link footer-link--parent">
+                            <i class="fas fa-chevron-right"></i> Portal Siswa
+                        </a></li>
+                </ul>
+
+                <h4 class="footer-col-title" style="margin-top: 28px;">Informasi</h4>
+                <ul class="footer-links">
+                    <li><a href="pendaftaran.html" class="footer-link footer-link--parent">
+                            <i class="fas fa-chevron-right"></i> Pendaftaran
+                        </a></li>
+                    <li><a href="kalendar-akademik.html" class="footer-link footer-link--parent">
+                            <i class="fas fa-chevron-right"></i> Kalender Akademik
+                        </a></li>
+                    <li><a href="berita.html" class="footer-link footer-link--parent">
+                            <i class="fas fa-chevron-right"></i> Berita
+                        </a></li>
+                    <li><a href="prestasi.html" class="footer-link footer-link--parent">
+                            <i class="fas fa-chevron-right"></i> Prestasi
+                        </a></li>
+                    <li><a href="contact.html" class="footer-link footer-link--parent">
+                            <i class="fas fa-chevron-right"></i> Hubungi Kami
+                        </a></li>
+                </ul>
+            </div>
+
+<div class="footer-col footer-col--contact">
+                <h4 class="footer-col-title">Hubungi Kami</h4>
+
+                <ul class="footer-contact-list">
+                    <li class="footer-contact-item">
+                        <div class="footer-contact-icon"><i class="fas fa-location-dot"></i></div>
+                        <p>Jl. Komplek Green Garden,<br>Kedoya Selatan, Kebon Jeruk<br>Jakarta Barat 11520</p>
+                    </li>
+                    <li class="footer-contact-item">
+                        <div class="footer-contact-icon"><i class="fas fa-phone"></i></div>
+                        <p>021 – 580 4058</p>
+                    </li>
+                    <li class="footer-contact-item">
+                        <div class="footer-contact-icon"><i class="fas fa-clock"></i></div>
+                        <p>Senin – Jumat<br>06.00 – 15.00 WIB</p>
+                    </li>
+                    <li class="footer-contact-item">
+                        <div class="footer-contact-icon"><i class="fas fa-envelope"></i></div>
+                        <p>info@sstandreas.sch.id</p>
+                    </li>
+                </ul>
+
+                <a href="pendaftaran.html" class="footer-cta-btn">
+                    Daftar Sekarang <i class="fas fa-paper-plane"></i>
+                </a>
+            </div>
+
+        </div>
+
+<div class="footer-divider"></div>
+
+<div class="footer-bottom">
+            <p class="footer-copyright">© 2026 Sekolah Santo Andreas. All Rights Reserved.</p>
+            <p class="footer-credit"><i class="fas fa-code"></i> Dikembangkan oleh Raylika L.</p>
+        </div>
+
+    </footer>
+
+    <script>
+        /* ── Gallery drag-to-scroll ── */
+        (function () {
+            const track = document.getElementById('tkGalleryTrack');
+            const btnLeft = document.getElementById('tkGalleryLeft');
+            const btnRight = document.getElementById('tkGalleryRight');
+
+            let isDragging = false, startX = 0, scrollStart = 0;
+
+            track.addEventListener('mousedown', e => {
+                isDragging = true;
+                startX = e.pageX - track.offsetLeft;
+                scrollStart = track.scrollLeft;
+                track.style.userSelect = 'none';
+            });
+
+            document.addEventListener('mouseup', () => {
+                isDragging = false;
+                track.style.userSelect = '';
+            });
+
+            document.addEventListener('mousemove', e => {
+                if (!isDragging) return;
+                const x = e.pageX - track.offsetLeft;
+                const walk = (x - startX) * 1.4;
+                track.scrollLeft = scrollStart - walk;
+            });
+
+            btnLeft.addEventListener('click', () => {
+                track.scrollBy({ left: -420, behavior: 'smooth' });
+            });
+
+            btnRight.addEventListener('click', () => {
+                track.scrollBy({ left: 420, behavior: 'smooth' });
+            });
+
+            let touchStartX = 0;
+            track.addEventListener('touchstart', e => {
+                touchStartX = e.touches[0].pageX;
+            }, { passive: true });
+
+            track.addEventListener('touchmove', e => {
+                const diff = touchStartX - e.touches[0].pageX;
+                track.scrollLeft += diff * 0.8;
+                touchStartX = e.touches[0].pageX;
+            }, { passive: true });
+        })();
+
+        /* ── Intersection observer fade-in for cards ── */
+        (function () {
+            const cards = document.querySelectorAll(
+                '.tk-ku-card, .tk-testi-card, .tk-stat-box'
+            );
+
+            cards.forEach((el, i) => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(28px)';
+                el.style.transition = `opacity 0.6s ease ${(i % 3) * 0.1}s, transform 0.6s ease ${(i % 3) * 0.1}s`;
+            });
+
+            const observer = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.12 });
+
+            cards.forEach(el => observer.observe(el));
+        })();
+    </script>
+
+    <script src="session-banner.js"></script>
+    <script>
+        (function () {
+            var btn = document.getElementById('hamburgerBtn');
+            var nav = document.getElementById('mobileNav');
+            if (!btn || !nav) return;
+            btn.addEventListener('click', function () {
+                btn.classList.toggle('open');
+                nav.classList.toggle('open');
+            });
+            nav.querySelectorAll('a').forEach(function (a) {
+                a.addEventListener('click', function () {
+                    btn.classList.remove('open');
+                    nav.classList.remove('open');
+                });
+            });
+            document.addEventListener('click', function (e) {
+                if (!btn.contains(e.target) && !nav.contains(e.target)) {
+                    btn.classList.remove('open');
+                    nav.classList.remove('open');
+                }
+            });
+        })();
+    </script>
+</body>
+
+</html>

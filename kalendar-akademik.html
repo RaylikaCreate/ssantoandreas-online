@@ -1,0 +1,907 @@
+﻿<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalender Akademik — Sekolah Santo Andreas</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.7.2/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Playfair+Display:wght@700;900&display=swap"
+        rel="stylesheet">
+    <style>
+        *,
+        *::before,
+        *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --dark: #04111f;
+            --dark2: #0a1929;
+            --dark3: #0d2137;
+            --blue: #0162a6;
+            --blue-lt: #0088e3;
+            --gold: #ffcc00;
+            --red: #da251e;
+            --white: #ffffff;
+            --muted: rgba(255, 255, 255, 0.45);
+            --border: rgba(255, 255, 255, 0.08);
+            --card-bg: rgba(255, 255, 255, 0.04);
+            --sans: 'Plus Jakarta Sans', sans-serif;
+            --display: 'Times New Roman', Georgia, serif;
+        }
+
+        body {
+            font-family: var(--sans);
+            background: var(--dark);
+            color: var(--white);
+            min-height: 100vh;
+        }
+
+.bn-hero {
+            position: relative;
+            height: 52vh;
+            min-height: 380px;
+            display: flex;
+            align-items: flex-end;
+            overflow: hidden;
+            padding-bottom: 70px;
+        }
+
+        .bn-hero-bg {
+            position: absolute;
+            inset: 0;
+        }
+
+        .bn-hero-bg img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center 45%;
+            filter: brightness(0.22) saturate(0.5);
+            animation: hero-zoom 16s ease-out forwards;
+        }
+
+        @keyframes hero-zoom {
+            from {
+                transform: scale(1.06);
+            }
+
+            to {
+                transform: scale(1.00);
+            }
+        }
+
+        .bn-hero-overlay {
+            position: absolute;
+            inset: 0;
+            background:
+                linear-gradient(110deg, rgba(1, 98, 166, 0.68) 0%, rgba(0, 136, 227, 0.15) 55%, transparent 100%),
+                linear-gradient(180deg, transparent 30%, rgba(4, 17, 31, 0.98) 100%);
+        }
+
+        .bn-hero-accent {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 5px;
+            height: 100%;
+            background: var(--gold);
+            z-index: 3;
+        }
+
+        .bn-hero-content {
+            position: relative;
+            z-index: 4;
+            padding: 0 80px;
+            max-width: 1200px;
+            width: 100%;
+            margin: 0 auto;
+            animation: fade-up 0.8s ease both;
+        }
+
+        .bn-hero-eyebrow {
+            font-family: var(--sans);
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 0.24em;
+            text-transform: uppercase;
+            color: var(--gold);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 14px;
+        }
+
+        .bn-hero-eyebrow::before {
+            content: '';
+            display: inline-block;
+            width: 32px;
+            height: 2px;
+            background: var(--gold);
+            border-radius: 2px;
+        }
+
+        .bn-hero-title {
+            font-family: var(--display);
+            font-size: clamp(36px, 5.5vw, 68px);
+            font-weight: 900;
+            color: var(--white);
+            line-height: 1.05;
+            margin: 0 0 14px;
+            letter-spacing: -0.02em;
+        }
+
+        .bn-hero-title em {
+            font-style: italic;
+            font-weight: 400;
+            color: var(--gold);
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        .bn-hero-sub {
+            font-family: var(--sans);
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.45);
+            margin: 0 0 24px;
+        }
+
+.legend {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 14px;
+            margin-top: 32px;
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 12px;
+            color: var(--muted);
+            font-weight: 600;
+        }
+
+        .legend-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+
+.content {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 52px 60px 80px;
+        }
+
+.filter-tabs {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-bottom: 36px;
+        }
+
+        .filter-tab {
+            font-size: 12px;
+            font-weight: 700;
+            padding: 8px 16px;
+            border-radius: 50px;
+            border: 1px solid var(--border);
+            background: var(--card-bg);
+            color: var(--muted);
+            cursor: pointer;
+            transition: all 0.2s;
+            text-transform: capitalize;
+            letter-spacing: 0.05em;
+        }
+
+        .filter-tab:hover {
+            color: var(--white);
+            border-color: rgba(255, 255, 255, 0.2);
+        }
+
+        .filter-tab.active {
+            background: var(--blue);
+            border-color: var(--blue-lt);
+            color: var(--white);
+        }
+
+.month-section {
+            margin-bottom: 44px;
+        }
+
+        .month-heading {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 18px;
+        }
+
+        .month-name {
+            font-family: var(--display);
+            font-size: 22px;
+            font-weight: 900;
+            color: var(--white);
+        }
+
+        .month-line {
+            flex: 1;
+            height: 1px;
+            background: var(--border);
+        }
+
+        .month-year {
+            font-size: 12px;
+            color: var(--muted);
+            font-weight: 600;
+        }
+
+.event-row {
+            display: grid;
+            grid-template-columns: 80px 1fr;
+            gap: 16px;
+            align-items: stretch;
+            margin-bottom: 10px;
+        }
+
+        .event-date-col {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            padding-top: 4px;
+        }
+
+        .event-day-num {
+            font-size: 26px;
+            font-weight: 800;
+            line-height: 1;
+        }
+
+        .event-day-name {
+            font-size: 10px;
+            font-weight: 600;
+            text-transform: uppercase;
+            color: var(--muted);
+            margin-top: 2px;
+        }
+
+        .event-range-line {
+            flex: 1;
+            width: 2px;
+            background: var(--border);
+            margin: 6px 0;
+            border-radius: 2px;
+        }
+
+        .event-body {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 18px 22px;
+            border-left: 3px solid transparent;
+            transition: border-color 0.2s, background 0.2s;
+        }
+
+        .event-body:hover {
+            background: rgba(255, 255, 255, 0.06);
+        }
+
+        .event-body-top {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            gap: 12px;
+            margin-bottom: 6px;
+        }
+
+        .event-name {
+            font-size: 15px;
+            font-weight: 700;
+            color: var(--white);
+        }
+
+        .event-badge {
+            font-size: 10px;
+            font-weight: 700;
+            padding: 3px 10px;
+            border-radius: 20px;
+            text-transform: uppercase;
+            white-space: nowrap;
+            flex-shrink: 0;
+        }
+
+        .badge-liburan {
+            background: rgba(74, 222, 128, 0.12);
+            color: #4ade80;
+        }
+
+        .badge-ujian {
+            background: rgba(218, 37, 30, 0.12);
+            color: #ff8a8a;
+        }
+
+        .badge-kegiatan {
+            background: rgba(1, 98, 166, 0.2);
+            color: #60a5fa;
+        }
+
+        .badge-upacara {
+            background: rgba(255, 204, 0, 0.12);
+            color: var(--gold);
+        }
+
+        .badge-rapat {
+            background: rgba(150, 80, 220, 0.12);
+            color: #c084fc;
+        }
+
+        .badge-lainnya {
+            background: rgba(255, 255, 255, 0.06);
+            color: var(--muted);
+        }
+
+        .event-keterangan {
+            font-size: 13px;
+            color: var(--muted);
+            line-height: 1.6;
+            margin-top: 4px;
+        }
+
+        .event-multiday {
+            font-size: 11px;
+            color: var(--muted);
+            margin-top: 6px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .empty-month {
+            font-size: 13px;
+            color: var(--muted);
+            padding: 12px 0;
+            font-style: italic;
+        }
+
+        .no-events {
+            text-align: center;
+            padding: 80px 20px;
+        }
+
+        .no-events i {
+            font-size: 48px;
+            color: rgba(255, 255, 255, 0.08);
+            margin-bottom: 16px;
+            display: block;
+        }
+
+        .no-events p {
+            font-size: 15px;
+            color: var(--muted);
+        }
+
+@keyframes fade-up {
+            from {
+                opacity: 0;
+                transform: translateY(16px)
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0)
+            }
+        }
+
+        .anim {
+            animation: fade-up 0.45s ease both;
+        }
+
+        .anim-1 {
+            animation-delay: .05s
+        }
+
+        .anim-2 {
+            animation-delay: .10s
+        }
+
+        .anim-3 {
+            animation-delay: .15s
+        }
+
+        @media(max-width:900px) {
+            .site-nav {
+                padding: 0 24px
+            }
+
+            .bn-hero-content {
+                padding: 0 24px
+            }
+
+            .content {
+                padding: 36px 24px 60px
+            }
+        }
+
+        @media(max-width:600px) {
+            .event-row {
+                grid-template-columns: 64px 1fr
+            }
+
+            .nav-right {
+                display: none
+            }
+        }
+
+        @media(max-width:768px) {
+            .bn-hero {
+                height: auto;
+                min-height: 52vh;
+                padding-bottom: 60px;
+            }
+
+            .bn-hero-content {
+                padding: 0 16px;
+            }
+
+            .bn-hero-title {
+                font-size: clamp(28px, 8vw, 52px);
+            }
+
+            .content {
+                padding: 32px 16px 60px;
+            }
+
+            .month-header {
+                font-size: 18px;
+            }
+
+            .event-title {
+                font-size: 14px;
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="nav-bar nav-scrolled">
+        <div class="nav-container">
+            <div class="logo">
+                <a href="index.html"><img src="https://i.ibb.co.com/V033MvMm/St-Andreas-Logo.png" alt="St-Andreas-Logo"
+                        width="290px" height="70px"></a>
+            </div>
+            <ul class="nav-links">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link">Halaman Utama</a>
+                </li>
+                <li class="nav-item">
+                    <a href="tentang-kami.html" class="nav-link">Tentang Kami<i class="fas fa-chevron-down"></i></a>
+                    <div class="dropdown-menu">
+                        <a href="tentang-kami.html#visi-misi">Visi &amp; Misi</a>
+                        <a href="tentang-kami.html#sejarah">Sejarah</a>
+                        <a href="tentang-kami.html#fasilitas">Fasilitas</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a href="jenjang.html" class="nav-link">Jenjang Pendidikan<i class="fas fa-chevron-down"></i></a>
+                    <div class="dropdown-menu">
+                        <a href="tk.html">TK / Nursery</a>
+                        <a href="sd.html">SD</a>
+                        <a href="smp.html">SMP</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a href="#" onclick="event.preventDefault()" class="nav-link">Portal<i class="fas fa-chevron-down"></i></a>
+                    <div class="dropdown-menu">
+                        <a href="login.html">Portal Siswa</a>
+                        <a href="login-teacher.html">Portal Guru</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a href="pendaftaran.html" class="nav-link">Pendaftaran</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" onclick="event.preventDefault()" class="nav-link">Informasi<i class="fas fa-chevron-down"></i></a>
+                    <div class="dropdown-menu">
+                        <a href="berita.html">Berita</a>
+                        <a href="kalendar-akademik.html">Kalender Akademik</a>
+                        <a href="prestasi.html">Prestasi</a>
+                        <a href="contact.html">Hubungi Kami</a>
+                    </div>
+                </li>
+            </ul>
+            <div class="social-links">
+                <a href="https://www.facebook.com/sstandreas" class="social-link"><i class="fab fa-facebook"></i></a>
+                <a href="https://www.instagram.com/sstandreas/" class="social-link"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.youtube.com/channel/UC2fmVdeHtxnXl1LMYu7WAAQ" class="social-link"><i
+                        class="fab fa-youtube"></i></a>
+            </div>
+            
+            <button class="hamburger" id="hamburgerBtn" aria-label="Menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+        
+        <div class="mobile-nav" id="mobileNav">
+            <ul class="mobile-nav-links">
+                <li><a href="index.html">Halaman Utama</a></li>
+                <li class="mobile-dropdown">
+                    <a href="tentang-kami.html">Tentang Kami</a>
+                    <div class="mobile-sub">
+                        <a href="tentang-kami.html#visi-misi">Visi &amp; Misi</a>
+                        <a href="tentang-kami.html#sejarah">Sejarah</a>
+                        <a href="tentang-kami.html#fasilitas">Fasilitas</a>
+                    </div>
+                </li>
+                <li class="mobile-dropdown">
+                    <a href="jenjang.html">Jenjang Pendidikan</a>
+                    <div class="mobile-sub">
+                        <a href="tk.html">TK / Nursery</a>
+                        <a href="sd.html">SD</a>
+                        <a href="smp.html">SMP</a>
+                    </div>
+                </li>
+                <li class="mobile-dropdown">
+                    <a href="#">Portal</a>
+                    <div class="mobile-sub">
+                        <a href="login.html">Portal Siswa</a>
+                        <a href="login-teacher.html">Portal Guru</a>
+                    </div>
+                </li>
+                <li><a href="pendaftaran.html">Pendaftaran</a></li>
+                <li class="mobile-dropdown">
+                    <a href="#">Informasi</a>
+                    <div class="mobile-sub">
+                        <a href="berita.html">Berita</a>
+                        <a href="kalendar-akademik.html">Kalender Akademik</a>
+                        <a href="prestasi.html">Prestasi</a>
+                        <a href="contact.html">Hubungi Kami</a>
+                    </div>
+                </li>
+            </ul>
+            <div class="mobile-nav-social">
+                <a href="https://www.facebook.com/sstandreas" aria-label="Facebook"><i
+                        class="fab fa-facebook-f"></i></a>
+                <a href="https://www.instagram.com/sstandreas/" aria-label="Instagram"><i
+                        class="fab fa-instagram"></i></a>
+                <a href="https://www.youtube.com/channel/UC2fmVdeHtxnXl1LMYu7WAAQ" aria-label="YouTube"><i
+                        class="fab fa-youtube"></i></a>
+            </div>
+        </div>
+    </nav>
+
+<header class="bn-hero">
+        <div class="bn-hero-bg">
+            <img src="https://santoandreas.sch.id/wp-content/uploads/slider/cache/414549754177bf3a942a6d7bff3dafc8/DSC00475-new-scaled.jpg"
+                alt="Kalender Akademik Santo Andreas">
+            <div class="bn-hero-overlay"></div>
+        </div>
+        <div class="bn-hero-accent"></div>
+        <div class="bn-hero-content">
+            <p class="bn-hero-eyebrow">Akademik</p>
+            <h1 class="bn-hero-title">Kalender <em>Akademik</em></h1>
+            <p class="bn-hero-sub">Jadwal lengkap kegiatan sekolah, hari libur, ujian, dan acara penting sepanjang tahun
+                pelajaran.</p>
+            <div class="legend">
+                <div class="legend-item">
+                    <div class="legend-dot" style="background:#4ade80"></div> Hari Libur
+                </div>
+                <div class="legend-item">
+                    <div class="legend-dot" style="background:#ff8a8a"></div> Ujian / Penilaian
+                </div>
+                <div class="legend-item">
+                    <div class="legend-dot" style="background:#60a5fa"></div> Kegiatan Sekolah
+                </div>
+                <div class="legend-item">
+                    <div class="legend-dot" style="background:#ffcc00"></div> Upacara / Seremonial
+                </div>
+                <div class="legend-item">
+                    <div class="legend-dot" style="background:#c084fc"></div> Rapat / Pertemuan
+                </div>
+            </div>
+        </div>
+    </header>
+
+<div class="content">
+        
+        <div class="filter-tabs anim anim-1" id="filterTabs">
+            <button class="filter-tab active" onclick="setFilter('')">Semua</button>
+            <button class="filter-tab" onclick="setFilter('liburan')">Hari Libur</button>
+            <button class="filter-tab" onclick="setFilter('ujian')">Ujian</button>
+            <button class="filter-tab" onclick="setFilter('kegiatan')">Kegiatan</button>
+            <button class="filter-tab" onclick="setFilter('upacara')">Upacara</button>
+        </div>
+
+        <div id="calendarContent" class="anim anim-2"></div>
+    </div>
+
+<footer class="site-footer">
+
+<div class="footer-bg-ring ring-a"></div>
+        <div class="footer-bg-ring ring-b"></div>
+
+        <div class="footer-inner">
+
+<div class="footer-col footer-col--brand">
+                <img src="logo-landscape-ssantoandreas.png" alt="Logo Sekolah Santo Andreas" class="footer-logo">
+                <p class="footer-about">Lembaga pendidikan Katolik di Jakarta Barat yang telah membentuk generasi unggul
+                    sejak 1990 — dari Nursery hingga SMP.</p>
+                
+                <div class="footer-socials">
+                    <a href="https://www.facebook.com/sstandreas" class="footer-social" aria-label="Facebook">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="https://www.instagram.com/sstandreas/" class="footer-social" aria-label="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://www.youtube.com/channel/UC2fmVdeHtxnXl1LMYu7WAAQ" class="footer-social"
+                        aria-label="YouTube">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                </div>
+            </div>
+
+<div class="footer-col">
+                <h4 class="footer-col-title">Tentang Kami</h4>
+                <ul class="footer-links">
+                    <li><a href="tentang-kami.html" class="footer-link footer-link--parent">
+                            <i class="fas fa-chevron-right"></i> Tentang Kami
+                        </a></li>
+                    <li><a href="tentang-kami.html#visi-misi" class="footer-link footer-link--child">
+                            <i class="fas fa-minus"></i> Visi &amp; Misi
+                        </a></li>
+                    <li><a href="tentang-kami.html#sejarah" class="footer-link footer-link--child">
+                            <i class="fas fa-minus"></i> Sejarah
+                        </a></li>
+                    <li><a href="tentang-kami.html#fasilitas" class="footer-link footer-link--child">
+                            <i class="fas fa-minus"></i> Fasilitas
+                        </a></li>
+                </ul>
+
+                <h4 class="footer-col-title" style="margin-top: 28px;">Jenjang Pendidikan</h4>
+                <ul class="footer-links">
+                    <li><a href="jenjang.html" class="footer-link footer-link--parent">
+                            <i class="fas fa-chevron-right"></i> Jenjang Pendidikan
+                        </a></li>
+                    <li><a href="tk.html" class="footer-link footer-link--child">
+                            <i class="fas fa-minus"></i> TK
+                        </a></li>
+                    <li><a href="sd.html" class="footer-link footer-link--child">
+                            <i class="fas fa-minus"></i> SD
+                        </a></li>
+                    <li><a href="smp.html" class="footer-link footer-link--child">
+                            <i class="fas fa-minus"></i> SMP
+                        </a></li>
+                </ul>
+            </div>
+
+<div class="footer-col">
+                <h4 class="footer-col-title">Portal</h4>
+                <ul class="footer-links">
+                    <li><a href="portal-guru.html" class="footer-link footer-link--parent">
+                            <i class="fas fa-chevron-right"></i> Portal Guru
+                        </a></li>
+                    <li><a href="login.html" class="footer-link footer-link--parent">
+                            <i class="fas fa-chevron-right"></i> Portal Siswa
+                        </a></li>
+                </ul>
+
+                <h4 class="footer-col-title" style="margin-top: 28px;">Informasi</h4>
+                <ul class="footer-links">
+                    <li><a href="pendaftaran.html" class="footer-link footer-link--parent">
+                            <i class="fas fa-chevron-right"></i> Pendaftaran
+                        </a></li>
+                    <li><a href="kalendar-akademik.html" class="footer-link footer-link--parent">
+                            <i class="fas fa-chevron-right"></i> Kalender Akademik
+                        </a></li>
+                    <li><a href="berita.html" class="footer-link footer-link--parent">
+                            <i class="fas fa-chevron-right"></i> Berita
+                        </a></li>
+                    <li><a href="prestasi.html" class="footer-link footer-link--parent">
+                            <i class="fas fa-chevron-right"></i> Prestasi
+                        </a></li>
+                    <li><a href="contact.html" class="footer-link footer-link--parent">
+                            <i class="fas fa-chevron-right"></i> Hubungi Kami
+                        </a></li>
+                </ul>
+            </div>
+
+<div class="footer-col footer-col--contact">
+                <h4 class="footer-col-title">Hubungi Kami</h4>
+
+                <ul class="footer-contact-list">
+                    <li class="footer-contact-item">
+                        <div class="footer-contact-icon"><i class="fas fa-location-dot"></i></div>
+                        <p>Jl. Komplek Green Garden,<br>Kedoya Selatan, Kebon Jeruk<br>Jakarta Barat 11520</p>
+                    </li>
+                    <li class="footer-contact-item">
+                        <div class="footer-contact-icon"><i class="fas fa-phone"></i></div>
+                        <p>021 – 580 4058</p>
+                    </li>
+                    <li class="footer-contact-item">
+                        <div class="footer-contact-icon"><i class="fas fa-clock"></i></div>
+                        <p>Senin – Jumat<br>06.00 – 15.00 WIB</p>
+                    </li>
+                    <li class="footer-contact-item">
+                        <div class="footer-contact-icon"><i class="fas fa-envelope"></i></div>
+                        <p>info@sstandreas.sch.id</p>
+                    </li>
+                </ul>
+
+                <a href="pendaftaran.html" class="footer-cta-btn">
+                    Daftar Sekarang <i class="fas fa-paper-plane"></i>
+                </a>
+            </div>
+
+        </div>
+
+<div class="footer-divider"></div>
+
+<div class="footer-bottom">
+            <p class="footer-copyright">© 2026 Sekolah Santo Andreas. All Rights Reserved.</p>
+            <p class="footer-credit"><i class="fas fa-code"></i> Dikembangkan oleh Raylika L.</p>
+        </div>
+
+    </footer>
+
+    <script>
+        const KALENDER_CSV_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vTwssRdD1LW3X9xBEIJBS7LIS5SkyZeO3d6Kz0jv3ldEr9hn8xdUVbe8NVWJajvqVT6pvXcaYzZRT4G/pub?output=csv";
+
+        const DAYS_ID = ["Minggu", "Senin", "Selasa", "Rabu", "Kamis", "Jumat", "Sabtu"];
+        const MONTHS_ID = ["Januari", "Februari", "Maret", "April", "Mei", "Juni", "Juli", "Agustus", "September", "Oktober", "November", "Desember"];
+        const BADGE_MAP = { liburan: "badge-liburan", ujian: "badge-ujian", kegiatan: "badge-kegiatan", upacara: "badge-upacara", rapat: "badge-rapat", lainnya: "badge-lainnya" };
+        const COLOR_MAP = { liburan: "#4ade80", ujian: "#ff8a8a", kegiatan: "#60a5fa", upacara: "#ffcc00", rapat: "#c084fc", lainnya: "#888" };
+
+        const DEMO_EVENTS = [
+            { judul: "Ujian Tengah Semester (UTS)", kategori: "ujian", tanggal_mulai: "2026-06-01", tanggal_selesai: "2026-06-05", keterangan: "Semua jenjang SD dan SMP", warna: "#ff8a8a" },
+            { judul: "Libur Hari Raya Idul Adha", kategori: "liburan", tanggal_mulai: "2026-06-17", tanggal_selesai: "2026-06-17", keterangan: "Hari libur nasional", warna: "#4ade80" },
+            { judul: "Pentas Seni Tahunan", kategori: "kegiatan", tanggal_mulai: "2026-07-04", tanggal_selesai: "2026-07-04", keterangan: "Gedung Serbaguna Lt. 1", warna: "#60a5fa" },
+            { judul: "Libur Semester Genap", kategori: "liburan", tanggal_mulai: "2026-07-06", tanggal_selesai: "2026-07-17", keterangan: "Libur akhir tahun pelajaran 2025/2026", warna: "#4ade80" },
+            { judul: "Upacara Kenaikan Kelas", kategori: "upacara", tanggal_mulai: "2026-07-20", tanggal_selesai: "2026-07-20", keterangan: "Lapangan utama pukul 07.00 WIB", warna: "#ffcc00" },
+            { judul: "Masa Pengenalan Lingkungan Sekolah (MPLS)", kategori: "kegiatan", tanggal_mulai: "2026-07-21", tanggal_selesai: "2026-07-23", keterangan: "Untuk siswa baru kelas 1 SD & 7 SMP", warna: "#60a5fa" },
+            { judul: "Ujian Akhir Semester (UAS)", kategori: "ujian", tanggal_mulai: "2026-11-23", tanggal_selesai: "2026-11-27", keterangan: "Semua jenjang SD dan SMP", warna: "#ff8a8a" },
+            { judul: "Peringatan Hari Guru Nasional", kategori: "upacara", tanggal_mulai: "2026-11-25", tanggal_selesai: "2026-11-25", keterangan: "Upacara bendera pagi hari", warna: "#ffcc00" },
+            { judul: "Libur Natal & Tahun Baru", kategori: "liburan", tanggal_mulai: "2026-12-22", tanggal_selesai: "2027-01-02", keterangan: "Libur akhir semester ganjil", warna: "#4ade80" },
+        ];
+
+        let allEvents = [];
+        let activeFilter = "";
+
+        async function loadCalendar() {
+            if (KALENDER_CSV_URL.includes("PASTE")) {
+                allEvents = DEMO_EVENTS;
+                render();
+                return;
+            }
+            try {
+                const res = await fetch(KALENDER_CSV_URL);
+                const text = await res.text();
+                const rows = parseCSV(text);
+                allEvents = rows.map(r => ({
+                    judul: r[0] || "", kategori: (r[1] || "lainnya").toLowerCase(),
+                    tanggal_mulai: r[2] || "", tanggal_selesai: r[3] || "",
+                    keterangan: r[4] || "", warna: r[5] || "#0088e3"
+                })).filter(e => e.judul)
+                  .sort((a, b) => a.tanggal_mulai.localeCompare(b.tanggal_mulai));
+                render();
+            } catch {
+                allEvents = DEMO_EVENTS;
+                render();
+            }
+        }
+
+        function parseCSV(text) {
+            const lines = text.trim().split("\n");
+            if (lines.length < 2) return [];
+            return lines.slice(1).map(line => {
+                const cells = []; let cur = "", inQ = false;
+                for (let c of line) { if (c === '"') { inQ = !inQ } else if (c === ',' && !inQ) { cells.push(cur.trim()); cur = "" } else cur += c }
+                cells.push(cur.trim()); return cells;
+            });
+        }
+
+        function setFilter(cat) {
+            activeFilter = cat;
+            document.querySelectorAll(".filter-tab").forEach(btn => {
+                btn.classList.toggle("active", btn.textContent.toLowerCase() === (cat || "semua"));
+            });
+            render();
+        }
+
+        function render() {
+            const container = document.getElementById("calendarContent");
+            const events = activeFilter ? allEvents.filter(e => e.kategori === activeFilter) : allEvents;
+            if (!events.length) {
+                container.innerHTML = `<div class="no-events"><i class="fas fa-calendar-xmark"></i><p>Tidak ada acara${activeFilter ? ' dalam kategori ini' : ''}.</p></div>`;
+                return;
+            }
+
+            const groups = {};
+            for (const ev of events) {
+                const d = ev.tanggal_mulai ? new Date(ev.tanggal_mulai + "T00:00:00") : null;
+                const key = d ? `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}` : "0000-00";
+                if (!groups[key]) groups[key] = { label: d ? `${MONTHS_ID[d.getMonth()]} ${d.getFullYear()}` : "Tanpa Tanggal", items: [] };
+                groups[key].items.push({ ...ev, _date: d });
+            }
+            const sortedKeys = Object.keys(groups).sort();
+            container.innerHTML = sortedKeys.map(key => {
+                const { label, items } = groups[key];
+                const sortedItems = items.sort((a, b) => (a.tanggal_mulai || "") < (b.tanggal_mulai || "") ? -1 : 1);
+                return `
+            <div class="month-section">
+                <div class="month-heading">
+                    <span class="month-name">${label}</span>
+                    <div class="month-line"></div>
+                    <span class="month-year">${items.length} acara</span>
+                </div>
+                ${sortedItems.map(ev => renderEvent(ev)).join("")}
+            </div>`;
+            }).join("");
+        }
+
+        function renderEvent(ev) {
+            const d = ev._date;
+            const day = d ? d.getDate() : "?";
+            const dayN = d ? DAYS_ID[d.getDay()] : "";
+            const color = COLOR_MAP[ev.kategori] || ev.warna || "#888";
+            const badgeCls = BADGE_MAP[ev.kategori] || "badge-lainnya";
+            const isMulti = ev.tanggal_selesai && ev.tanggal_selesai !== ev.tanggal_mulai;
+            let endStr = "";
+            if (isMulti) {
+                const de = new Date(ev.tanggal_selesai + "T00:00:00");
+                endStr = `<div class="event-multiday"><i class="fas fa-arrow-right-long"></i> sampai ${de.getDate()} ${MONTHS_ID[de.getMonth()]} ${de.getFullYear()}</div>`;
+            }
+            return `
+        <div class="event-row">
+            <div class="event-date-col">
+                <span class="event-day-num" style="color:${color}">${day}</span>
+                <span class="event-day-name">${dayN}</span>
+                ${isMulti ? '<div class="event-range-line"></div>' : ''}
+            </div>
+            <div class="event-body" style="border-left-color:${color}">
+                <div class="event-body-top">
+                    <span class="event-name">${ev.judul}</span>
+                    <span class="event-badge ${badgeCls}">${ev.kategori}</span>
+                </div>
+                ${ev.keterangan ? `<p class="event-keterangan">${ev.keterangan}</p>` : ""}
+                ${endStr}
+            </div>
+        </div>`;
+        }
+
+        loadCalendar();
+    </script>
+    <script>
+        (function () {
+            var btn = document.getElementById('hamburgerBtn');
+            var nav = document.getElementById('mobileNav');
+            if (!btn || !nav) return;
+            btn.addEventListener('click', function () {
+                btn.classList.toggle('open');
+                nav.classList.toggle('open');
+            });
+            nav.querySelectorAll('a').forEach(function (a) {
+                a.addEventListener('click', function () {
+                    btn.classList.remove('open');
+                    nav.classList.remove('open');
+                });
+            });
+            document.addEventListener('click', function (e) {
+                if (!btn.contains(e.target) && !nav.contains(e.target)) {
+                    btn.classList.remove('open');
+                    nav.classList.remove('open');
+                }
+            });
+        })();
+    </script>
+</body>
+
+</html>

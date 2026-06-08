@@ -1,0 +1,1064 @@
+﻿<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SMP — Sekolah Santo Andreas</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="smp.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.7.2/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+<nav class="nav-bar nav-scrolled">
+        <div class="nav-container">
+            <div class="logo">
+                <a href="index.html"><img src="https://i.ibb.co.com/V033MvMm/St-Andreas-Logo.png" alt="St-Andreas-Logo"
+                        width="290px" height="70px"></a>
+            </div>
+            <ul class="nav-links">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link">Halaman Utama</a>
+                </li>
+                <li class="nav-item">
+                    <a href="tentang-kami.html" class="nav-link">Tentang Kami<i class="fas fa-chevron-down"></i></a>
+                    <div class="dropdown-menu">
+                        <a href="tentang-kami.html#visi-misi">Visi &amp; Misi</a>
+                        <a href="tentang-kami.html#sejarah">Sejarah</a>
+                        <a href="tentang-kami.html#fasilitas">Fasilitas</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a href="jenjang.html" class="nav-link">Jenjang Pendidikan<i class="fas fa-chevron-down"></i></a>
+                    <div class="dropdown-menu">
+                        <a href="tk.html">TK / Nursery</a>
+                        <a href="sd.html">SD</a>
+                        <a href="smp.html">SMP</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a href="#" onclick="event.preventDefault()" class="nav-link">Portal<i class="fas fa-chevron-down"></i></a>
+                    <div class="dropdown-menu">
+                        <a href="login.html">Portal Siswa</a>
+                        <a href="login-teacher.html">Portal Guru</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a href="pendaftaran.html" class="nav-link">Pendaftaran</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" onclick="event.preventDefault()" class="nav-link">Informasi<i class="fas fa-chevron-down"></i></a>
+                    <div class="dropdown-menu">
+                        <a href="berita.html">Berita</a>
+                        <a href="kalendar-akademik.html">Kalender Akademik</a>
+                        <a href="prestasi.html">Prestasi</a>
+                        <a href="contact.html">Hubungi Kami</a>
+                    </div>
+                </li>
+            </ul>
+            <div class="social-links">
+                <a href="https://www.facebook.com/sstandreas" class="social-link"><i class="fab fa-facebook"></i></a>
+                <a href="https://www.instagram.com/sstandreas/" class="social-link"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.youtube.com/channel/UC2fmVdeHtxnXl1LMYu7WAAQ" class="social-link"><i
+                        class="fab fa-youtube"></i></a>
+            </div>
+            
+            <button class="hamburger" id="hamburgerBtn" aria-label="Menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+        
+        <div class="mobile-nav" id="mobileNav">
+            <ul class="mobile-nav-links">
+                <li><a href="index.html">Halaman Utama</a></li>
+                <li class="mobile-dropdown">
+                    <a href="tentang-kami.html">Tentang Kami</a>
+                    <div class="mobile-sub">
+                        <a href="tentang-kami.html#visi-misi">Visi &amp; Misi</a>
+                        <a href="tentang-kami.html#sejarah">Sejarah</a>
+                        <a href="tentang-kami.html#fasilitas">Fasilitas</a>
+                    </div>
+                </li>
+                <li class="mobile-dropdown">
+                    <a href="jenjang.html">Jenjang Pendidikan</a>
+                    <div class="mobile-sub">
+                        <a href="tk.html">TK / Nursery</a>
+                        <a href="sd.html">SD</a>
+                        <a href="smp.html">SMP</a>
+                    </div>
+                </li>
+                <li class="mobile-dropdown">
+                    <a href="#">Portal</a>
+                    <div class="mobile-sub">
+                        <a href="login.html">Portal Siswa</a>
+                        <a href="login-teacher.html">Portal Guru</a>
+                    </div>
+                </li>
+                <li><a href="pendaftaran.html">Pendaftaran</a></li>
+                <li class="mobile-dropdown">
+                    <a href="#">Informasi</a>
+                    <div class="mobile-sub">
+                        <a href="berita.html">Berita</a>
+                        <a href="kalendar-akademik.html">Kalender Akademik</a>
+                        <a href="prestasi.html">Prestasi</a>
+                        <a href="contact.html">Hubungi Kami</a>
+                    </div>
+                </li>
+            </ul>
+            <div class="mobile-nav-social">
+                <a href="https://www.facebook.com/sstandreas" aria-label="Facebook"><i
+                        class="fab fa-facebook-f"></i></a>
+                <a href="https://www.instagram.com/sstandreas/" aria-label="Instagram"><i
+                        class="fab fa-instagram"></i></a>
+                <a href="https://www.youtube.com/channel/UC2fmVdeHtxnXl1LMYu7WAAQ" aria-label="YouTube"><i
+                        class="fab fa-youtube"></i></a>
+            </div>
+        </div>
+    </nav>
+
+<header class="smp-hero">
+        <div class="smp-hero-bg">
+            <img src="smp-hero-ssantoandreas.jpg" alt="SMP Santo Andreas">
+            <div class="smp-hero-overlay"></div>
+        </div>
+
+        <div class="smp-hero-content">
+            <div class="smp-hero-badge">
+                <span class="smp-hero-badge-dot"></span>
+                Jenjang SMP · Kelas 7 – 9
+            </div>
+            <span class="smp-hero-eyebrow">Sekolah Menengah Pertama</span>
+            <h1 class="smp-hero-title">
+                SMP<br><em>Santo Andreas</em>
+            </h1>
+            <p class="smp-hero-sub">
+                Tiga tahun yang menentukan — kami hadir untuk membentuk siswa yang
+                tangguh secara akademik, kuat dalam karakter, dan siap menghadapi dunia.
+            </p>
+            <div class="smp-hero-pills">
+                <a href="#keunggulan" class="smp-pill"><i class="fas fa-star"></i> Keunggulan</a>
+                <a href="#ekskul" class="smp-pill"><i class="fas fa-futbol"></i> Ekskul</a>
+                <a href="#guru" class="smp-pill"><i class="fas fa-chalkboard-teacher"></i> Guru</a>
+                <a href="#testimoni" class="smp-pill"><i class="fas fa-quote-left"></i> Testimoni</a>
+                <a href="pendaftaran.html" class="smp-pill smp-pill--solid"><i class="fas fa-paper-plane"></i> Daftar
+                    Sekarang</a>
+            </div>
+        </div>
+
+        <div class="smp-hero-accent"></div>
+        <div class="smp-hero-bottom-line"></div>
+
+        <div class="smp-hero-scroll">
+            <span class="smp-hero-scroll-line"></span>
+            Scroll ke Bawah
+        </div>
+    </header>
+
+<section class="smp-sec smp-about">
+        <div class="smp-sec-inner">
+            <div class="smp-about-grid">
+                
+                <div>
+                    <span class="smp-about-tag">Tentang SMP St. Andreas</span>
+                    <h2 class="smp-about-title">
+                        Tempat Potensi<br>Berkembang <em>Tanpa Batas</em>
+                    </h2>
+                    <p class="smp-about-body">
+                        SMP Santo Andreas adalah jenjang yang dirancang untuk menjawab tantangan masa remaja — periode
+                        paling kritis dalam perjalanan tumbuh kembang seorang anak. Di sini, siswa tidak hanya
+                        dipelajari mata pelajaran, melainkan dipersiapkan menjadi pribadi yang utuh: cerdas,
+                        berkarakter,
+                        dan siap bersaing di jenjang berikutnya.
+                    </p>
+                    <p class="smp-about-body">
+                        Dengan kurikulum Merdeka Belajar yang diperkaya pendekatan Kristiani, guru-guru bersertifikat,
+                        dan lingkungan belajar yang suportif, SMP St. Andreas telah menjadi pilihan kepercayaan ribuan
+                        keluarga di Jakarta Barat selama lebih dari tiga dekade.
+                    </p>
+                    <div class="smp-about-features">
+                        <div class="smp-about-feat">
+                            <i class="fas fa-check"></i> Kurikulum Merdeka Belajar terintegrasi nilai Kristiani
+                        </div>
+                        <div class="smp-about-feat">
+                            <i class="fas fa-check"></i> Laboratorium sains, komputer, dan bahasa berstandar modern
+                        </div>
+                        <div class="smp-about-feat">
+                            <i class="fas fa-check"></i> Pembinaan OSIS, kepemimpinan, dan karakter aktif
+                        </div>
+                        <div class="smp-about-feat">
+                            <i class="fas fa-check"></i> Bimbingan konselor untuk persiapan SMA / SMA favorit
+                        </div>
+                        <div class="smp-about-feat">
+                            <i class="fas fa-check"></i> Lebih dari 15 pilihan ekstrakurikuler unggulan
+                        </div>
+                    </div>
+                </div>
+
+<div class="smp-about-stats">
+                    <div class="smp-stat-box">
+                        <span class="smp-stat-num">400+</span>
+                        <span class="smp-stat-label">Siswa Aktif</span>
+                    </div>
+                    <div class="smp-stat-box">
+                        <span class="smp-stat-num">25+</span>
+                        <span class="smp-stat-label">Guru Bersertifikat</span>
+                    </div>
+                    <div class="smp-stat-box">
+                        <span class="smp-stat-num">98%</span>
+                        <span class="smp-stat-label">Kelulusan</span>
+                    </div>
+                    <div class="smp-stat-box">
+                        <span class="smp-stat-num">30+</span>
+                        <span class="smp-stat-label">Tahun Berdiri</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<section class="smp-sec smp-keunggulan" id="keunggulan">
+        <div class="smp-sec-inner">
+            <div class="smp-keunggulan-header">
+                <p class="smp-eyebrow smp-eyebrow--light"><i class="fas fa-star"></i> Mengapa SMP St. Andreas</p>
+                <h2 class="smp-heading smp-heading--light">
+                    Keunggulan SMP<br><em>Santo Andreas</em>
+                </h2>
+                <div class="smp-title-line smp-title-line--light" style="margin: 0 auto 24px;"></div>
+                <p class="smp-desc smp-desc--light">
+                    Kami percaya bahwa setiap siswa berhak mendapatkan pendidikan terbaik —
+                    bukan hanya nilai di atas kertas, tetapi kesiapan nyata menghadapi kehidupan.
+                </p>
+            </div>
+
+            <div class="smp-keunggulan-grid">
+
+<div class="smp-ku-card">
+                    <div class="smp-ku-num">01</div>
+                    <div class="smp-ku-icon-wrap">
+                        <i class="fas fa-book-open smp-ku-icon"></i>
+                    </div>
+                    <h3 class="smp-ku-title">Akademik Unggul</h3>
+                    <p class="smp-ku-text">
+                        Program akademik intensif berbasis Kurikulum Merdeka dengan pendampingan individual.
+                        Siswa dipersiapkan sejak dini untuk SNBP dan kompetisi olimpiade nasional.
+                    </p>
+                    <span class="smp-ku-tag">Kurikulum Merdeka · Olimpiade</span>
+                </div>
+
+<div class="smp-ku-card">
+                    <div class="smp-ku-num">02</div>
+                    <div class="smp-ku-icon-wrap">
+                        <i class="fas fa-flask smp-ku-icon"></i>
+                    </div>
+                    <h3 class="smp-ku-title">Lab Sains Modern</h3>
+                    <p class="smp-ku-text">
+                        Laboratorium sains dan komputer yang terus diperbarui memastikan siswa belajar
+                        langsung dengan peralatan berstandar tinggi — dari kimia hingga coding.
+                    </p>
+                    <span class="smp-ku-tag">Sains · Teknologi · Inovasi</span>
+                </div>
+
+<div class="smp-ku-card">
+                    <div class="smp-ku-num">03</div>
+                    <div class="smp-ku-icon-wrap">
+                        <i class="fas fa-heart smp-ku-icon"></i>
+                    </div>
+                    <h3 class="smp-ku-title">Pembinaan Karakter</h3>
+                    <p class="smp-ku-text">
+                        Nilai-nilai Kristiani ditanamkan bukan sekadar sebagai pelajaran — melainkan
+                        sebagai cara hidup. Kejujuran, kasih, dan kepedulian menjadi fondasi setiap hari.
+                    </p>
+                    <span class="smp-ku-tag">Iman · Karakter · Budi Pekerti</span>
+                </div>
+
+<div class="smp-ku-card">
+                    <div class="smp-ku-num">04</div>
+                    <div class="smp-ku-icon-wrap">
+                        <i class="fas fa-users-cog smp-ku-icon"></i>
+                    </div>
+                    <h3 class="smp-ku-title">Pembinaan Kepemimpinan</h3>
+                    <p class="smp-ku-text">
+                        Melalui OSIS, kepanitiaan, dan program leadership, siswa dilatih memimpin
+                        dengan tanggung jawab, kepercayaan diri, dan kemampuan berorganisasi.
+                    </p>
+                    <span class="smp-ku-tag">OSIS · Leadership · Organisasi</span>
+                </div>
+
+<div class="smp-ku-card">
+                    <div class="smp-ku-num">05</div>
+                    <div class="smp-ku-icon-wrap">
+                        <i class="fas fa-trophy smp-ku-icon"></i>
+                    </div>
+                    <h3 class="smp-ku-title">Prestasi Kompetitif</h3>
+                    <p class="smp-ku-text">
+                        Dari olimpiade matematika, sains, hingga debat bahasa Inggris — siswa kami
+                        secara konsisten meraih penghargaan tingkat kota dan nasional setiap tahunnya.
+                    </p>
+                    <span class="smp-ku-tag">Olimpiade · Kompetisi · Medali</span>
+                </div>
+
+<div class="smp-ku-card">
+                    <div class="smp-ku-num">06</div>
+                    <div class="smp-ku-icon-wrap">
+                        <i class="fas fa-graduation-cap smp-ku-icon"></i>
+                    </div>
+                    <h3 class="smp-ku-title">Bimbingan Lanjut Studi</h3>
+                    <p class="smp-ku-text">
+                        Konselor akademik kami membantu setiap siswa kelas 9 menemukan SMA yang sesuai
+                        minat dan kemampuan — termasuk bimbingan persiapan tes masuk dan portofolio.
+                    </p>
+                    <span class="smp-ku-tag">Konseling · SMA · Masa Depan</span>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+<section class="smp-sec smp-ekskul" id="ekskul">
+        <div class="smp-sec-inner">
+            <div class="smp-ekskul-header">
+                <p class="smp-eyebrow smp-eyebrow--dark"><i class="fas fa-futbol"></i> Ekstrakurikuler</p>
+                <h2 class="smp-heading smp-heading--dark">
+                    Profil Ekskul<br><em>SMP St. Andreas</em>
+                </h2>
+                <div class="smp-title-line smp-title-line--dark" style="margin: 0 auto 24px;"></div>
+                <p class="smp-desc smp-desc--dark">
+                    Lebih dari sekadar belajar di kelas — setiap siswa didorong untuk menemukan
+                    passion-nya melalui beragam pilihan ekstrakurikuler unggulan.
+                </p>
+            </div>
+
+            <div class="smp-ekskul-grid">
+
+<div class="smp-ekskul-card">
+                    <div class="smp-ekskul-cover">
+                        <i class="fas fa-campground smp-ekskul-cover-icon"></i>
+                        <span class="smp-ekskul-badge">Wajib</span>
+                    </div>
+                    <div class="smp-ekskul-body">
+                        <h3 class="smp-ekskul-name">Pramuka</h3>
+                        <p class="smp-ekskul-desc">
+                            Pembinaan kepramukaan yang membentuk disiplin, kemandirian, dan rasa
+                            cinta tanah air. Rutin mengikuti lomba tingkat ranting dan cabang.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="smp-ekskul-card">
+                    <div class="smp-ekskul-cover">
+                        <i class="fa-solid fa-futbol" style="color: white; font-size: 50px;"></i>
+                        <span class="smp-ekskul-badge">Olahraga</span>
+                    </div>
+                    <div class="smp-ekskul-body">
+                        <h3 class="smp-ekskul-name">Futsal</h3>
+                        <p class="smp-ekskul-desc">
+                            Tim futsal SMP St. Andreas yang telah meraih juara 1 di turnamen antar-sekolah
+                            Jakarta Barat.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="smp-ekskul-card">
+                    <div class="smp-ekskul-cover">
+                        <i class="fa-solid fa-basketball" style="color: white; font-size: 50px;"></i>
+                        <span class="smp-ekskul-badge">Olahraga</span>
+                    </div>
+                    <div class="smp-ekskul-body">
+                        <h3 class="smp-ekskul-name">Basket</h3>
+                        <p class="smp-ekskul-desc">
+                            Berlatih dengan sesama bermain bola basket. Di mulai dari pelajari gerakan dribbling hingga
+                            mengikuti kompetisi-kompetisi bergengsi.
+                        </p>
+                    </div>
+                </div>
+
+<div class="smp-ekskul-card">
+                    <div class="smp-ekskul-cover">
+                        <i class="fas fa-music smp-ekskul-cover-icon"></i>
+                        <span class="smp-ekskul-badge">Seni</span>
+                    </div>
+                    <div class="smp-ekskul-body">
+                        <h3 class="smp-ekskul-name">Paduan Suara</h3>
+                        <p class="smp-ekskul-desc">
+                            Kelompok vokal kebanggaan sekolah yang tampil di misa, upacara resmi, dan
+                            kompetisi paduan suara berbagai tingkat.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="smp-ekskul-card">
+                    <div class="smp-ekskul-cover">
+                        <i class="fa-solid fa-photo-film" style="color: white; font-size: 50px;"></i>
+                        <span class="smp-ekskul-badge">Seni</span>
+                    </div>
+                    <div class="smp-ekskul-body">
+                        <h3 class="smp-ekskul-name">Fotografi</h3>
+                        <p class="smp-ekskul-desc">
+                            Melatih kemampuan memfoto dan memotret dengan pelatih profesional. Di sini siswa-siswi dapat
+                            berlatih teknik-teknik fotografi seperti golden rasio, the rule of third, dan berbagai
+                            lainnya.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="smp-ekskul-card">
+                    <div class="smp-ekskul-cover">
+                        <i class="fas fa-palette smp-ekskul-cover-icon"></i>
+                        <span class="smp-ekskul-badge">Seni</span>
+                    </div>
+                    <div class="smp-ekskul-body">
+                        <h3 class="smp-ekskul-name">Tari Tradisional</h3>
+                        <p class="smp-ekskul-desc">
+                            Jembatan antara dunia seni dan kebudyaan tradisional Indonesia. Siswa-siswi dapat berlatih
+                            gerakan elegan, gaya teratur dengan penanaman nilai-nilai tradisional.
+                        </p>
+                    </div>
+                </div>
+
+<div class="smp-ekskul-card">
+                    <div class="smp-ekskul-cover" style="background: linear-gradient(90deg, #079360, #78d7a3);">
+                        <i class="fa-solid fa-guitar" style="color: white; font-size: 60px;"></i>
+                        <span class="smp-ekskul-badge">Seni</span>
+                    </div>
+                    <div class="smp-ekskul-body">
+                        <h3 class="smp-ekskul-name">Musik</h3>
+                        <p class="smp-ekskul-desc">
+                            Eksplorasi dunia musik dengan berlatih bermain piano, gitar, hingga drum bersama teman-teman
+                            di dalam kegiatan band.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+<section class="smp-sec smp-guru" id="guru">
+        <div class="smp-sec-inner">
+
+<div class="smp-guru-header">
+                <p class="smp-eyebrow smp-eyebrow--light">
+                    <i class="fas fa-chalkboard-teacher"></i> Tim Pengajar
+                </p>
+                <h2 class="smp-heading smp-heading--light">
+                    Guru-Guru <em>Berpengalaman</em>
+                </h2>
+                <div class="smp-title-line smp-title-line--light" style="margin: 0 auto 24px;"></div>
+                <p class="smp-desc smp-desc--light">
+                    Para pendidik kami yang berdedikasi memberikan yang terbaik bagi setiap siswa —
+                    dengan hati, ilmu, dan pengalaman.
+                </p>
+            </div>
+
+<div class="smp-guru-carousel-wrap">
+
+                <button class="smp-guru-btn" id="guruPrev" aria-label="Sebelumnya" disabled>
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+
+                <div class="smp-guru-track-outer">
+                    <div class="smp-guru-track" id="guruTrack">
+
+                        <div class="smp-guru-card">
+                            <div class="smp-guru-img-wrap">
+                                <img src="https://santoandreas.sch.id/wp-content/uploads/2024/11/Teacher-Profile-22.jpg"
+                                    alt="Deslita Anzelina Br. Tarigan, S.pd" loading="lazy">
+                            </div>
+                        </div>
+
+                        <div class="smp-guru-card">
+                            <div class="smp-guru-img-wrap">
+                                <img src="https://santoandreas.sch.id/wp-content/uploads/2024/11/Teacher-Profile-2-2.jpg"
+                                    alt="Yarman Gulo, S.pd" loading="lazy">
+                            </div>
+                        </div>
+
+                        <div class="smp-guru-card">
+                            <div class="smp-guru-img-wrap">
+                                <img src="https://santoandreas.sch.id/wp-content/uploads/2024/11/Teacher-Profile-3-2.jpg"
+                                    alt="Sugiyanti, S.pd" loading="lazy">
+                            </div>
+                        </div>
+
+                        <div class="smp-guru-card">
+                            <div class="smp-guru-img-wrap">
+                                <img src="https://santoandreas.sch.id/wp-content/uploads/2024/11/Teacher-Profile-7-2.jpg"
+                                    alt="Matius Buyung, S.pd" loading="lazy">
+                            </div>
+                        </div>
+
+                        <div class="smp-guru-card">
+                            <div class="smp-guru-img-wrap">
+                                <img src="https://santoandreas.sch.id/wp-content/uploads/2024/11/Teacher-Profile-10-2.jpg"
+                                    alt="Marheni Muji Sasanti, S.pd" loading="lazy">
+                            </div>
+                        </div>
+
+                        <div class="smp-guru-card">
+                            <div class="smp-guru-img-wrap">
+                                <img src="https://santoandreas.sch.id/wp-content/uploads/2024/11/Teacher-Profile-14-1.jpg"
+                                    alt="Doroteus Nahim, S.fil" loading="lazy">
+                            </div>
+                        </div>
+
+                        <div class="smp-guru-card">
+                            <div class="smp-guru-img-wrap">
+                                <img src="https://santoandreas.sch.id/wp-content/uploads/2024/11/Teacher-Profile-6-3.jpg"
+                                    alt="Mei Andani Sihaloho, S.pd" loading="lazy">
+                            </div>
+                        </div>
+
+                        <div class="smp-guru-card">
+                            <div class="smp-guru-img-wrap">
+                                <img src="https://santoandreas.sch.id/wp-content/uploads/2024/11/Teacher-Profile-9-2.jpg"
+                                    alt="Drs. Haris Purnama" loading="lazy">
+                            </div>
+                        </div>
+
+                        <div class="smp-guru-card">
+                            <div class="smp-guru-img-wrap">
+                                <img src="https://santoandreas.sch.id/wp-content/uploads/2024/11/Teacher-Profile-4-2.jpg"
+                                    alt="Margaret Novalia, S.pd" loading="lazy">
+                            </div>
+                        </div>
+
+                        <div class="smp-guru-card">
+                            <div class="smp-guru-img-wrap">
+                                <img src="https://santoandreas.sch.id/wp-content/uploads/2024/11/Teacher-Profile-5-2.jpg"
+                                    alt="Fredy Lumanow, S.kom" loading="lazy">
+                            </div>
+                        </div>
+
+                        <div class="smp-guru-card">
+                            <div class="smp-guru-img-wrap">
+                                <img src="https://santoandreas.sch.id/wp-content/uploads/2024/11/Teacher-Profile-8-2.jpg"
+                                    alt="Nelson Pratama, S.pd" loading="lazy">
+                            </div>
+                        </div>
+
+                        <div class="smp-guru-card">
+                            <div class="smp-guru-img-wrap">
+                                <img src="https://santoandreas.sch.id/wp-content/uploads/2024/11/Teacher-Profile-12-2.jpg"
+                                    alt="Frengky, S.pd" loading="lazy">
+                            </div>
+                        </div>
+
+                        <div class="smp-guru-card">
+                            <div class="smp-guru-img-wrap">
+                                <img src="https://santoandreas.sch.id/wp-content/uploads/2024/11/Teacher-Profile-17-1.jpg"
+                                    alt="Ria Rahmayanti" loading="lazy">
+                            </div>
+                        </div>
+
+<div class="smp-guru-card">
+                            <div class="smp-guru-img-wrap">
+                                <img src="https://santoandreas.sch.id/wp-content/uploads/2024/11/Teacher-Profile-18-1.jpg"
+                                    alt="Jason Wayne Chilvers" loading="lazy">
+                            </div>
+                        </div>
+
+                        <div class="smp-guru-card">
+                            <div class="smp-guru-img-wrap">
+                                <img src="https://santoandreas.sch.id/wp-content/uploads/2024/11/Teacher-Profile-15-1.jpg"
+                                    alt="Laoshi Septi" loading="lazy">
+                            </div>
+                        </div>
+
+<div class="smp-guru-card">
+                            <div class="smp-guru-img-wrap">
+                                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRmxu6aGAxYpgOqmUKkq9kUQ2T2A4rVyQQONg&s"
+                                    alt="Laoshi Jersey Zhang" loading="lazy">
+                            </div>
+                        </div>
+
+                        <div class="smp-guru-card">
+                            <div class="smp-guru-img-wrap">
+                                <img src="https://santoandreas.sch.id/wp-content/uploads/2024/11/Teacher-Profile-20-1.jpg"
+                                    alt="Laoshi Jersey Zhang" loading="lazy">
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <button class="smp-guru-btn" id="guruNext" aria-label="Selanjutnya">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+
+            </div>
+
+<div class="smp-guru-dots" id="guruDots"></div>
+
+        </div>
+    </section>
+
+    <script>
+        (function () {
+            const track = document.getElementById('guruTrack');
+            const prev = document.getElementById('guruPrev');
+            const next = document.getElementById('guruNext');
+            const dotsEl = document.getElementById('guruDots');
+            const cards = Array.from(track.querySelectorAll('.smp-guru-card'));
+
+function visibleCount() {
+                return window.innerWidth <= 560 ? 1 : window.innerWidth <= 900 ? 2 : 3;
+            }
+
+            let current = 0;
+
+            function maxIdx() { return Math.max(0, cards.length - visibleCount()); }
+
+            function buildDots() {
+                dotsEl.innerHTML = '';
+                for (let i = 0; i <= maxIdx(); i++) {
+                    const d = document.createElement('button');
+                    d.className = 'smp-guru-dot' + (i === current ? ' active' : '');
+                    d.addEventListener('click', () => goTo(i));
+                    dotsEl.appendChild(d);
+                }
+            }
+
+            function goTo(idx) {
+                current = Math.max(0, Math.min(idx, maxIdx()));
+                const card = cards[0];
+                const gap = 24;
+                const step = card.offsetWidth + gap;
+                track.style.transform = `translateX(-${current * step}px)`;
+                prev.disabled = current === 0;
+                next.disabled = current >= maxIdx();
+                dotsEl.querySelectorAll('.smp-guru-dot').forEach((d, i) => {
+                    d.classList.toggle('active', i === current);
+                });
+            }
+
+            prev.addEventListener('click', () => goTo(current - 1));
+            next.addEventListener('click', () => goTo(current + 1));
+
+let resizeTimer;
+            window.addEventListener('resize', () => {
+                clearTimeout(resizeTimer);
+                resizeTimer = setTimeout(() => {
+                    buildDots();
+                    goTo(Math.min(current, maxIdx()));
+                }, 120);
+            });
+
+            buildDots();
+            goTo(0);
+        })();
+    </script>
+
+<section class="smp-sec smp-testi" id="testimoni">
+        <div class="smp-testi-deco-q">"</div>
+        <div class="smp-sec-inner">
+            <div class="smp-testi-header">
+                <p class="smp-eyebrow smp-eyebrow--light"><i class="fas fa-quote-left"></i> Suara Mereka</p>
+                <h2 class="smp-heading smp-heading--light">
+                    Apa Kata<br><em>Siswa-Siswi SMP St. Andreas</em>
+                </h2>
+                <div class="smp-title-line smp-title-line--light" style="margin: 0 auto 24px;"></div>
+                <p class="smp-desc smp-desc--light">
+                    Cerita nyata dari siswa yang telah merasakan langsung pengalaman belajar
+                    di SMP Santo Andreas.
+                </p>
+            </div>
+
+            <div class="smp-testi-grid">
+
+<div class="smp-testi-card">
+                    <span class="smp-testi-quote-icon">"</span>
+                    <div class="smp-testi-stars">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="smp-testi-text">
+                        SMP St. Andreas benar-benar mengubah cara pandang saya terhadap belajar.
+                        Guru-gurunya tidak hanya mengajarkan materi, tapi juga mengajarkan cara
+                        berpikir. Saya masuk sebagai siswa biasa, dan keluar sebagai seseorang
+                        yang percaya diri akan kemampuan dirinya sendiri.
+                    </p>
+                    <div class="smp-testi-author">
+                        <div class="smp-testi-avatar">
+                            <img src="https://i.pinimg.com/236x/1d/ec/e2/1dece2c8357bdd7cee3b15036344faf5.jpg"
+                                alt="Kezia">
+                        </div>
+                        <div>
+                            <span class="smp-testi-name">Samuel Kenzo</span>
+                            <span class="smp-testi-role">Kelas 8A · Ketua OSIS 2025/2026</span>
+                        </div>
+                    </div>
+                </div>
+
+<div class="smp-testi-card">
+                    <span class="smp-testi-quote-icon">"</span>
+                    <div class="smp-testi-stars">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="smp-testi-text">
+                        Saya bergabung dengan Ekskul Futsal dan itu adalah keputusan
+                        terbaik saya selama di SMP. Berkat dari sekolah, tim kami dapat meraih juara satu tingkat
+                        kabupaten!
+                    </p>
+                    <div class="smp-testi-author">
+                        <div class="smp-testi-avatar">
+                            <img src="https://i.pinimg.com/236x/1d/ec/e2/1dece2c8357bdd7cee3b15036344faf5.jpg"
+                                alt="Alfredo">
+                        </div>
+                        <div>
+                            <span class="smp-testi-name">Alfredo Tualaka</span>
+                            <span class="smp-testi-role">Kelas 8B · Anggota Futsal</span>
+                        </div>
+                    </div>
+                </div>
+
+<div class="smp-testi-card">
+                    <span class="smp-testi-quote-icon">"</span>
+                    <div class="smp-testi-stars">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="smp-testi-text">
+                        Waktu pertama masuk SMP saya sangat nervous. Tapi teman-teman dan
+                        kakak-kakak OSIS di sini menyambut saya dengan hangat sekali.
+                        Lingkungannya positif, gurunya perhatian, dan kegiatannya seru.
+                        Saya sungguh bersyukur bisa bersekolah di sini.
+                    </p>
+                    <div class="smp-testi-author">
+                        <div class="smp-testi-avatar">
+                            <img src="https://i.pinimg.com/236x/1d/ec/e2/1dece2c8357bdd7cee3b15036344faf5.jpg"
+                                alt="Priscilla">
+                        </div>
+                        <div>
+                            <span class="smp-testi-name">Vivy</span>
+                            <span class="smp-testi-role">Kelas 7B · Anggota Paduan Suara</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+<section class="smp-gallery" id="galeri">
+        <div class="smp-gallery-inner">
+            <div class="smp-gallery-header">
+                <p class="smp-eyebrow smp-eyebrow--light"><i class="fas fa-images"></i> Galeri Foto</p>
+                <h2 class="smp-heading smp-heading--light">
+                    Momen &amp; Kenangan<br><em>SMP St. Andreas</em>
+                </h2>
+                <div class="smp-title-line smp-title-line--light" style="margin: 0 auto 24px;"></div>
+                <p class="smp-desc smp-desc--light">
+                    Setiap foto menyimpan cerita — dari ruang kelas, lapangan, hingga pentas besar.
+                </p>
+            </div>
+
+            <div class="smp-gallery-scroll-hint">
+                <i class="fas fa-hand-point-left"></i>
+                Geser untuk Melihat Lebih
+                <i class="fas fa-hand-point-right"></i>
+            </div>
+        </div>
+
+        <div class="smp-gallery-track" id="galleryTrack">
+
+            <div class="smp-gallery-item smp-gallery-item--wide">
+                <img src="smpm-filming3-ssantoandreas.jpg" alt="Filming">
+                <div class="smp-gallery-item-cap">Kegiatan Filming Video 3/3</div>
+            </div>
+
+            <div class="smp-gallery-item smp-gallery-item--wide">
+                <img src="smpm-filming2-ssantoandreas.jpg" alt="Filming">
+                <div class="smp-gallery-item-cap">Kegiatan Filming Video 2/3</div>
+            </div>
+
+            <div class="smp-gallery-item smp-gallery-item--wide">
+                <img src="smpm-filming1-ssantoandreas.jpg" alt="Filming">
+                <div class="smp-gallery-item-cap">Kegiatan Filming Video 1/3</div>
+            </div>
+
+            <div class="smp-gallery-item smp-gallery-item--wide">
+                <img src="smpm-project3-ssantoandreas.jpg" alt="Proyek">
+                <div class="smp-gallery-item-cap">Proyek Besar Kelas 9 3/3</div>
+            </div>
+
+            <div class="smp-gallery-item smp-gallery-item--wide">
+                <img src="smpm-project2-ssantoandreas.jpg" alt="Proyek">
+                <div class="smp-gallery-item-cap">Proyek Besar Kelas 9 2/3</div>
+            </div>
+
+            <div class="smp-gallery-item smp-gallery-item--wide">
+                <img src="smpm-project-ssantoandreas.jpg" alt="Proyek">
+                <div class="smp-gallery-item-cap">Proyek Besar Kelas 9 1/3</div>
+            </div>
+
+            <div class="smp-gallery-item smp-gallery-item--wide">
+                <img src="smpm-anbk-ssantoandreas.jpg" alt="ANBK Kelas 8">
+                <div class="smp-gallery-item-cap">ANBK Kelas 8 di ruang kelas</div>
+            </div>
+
+            <div class="smp-gallery-item smp-gallery-item--wide">
+                <img src="smpm-tablo-ssantoandreas.jpg" alt="Performa Tablo">
+                <div class="smp-gallery-item-cap">Aktor-aktor setelah Performa Tablo</div>
+            </div>
+
+            <div class="smp-gallery-item smp-gallery-item--wide">
+                <img src="smpm-seminarsosial2-ssantoandreas.jpg" alt="Drama Siswa">
+                <div class="smp-gallery-item-cap">Seminar sosial 2/2</div>
+            </div>
+
+            <div class="smp-gallery-item smp-gallery-item--wide">
+                <img src="smpm-seminarsosial1-ssantoandreas.jpg" alt="Drama Siswa">
+                <div class="smp-gallery-item-cap">Seminar sosial 1/2</div>
+            </div>
+        </div>
+
+        <div class="smp-gallery-controls">
+            <button class="smp-gallery-btn" id="galleryLeft" aria-label="Geser Kiri">
+                <i class="fas fa-arrow-left"></i>
+            </button>
+            <button class="smp-gallery-btn" id="galleryRight" aria-label="Geser Kanan">
+                <i class="fas fa-arrow-right"></i>
+            </button>
+        </div>
+    </section>
+
+<footer class="site-footer">
+
+<div class="footer-bg-ring ring-a"></div>
+        <div class="footer-bg-ring ring-b"></div>
+
+        <div class="footer-inner">
+
+<div class="footer-col footer-col--brand">
+                <img src="logo-landscape-ssantoandreas.png" alt="Logo Sekolah Santo Andreas" class="footer-logo">
+                <p class="footer-about">Lembaga pendidikan Katolik di Jakarta Barat yang telah membentuk generasi unggul
+                    sejak 1990 — dari Nursery hingga SMP.</p>
+                
+                <div class="footer-socials">
+                    <a href="https://www.facebook.com/sstandreas" class="footer-social" aria-label="Facebook">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="https://www.instagram.com/sstandreas/" class="footer-social" aria-label="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://www.youtube.com/channel/UC2fmVdeHtxnXl1LMYu7WAAQ" class="footer-social"
+                        aria-label="YouTube">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                </div>
+            </div>
+
+<div class="footer-col">
+                <h4 class="footer-col-title">Tentang Kami</h4>
+                <ul class="footer-links">
+                    <li><a href="tentang-kami.html" class="footer-link footer-link--parent">
+                            <i class="fas fa-chevron-right"></i> Tentang Kami
+                        </a></li>
+                    <li><a href="tentang-kami.html#visi-misi" class="footer-link footer-link--child">
+                            <i class="fas fa-minus"></i> Visi &amp; Misi
+                        </a></li>
+                    <li><a href="tentang-kami.html#sejarah" class="footer-link footer-link--child">
+                            <i class="fas fa-minus"></i> Sejarah
+                        </a></li>
+                    <li><a href="tentang-kami.html#fasilitas" class="footer-link footer-link--child">
+                            <i class="fas fa-minus"></i> Fasilitas
+                        </a></li>
+                </ul>
+
+                <h4 class="footer-col-title" style="margin-top: 28px;">Jenjang Pendidikan</h4>
+                <ul class="footer-links">
+                    <li><a href="jenjang.html" class="footer-link footer-link--parent">
+                            <i class="fas fa-chevron-right"></i> Jenjang Pendidikan
+                        </a></li>
+                    <li><a href="tk.html" class="footer-link footer-link--child">
+                            <i class="fas fa-minus"></i> TK
+                        </a></li>
+                    <li><a href="sd.html" class="footer-link footer-link--child">
+                            <i class="fas fa-minus"></i> SD
+                        </a></li>
+                    <li><a href="smp.html" class="footer-link footer-link--child">
+                            <i class="fas fa-minus"></i> SMP
+                        </a></li>
+                </ul>
+            </div>
+
+<div class="footer-col">
+                <h4 class="footer-col-title">Portal</h4>
+                <ul class="footer-links">
+                    <li><a href="portal-guru.html" class="footer-link footer-link--parent">
+                            <i class="fas fa-chevron-right"></i> Portal Guru
+                        </a></li>
+                    <li><a href="login.html" class="footer-link footer-link--parent">
+                            <i class="fas fa-chevron-right"></i> Portal Siswa
+                        </a></li>
+                </ul>
+
+                <h4 class="footer-col-title" style="margin-top: 28px;">Informasi</h4>
+                <ul class="footer-links">
+                    <li><a href="pendaftaran.html" class="footer-link footer-link--parent">
+                            <i class="fas fa-chevron-right"></i> Pendaftaran
+                        </a></li>
+                    <li><a href="kalendar-akademik.html" class="footer-link footer-link--parent">
+                            <i class="fas fa-chevron-right"></i> Kalender Akademik
+                        </a></li>
+                    <li><a href="berita.html" class="footer-link footer-link--parent">
+                            <i class="fas fa-chevron-right"></i> Berita
+                        </a></li>
+                    <li><a href="prestasi.html" class="footer-link footer-link--parent">
+                            <i class="fas fa-chevron-right"></i> Prestasi
+                        </a></li>
+                    <li><a href="contact.html" class="footer-link footer-link--parent">
+                            <i class="fas fa-chevron-right"></i> Hubungi Kami
+                        </a></li>
+                </ul>
+            </div>
+
+<div class="footer-col footer-col--contact">
+                <h4 class="footer-col-title">Hubungi Kami</h4>
+
+                <ul class="footer-contact-list">
+                    <li class="footer-contact-item">
+                        <div class="footer-contact-icon"><i class="fas fa-location-dot"></i></div>
+                        <p>Jl. Komplek Green Garden,<br>Kedoya Selatan, Kebon Jeruk<br>Jakarta Barat 11520</p>
+                    </li>
+                    <li class="footer-contact-item">
+                        <div class="footer-contact-icon"><i class="fas fa-phone"></i></div>
+                        <p>021 – 580 4058</p>
+                    </li>
+                    <li class="footer-contact-item">
+                        <div class="footer-contact-icon"><i class="fas fa-clock"></i></div>
+                        <p>Senin – Jumat<br>06.00 – 15.00 WIB</p>
+                    </li>
+                    <li class="footer-contact-item">
+                        <div class="footer-contact-icon"><i class="fas fa-envelope"></i></div>
+                        <p>info@sstandreas.sch.id</p>
+                    </li>
+                </ul>
+
+                <a href="pendaftaran.html" class="footer-cta-btn">
+                    Daftar Sekarang <i class="fas fa-paper-plane"></i>
+                </a>
+            </div>
+
+        </div>
+
+<div class="footer-divider"></div>
+
+<div class="footer-bottom">
+            <p class="footer-copyright">© 2026 Sekolah Santo Andreas. All Rights Reserved.</p>
+            <p class="footer-credit"><i class="fas fa-code"></i> Dikembangkan oleh Raylika L.</p>
+        </div>
+
+    </footer>
+    <script>
+        /* ── Gallery drag-to-scroll ── */
+        (function () {
+            const track = document.getElementById('galleryTrack');
+            const btnLeft = document.getElementById('galleryLeft');
+            const btnRight = document.getElementById('galleryRight');
+
+            let isDragging = false, startX = 0, scrollStart = 0;
+
+            track.addEventListener('mousedown', e => {
+                isDragging = true;
+                startX = e.pageX - track.offsetLeft;
+                scrollStart = track.scrollLeft;
+                track.style.userSelect = 'none';
+            });
+
+            document.addEventListener('mouseup', () => {
+                isDragging = false;
+                track.style.userSelect = '';
+            });
+
+            document.addEventListener('mousemove', e => {
+                if (!isDragging) return;
+                const x = e.pageX - track.offsetLeft;
+                const walk = (x - startX) * 1.4;
+                track.scrollLeft = scrollStart - walk;
+            });
+
+            btnLeft.addEventListener('click', () => {
+                track.scrollBy({ left: -420, behavior: 'smooth' });
+            });
+
+            btnRight.addEventListener('click', () => {
+                track.scrollBy({ left: 420, behavior: 'smooth' });
+            });
+
+            /* touch support */
+            let touchStartX = 0;
+            track.addEventListener('touchstart', e => {
+                touchStartX = e.touches[0].pageX;
+            }, { passive: true });
+
+            track.addEventListener('touchmove', e => {
+                const diff = touchStartX - e.touches[0].pageX;
+                track.scrollLeft += diff * 0.8;
+                touchStartX = e.touches[0].pageX;
+            }, { passive: true });
+        })();
+
+        /* ── Intersection observer fade-in for cards ── */
+        (function () {
+            const cards = document.querySelectorAll(
+                '.smp-ku-card, .smp-ekskul-card, .smp-testi-card, .smp-stat-box'
+            );
+
+            cards.forEach((el, i) => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(28px)';
+                el.style.transition = `opacity 0.6s ease ${(i % 3) * 0.1}s, transform 0.6s ease ${(i % 3) * 0.1}s`;
+            });
+
+            const observer = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.12 });
+
+            cards.forEach(el => observer.observe(el));
+        })();
+    </script>
+
+    <script src="session-banner.js"></script>
+    <script>
+        (function () {
+            var btn = document.getElementById('hamburgerBtn');
+            var nav = document.getElementById('mobileNav');
+            if (!btn || !nav) return;
+            btn.addEventListener('click', function () {
+                btn.classList.toggle('open');
+                nav.classList.toggle('open');
+            });
+            nav.querySelectorAll('a').forEach(function (a) {
+                a.addEventListener('click', function () {
+                    btn.classList.remove('open');
+                    nav.classList.remove('open');
+                });
+            });
+            document.addEventListener('click', function (e) {
+                if (!btn.contains(e.target) && !nav.contains(e.target)) {
+                    btn.classList.remove('open');
+                    nav.classList.remove('open');
+                }
+            });
+        })();
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,1085 @@
+﻿<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SD — Sekolah Santo Andreas</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="sd.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.7.2/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+<nav class="nav-bar nav-scrolled">
+        <div class="nav-container">
+            <div class="logo">
+                <a href="index.html"><img src="https://i.ibb.co.com/V033MvMm/St-Andreas-Logo.png" alt="St-Andreas-Logo"
+                        width="290px" height="70px"></a>
+            </div>
+            <ul class="nav-links">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link">Halaman Utama</a>
+                </li>
+                <li class="nav-item">
+                    <a href="tentang-kami.html" class="nav-link">Tentang Kami<i class="fas fa-chevron-down"></i></a>
+                    <div class="dropdown-menu">
+                        <a href="tentang-kami.html#visi-misi">Visi &amp; Misi</a>
+                        <a href="tentang-kami.html#sejarah">Sejarah</a>
+                        <a href="tentang-kami.html#fasilitas">Fasilitas</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a href="jenjang.html" class="nav-link">Jenjang Pendidikan<i class="fas fa-chevron-down"></i></a>
+                    <div class="dropdown-menu">
+                        <a href="tk.html">TK / Nursery</a>
+                        <a href="sd.html">SD</a>
+                        <a href="smp.html">SMP</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a href="#" onclick="event.preventDefault()" class="nav-link">Portal<i class="fas fa-chevron-down"></i></a>
+                    <div class="dropdown-menu">
+                        <a href="login.html">Portal Siswa</a>
+                        <a href="login-teacher.html">Portal Guru</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a href="pendaftaran.html" class="nav-link">Pendaftaran</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" onclick="event.preventDefault()" class="nav-link">Informasi<i class="fas fa-chevron-down"></i></a>
+                    <div class="dropdown-menu">
+                        <a href="berita.html">Berita</a>
+                        <a href="kalendar-akademik.html">Kalender Akademik</a>
+                        <a href="prestasi.html">Prestasi</a>
+                        <a href="contact.html">Hubungi Kami</a>
+                    </div>
+                </li>
+            </ul>
+            <div class="social-links">
+                <a href="https://www.facebook.com/sstandreas" class="social-link"><i class="fab fa-facebook"></i></a>
+                <a href="https://www.instagram.com/sstandreas/" class="social-link"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.youtube.com/channel/UC2fmVdeHtxnXl1LMYu7WAAQ" class="social-link"><i
+                        class="fab fa-youtube"></i></a>
+            </div>
+            
+            <button class="hamburger" id="hamburgerBtn" aria-label="Menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+        
+        <div class="mobile-nav" id="mobileNav">
+            <ul class="mobile-nav-links">
+                <li><a href="index.html">Halaman Utama</a></li>
+                <li class="mobile-dropdown">
+                    <a href="tentang-kami.html">Tentang Kami</a>
+                    <div class="mobile-sub">
+                        <a href="tentang-kami.html#visi-misi">Visi &amp; Misi</a>
+                        <a href="tentang-kami.html#sejarah">Sejarah</a>
+                        <a href="tentang-kami.html#fasilitas">Fasilitas</a>
+                    </div>
+                </li>
+                <li class="mobile-dropdown">
+                    <a href="jenjang.html">Jenjang Pendidikan</a>
+                    <div class="mobile-sub">
+                        <a href="tk.html">TK / Nursery</a>
+                        <a href="sd.html">SD</a>
+                        <a href="smp.html">SMP</a>
+                    </div>
+                </li>
+                <li class="mobile-dropdown">
+                    <a href="#">Portal</a>
+                    <div class="mobile-sub">
+                        <a href="login.html">Portal Siswa</a>
+                        <a href="login-teacher.html">Portal Guru</a>
+                    </div>
+                </li>
+                <li><a href="pendaftaran.html">Pendaftaran</a></li>
+                <li class="mobile-dropdown">
+                    <a href="#">Informasi</a>
+                    <div class="mobile-sub">
+                        <a href="berita.html">Berita</a>
+                        <a href="kalendar-akademik.html">Kalender Akademik</a>
+                        <a href="prestasi.html">Prestasi</a>
+                        <a href="contact.html">Hubungi Kami</a>
+                    </div>
+                </li>
+            </ul>
+            <div class="mobile-nav-social">
+                <a href="https://www.facebook.com/sstandreas" aria-label="Facebook"><i
+                        class="fab fa-facebook-f"></i></a>
+                <a href="https://www.instagram.com/sstandreas/" aria-label="Instagram"><i
+                        class="fab fa-instagram"></i></a>
+                <a href="https://www.youtube.com/channel/UC2fmVdeHtxnXl1LMYu7WAAQ" aria-label="YouTube"><i
+                        class="fab fa-youtube"></i></a>
+            </div>
+        </div>
+    </nav>
+
+<header class="sd-hero">
+        <div class="sd-hero-bg">
+            <img src="sd-hero-placeholder-ssantoandreas.jpg" alt="SD Santo Andreas">
+            <div class="sd-hero-overlay"></div>
+        </div>
+
+        <div class="sd-hero-content">
+            <div class="sd-hero-badge">
+                <span class="sd-hero-badge-dot"></span>
+                Jenjang SD · Kelas 1 – 6
+            </div>
+            <span class="sd-hero-eyebrow">Sekolah Dasar</span>
+            <h1 class="sd-hero-title">
+                SD<br><em>Santo Andreas</em>
+            </h1>
+            <p class="sd-hero-sub">
+                Enam tahun penuh makna — fondasi terkuat untuk masa depan yang gemilang.
+                Kami membentuk karakter, menumbuhkan rasa ingin tahu, dan menyalakan semangat belajar
+                sejak dini.
+            </p>
+            <div class="sd-hero-pills">
+                <a href="#keunggulan" class="sd-pill"><i class="fas fa-star"></i> Keunggulan</a>
+                <a href="#ekskul" class="sd-pill"><i class="fas fa-futbol"></i> Ekskul</a>
+                <a href="#guru" class="sd-pill"><i class="fas fa-chalkboard-teacher"></i> Guru</a>
+                <a href="#testimoni" class="sd-pill"><i class="fas fa-quote-left"></i> Testimoni</a>
+                <a href="pendaftaran.html" class="sd-pill sd-pill--solid"><i class="fas fa-paper-plane"></i> Daftar
+                    Sekarang</a>
+            </div>
+        </div>
+
+        <div class="sd-hero-accent"></div>
+        <div class="sd-hero-bottom-line"></div>
+
+        <div class="sd-hero-scroll">
+            <span class="sd-hero-scroll-line"></span>
+            Scroll ke Bawah
+        </div>
+    </header>
+
+<section class="sd-sec sd-about">
+        <div class="sd-sec-inner">
+            <div class="sd-about-grid">
+                
+                <div>
+                    <span class="sd-about-tag">Tentang SD St. Andreas</span>
+                    <h2 class="sd-about-title">
+                        Fondasi Terbaik untuk<br>Masa Depan <em>yang Gemilang</em>
+                    </h2>
+                    <p class="sd-about-body">
+                        SD Santo Andreas adalah tempat di mana perjalanan belajar dimulai — dengan penuh kegembiraan,
+                        rasa aman, dan kasih. Di sinilah anak-anak menemukan potensi pertama mereka: belajar membaca,
+                        menulis, berhitung, dan yang paling penting, belajar mencintai proses belajar itu sendiri.
+                    </p>
+                    <p class="sd-about-body">
+                        Dengan pendekatan Kurikulum Merdeka yang berpusat pada siswa, nilai-nilai Kristiani yang hidup,
+                        serta lingkungan belajar yang hangat dan inklusif, SD St. Andreas telah menjadi rumah kedua
+                        bagi lebih dari 600 siswa aktif dan kepercayaan ribuan keluarga di Jakarta Barat.
+                    </p>
+                    <div class="sd-about-features">
+                        <div class="sd-about-feat">
+                            <i class="fas fa-check"></i> Kurikulum Merdeka Belajar berbasis nilai Kristiani
+                        </div>
+                        <div class="sd-about-feat">
+                            <i class="fas fa-check"></i> Guru terlatih dengan pendekatan child-centered learning
+                        </div>
+                        <div class="sd-about-feat">
+                            <i class="fas fa-check"></i> Program literasi, numerasi, dan seni terintegrasi
+                        </div>
+                        <div class="sd-about-feat">
+                            <i class="fas fa-check"></i> Lingkungan belajar yang aman, inklusif, dan menyenangkan
+                        </div>
+                        <div class="sd-about-feat">
+                            <i class="fas fa-check"></i> Beragam pilihan ekstrakurikuler sejak kelas 1
+                        </div>
+                    </div>
+                </div>
+
+<div class="sd-about-stats">
+                    <div class="sd-stat-box">
+                        <span class="sd-stat-num">600+</span>
+                        <span class="sd-stat-label">Siswa Aktif</span>
+                    </div>
+                    <div class="sd-stat-box">
+                        <span class="sd-stat-num">30+</span>
+                        <span class="sd-stat-label">Guru Bersertifikat</span>
+                    </div>
+                    <div class="sd-stat-box">
+                        <span class="sd-stat-num">100%</span>
+                        <span class="sd-stat-label">Kelulusan</span>
+                    </div>
+                    <div class="sd-stat-box">
+                        <span class="sd-stat-num">30+</span>
+                        <span class="sd-stat-label">Tahun Berdiri</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<section class="sd-sec sd-keunggulan" id="keunggulan">
+        <div class="sd-sec-inner">
+            <div class="sd-keunggulan-header">
+                <p class="sd-eyebrow sd-eyebrow--light"><i class="fas fa-star"></i> Mengapa SD St. Andreas</p>
+                <h2 class="sd-heading sd-heading--light">
+                    Keunggulan SD<br><em>Santo Andreas</em>
+                </h2>
+                <div class="sd-title-line sd-title-line--light" style="margin: 0 auto 24px;"></div>
+                <p class="sd-desc sd-desc--light">
+                    Kami percaya setiap anak lahir dengan keistimewaan masing-masing —
+                    tugas kami adalah memastikan setiap keistimewaan itu bersinar dengan cara terbaik.
+                </p>
+            </div>
+
+            <div class="sd-keunggulan-grid">
+
+<div class="sd-ku-card">
+                    <div class="sd-ku-num">01</div>
+                    <div class="sd-ku-icon-wrap">
+                        <i class="fas fa-book-open sd-ku-icon"></i>
+                    </div>
+                    <h3 class="sd-ku-title">Akademik Kuat</h3>
+                    <p class="sd-ku-text">
+                        Program akademik SD yang terstruktur dan menyenangkan — membangun kemampuan
+                        literasi, numerasi, dan sains sejak kelas 1 dengan metode aktif dan kreatif.
+                    </p>
+                    <span class="sd-ku-tag">Literasi · Numerasi · Sains</span>
+                </div>
+
+<div class="sd-ku-card">
+                    <div class="sd-ku-num">02</div>
+                    <div class="sd-ku-icon-wrap">
+                        <i class="fas fa-palette sd-ku-icon"></i>
+                    </div>
+                    <h3 class="sd-ku-title">Seni &amp; Kreativitas</h3>
+                    <p class="sd-ku-text">
+                        Dari menggambar, menyanyi, hingga menari — kami menyediakan ruang ekspresi
+                        yang luas agar setiap anak dapat menemukan dan mengembangkan bakatnya sendiri.
+                    </p>
+                    <span class="sd-ku-tag">Seni Rupa · Musik · Tari</span>
+                </div>
+
+<div class="sd-ku-card">
+                    <div class="sd-ku-num">03</div>
+                    <div class="sd-ku-icon-wrap">
+                        <i class="fas fa-heart sd-ku-icon"></i>
+                    </div>
+                    <h3 class="sd-ku-title">Pembinaan Karakter</h3>
+                    <p class="sd-ku-text">
+                        Nilai-nilai Kristiani ditanamkan melalui kebiasaan sehari-hari — kejujuran,
+                        disiplin, kepedulian, dan rasa syukur menjadi bagian hidup nyata setiap siswa.
+                    </p>
+                    <span class="sd-ku-tag">Iman · Budi Pekerti · Disiplin</span>
+                </div>
+
+<div class="sd-ku-card">
+                    <div class="sd-ku-num">04</div>
+                    <div class="sd-ku-icon-wrap">
+                        <i class="fas fa-running sd-ku-icon"></i>
+                    </div>
+                    <h3 class="sd-ku-title">Olahraga &amp; Kesehatan</h3>
+                    <p class="sd-ku-text">
+                        Tubuh sehat mendukung pikiran yang cerdas. Program olahraga dan Taekwondo
+                        melatih fisik, keberanian, serta sportivitas siswa sejak usia dini.
+                    </p>
+                    <span class="sd-ku-tag">Olahraga · Taekwondo · Sehat</span>
+                </div>
+
+<div class="sd-ku-card">
+                    <div class="sd-ku-num">05</div>
+                    <div class="sd-ku-icon-wrap">
+                        <i class="fas fa-robot sd-ku-icon"></i>
+                    </div>
+                    <h3 class="sd-ku-title">Teknologi Sejak Dini</h3>
+                    <p class="sd-ku-text">
+                        Program Robotics dan komputer memperkenalkan teknologi dengan cara yang menyenangkan —
+                        menumbuhkan kemampuan berpikir logis dan pemecahan masalah sejak SD.
+                    </p>
+                    <span class="sd-ku-tag">Robotics · Komputer · Coding</span>
+                </div>
+
+<div class="sd-ku-card">
+                    <div class="sd-ku-num">06</div>
+                    <div class="sd-ku-icon-wrap">
+                        <i class="fas fa-child sd-ku-icon"></i>
+                    </div>
+                    <h3 class="sd-ku-title">Pendidikan Holistik</h3>
+                    <p class="sd-ku-text">
+                        Kami mendidik seluruh aspek anak — intelektual, emosional, sosial, dan spiritual —
+                        sehingga setiap siswa tumbuh menjadi pribadi yang utuh dan siap menghadapi dunia.
+                    </p>
+                    <span class="sd-ku-tag">Holistik · Emosi · Sosial</span>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+<section class="sd-sec sd-ekskul" id="ekskul">
+        <div class="sd-sec-inner">
+            <div class="sd-ekskul-header">
+                <p class="sd-eyebrow sd-eyebrow--dark"><i class="fas fa-futbol"></i> Ekstrakurikuler</p>
+                <h2 class="sd-heading sd-heading--dark">
+                    Profil Ekskul<br><em>SD St. Andreas</em>
+                </h2>
+                <div class="sd-title-line sd-title-line--dark" style="margin: 0 auto 24px;"></div>
+                <p class="sd-desc sd-desc--dark">
+                    Belajar tak hanya terjadi di dalam kelas. Setiap anak didorong untuk
+                    berani mencoba, berkreasi, dan menemukan passionnya melalui ekskul pilihan.
+                </p>
+            </div>
+
+            <div class="sd-ekskul-grid">
+
+<div class="sd-ekskul-card">
+                    <div class="sd-ekskul-cover">
+                        <i class="fas fa-hand-fist sd-ekskul-cover-icon"></i>
+                        <span class="sd-ekskul-badge">Olahraga</span>
+                    </div>
+                    <div class="sd-ekskul-body">
+                        <h3 class="sd-ekskul-name">Taekwondo</h3>
+                        <p class="sd-ekskul-desc">
+                            Melatih fisik, keberanian, dan kedisiplinan melalui seni bela diri Taekwondo.
+                            Siswa diajarkan teknik dasar, etika, dan semangat pantang menyerah.
+                        </p>
+                    </div>
+                </div>
+
+<div class="sd-ekskul-card">
+                    <div class="sd-ekskul-cover">
+                        <i class="fas fa-music sd-ekskul-cover-icon"></i>
+                        <span class="sd-ekskul-badge">Seni</span>
+                    </div>
+                    <div class="sd-ekskul-body">
+                        <h3 class="sd-ekskul-name">Tari Modern</h3>
+                        <p class="sd-ekskul-desc">
+                            Mengekspresikan diri melalui gerakan dance, yang ditampilkan pada pentas seni tahunan
+                            sekolah hingga acara-acara di mall.
+                        </p>
+                    </div>
+                </div>
+
+<div class="sd-ekskul-card">
+                    <div class="sd-ekskul-cover">
+                        <i class="fas fa-campground sd-ekskul-cover-icon"></i>
+                        <span class="sd-ekskul-badge">Wajib</span>
+                    </div>
+                    <div class="sd-ekskul-body">
+                        <h3 class="sd-ekskul-name">Pramuka</h3>
+                        <p class="sd-ekskul-desc">
+                            Membentuk kemandirian, tanggung jawab, dan cinta tanah air sejak dini.
+                            Aktif mengikuti kegiatan berkemah, lomba kepramukaan, dan bakti sosial.
+                        </p>
+                    </div>
+                </div>
+
+<div class="sd-ekskul-card">
+                    <div class="sd-ekskul-cover">
+                        <i class="fas fa-microphone-lines sd-ekskul-cover-icon"></i>
+                        <span class="sd-ekskul-badge">Seni</span>
+                    </div>
+                    <div class="sd-ekskul-body">
+                        <h3 class="sd-ekskul-name">Paduan Suara</h3>
+                        <p class="sd-ekskul-desc">
+                            Kelompok vokal kebanggaan SD St. Andreas yang tampil di misa sekolah,
+                            upacara resmi, dan kompetisi paduan suara antar-sekolah tingkat kota.
+                        </p>
+                    </div>
+                </div>
+
+<div class="sd-ekskul-card">
+                    <div class="sd-ekskul-cover">
+                        <i class="fas fa-palette sd-ekskul-cover-icon"></i>
+                        <span class="sd-ekskul-badge">Seni · Kelas 1–2</span>
+                    </div>
+                    <div class="sd-ekskul-body">
+                        <h3 class="sd-ekskul-name">Menggambar</h3>
+                        <p class="sd-ekskul-desc">
+                            Khusus siswa kelas 1 dan 2 — menggambar menjadi cara pertama anak-anak
+                            mengekspresikan imajinasi mereka. Karya terbaik dipamerkan di galeri sekolah.
+                        </p>
+                    </div>
+                </div>
+
+<div class="sd-ekskul-card">
+                    <div class="sd-ekskul-cover">
+                        <i class="fas fa-comments sd-ekskul-cover-icon"></i>
+                        <span class="sd-ekskul-badge">Akademik</span>
+                    </div>
+                    <div class="sd-ekskul-body">
+                        <h3 class="sd-ekskul-name">English Club</h3>
+                        <p class="sd-ekskul-desc">
+                            Menumbuhkan rasa percaya diri berbicara bahasa Inggris sejak SD melalui
+                            permainan, storytelling, drama singkat, dan percakapan sehari-hari.
+                        </p>
+                    </div>
+                </div>
+
+<div class="sd-ekskul-card">
+                    <div class="sd-ekskul-cover">
+                        <i class="fas fa-robot sd-ekskul-cover-icon"></i>
+                        <span class="sd-ekskul-badge">Teknologi</span>
+                    </div>
+                    <div class="sd-ekskul-body">
+                        <h3 class="sd-ekskul-name">Robotics</h3>
+                        <p class="sd-ekskul-desc">
+                            Mengenalkan dunia teknologi dan logika pemrograman dengan cara yang seru.
+                            Siswa merakit, memprogram, dan menguji robot mereka sendiri dalam tim kecil.
+                        </p>
+                    </div>
+                </div>
+
+<div class="sd-ekskul-card">
+                    <div class="sd-ekskul-cover">
+                        <i class="fas fa-lightbulb sd-ekskul-cover-icon"></i>
+                        <span class="sd-ekskul-badge">Keterampilan</span>
+                    </div>
+                    <div class="sd-ekskul-body">
+                        <h3 class="sd-ekskul-name">Life Skills</h3>
+                        <p class="sd-ekskul-desc">
+                            Keterampilan hidup praktis yang membekali siswa dengan kemampuan nyata —
+                            dari memasak sederhana, berkebun, menjahit, hingga manajemen waktu dasar.
+                        </p>
+                    </div>
+                </div>
+
+<div class="sd-ekskul-card">
+                    <div class="sd-ekskul-cover">
+                        <i class="fas fa-guitar sd-ekskul-cover-icon"></i>
+                        <span class="sd-ekskul-badge">Seni</span>
+                    </div>
+                    <div class="sd-ekskul-body">
+                        <h3 class="sd-ekskul-name">Musik</h3>
+                        <p class="sd-ekskul-desc">
+                            Belajar memainkan alat musik — dari pianika, gitar, hingga band —
+                            dalam suasana yang menyenangkan dan mendorong kreativitas bermusik sejak kecil.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+<section class="sd-sec sd-guru" id="guru">
+        <div class="sd-sec-inner">
+
+<div class="sd-guru-header">
+                <p class="sd-eyebrow sd-eyebrow--light">
+                    <i class="fas fa-chalkboard-teacher"></i> Tim Pengajar
+                </p>
+                <h2 class="sd-heading sd-heading--light">
+                    Guru-Guru <em>Berpengalaman</em>
+                </h2>
+                <div class="sd-title-line sd-title-line--light" style="margin: 0 auto 24px;"></div>
+                <p class="sd-desc sd-desc--light">
+                    Para pendidik kami yang berdedikasi memberikan yang terbaik bagi setiap siswa —
+                    dengan hati, ilmu, dan pengalaman.
+                </p>
+            </div>
+
+<div class="sd-guru-carousel-wrap">
+
+                <button class="sd-guru-btn" id="guruPrev" aria-label="Sebelumnya" disabled>
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+
+                <div class="sd-guru-track-outer">
+                    <div class="sd-guru-track" id="guruTrack">
+
+                        <div class="sd-guru-card">
+                            <div class="sd-guru-img-wrap">
+                                <img src="https://santoandreas.sch.id/wp-content/uploads/2024/11/Teacher-Profile-12.jpg"
+                                    alt="Patrecia, S.pd" loading="lazy">
+                            </div>
+                        </div>
+
+                        <div class="sd-guru-card">
+                            <div class="sd-guru-img-wrap">
+                                <img src="https://santoandreas.sch.id/wp-content/uploads/2024/11/Teacher-Profile-2-1.jpg"
+                                    alt="Cicila Widyanita Radiasari, S.pd" loading="lazy">
+                            </div>
+                        </div>
+
+                        <div class="sd-guru-card">
+                            <div class="sd-guru-img-wrap">
+                                <img src="https://santoandreas.sch.id/wp-content/uploads/2024/11/Teacher-Profile-3-1.jpg"
+                                    alt="Milka Kristiani, S.pd" loading="lazy">
+                            </div>
+                        </div>
+
+                        <div class="sd-guru-card">
+                            <div class="sd-guru-img-wrap">
+                                <img src="https://santoandreas.sch.id/wp-content/uploads/2024/11/Teacher-Profile-4-1.jpg"
+                                    alt="Detjewati, A.md" loading="lazy">
+                            </div>
+                        </div>
+
+                        <div class="sd-guru-card">
+                            <div class="sd-guru-img-wrap">
+                                <img src="https://santoandreas.sch.id/wp-content/uploads/2024/11/Teacher-Profile-5-1.jpg"
+                                    alt="Epralita Simalango, S.pd" loading="lazy">
+                            </div>
+                        </div>
+
+                        <div class="sd-guru-card">
+                            <div class="sd-guru-img-wrap">
+                                <img src="https://santoandreas.sch.id/wp-content/uploads/2024/11/Teacher-Profile-6-2.jpg"
+                                    alt="Marince Marbun, S.pd" loading="lazy">
+                            </div>
+                        </div>
+
+                        <div class="sd-guru-card">
+                            <div class="sd-guru-img-wrap">
+                                <img src="https://santoandreas.sch.id/wp-content/uploads/2024/11/Teacher-Profile-7-1.jpg"
+                                    alt="Markus Suprapto, S.pd" loading="lazy">
+                            </div>
+                        </div>
+
+                        <div class="sd-guru-card">
+                            <div class="sd-guru-img-wrap">
+                                <img src="https://santoandreas.sch.id/wp-content/uploads/2024/11/Teacher-Profile-8-1.jpg"
+                                    alt="Christie Eveline Silitonga, S.pd" loading="lazy">
+                            </div>
+                        </div>
+
+                        <div class="sd-guru-card">
+                            <div class="sd-guru-img-wrap">
+                                <img src="https://santoandreas.sch.id/wp-content/uploads/2024/11/Teacher-Profile-9-1.jpg"
+                                    alt="Masje Kaporoh, M.pd" loading="lazy">
+                            </div>
+                        </div>
+
+                        <div class="sd-guru-card">
+                            <div class="sd-guru-img-wrap">
+                                <img src="https://santoandreas.sch.id/wp-content/uploads/2024/11/Teacher-Profile-10-1.jpg"
+                                    alt="Florentina Sutiyah, S.pd" loading="lazy">
+                            </div>
+                        </div>
+
+                        <div class="sd-guru-card">
+                            <div class="sd-guru-img-wrap">
+                                <img src="https://santoandreas.sch.id/wp-content/uploads/2024/11/Teacher-Profile-11-1.jpg"
+                                    alt="Kristanti, S.pd" loading="lazy">
+                            </div>
+                        </div>
+
+                        <div class="sd-guru-card">
+                            <div class="sd-guru-img-wrap">
+                                <img src="https://santoandreas.sch.id/wp-content/uploads/2024/11/Teacher-Profile-12-1.jpg"
+                                    alt="Magdalena Kusumawardhani, S.pd" loading="lazy">
+                            </div>
+                        </div>
+
+                        <div class="sd-guru-card">
+                            <div class="sd-guru-img-wrap">
+                                <img src="https://santoandreas.sch.id/wp-content/uploads/2024/11/Teacher-Profile-13.jpg"
+                                    alt="Sarmita Afrianty Saragih, S.pd" loading="lazy">
+                            </div>
+                        </div>
+
+                        <div class="sd-guru-card">
+                            <div class="sd-guru-img-wrap">
+                                <img src="https://santoandreas.sch.id/wp-content/uploads/2024/11/Teacher-Profile-14.jpg"
+                                    alt="Dewi Susilawati, S.pd" loading="lazy">
+                            </div>
+                        </div>
+
+                        <div class="sd-guru-card">
+                            <div class="sd-guru-img-wrap">
+                                <img src="https://santoandreas.sch.id/wp-content/uploads/2024/11/Teacher-Profile-15.jpg"
+                                    alt="Yulita Susi Astuti, S.Ag" loading="lazy">
+                            </div>
+                        </div>
+
+                        <div class="sd-guru-card">
+                            <div class="sd-guru-img-wrap">
+                                <img src="https://santoandreas.sch.id/wp-content/uploads/2024/11/Teacher-Profile-16.jpg"
+                                    alt="Agus Iswandi, S.pd" loading="lazy">
+                            </div>
+                        </div>
+
+                        <div class="sd-guru-card">
+                            <div class="sd-guru-img-wrap">
+                                <img src="https://santoandreas.sch.id/wp-content/uploads/2024/11/Teacher-Profile-17.jpg"
+                                    alt="Doroteus Nahim, S.Fil" loading="lazy">
+                            </div>
+                        </div>
+
+                        <div class="sd-guru-card">
+                            <div class="sd-guru-img-wrap">
+                                <img src="https://santoandreas.sch.id/wp-content/uploads/2024/11/Teacher-Profile-18.jpg"
+                                    alt="Laoshi Jersey Zhang" loading="lazy">
+                            </div>
+                        </div>
+
+<div class="sd-guru-card">
+                            <div class="sd-guru-img-wrap">
+                                <img src="https://santoandreas.sch.id/wp-content/uploads/2024/11/Teacher-Profile-19.jpg"
+                                    alt="Laoshi Jersey Zhang" loading="lazy">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <button class="sd-guru-btn" id="guruNext" aria-label="Selanjutnya">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+
+            </div>
+
+<div class="sd-guru-dots" id="guruDots"></div>
+
+        </div>
+    </section>
+
+    <script>
+        (function () {
+            const track = document.getElementById('guruTrack');
+            const prev = document.getElementById('guruPrev');
+            const next = document.getElementById('guruNext');
+            const dotsEl = document.getElementById('guruDots');
+            const cards = Array.from(track.querySelectorAll('.sd-guru-card'));
+
+            function visibleCount() {
+                return window.innerWidth <= 560 ? 1 : window.innerWidth <= 900 ? 2 : 3;
+            }
+
+            let current = 0;
+
+            function maxIdx() { return Math.max(0, cards.length - visibleCount()); }
+
+            function buildDots() {
+                dotsEl.innerHTML = '';
+                for (let i = 0; i <= maxIdx(); i++) {
+                    const d = document.createElement('button');
+                    d.className = 'sd-guru-dot' + (i === current ? ' active' : '');
+                    d.addEventListener('click', () => goTo(i));
+                    dotsEl.appendChild(d);
+                }
+            }
+
+            function goTo(idx) {
+                current = Math.max(0, Math.min(idx, maxIdx()));
+                const card = cards[0];
+                const gap = 24;
+                const step = card.offsetWidth + gap;
+                track.style.transform = `translateX(-${current * step}px)`;
+                prev.disabled = current === 0;
+                next.disabled = current >= maxIdx();
+                dotsEl.querySelectorAll('.sd-guru-dot').forEach((d, i) => {
+                    d.classList.toggle('active', i === current);
+                });
+            }
+
+            prev.addEventListener('click', () => goTo(current - 1));
+            next.addEventListener('click', () => goTo(current + 1));
+
+            let resizeTimer;
+            window.addEventListener('resize', () => {
+                clearTimeout(resizeTimer);
+                resizeTimer = setTimeout(() => {
+                    buildDots();
+                    goTo(Math.min(current, maxIdx()));
+                }, 120);
+            });
+
+            buildDots();
+            goTo(0);
+        })();
+    </script>
+
+<section class="sd-sec sd-testi" id="testimoni">
+        <div class="sd-testi-deco-q">"</div>
+        <div class="sd-sec-inner">
+            <div class="sd-testi-header">
+                <p class="sd-eyebrow sd-eyebrow--light"><i class="fas fa-quote-left"></i> Suara Mereka</p>
+                <h2 class="sd-heading sd-heading--light">
+                    Apa Kata<br><em>Orang Tua SD</em>
+                </h2>
+                <div class="sd-title-line sd-title-line--light" style="margin: 0 auto 24px;"></div>
+                <p class="sd-desc sd-desc--light">
+                    Kepercayaan keluarga adalah motivasi terbesar kami. Inilah cerita nyata dari
+                    para orang tua yang telah mempercayakan buah hati mereka kepada SD Santo Andreas.
+                </p>
+            </div>
+
+            <div class="sd-testi-grid">
+
+<div class="sd-testi-card">
+                    <span class="sd-testi-quote-icon">"</span>
+                    <div class="sd-testi-stars">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="sd-testi-text">
+                        Anak saya Kevin awalnya sangat pemalu dan tidak percaya diri. Setelah masuk
+                        SD St. Andreas, perubahan yang saya lihat luar biasa. Guru-gurunya sabar,
+                        hangat, dan benar-benar memahami karakter setiap anak.
+                    </p>
+                    <div class="sd-testi-author">
+                        <div class="sd-testi-avatar">
+                            <img src="https://i.pinimg.com/236x/1d/ec/e2/1dece2c8357bdd7cee3b15036344faf5.jpg"
+                                alt="Ibu Maria">
+                        </div>
+                        <div>
+                            <span class="sd-testi-name">Ibu Maria Christiani</span>
+                            <span class="sd-testi-role">Orang tua Kevin · Kelas 4A</span>
+                        </div>
+                    </div>
+                </div>
+
+<div class="sd-testi-card">
+                    <span class="sd-testi-quote-icon">"</span>
+                    <div class="sd-testi-stars">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="sd-testi-text">
+                        Sebagai orang tua, saya sangat menghargai bagaimana SD St. Andreas tidak hanya
+                        fokus pada nilai akademik, tetapi juga membentuk karakter anak secara menyeluruh.
+                        Karena berkat para guru-guru Gracia belajar bersyukur, berbagi, dan bertanggung jawab!
+                    </p>
+                    <div class="sd-testi-author">
+                        <div class="sd-testi-avatar">
+                            <img src="https://i.pinimg.com/236x/1d/ec/e2/1dece2c8357bdd7cee3b15036344faf5.jpg"
+                                alt="Bapak Thomas">
+                        </div>
+                        <div>
+                            <span class="sd-testi-name">Bapak Thomas Wijaya</span>
+                            <span class="sd-testi-role">Orang tua Gracia · Kelas 2B</span>
+                        </div>
+                    </div>
+                </div>
+
+<div class="sd-testi-card">
+                    <span class="sd-testi-quote-icon">"</span>
+                    <div class="sd-testi-stars">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="sd-testi-text">
+                        Daniel kini di kelas 6 dan sebentar lagi lulus. Melihat perjalanannya selama
+                        enam tahun di SD St. Andreas membuat saya terharu. Ia tumbuh menjadi anak
+                        yang mandiri, percaya diri, dan punya empati tinggi. Terima kasih kepada
+                        seluruh guru dan staf yang sudah menjadi keluarga kedua bagi Daniel.
+                    </p>
+                    <div class="sd-testi-author">
+                        <div class="sd-testi-avatar">
+                            <img src="https://i.pinimg.com/236x/1d/ec/e2/1dece2c8357bdd7cee3b15036344faf5.jpg"
+                                alt="Ibu Sandra">
+                        </div>
+                        <div>
+                            <span class="sd-testi-name">Ibu Sandra Hartono</span>
+                            <span class="sd-testi-role">Orang tua Daniel · Kelas 6C</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+<section class="sd-gallery" id="galeri">
+        <div class="sd-gallery-inner">
+            <div class="sd-gallery-header">
+                <p class="sd-eyebrow sd-eyebrow--light"><i class="fas fa-images"></i> Galeri Foto</p>
+                <h2 class="sd-heading sd-heading--light">
+                    Momen &amp; Kenangan<br><em>SD St. Andreas</em>
+                </h2>
+                <div class="sd-title-line sd-title-line--light" style="margin: 0 auto 24px;"></div>
+                <p class="sd-desc sd-desc--light">
+                    Setiap momen adalah kenangan berharga — dari ruang kelas, lapangan, hingga pentas seni yang memukau.
+                </p>
+            </div>
+
+            <div class="sd-gallery-scroll-hint">
+                <i class="fas fa-hand-point-left"></i>
+                Geser untuk Melihat Lebih
+                <i class="fas fa-hand-point-right"></i>
+            </div>
+        </div>
+
+        <div class="sd-gallery-track" id="sdGalleryTrack">
+
+<div class="sd-gallery-item sd-gallery-item--wide">
+                <img src="sdm-dramamusical-ssantoandreas.jpg" alt="Drama Musikal SD">
+                <div class="sd-gallery-item-cap">Performa Drama Musikal di Lippo Mall Puri</div>
+            </div>
+
+            <div class="sd-gallery-item sd-gallery-item--wide">
+                <img src="sdm-upacara-ssantoandreas.jpg" alt="Upacara SD">
+                <div class="sd-gallery-item-cap">Upacara dengan bermain musik</div>
+            </div>
+
+        </div>
+
+        <div class="sd-gallery-controls">
+            <button class="sd-gallery-btn" id="sdGalleryLeft" aria-label="Geser Kiri">
+                <i class="fas fa-arrow-left"></i>
+            </button>
+            <button class="sd-gallery-btn" id="sdGalleryRight" aria-label="Geser Kanan">
+                <i class="fas fa-arrow-right"></i>
+            </button>
+        </div>
+    </section>
+
+<section class="sd-cta-strip">
+        <div class="sd-cta-strip-inner">
+            <p class="sd-cta-label">PPDB 2026/2027 · Kuota Terbatas</p>
+            <h2 class="sd-cta-title">
+                Titipkan Masa Depan Anak<br><em>Bersama Kami</em>
+            </h2>
+            <p class="sd-cta-sub">
+                Daftarkan putra-putri Anda sekarang dan jadikan SD Santo Andreas sebagai
+                rumah pertama mereka dalam belajar, bertumbuh, dan bersinar.
+            </p>
+            <div class="sd-cta-btns">
+                <a href="pendaftaran.html" class="sd-cta-btn sd-cta-btn--solid">
+                    <i class="fas fa-paper-plane"></i> Daftar Sekarang
+                </a>
+                <a href="tentang-kami.html" class="sd-cta-btn sd-cta-btn--outline">
+                    <i class="fas fa-info-circle"></i> Pelajari Lebih Lanjut
+                </a>
+            </div>
+        </div>
+    </section>
+
+<footer class="site-footer">
+
+<div class="footer-bg-ring ring-a"></div>
+        <div class="footer-bg-ring ring-b"></div>
+
+        <div class="footer-inner">
+
+<div class="footer-col footer-col--brand">
+                <img src="logo-landscape-ssantoandreas.png" alt="Logo Sekolah Santo Andreas" class="footer-logo">
+                <p class="footer-about">Lembaga pendidikan Katolik di Jakarta Barat yang telah membentuk generasi unggul
+                    sejak 1990 — dari Nursery hingga SMP.</p>
+                
+                <div class="footer-socials">
+                    <a href="https://www.facebook.com/sstandreas" class="footer-social" aria-label="Facebook">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="https://www.instagram.com/sstandreas/" class="footer-social" aria-label="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://www.youtube.com/channel/UC2fmVdeHtxnXl1LMYu7WAAQ" class="footer-social"
+                        aria-label="YouTube">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                </div>
+            </div>
+
+<div class="footer-col">
+                <h4 class="footer-col-title">Tentang Kami</h4>
+                <ul class="footer-links">
+                    <li><a href="tentang-kami.html" class="footer-link footer-link--parent">
+                            <i class="fas fa-chevron-right"></i> Tentang Kami
+                        </a></li>
+                    <li><a href="tentang-kami.html#visi-misi" class="footer-link footer-link--child">
+                            <i class="fas fa-minus"></i> Visi &amp; Misi
+                        </a></li>
+                    <li><a href="tentang-kami.html#sejarah" class="footer-link footer-link--child">
+                            <i class="fas fa-minus"></i> Sejarah
+                        </a></li>
+                    <li><a href="tentang-kami.html#fasilitas" class="footer-link footer-link--child">
+                            <i class="fas fa-minus"></i> Fasilitas
+                        </a></li>
+                </ul>
+
+                <h4 class="footer-col-title" style="margin-top: 28px;">Jenjang Pendidikan</h4>
+                <ul class="footer-links">
+                    <li><a href="jenjang.html" class="footer-link footer-link--parent">
+                            <i class="fas fa-chevron-right"></i> Jenjang Pendidikan
+                        </a></li>
+                    <li><a href="tk.html" class="footer-link footer-link--child">
+                            <i class="fas fa-minus"></i> TK
+                        </a></li>
+                    <li><a href="sd.html" class="footer-link footer-link--child">
+                            <i class="fas fa-minus"></i> SD
+                        </a></li>
+                    <li><a href="smp.html" class="footer-link footer-link--child">
+                            <i class="fas fa-minus"></i> SMP
+                        </a></li>
+                </ul>
+            </div>
+
+<div class="footer-col">
+                <h4 class="footer-col-title">Portal</h4>
+                <ul class="footer-links">
+                    <li><a href="portal-guru.html" class="footer-link footer-link--parent">
+                            <i class="fas fa-chevron-right"></i> Portal Guru
+                        </a></li>
+                    <li><a href="login.html" class="footer-link footer-link--parent">
+                            <i class="fas fa-chevron-right"></i> Portal Siswa
+                        </a></li>
+                </ul>
+
+                <h4 class="footer-col-title" style="margin-top: 28px;">Informasi</h4>
+                <ul class="footer-links">
+                    <li><a href="pendaftaran.html" class="footer-link footer-link--parent">
+                            <i class="fas fa-chevron-right"></i> Pendaftaran
+                        </a></li>
+                    <li><a href="kalendar-akademik.html" class="footer-link footer-link--parent">
+                            <i class="fas fa-chevron-right"></i> Kalender Akademik
+                        </a></li>
+                    <li><a href="berita.html" class="footer-link footer-link--parent">
+                            <i class="fas fa-chevron-right"></i> Berita
+                        </a></li>
+                    <li><a href="prestasi.html" class="footer-link footer-link--parent">
+                            <i class="fas fa-chevron-right"></i> Prestasi
+                        </a></li>
+                    <li><a href="contact.html" class="footer-link footer-link--parent">
+                            <i class="fas fa-chevron-right"></i> Hubungi Kami
+                        </a></li>
+                </ul>
+            </div>
+
+<div class="footer-col footer-col--contact">
+                <h4 class="footer-col-title">Hubungi Kami</h4>
+
+                <ul class="footer-contact-list">
+                    <li class="footer-contact-item">
+                        <div class="footer-contact-icon"><i class="fas fa-location-dot"></i></div>
+                        <p>Jl. Komplek Green Garden,<br>Kedoya Selatan, Kebon Jeruk<br>Jakarta Barat 11520</p>
+                    </li>
+                    <li class="footer-contact-item">
+                        <div class="footer-contact-icon"><i class="fas fa-phone"></i></div>
+                        <p>021 – 580 4058</p>
+                    </li>
+                    <li class="footer-contact-item">
+                        <div class="footer-contact-icon"><i class="fas fa-clock"></i></div>
+                        <p>Senin – Jumat<br>06.00 – 15.00 WIB</p>
+                    </li>
+                    <li class="footer-contact-item">
+                        <div class="footer-contact-icon"><i class="fas fa-envelope"></i></div>
+                        <p>info@sstandreas.sch.id</p>
+                    </li>
+                </ul>
+
+                <a href="pendaftaran.html" class="footer-cta-btn">
+                    Daftar Sekarang <i class="fas fa-paper-plane"></i>
+                </a>
+            </div>
+
+        </div>
+
+<div class="footer-divider"></div>
+
+<div class="footer-bottom">
+            <p class="footer-copyright">© 2026 Sekolah Santo Andreas. All Rights Reserved.</p>
+            <p class="footer-credit"><i class="fas fa-code"></i> Dikembangkan oleh Raylika L.</p>
+        </div>
+
+    </footer>
+
+    <script>
+        /* ── Gallery drag-to-scroll ── */
+        (function () {
+            const track = document.getElementById('sdGalleryTrack');
+            const btnLeft = document.getElementById('sdGalleryLeft');
+            const btnRight = document.getElementById('sdGalleryRight');
+
+            let isDragging = false, startX = 0, scrollStart = 0;
+
+            track.addEventListener('mousedown', e => {
+                isDragging = true;
+                startX = e.pageX - track.offsetLeft;
+                scrollStart = track.scrollLeft;
+                track.style.userSelect = 'none';
+            });
+
+            document.addEventListener('mouseup', () => {
+                isDragging = false;
+                track.style.userSelect = '';
+            });
+
+            document.addEventListener('mousemove', e => {
+                if (!isDragging) return;
+                const x = e.pageX - track.offsetLeft;
+                const walk = (x - startX) * 1.4;
+                track.scrollLeft = scrollStart - walk;
+            });
+
+            btnLeft.addEventListener('click', () => {
+                track.scrollBy({ left: -420, behavior: 'smooth' });
+            });
+
+            btnRight.addEventListener('click', () => {
+                track.scrollBy({ left: 420, behavior: 'smooth' });
+            });
+
+            /* touch support */
+            let touchStartX = 0;
+            track.addEventListener('touchstart', e => {
+                touchStartX = e.touches[0].pageX;
+            }, { passive: true });
+
+            track.addEventListener('touchmove', e => {
+                const diff = touchStartX - e.touches[0].pageX;
+                track.scrollLeft += diff * 0.8;
+                touchStartX = e.touches[0].pageX;
+            }, { passive: true });
+        })();
+
+        /* ── Intersection observer fade-in for cards ── */
+        (function () {
+            const cards = document.querySelectorAll(
+                '.sd-ku-card, .sd-ekskul-card, .sd-testi-card, .sd-stat-box'
+            );
+
+            cards.forEach((el, i) => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(28px)';
+                el.style.transition = `opacity 0.6s ease ${(i % 3) * 0.1}s, transform 0.6s ease ${(i % 3) * 0.1}s`;
+            });
+
+            const observer = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.12 });
+
+            cards.forEach(el => observer.observe(el));
+        })();
+    </script>
+
+    <script src="session-banner.js"></script>
+    <script>
+        (function () {
+            var btn = document.getElementById('hamburgerBtn');
+            var nav = document.getElementById('mobileNav');
+            if (!btn || !nav) return;
+            btn.addEventListener('click', function () {
+                btn.classList.toggle('open');
+                nav.classList.toggle('open');
+            });
+            nav.querySelectorAll('a').forEach(function (a) {
+                a.addEventListener('click', function () {
+                    btn.classList.remove('open');
+                    nav.classList.remove('open');
+                });
+            });
+            document.addEventListener('click', function (e) {
+                if (!btn.contains(e.target) && !nav.contains(e.target)) {
+                    btn.classList.remove('open');
+                    nav.classList.remove('open');
+                }
+            });
+        })();
+    </script>
+</body>
+
+</html>

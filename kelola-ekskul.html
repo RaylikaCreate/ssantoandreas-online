@@ -1,0 +1,269 @@
+﻿<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atur Jadwal Ekskul — Portal Guru Santo Andreas</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.7.2/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+    <style>
+        *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+        :root{--dark:#04111f;--dark2:#0a1929;--blue:#0162a6;--blue-lt:#0088e3;--gold:#ffcc00;--green:#28a850;--white:#ffffff;--muted:rgba(255,255,255,0.45);--border:rgba(255,255,255,0.08);--card-bg:rgba(255,255,255,0.04);--sans:'Plus Jakarta Sans',sans-serif;--display:'Playfair Display',Georgia,serif}
+        body{font-family:var(--sans);background:var(--dark);color:var(--white);min-height:100vh}
+        .portal-header{background:rgba(4,17,31,0.95);border-bottom:1px solid var(--border);backdrop-filter:blur(12px);position:sticky;top:0;z-index:100;padding:0 40px;display:flex;align-items:center;justify-content:space-between;height:68px}
+        .portal-header-left{display:flex;align-items:center;gap:20px}
+        .portal-logo{height:42px}
+        .portal-header-divider{width:1px;height:28px;background:var(--border)}
+        .portal-header-label{font-size:11px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold)}
+        .portal-header-right{display:flex;align-items:center;gap:16px}
+        .teacher-chip{display:flex;align-items:center;gap:10px;background:rgba(255,255,255,0.06);border:1px solid var(--border);border-radius:50px;padding:8px 16px}
+        .teacher-chip-avatar{width:30px;height:30px;border-radius:50%;background:linear-gradient(135deg,var(--blue),var(--blue-lt));display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;color:#fff;flex-shrink:0}
+        .teacher-chip-name{font-size:13px;font-weight:600;display:block}
+        .teacher-chip-role{font-size:11px;color:var(--muted);display:block}
+        .logout-btn{display:flex;align-items:center;gap:8px;background:rgba(218,37,30,0.12);border:1px solid rgba(218,37,30,0.28);color:#ff8a8a;border-radius:50px;padding:9px 18px;font-family:var(--sans);font-size:12px;font-weight:600;cursor:pointer;text-decoration:none;transition:all 0.2s}
+        .logout-btn:hover{background:rgba(218,37,30,0.25);color:#fff}
+        .portal-body{max-width:1200px;margin:0 auto;padding:44px 40px 80px}
+        .page-header{display:flex;align-items:center;gap:20px;margin-bottom:36px}
+        .back-btn{display:flex;align-items:center;gap:8px;background:var(--card-bg);border:1px solid var(--border);color:var(--muted);border-radius:50px;padding:9px 18px;font-family:var(--sans);font-size:13px;font-weight:600;cursor:pointer;text-decoration:none;transition:all 0.2s}
+        .back-btn:hover{color:var(--white);border-color:rgba(255,255,255,0.2)}
+        .page-eyebrow{font-size:11px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--green);margin-bottom:4px}
+        .page-title{font-family:var(--display);font-size:28px;font-weight:900}
+        .mgmt-layout{display:grid;grid-template-columns:380px 1fr;gap:28px;align-items:start}
+        .mgmt-panel{background:var(--card-bg);border:1px solid var(--border);border-radius:20px;padding:28px}
+        .mgmt-panel-title{font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:0.12em;color:var(--muted);margin-bottom:22px;display:flex;align-items:center;gap:8px}
+        .mgmt-panel-title i{color:var(--green)}
+        .field-group{margin-bottom:16px}
+        .field-label{display:block;font-size:12px;font-weight:600;color:rgba(255,255,255,0.65);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:8px}
+        .field-input,.field-select{width:100%;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.10);border-radius:12px;padding:12px 16px;color:var(--white);font-family:var(--sans);font-size:14px;outline:none;transition:border-color 0.2s,background 0.2s}
+        .field-input:focus,.field-select:focus{border-color:var(--green);background:rgba(40,168,80,0.08)}
+        .field-input::placeholder{color:var(--muted)}
+        .field-select option{background:var(--dark2)}
+        .field-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+        .submit-btn{width:100%;background:linear-gradient(135deg,#1a6030,#28a850);border:none;border-radius:14px;padding:14px;color:#fff;font-family:var(--sans);font-size:14px;font-weight:700;cursor:pointer;transition:all 0.25s;margin-top:8px;display:flex;align-items:center;justify-content:center;gap:10px}
+        .submit-btn:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(40,168,80,0.3)}
+        .submit-btn:disabled{opacity:0.6;cursor:not-allowed;transform:none}
+        .entries-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:16px}
+        .entries-count{font-size:13px;color:var(--muted)}
+        .sheets-link{display:flex;align-items:center;gap:7px;background:rgba(26,184,100,0.12);border:1px solid rgba(26,184,100,0.28);color:#4ade80;border-radius:50px;padding:7px 14px;font-size:12px;font-weight:600;text-decoration:none;transition:all 0.2s}
+        .sheets-link:hover{background:rgba(26,184,100,0.22);color:#fff}
+        .entry-card{background:rgba(255,255,255,0.03);border:1px solid var(--border);border-radius:14px;padding:14px 18px;margin-bottom:10px;display:flex;align-items:center;justify-content:space-between;gap:12px}
+        .entry-day{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:var(--green);min-width:60px}
+        .entry-info{flex:1}
+        .entry-name{font-size:14px;font-weight:700;color:var(--white)}
+        .entry-meta{font-size:12px;color:var(--muted);margin-top:2px}
+        .entry-badge{font-size:10px;font-weight:700;padding:3px 10px;border-radius:20px}
+        .badge-sd{background:rgba(200,23,28,0.15);color:#e84545}
+        .badge-smp{background:rgba(1,98,166,0.15);color:#60a5fa}
+        .badge-all{background:rgba(255,255,255,0.06);color:var(--muted)}
+        .empty-state{text-align:center;padding:48px 20px;color:var(--muted)}
+        .empty-state i{font-size:36px;margin-bottom:14px;display:block;color:rgba(255,255,255,0.1)}
+        .toast{position:fixed;bottom:28px;right:28px;padding:12px 20px;border-radius:12px;font-size:13px;font-weight:500;display:flex;align-items:center;gap:9px;box-shadow:0 10px 36px rgba(0,0,0,0.4);z-index:9999;animation:toast-in 0.35s ease both}
+        .toast-ok{background:rgba(40,168,80,0.95);color:#fff}
+        .toast-err{background:rgba(218,37,30,0.95);color:#fff}
+        @keyframes toast-in{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+        @keyframes fade-up{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+        .anim{animation:fade-up 0.45s ease both}
+        .anim-1{animation-delay:.05s}.anim-2{animation-delay:.10s}.anim-3{animation-delay:.15s}
+        @media(max-width:900px){.mgmt-layout{grid-template-columns:1fr}.portal-header{padding:0 20px}.portal-body{padding:28px 20px 60px}}
+        @media(max-width:600px){.field-row{grid-template-columns:1fr}}
+    </style>
+</head>
+<body>
+
+<header class="portal-header">
+    <div class="portal-header-left">
+        <img src="https://i.ibb.co.com/V033MvMm/St-Andreas-Logo.png" alt="Logo" class="portal-logo">
+        <div class="portal-header-divider"></div>
+        <span class="portal-header-label">Jadwal Ekskul</span>
+    </div>
+    <div class="portal-header-right">
+        <div class="teacher-chip">
+            <div class="teacher-chip-avatar" id="avatarInitials">?</div>
+            <div><span class="teacher-chip-name" id="headerName">—</span><span class="teacher-chip-role" id="headerRole">—</span></div>
+        </div>
+        <button class="logout-btn" onclick="teacherLogout()"><i class="fas fa-sign-out-alt"></i> Keluar</button>
+    </div>
+</header>
+
+<div class="portal-body">
+    <div class="page-header anim anim-1">
+        <a href="portal-guru.html" class="back-btn"><i class="fas fa-arrow-left"></i> Kembali</a>
+        <div>
+            <p class="page-eyebrow">Student Hub</p>
+            <h1 class="page-title">Atur Jadwal Ekskul</h1>
+        </div>
+    </div>
+
+    <div class="mgmt-layout">
+        
+        <div class="anim anim-2">
+            <div class="mgmt-panel">
+                <p class="mgmt-panel-title"><i class="fas fa-plus-circle"></i> Tambah Jadwal Ekskul</p>
+                <form id="ekskulForm" onsubmit="submitEkskul(event)">
+                    <div class="field-row">
+                        <div class="field-group">
+                            <label class="field-label">Hari</label>
+                            <select class="field-select" id="eHari" required>
+                                <option value="Senin">Senin</option>
+                                <option value="Selasa">Selasa</option>
+                                <option value="Rabu">Rabu</option>
+                                <option value="Kamis">Kamis</option>
+                                <option value="Jumat">Jumat</option>
+                            </select>
+                        </div>
+                        <div class="field-group">
+                            <label class="field-label">Jenjang</label>
+                            <select class="field-select" id="eJenjang">
+                                <option value="">Semua</option>
+                                <option value="SD">SD</option>
+                                <option value="SMP">SMP</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="field-group">
+                        <label class="field-label">Waktu</label>
+                        <input type="text" class="field-input" id="eWaktu" placeholder="Cth: 14.00 – 15.30" required>
+                    </div>
+                    <div class="field-group">
+                        <label class="field-label">Nama Ekskul</label>
+                        <input type="text" class="field-input" id="eNama" placeholder="Cth: Taekwondo, English Club..." required>
+                    </div>
+                    <div class="field-group">
+                        <label class="field-label">Pelatih / Pembina</label>
+                        <input type="text" class="field-input" id="ePelatih" placeholder="Nama pelatih atau guru">
+                    </div>
+                    <div class="field-group">
+                        <label class="field-label">Tempat</label>
+                        <input type="text" class="field-input" id="eTempat" placeholder="Cth: Aula Utama, Lab Bahasa...">
+                    </div>
+                    <button type="submit" class="submit-btn" id="submitBtn">
+                        <i class="fas fa-calendar-plus"></i> Simpan ke Jadwal
+                    </button>
+                </form>
+            </div>
+        </div>
+
+<div class="anim anim-3">
+            <div class="mgmt-panel">
+                <div class="entries-header">
+                    <p class="mgmt-panel-title" style="margin-bottom:0"><i class="fas fa-list"></i> Jadwal Saat Ini</p>
+                    <a href="https://docs.google.com/spreadsheets/d/1oa-OiOqP_mh5D7qesYnydUXfS2Yh8vQ7Eb-xxF7kmuU/edit"
+                       target="_blank" class="sheets-link"><i class="fas fa-table-cells"></i> Sheets</a>
+                </div>
+                <p class="entries-count" id="entriesCount">Memuat...</p>
+                <div id="entriesList"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="script-teacher.js"></script>
+<script>
+    const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbx1kUvYfKbeEtLQdSrLAQkU_d_f9h-VJrCSZD_qxx8LGWLVwyjqCVkIobbldjeSwLdWRQ/exec";
+    const EKSKUL_CSV_URL  = "https://docs.google.com/spreadsheets/d/e/2PACX-1vSIys5QOgE7HfD_Vna_8cGx-7Wl8CxkCqUHrZfGVO-zY4JNwfqEMgbiXXTJ3-wMrXDlK_onmNyqThdG/pub?output=csv";
+
+    let teacher = null;
+    document.addEventListener("DOMContentLoaded", () => {
+        teacher = requireTeacherAuth();
+        if (!teacher) return;
+        const ini = teacher.name.split(" ").slice(0,2).map(w=>w[0]).join("").toUpperCase();
+        document.getElementById("avatarInitials").textContent = ini;
+        document.getElementById("headerName").textContent = teacher.name;
+        document.getElementById("headerRole").textContent = teacher.jabatan || teacher.id;
+        loadEntries();
+    });
+
+    function parseCSV(text) {
+        const results = []; let cols = [], cur = "", inQ = false;
+        const t = text.trim();
+        for (let i = 0; i < t.length; i++) {
+            const ch = t[i];
+            if (ch === '"') { if (inQ && t[i+1]==='"'){cur+='"';i++;}else inQ=!inQ; }
+            else if (ch === ',' && !inQ) { cols.push(cur); cur = ""; }
+            else if ((ch==='\n'||ch==='\r') && !inQ) { if(ch==='\r'&&t[i+1]==='\n')i++; cols.push(cur); cur=""; if(cols.some(c=>c))results.push(cols); cols=[]; }
+            else cur += ch;
+        }
+        cols.push(cur); if(cols.some(c=>c))results.push(cols);
+        const first = (results[0]&&results[0][0])?results[0][0].trim().toLowerCase():"";
+        return (first==="hari"||first==="day") ? results.slice(1) : results;
+    }
+
+    async function loadEntries() {
+        const countEl = document.getElementById("entriesCount");
+        try {
+            const res  = await fetch(EKSKUL_CSV_URL);
+            const text = await res.text();
+            const rows = parseCSV(text);
+            const data = rows.map(r => ({
+                day: r[0]||"", time: r[1]||"", name: r[2]||"",
+                coach: r[3]||"", place: r[4]||"", jenjang: (r[5]||"").toUpperCase()
+            })).filter(e => e.day && e.name);
+            renderEntries(data);
+            countEl.textContent = `${data.length} jadwal`;
+        } catch { countEl.textContent = "Gagal memuat."; }
+    }
+
+    const DAY_ORDER = { Senin:1, Selasa:2, Rabu:3, Kamis:4, Jumat:5 };
+
+    function renderEntries(data) {
+        const c = document.getElementById("entriesList");
+        if (!data.length) { c.innerHTML=`<div class="empty-state"><i class="fas fa-calendar-xmark"></i><p>Belum ada jadwal.</p></div>`; return; }
+        const sorted = [...data].sort((a,b) => (DAY_ORDER[a.day]||9)-(DAY_ORDER[b.day]||9));
+        c.innerHTML = sorted.map(e => {
+            const badgeCls = e.jenjang==="SD" ? "badge-sd" : e.jenjang==="SMP" ? "badge-smp" : "badge-all";
+            const badgeLbl = e.jenjang || "Semua";
+            return `<div class="entry-card">
+                <div class="entry-day">${e.day}</div>
+                <div class="entry-info">
+                    <div class="entry-name">${e.name}</div>
+                    <div class="entry-meta">${e.time}${e.place ? " · "+e.place : ""}${e.coach ? " · "+e.coach : ""}</div>
+                </div>
+                <span class="entry-badge ${badgeCls}">${badgeLbl}</span>
+            </div>`;
+        }).join("");
+    }
+
+    async function submitEkskul(e) {
+        e.preventDefault();
+        const btn = document.getElementById("submitBtn");
+        btn.disabled = true; btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Menyimpan...';
+
+        const payload = {
+            hari:    document.getElementById("eHari").value,
+            waktu:   document.getElementById("eWaktu").value.trim(),
+            nama:    document.getElementById("eNama").value.trim(),
+            pelatih: document.getElementById("ePelatih").value.trim(),
+            tempat:  document.getElementById("eTempat").value.trim(),
+            jenjang: document.getElementById("eJenjang").value
+        };
+
+        if (APPS_SCRIPT_URL.includes("PASTE")) {
+            await new Promise(r=>setTimeout(r,800));
+            document.getElementById("ekskulForm").reset();
+            showToast("Demo: jadwal akan tersimpan setelah Apps Script terhubung.");
+        } else {
+            try {
+                const blob = new Blob([JSON.stringify(payload)], { type:"text/plain" });
+                navigator.sendBeacon(APPS_SCRIPT_URL, blob);
+                document.getElementById("ekskulForm").reset();
+                showToast("✅ Jadwal berhasil ditambahkan!");
+                setTimeout(loadEntries, 2000);
+            } catch { showToast("❌ Gagal menyimpan.", true); }
+        }
+
+        btn.disabled = false; btn.innerHTML = '<i class="fas fa-calendar-plus"></i> Simpan ke Jadwal';
+    }
+
+    function showToast(msg, isErr=false) {
+        const ex = document.querySelector(".toast"); if(ex) ex.remove();
+        const t = document.createElement("div");
+        t.className = "toast "+(isErr?"toast-err":"toast-ok");
+        t.textContent = msg;
+        document.body.appendChild(t);
+        setTimeout(()=>t.remove(), 4000);
+    }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,2145 @@
+﻿<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.7.2/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;1,500;1,600&family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <title>Sekolah Santo Andreas</title>
+
+    <style>
+        :root {
+            --cs-blue: #0162a6;
+            --cs-yellow: #ffcc00;
+            --cs-red: #da251e;
+            --cs-accent: #0088e3;
+            --cs-dark: #04111f;
+            --cs-display: 'Playfair Display', Georgia, serif;
+            --cs-sans: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        .auto-carousel {
+            height: 100vh;
+            min-height: 620px;
+        }
+
+        .slides {
+            height: 100vh !important;
+            min-height: 620px;
+            background: var(--cs-dark);
+        }
+
+        .slide {
+            position: absolute !important;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .slide-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center 40%;
+            transform: scale(1);
+        }
+
+        .slide.displaySlide .slide-img {
+            animation: slide-zoom-in 8s ease-out forwards;
+        }
+
+        @keyframes slide-zoom-in {
+            from {
+                transform: scale(1);
+            }
+
+            to {
+                transform: scale(1.12);
+            }
+        }
+
+        .tw-cursor {
+            display: inline-block;
+            width: 2px;
+            height: 0.9em;
+            margin-left: 3px;
+            background: var(--cs-yellow);
+            vertical-align: text-bottom;
+            animation: tw-blink 0.8s steps(1) infinite;
+        }
+
+        @keyframes tw-blink {
+
+            0%,
+            50% {
+                opacity: 1;
+            }
+
+            51%,
+            100% {
+                opacity: 0;
+            }
+        }
+
+        .slide-img-overlay {
+            position: absolute;
+            inset: 0;
+            background:
+                linear-gradient(135deg, rgba(0, 110, 201, 0.895) 0%, transparent 52%),
+                linear-gradient(180deg, transparent 28%, rgb(0, 24, 50) 100%);
+        }
+
+        .slide-content {
+            position: absolute !important;
+            inset: 0;
+            display: flex !important;
+            flex-direction: column !important;
+            align-items: flex-start !important;
+            justify-content: flex-end !important;
+            padding: 0 72px 96px !important;
+            background: none !important;
+            text-align: left !important;
+        }
+
+        .slide-eyebrow {
+            font-family: var(--cs-sans);
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 0.24em;
+            text-transform: uppercase;
+            color: var(--cs-yellow);
+            background: rgba(255, 204, 0, 0.12);
+            border: 1px solid rgba(255, 204, 0, 0.28);
+            border-radius: 50px;
+            padding: 6px 18px;
+            margin-bottom: 20px;
+            display: inline-block;
+            transform: none;
+        }
+
+        /* Heading swipes in first. Label, subheading & buttons follow halfway through */
+        .slide.displaySlide .slide-heading {
+            animation: heading-reveal 1.6s cubic-bezier(0.22, 1, 0.36, 1) both;
+        }
+
+        .slide.displaySlide .slide-eyebrow {
+            animation: eyebrow-reveal 1.6s cubic-bezier(0.22, 1, 0.36, 1) 1.2s both;
+        }
+
+        .slide.displaySlide .slide-subheading {
+            animation: slide-fade-up 0.9s cubic-bezier(0.22, 1, 0.36, 1) 1.2s both;
+        }
+
+        .slide.displaySlide .slide-btns {
+            animation: slide-fade-up 0.9s cubic-bezier(0.22, 1, 0.36, 1) 1.45s both;
+        }
+
+        @keyframes slide-fade-up {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes heading-reveal {
+            from {
+                opacity: 0;
+                transform: translateX(60px);
+            }
+
+            50% {
+                opacity: 0;
+                transform: translateX(60px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes eyebrow-reveal {
+            from {
+                opacity: 0;
+                transform: translateX(60px);
+            }
+
+            50% {
+                opacity: 0;
+                transform: translateX(60px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .slide-heading {
+            font-family: sans-serif !important;
+            font-size: 65px !important;
+            font-weight: 600 !important;
+            color: #fff !important;
+            line-height: 1.04 !important;
+            letter-spacing: -0.02em;
+            margin: 0 0 18px;
+            text-shadow: 0 4px 24px rgba(0, 0, 0, 0.4) !important;
+        }
+
+        .slide-heading em {
+            font-style: normal;
+            font-weight: 500;
+            font-size: 90px;
+            color: var(--cs-yellow);
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+        .slide-subheading {
+            font-family: var(--cs-sans) !important;
+            font-size: 15px !important;
+            font-weight: 300 !important;
+            color: rgba(255, 255, 255, 0.6) !important;
+            max-width: 500px;
+            line-height: 1.8 !important;
+            margin-bottom: 36px;
+        }
+
+        .slide-btns {
+            display: flex;
+            gap: 14px;
+            flex-wrap: wrap;
+        }
+
+        .cs-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 9px;
+            padding: 14px 28px;
+            border-radius: 50px;
+            font-family: var(--cs-sans);
+            font-size: 13px;
+            font-weight: 700;
+            cursor: pointer;
+            border: none;
+            text-decoration: none;
+            letter-spacing: 0.04em;
+            transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        .cs-btn i {
+            font-size: 12px;
+            color: inherit;
+        }
+
+        .cs-btn--primary {
+            background: var(--cs-yellow);
+            color: var(--cs-dark);
+            box-shadow: 0 8px 24px rgba(255, 204, 0, 0.32);
+        }
+
+        .cs-btn--primary:hover {
+            background: #fff;
+            transform: translateY(-3px);
+            box-shadow: 0 14px 32px rgba(255, 204, 0, 0.22);
+        }
+
+        .cs-btn--accent {
+            background: var(--cs-blue);
+            color: #fff;
+            box-shadow: 0 8px 24px rgba(1, 98, 166, 0.38);
+        }
+
+        .cs-btn--accent:hover {
+            background: var(--cs-accent);
+            transform: translateY(-3px);
+        }
+
+        .cs-btn--ghost {
+            background: rgba(255, 255, 255, 0.08);
+            color: rgba(255, 255, 255, 0.88);
+            border: 1px solid rgba(255, 255, 255, 0.22);
+            backdrop-filter: blur(8px);
+        }
+
+        .cs-btn--ghost:hover {
+            background: rgba(255, 255, 255, 0.16);
+            transform: translateY(-3px);
+        }
+
+        .slide .progress-bar {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            height: 3px;
+            width: 0%;
+            background: #1899cc;
+            z-index: 310;
+            border-radius: 0 2px 2px 0;
+            transition: none;
+        }
+
+        .slide.displaySlide .progress-bar {
+            animation: cs-progress 5s linear forwards;
+        }
+
+        @keyframes cs-progress {
+            from {
+                width: 0%;
+            }
+
+            to {
+                width: 100%;
+            }
+        }
+
+        .carousel-dots {
+            z-index: 11000 !important;
+        }
+
+        .dot {
+            width: 22px !important;
+            height: 4px !important;
+            border-radius: 4px !important;
+            background: rgba(255, 255, 255, 0.3) !important;
+            transition: all 0.4s ease !important;
+        }
+
+        .dotActive {
+            width: 44px !important;
+            height: 4px !important;
+            border-radius: 4px !important;
+            background: var(--cs-yellow) !important;
+            transform: none !important;
+        }
+
+        .carousel-btn {
+            width: 46px !important;
+            height: 46px !important;
+            background: rgba(255, 255, 255, 0.08) !important;
+            border: 1px solid rgba(255, 255, 255, 0.2) !important;
+            backdrop-filter: blur(10px);
+            border-radius: 50%;
+        }
+
+        .carousel-btn:hover {
+            background: var(--cs-yellow) !important;
+            border-color: var(--cs-yellow) !important;
+            transform: scale(1.1) !important;
+        }
+
+        .carousel-btn:hover .fas {
+            color: var(--cs-dark) !important;
+        }
+
+        .achv-title,
+        .programs-title,
+        .why-title,
+        .news-main-title,
+        .faq-title {
+            font-family: 'Times New Roman', Georgia, serif !important;
+        }
+
+        .achv-title {
+            color: #fff !important;
+        }
+
+        .achv-title em,
+        .programs-title em {
+            color: var(--cs-yellow) !important;
+        }
+
+        .achv-eyebrow {
+            color: rgba(255, 255, 255, 0.75) !important;
+            letter-spacing: 0.2em;
+        }
+
+        .programs-eyebrow {
+            color: rgba(255, 255, 255, 0.55) !important;
+        }
+
+        .programs-title-line {
+            background: linear-gradient(90deg, var(--cs-yellow), var(--cs-accent)) !important;
+        }
+
+        .why-title span,
+        .news-main-title span,
+        .faq-title span {
+            color: var(--cs-yellow) !important;
+        }
+
+        .why-eyebrow,
+        .news-eyebrow,
+        .faq-eyebrow {
+            color: var(--cs-yellow) !important;
+        }
+
+        .mobile-nav {
+            display: none;
+        }
+
+        .mobile-hero {
+            display: none;
+        }
+
+        @media (max-width: 768px) {
+            .nav-bar {
+                transform: translateY(-100%);
+                transition: transform 0.42s cubic-bezier(0.22, 1, 0.36, 1) !important;
+            }
+
+            .nav-bar.nav-mobile-visible {
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 768px) {
+
+            .nav-container {
+                justify-content: space-between !important;
+                padding: 0 16px !important;
+                height: 75px;
+            }
+
+            .nav-links,
+            .social-links {
+                display: none !important;
+            }
+
+            .hamburger {
+                display: flex !important;
+                position: relative;
+                z-index: 1002;
+            }
+
+            .logo img {
+                width: 230px !important;
+                height: auto !important;
+            }
+
+            .achv-stats {
+                grid-template-columns: 1fr 1fr !important;
+                gap: 10px !important;
+            }
+
+            .achv-stat {
+                padding: 18px 10px 14px !important;
+            }
+
+            .achv-stat-number {
+                font-size: 28px !important;
+            }
+
+            .achv-stat-label {
+                font-size: 11px !important;
+            }
+
+            .achv-stat-icon {
+                width: 36px !important;
+                height: 36px !important;
+                font-size: 15px !important;
+                margin-bottom: 10px !important;
+            }
+
+            .auto-carousel {
+                display: none !important;
+            }
+
+            .mobile-hero {
+                display: flex !important;
+            }
+
+            .news-filters {
+                flex-direction: row !important;
+                flex-wrap: nowrap !important;
+                justify-content: center !important;
+                gap: 6px !important;
+                padding: 0 16px !important;
+                overflow-x: auto !important;
+            }
+
+            .news-filter {
+                flex-shrink: 0 !important;
+                font-size: 10px !important;
+                padding: 7px 12px !important;
+                letter-spacing: 0.03em !important;
+            }
+
+            .tb-stat-strip {
+                display: none !important;
+            }
+
+        }
+
+        .mobile-hero {
+            display: none;
+            position: relative;
+            min-height: 100svh;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-end;
+            overflow: hidden;
+            padding-bottom: 100px;
+        }
+
+        .mobile-hero-bg {
+            position: absolute;
+            inset: 0;
+        }
+
+        .mobile-hero-bg img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center 30%;
+            animation: mh-zoom 18s ease-out forwards;
+        }
+
+        @keyframes mh-zoom {
+            from {
+                transform: scale(1.10);
+            }
+
+            to {
+                transform: scale(1.00);
+            }
+        }
+
+        .mobile-hero-overlay {
+            position: absolute;
+            inset: 0;
+            background:
+                linear-gradient(160deg, rgba(0, 40, 120, 0.72) 0%, rgba(1, 98, 166, 0.30) 45%, transparent 70%),
+                linear-gradient(180deg, rgba(4, 17, 31, 0.25) 0%, transparent 35%, rgba(4, 17, 31, 0.96) 75%);
+        }
+
+        .mobile-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, #ffcc00 40%, #0088e3 70%, transparent);
+            z-index: 3;
+        }
+
+        .mobile-hero::after {
+            content: '';
+            position: absolute;
+            top: 10%;
+            right: -60px;
+            width: 260px;
+            height: 260px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(0, 136, 227, 0.25) 0%, transparent 70%);
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        .mobile-hero-content {
+            position: relative;
+            z-index: 2;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            padding: 0 28px;
+            width: 100%;
+        }
+
+        .mobile-hero-badge {
+            font-size: 9px;
+            font-weight: 700;
+            letter-spacing: 0.24em;
+            text-transform: uppercase;
+            color: var(--cs-yellow);
+            background: rgba(255, 204, 0, 0.12);
+            border: 1px solid rgba(255, 204, 0, 0.32);
+            border-radius: 50px;
+            padding: 5px 16px;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 7px;
+            animation: mh-fade 0.8s 0.1s ease both;
+        }
+
+        .mobile-hero-badge::before {
+            content: '';
+            width: 5px;
+            height: 5px;
+            border-radius: 50%;
+            background: var(--cs-yellow);
+            animation: mh-pulse 1.6s ease-in-out infinite;
+        }
+
+        @keyframes mh-pulse {
+
+            0%,
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+
+            50% {
+                opacity: 0.4;
+                transform: scale(0.7);
+            }
+        }
+
+        .mobile-hero-logo {
+            width: 160px;
+            height: auto;
+            filter: drop-shadow(0 4px 16px rgba(0, 0, 0, 0.4));
+            margin-bottom: 5px;
+            animation: mh-fade 0.8s 0.2s ease both;
+        }
+
+        .mobile-hero-title {
+            font-family: var(--cs-display);
+            font-size: clamp(34px, 10vw, 52px);
+            font-weight: 900;
+            color: #fff;
+            line-height: 1.08;
+            letter-spacing: -0.02em;
+            margin-bottom: 10px;
+            text-shadow: 0 4px 24px rgba(0, 0, 0, 0.4);
+            animation: mh-fade 0.8s 0.3s ease both;
+        }
+
+        .mobile-hero-title em {
+            font-style: italic;
+            font-weight: 400;
+            color: var(--cs-yellow);
+            font-family: var(--cs-sans);
+        }
+
+        .mobile-hero-sub {
+            font-size: 12px;
+            font-weight: 500;
+            color: rgba(255, 255, 255, 0.50);
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            animation: mh-fade 0.8s 0.4s ease both;
+        }
+
+        .mobile-hero-divider {
+            width: 48px;
+            height: 2px;
+            border-radius: 2px;
+            background: linear-gradient(90deg, var(--cs-yellow), var(--cs-accent));
+            margin-bottom: 20px;
+            animation: mh-fade 0.8s 0.45s ease both;
+        }
+
+        .mobile-hero-btns {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            width: 100%;
+            max-width: 280px;
+            animation: mh-fade 0.8s 0.6s ease both;
+        }
+
+        .mobile-hero-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 9px;
+            padding: 15px 24px;
+            border-radius: 50px;
+            font-family: var(--cs-sans);
+            font-size: 14px;
+            font-weight: 700;
+            text-decoration: none;
+            border: none;
+            transition: all 0.3s ease;
+        }
+
+        .mobile-hero-btn--primary {
+            background: var(--cs-yellow);
+            color: var(--cs-dark);
+            box-shadow: 0 8px 28px rgba(255, 204, 0, 0.45);
+        }
+
+        .mobile-hero-btn--ghost {
+            background: rgba(255, 255, 255, 0.08);
+            color: #fff;
+            border: 1px solid rgba(255, 255, 255, 0.22);
+            backdrop-filter: blur(10px);
+        }
+
+        .mobile-hero-scroll {
+            position: absolute;
+            bottom: 18px;
+            left: 0;
+            right: 0;
+            z-index: 2;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 5px;
+            animation: bounce-down 1.6s ease infinite;
+        }
+
+        .mobile-hero-scroll span {
+            font-size: 9px;
+            color: rgba(255, 255, 255, 0.30);
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+        }
+
+        .mobile-hero-scroll i {
+            color: rgba(255, 255, 255, 0.40);
+            font-size: 13px;
+        }
+
+        @keyframes bounce-down {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(6px);
+            }
+        }
+
+        @keyframes mh-fade {
+            from {
+                opacity: 0;
+                transform: translateY(18px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="nav-bar">
+        <div class="nav-container">
+            <div class="logo">
+                <a href=""><img src="logo-landscape-ssantoandreas.png" alt="St-Andreas-Logo" width="290px"
+                        height="70px"></a>
+            </div>
+            <ul class="nav-links">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link">Halaman Utama</a>
+                </li>
+                <li class="nav-item">
+                    <a href="tentang-kami.html" class="nav-link">Tentang Kami<i class="fas fa-chevron-down"></i></a>
+                    <div class="dropdown-menu">
+                        <a href="tentang-kami.html#visi-misi">Visi & Misi</a>
+                        <a href="tentang-kami.html#sejarah">Sejarah</a>
+                        <a href="tentang-kami.html#fasilitas">Fasilitas</a>
+                    </div>
+                </li>
+
+                <li class="nav-item">
+                    <a href="jenjang.html" class="nav-link">Jenjang Pendidikan<i class="fas fa-chevron-down"></i></a>
+                    <div class="dropdown-menu">
+                        <a href="tk.html">TK / Nursery</a>
+                        <a href="sd.html">SD</a>
+                        <a href="smp.html">SMP </a>
+                    </div>
+                </li>
+
+                <li class="nav-item">
+                    <a href="#" onclick="event.preventDefault()" class="nav-link">
+                        Portal</a>
+                    <div class="dropdown-menu">
+                        <a href="login.html">Portal Siswa</a>
+                        <a href="login-teacher.html">Portal Guru</a>
+                    </div>
+                </li>
+
+                <li class="nav-item">
+                    <a href="pendaftaran.html" class="nav-link">
+                        Pendaftaran</a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="#" onclick="event.preventDefault()" class="nav-link">
+                        Informasi</a>
+                    <div class="dropdown-menu">
+                        <a href="berita.html">Berita</a>
+                        <a href="kalendar-akademik.html">Kalender Akademik</a>
+                        <a href="prestasi.html">Prestasi</a>
+                        <a href="contact.html">Hubungi Kami</a>
+                    </div>
+                </li>
+            </ul>
+
+            <div class="social-links">
+                <a href="https://www.facebook.com/sstandreas" class="social-link"><i class="fab fa-facebook"></i></a>
+                <a href="https://www.instagram.com/sstandreas/" class="social-link"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.youtube.com/channel/UC2fmVdeHtxnXl1LMYu7WAAQ" class="social-link"><i
+                        class="fab fa-youtube"></i></a>
+            </div>
+
+            <button class="hamburger" id="hamburgerBtn" aria-label="Menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+
+        <div class="mobile-nav" id="mobileNav">
+            <ul class="mobile-nav-links">
+                <li><a href="index.html">Halaman Utama</a></li>
+                <li class="mobile-dropdown">
+                    <a href="tentang-kami.html">Tentang Kami</a>
+                    <div class="mobile-sub">
+                        <a href="tentang-kami.html#visi-misi">Visi &amp; Misi</a>
+                        <a href="tentang-kami.html#sejarah">Sejarah</a>
+                        <a href="tentang-kami.html#fasilitas">Fasilitas</a>
+                    </div>
+                </li>
+                <li class="mobile-dropdown">
+                    <a href="jenjang.html">Jenjang Pendidikan</a>
+                    <div class="mobile-sub">
+                        <a href="tk.html">TK / Nursery</a>
+                        <a href="sd.html">SD</a>
+                        <a href="smp.html">SMP</a>
+                    </div>
+                </li>
+                <li class="mobile-dropdown">
+                    <a href="#">Portal</a>
+                    <div class="mobile-sub">
+                        <a href="login.html">Portal Siswa</a>
+                        <a href="login-teacher.html">Portal Guru</a>
+                    </div>
+                </li>
+                <li><a href="pendaftaran.html">Pendaftaran</a></li>
+                <li class="mobile-dropdown">
+                    <a href="#">Informasi</a>
+                    <div class="mobile-sub">
+                        <a href="berita.html">Berita</a>
+                        <a href="kalendar-akademik.html">Kalender Akademik</a>
+                        <a href="prestasi.html">Prestasi</a>
+                        <a href="contact.html">Hubungi Kami</a>
+                    </div>
+                </li>
+            </ul>
+
+            <div class="mobile-nav-social">
+                <a href="https://www.facebook.com/sstandreas" aria-label="Facebook"><i
+                        class="fab fa-facebook-f"></i></a>
+                <a href="https://www.instagram.com/sstandreas/" aria-label="Instagram"><i
+                        class="fab fa-instagram"></i></a>
+                <a href="https://www.youtube.com/channel/UC2fmVdeHtxnXl1LMYu7WAAQ" aria-label="YouTube"><i
+                        class="fab fa-youtube"></i></a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="mobile-hero">
+        <div class="mobile-hero-bg">
+            <img src="gedung-thomasaquinas-ssantoandreas.jpg" alt="Sekolah Santo Andreas">
+        </div>
+        <div class="mobile-hero-overlay"></div>
+
+        <div class="mobile-hero-content">
+            <div class="mobile-hero-badge">Est. 1990 · Jakarta Barat</div>
+            <img src="logo-trans-ssantoandreas.png" alt="Logo" class="mobile-hero-logo">
+            <h1 class="mobile-hero-title">Sekolah<br><em>Santo Andreas</em></h1>
+            <p class="mobile-hero-sub">Gembira · Cerdas · Peduli</p>
+            <div class="mobile-hero-divider"></div>
+            <div class="mobile-hero-btns">
+                <a href="pendaftaran.html" class="mobile-hero-btn mobile-hero-btn--primary">
+                    <i class="fas fa-paper-plane"></i> Daftar Sekarang
+                </a>
+                <a href="jenjang.html" class="mobile-hero-btn mobile-hero-btn--ghost">
+                    <i class="fas fa-graduation-cap"></i> Lihat Jenjang
+                </a>
+            </div>
+        </div>
+
+        <div class="mobile-hero-scroll">
+            <span>Scroll</span>
+            <i class="fas fa-chevron-down"></i>
+        </div>
+    </div>
+
+    <div class="main">
+
+        <div class="auto-carousel">
+            <div class="carousel-container">
+
+                <div class="slides">
+
+                    <div class="slide">
+                        <img class="slide-img" src="gedung-logo-ssantoandreas.jpg" alt="Sekolah Santo Andreas">
+                        <div class="slide-img-overlay"></div>
+                        <div class="slide-content">
+                            <span class="slide-eyebrow">Est. 1990 · Jakarta Barat</span>
+                            <h1 class="slide-heading">Selamat Datang di<br><em>Sekolah Santo Andreas</em></h1>
+                            <p class="slide-subheading">Lebih dari tiga dekade membentuk generasi yang gembira, cerdas,
+                                dan peduli. Diarah dengan iman sebagai fondasi dan keunggulan sebagai tujuan.</p>
+                            <div class="slide-btns">
+                                <a href="pendaftaran.html"><button class="cs-btn cs-btn--primary">Daftar Sekarang <i
+                                            class="fas fa-paper-plane"></i></button></a>
+                                <a href="tentang-kami.html"><button class="cs-btn cs-btn--ghost">Tentang Kami <i
+                                            class="fas fa-arrow-right"></i></button></a>
+                            </div>
+                        </div>
+                        <div class="progress-bar"></div>
+                    </div>
+
+                    <div class="slide">
+                        <img class="slide-img" src="tk-rosario-ssantoandreas.jpg"
+                            alt="Menerapkan Gembira, Cerdas, Peduli">
+                        <div class="slide-img-overlay"></div>
+                        <div class="slide-content">
+                            <span class="slide-eyebrow">Kurikulum Merdeka · Nilai Kristiani</span>
+                            <h1 class="slide-heading">Ilmu dan Budi<br><em>Pekerti Luhur</em></h1>
+                            <p class="slide-subheading">Sekolah St. Andreas membentuk siswa-siswi yang cerdas secara
+                                akademis, spiritual dan emosional dengan menumbuhkan pribadi mereka yang berbudi pekerti
+                                luhur.
+                            </p>
+                            <div class="slide-btns">
+                                <a href="tentang-kami.html"><button class="cs-btn cs-btn--primary">Baca Tentang Kami <i
+                                            class="fas fa-book-open-reader"></i></button></a>
+                            </div>
+                        </div>
+                        <div class="progress-bar"></div>
+                    </div>
+
+                    <div class="slide">
+                        <img class="slide-img" src="aula-bethlehem-ssantoandreas.jpg" alt="Aula Bethlehem">
+                        <div class="slide-img-overlay"></div>
+                        <div class="slide-content">
+                            <span class="slide-eyebrow">Kenyamanan &amp; Kebersihan</span>
+                            <h1 class="slide-heading">Fasilitas<br><em>Moderen</em></h1>
+                            <p class="slide-subheading">Fasilitas kami, mulai dari kelas hingga aula sekolah dirancang
+                                untuk memenuhi kebutuhan proses belajar dan mengajar dengan fasilitas bersih dan
+                                moderen.</p>
+                            <div class="slide-btns">
+                                <a href="tentang-kami.html"><button class="cs-btn cs-btn--primary">Lihat Fasilitas <i
+                                            class="fa-solid fa-flask"></i></button></a>
+                            </div>
+                        </div>
+                        <div class="progress-bar"></div>
+                    </div>
+
+                    <div class="slide">
+                        <img class="slide-img" src="tentang-kami-hero-ssantoandreas.jpg" alt="Program Filming SMP">
+                        <div class="slide-img-overlay"></div>
+                        <div class="slide-content">
+                            <span class="slide-eyebrow">Mengembangkan Potensi Siswa-Siswi</span>
+                            <h1 class="slide-heading">Lebih dari<br><em>15+ Pilihan Ekskul</em></h1>
+                            <p class="slide-subheading">Dari ekskul robotics hingga fotografi, siswa-siswi kami dapat
+                                kesempatan
+                                untuk mengembangkan potensial yang mereka miliki masing-masing.</p>
+                            <div class="slide-btns">
+                                <a href="jenjang.html"><button class="cs-btn cs-btn--primary">Lihat Jenjang Pendidikan
+                                        <i class="fa-solid fa-music"></i></button></a>
+                            </div>
+                        </div>
+                        <div class="progress-bar"></div>
+                    </div>
+
+                    <div class="slide">
+                        <img class="slide-img" src="smp-hero-ssantoandreas.jpg" alt="Komunitas">
+                        <div class="slide-img-overlay"></div>
+                        <div class="slide-content">
+                            <span class="slide-eyebrow">Membangun Komunitas &amp; Keluarga Sekolah</span>
+                            <h1 class="slide-heading">Bertumbuh Bersama<br><em>Keluarga Sekolah</em></h1>
+                            <p class="slide-subheading">Sekolah St. Andreas hadir untuk menumbuhkan keterampilan lunak
+                                siswa-siswi.
+                                Termasuk bekerja kelompok, saling menolong satu sama lain, dan program khusus pembinaan
+                                kepemimpinan.
+                            </p>
+                            <div class="slide-btns">
+                                <a href="berita.html"><button class="cs-btn cs-btn--primary">Lihat Program Terkini
+                                        <i class="fas fa-heart"></i></button></a>
+                                <a href="kalendar-akademik.html"><button class="cs-btn cs-btn--ghost">Kalendar Akademik
+                                        <i class="fas fa-arrow-right"></i></button></a>
+                            </div>
+                        </div>
+                        <div class="progress-bar"></div>
+                    </div>
+
+                    <div class="slide">
+                        <img class="slide-img" src="gedung-thomasaquinas-ssantoandreas.jpg" alt="PPDB 2026/2027">
+                        <div class="slide-img-overlay"></div>
+                        <div class="slide-content">
+                            <span class="slide-eyebrow">PPDB 2026/2027 · Kuota Terbatas</span>
+                            <h1 class="slide-heading">Bergabunglah<br><em>dengan Kami</em></h1>
+                            <p class="slide-subheading">Daftarkan putra-putri Anda sekarang — tempat tersedia untuk
+                                jenjang TK, SD, dan SMP.</p>
+                            <div class="slide-btns">
+                                <a href="pendaftaran.html"><button class="cs-btn cs-btn--primary">Daftar Sekarang <i
+                                            class="fas fa-paper-plane"></i></button></a>
+                                <a href="contact.html"><button class="cs-btn cs-btn--ghost">Hubungi Kami <i
+                                            class="fas fa-arrow-right"></i></button></a>
+                            </div>
+                        </div>
+                        <div class="progress-bar"></div>
+                    </div>
+
+                    <div class="carousel-dots">
+                        <span class="dot" data-slide="0"></span>
+                        <span class="dot" data-slide="1"></span>
+                        <span class="dot" data-slide="2"></span>
+                        <span class="dot" data-slide="3"></span>
+                        <span class="dot" data-slide="4"></span>
+                        <span class="dot" data-slide="5"></span>
+                    </div>
+
+                </div>
+
+                <button class="carousel-btn btn-left" onclick="prevSlide()"><i class="fas fa-chevron-left"
+                        style="color: white;"></i></button>
+                <button class="carousel-btn btn-right" onclick="nextSlide()"><i class="fas fa-chevron-right"
+                        style="color: white;"></i></button>
+            </div>
+        </div>
+    </div>
+
+    <section class="achv-section">
+
+        <div class="achv-blob blob-1"></div>
+        <div class="achv-blob blob-2"></div>
+        <div class="achv-blob blob-3"></div>
+
+        <div class="achv-header">
+            <p class="achv-eyebrow">Tentang Kami</p>
+            <h2 class="achv-title">Lihat Profil <em>Sekolah St. Andreas</em></h2>
+            <p class="achv-subtitle">Lebih dari tiga dekade membentuk generasi unggul di Jakarta Barat.</p>
+        </div>
+
+        <div class="achv-play-cta">
+            <div class="achv-play-label">
+                <span>Tonton Video Profil</span>
+            </div>
+            <div class="achv-arrow-bounce">
+                <i class="fas fa-chevron-down"></i>
+                <i class="fas fa-chevron-down"></i>
+            </div>
+        </div>
+
+        <div class="achv-video-wrapper">
+
+            <div class="achv-video-ring"></div>
+            <div class="achv-video-frame">
+                <iframe src="https://www.youtube.com/embed/5qJwG4rDO8A" title="Profil Sekolah Santo Andreas"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen>
+                </iframe>
+            </div>
+        </div>
+
+        <div class="achv-stats">
+
+            <div class="achv-stat" style="--delay: 0s">
+                <div class="achv-stat-icon">
+                    <i class="fas fa-handshake"></i>
+                </div>
+                <div class="achv-stat-body">
+                    <span class="achv-stat-number" data-target="1000">0</span>
+                    <span class="achv-stat-plus">+</span>
+                </div>
+                <p class="achv-stat-label">Orang Tua Percaya</p>
+                <div class="achv-stat-bar"></div>
+            </div>
+
+            <div class="achv-stat" style="--delay: 0.1s">
+                <div class="achv-stat-icon">
+                    <i class="fas fa-chalkboard-teacher"></i>
+                </div>
+                <div class="achv-stat-body">
+                    <span class="achv-stat-number" data-target="30">0</span>
+                    <span class="achv-stat-plus">+</span>
+                </div>
+                <p class="achv-stat-label">Guru Bersertifikat</p>
+                <div class="achv-stat-bar"></div>
+            </div>
+
+            <div class="achv-stat" style="--delay: 0.2s">
+                <div class="achv-stat-icon">
+                    <i class="fas fa-user-graduate"></i>
+                </div>
+                <div class="achv-stat-body">
+                    <span class="achv-stat-number" data-target="2500">0</span>
+                    <span class="achv-stat-plus">+</span>
+                </div>
+                <p class="achv-stat-label">Alumni</p>
+                <div class="achv-stat-bar"></div>
+            </div>
+
+            <div class="achv-stat" style="--delay: 0.3s">
+                <div class="achv-stat-icon">
+                    <i class="fas fa-school"></i>
+                </div>
+                <div class="achv-stat-body">
+                    <span class="achv-stat-number" data-target="1990">0</span>
+                    <span class="achv-stat-plus"></span>
+                </div>
+                <p class="achv-stat-label">Tahun Berdiri</p>
+                <div class="achv-stat-bar"></div>
+            </div>
+
+        </div>
+
+    </section>
+
+    <script>
+        /* ── Count-up animation triggered when stats enter viewport ── */
+        (function () {
+            const stats = document.querySelectorAll(".achv-stat-number");
+            let animated = false;
+
+            function countUp(el) {
+                const target = +el.dataset.target;
+                const duration = 1800;
+                const step = target / (duration / 16);
+                let current = 0;
+
+                const timer = setInterval(() => {
+                    current += step;
+                    if (current >= target) {
+                        el.textContent = target.toLocaleString();
+                        clearInterval(timer);
+                    } else {
+                        el.textContent = Math.floor(current).toLocaleString();
+                    }
+                }, 16);
+            }
+
+            const observer = new IntersectionObserver((entries) => {
+                if (entries[0].isIntersecting && !animated) {
+                    animated = true;
+                    stats.forEach((el, i) => {
+                        setTimeout(() => countUp(el), i * 120);
+                    });
+                }
+            }, { threshold: 0.3 });
+
+            const section = document.querySelector(".achv-stats");
+            if (section) observer.observe(section);
+        })();
+    </script>
+
+    <section class="programs-section">
+
+        <div class="programs-heading-block">
+            <p class="programs-eyebrow">Jenjang Pendidikan</p>
+            <h2 class="programs-title">Program Sekolah<br><em>St. Andreas</em></h2>
+            <div class="programs-title-line"></div>
+        </div>
+
+        <div class="programs-panels" id="programsPanels">
+
+            <div class="panel" data-index="0">
+                <div class="panel-bg" style="background-image: url('tk-rosario-ssantoandreas.jpg')">
+                </div>
+                <div class="panel-tint"></div>
+
+                <div class="panel-label">
+                    <span class="panel-tag">01</span>
+                    <h3 class="panel-name">TK</h3>
+                </div>
+
+                <div class="panel-content">
+                    <h3 class="panel-content-title">Taman Kanak-Kanak</h3>
+                    <p class="panel-content-desc">
+                        Pondasi pertama perjalanan belajar si kecil — penuh eksplorasi,
+                        bermain, dan kasih sayang. Kami membentuk karakter, rasa ingin tahu,
+                        dan kecintaan belajar sejak dini.
+                    </p>
+                    <ul class="panel-features">
+                        <li><i class="fas fa-check"></i> Usia 4 – 6 tahun</li>
+                        <li><i class="fas fa-check"></i> Kurikulum berbasis bermain</li>
+                        <li><i class="fas fa-check"></i> Guru bersertifikat</li>
+                    </ul>
+                    <a href="tk.html" class="panel-btn">
+                        Pelajari Lebih Lanjut <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="panel active" data-index="1">
+                <div class="panel-bg" style="background-image: url('sdm-upacara-ssantoandreas.jpg')">
+                </div>
+                <div class="panel-tint"></div>
+
+                <div class="panel-label">
+                    <span class="panel-tag">02</span>
+                    <h3 class="panel-name">SD</h3>
+                </div>
+
+                <div class="panel-content">
+                    <h3 class="panel-content-title">Sekolah Dasar</h3>
+                    <p class="panel-content-desc">
+                        Enam tahun membangun ilmu, budi pekerti, dan semangat juang.
+                        Siswa dididik untuk unggul akademis sekaligus tumbuh menjadi
+                        pribadi yang peduli dan berkarakter Kristiani.
+                    </p>
+                    <ul class="panel-features">
+                        <li><i class="fas fa-check"></i> Kelas 1 – 6</li>
+                        <li><i class="fas fa-check"></i> Kurikulum Merdeka</li>
+                        <li><i class="fas fa-check"></i> Ekstrakurikuler lengkap</li>
+                    </ul>
+                    <a href="sd.html" class="panel-btn">
+                        Pelajari Lebih Lanjut <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="panel" data-index="2">
+                <div class="panel-bg" style="background-image: url('smpm-project2-ssantoandreas.jpg')">
+                </div>
+                <div class="panel-tint"></div>
+
+                <div class="panel-label">
+                    <span class="panel-tag">03</span>
+                    <h3 class="panel-name">SMP</h3>
+                </div>
+
+                <div class="panel-content">
+                    <h3 class="panel-content-title">Sekolah Menengah Pertama</h3>
+                    <p class="panel-content-desc">
+                        Program SMP kami dirancang untuk mempersiapkan siswa menghadapi
+                        tantangan akademik dan kehidupan nyata.
+                    </p>
+                    <ul class="panel-features">
+                        <li><i class="fas fa-check"></i> Kelas 7 – 9</li>
+                        <li><i class="fas fa-check"></i> Lab sains & komputer</li>
+                        <li><i class="fas fa-check"></i> Pembinaan kepemimpinan</li>
+                    </ul>
+                    <a href="smp.html" class="panel-btn">
+                        Pelajari Lebih Lanjut <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <script>
+
+        const panels = document.querySelectorAll(".panel");
+        panels.forEach(panel => {
+            panel.addEventListener("click", () => {
+                panels.forEach(p => p.classList.remove("active"));
+                panel.classList.add("active");
+            });
+        });
+    </script>
+    </div>
+
+    <section class="why-section">
+
+        <div class="why-grid-lines">
+            <span></span><span></span><span></span><span></span><span></span>
+        </div>
+
+        <div class="why-orb orb-a"></div>
+        <div class="why-orb orb-b"></div>
+        <div class="why-orb orb-c"></div>
+
+        <div class="why-header">
+            <p class="why-eyebrow"><i class="fas fa-star"></i> Mengapa Memilih Kami</p>
+            <h2 class="why-title">Bukan Sekadar Sekolah.<br><span>Rumah Kedua Mereka.</span></h2>
+            <p class="why-desc">Kami hadir dengan pendekatan yang berbeda — karena setiap anak berhak mendapat yang
+                terbaik.</p>
+        </div>
+
+        <div class="why-grid">
+
+            <div class="why-card" data-tilt>
+                <div class="why-card-glow"></div>
+                <div class="why-card-inner">
+                    <div class="why-icon-wrap">
+                        <div class="why-icon-bg"></div>
+                        <i class="fas fa-heart why-icon"></i>
+                    </div>
+                    <div class="why-card-number">01</div>
+                    <h3 class="why-card-title">Nilai Kristiani yang Hidup</h3>
+                    <p class="why-card-desc">Bukan hanya pelajaran agama. Kami menanamkan kasih, kejujuran, dan
+                        kepedulian ke dalam setiap aktivitas harian di sekolah.</p>
+                    <div class="why-card-line"></div>
+                    <span class="why-tag">Karakter & Rohani</span>
+                </div>
+            </div>
+
+            <div class="why-card" data-tilt>
+                <div class="why-card-glow"></div>
+                <div class="why-card-inner">
+                    <div class="why-icon-wrap">
+                        <div class="why-icon-bg"></div>
+                        <i class="fas fa-chalkboard-teacher why-icon"></i>
+                    </div>
+                    <div class="why-card-number">02</div>
+                    <h3 class="why-card-title">30+ Guru Bersertifikat</h3>
+                    <p class="why-card-desc">Tim pengajar kami tersertifikasi, terus berkembang dan berpengalaman dalam
+                        menciptakan murid-murid yang luar biasa.</p>
+                    <div class="why-card-line"></div>
+                    <span class="why-tag">Tenaga Pendidik</span>
+                </div>
+            </div>
+
+            <div class="why-card" data-tilt>
+                <div class="why-card-glow"></div>
+                <div class="why-card-inner">
+                    <div class="why-icon-wrap">
+                        <div class="why-icon-bg"></div>
+                        <i class="fas fa-flask why-icon"></i>
+                    </div>
+                    <div class="why-card-number">03</div>
+                    <h3 class="why-card-title">Fasilitas Modern & Lengkap</h3>
+                    <p class="why-card-desc">Lab sains, lab komputer, lapangan olahraga, kolam renang, kantin, dan
+                        lainnya. Semua tersedia
+                        agar eksplorasi anak tak pernah terbatas.</p>
+                    <div class="why-card-line"></div>
+                    <span class="why-tag">Fasilitas</span>
+                </div>
+            </div>
+
+            <div class="why-card" data-tilt>
+                <div class="why-card-glow"></div>
+                <div class="why-card-inner">
+                    <div class="why-icon-wrap">
+                        <div class="why-icon-bg"></div>
+                        <i class="fas fa-trophy why-icon"></i>
+                    </div>
+                    <div class="why-card-number">04</div>
+                    <h3 class="why-card-title">Prestasi yang Bicara</h3>
+                    <p class="why-card-desc">Dari olimpiade sains hingga kompetisi bahasa. Siswa kami konsisten meraih
+                        penghargaan di berbagai tingkat.</p>
+                    <div class="why-card-line"></div>
+                    <span class="why-tag">Prestasi</span>
+                </div>
+            </div>
+
+            <div class="why-card" data-tilt>
+                <div class="why-card-glow"></div>
+                <div class="why-card-inner">
+                    <div class="why-icon-wrap">
+                        <div class="why-icon-bg"></div>
+                        <i class="fas fa-child why-icon"></i>
+                    </div>
+                    <div class="why-card-number">05</div>
+                    <h3 class="why-card-title">Pendekatan Holistik</h3>
+                    <p class="why-card-desc">Akademik, emosional, sosial, dan spiritual. Kami mendidik anak secara
+                        menyeluruh agar tumbuh menjadi pribadi yang utuh dan seimbang.</p>
+                    <div class="why-card-line"></div>
+                    <span class="why-tag">Gembira · Cerdas · Peduli</span>
+                </div>
+            </div>
+
+            <div class="why-card" data-tilt>
+                <div class="why-card-glow"></div>
+                <div class="why-card-inner">
+                    <div class="why-icon-wrap">
+                        <div class="why-icon-bg"></div>
+                        <i class="fas fa-users why-icon"></i>
+                    </div>
+                    <div class="why-card-number">06</div>
+                    <h3 class="why-card-title">Komunitas yang Hangat</h3>
+                    <p class="why-card-desc">Lebih dari 1.000 orang tua telah mempercayakan buah hati mereka kepada
+                        kami. Bergabunglah dengan keluarga besar Santo Andreas.</p>
+                    <div class="why-card-line"></div>
+                    <span class="why-tag">Komunitas</span>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="why-cta">
+            <p class="why-cta-text">Siap menjadi bagian dari keluarga kami?</p>
+            <a href="pendaftaran.html" class="why-cta-btn">
+                Daftar Sekarang <i class="fas fa-paper-plane"></i>
+            </a>
+        </div>
+
+    </section>
+
+    <script>
+        /* ── Tilt effect on mouse move ── */
+        document.querySelectorAll(".why-card[data-tilt]").forEach(card => {
+            card.addEventListener("mousemove", e => {
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                const cx = rect.width / 2;
+                const cy = rect.height / 2;
+                const rotateX = ((y - cy) / cy) * -7;
+                const rotateY = ((x - cx) / cx) * 7;
+
+                card.style.transform =
+                    `perspective(900px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-6px)`;
+
+                const glow = card.querySelector(".why-card-glow");
+                glow.style.left = `${x}px`;
+                glow.style.top = `${y}px`;
+            });
+
+            card.addEventListener("mouseleave", () => {
+                card.style.transform = "";
+            });
+        });
+    </script>
+
+    <section class="news-section">
+
+        <div class="news-bg-circle circle-1"></div>
+        <div class="news-bg-circle circle-2"></div>
+        <div class="news-bg-dots"></div>
+
+        <div class="news-header-block">
+            <p class="news-eyebrow"><i class="fas fa-newspaper"></i> Kabar Terbaru</p>
+            <h2 class="news-main-title">Berita Terkini <span>St. Andreas</span></h2>
+            <p class="news-main-desc">Ikuti setiap momen, pencapaian, dan cerita inspiratif dari keluarga besar Santo
+                Andreas.</p>
+
+            <div class="news-filters">
+                <button class="news-filter active" data-filter="all">Semua</button>
+                <button class="news-filter" data-filter="event">Event</button>
+                <button class="news-filter" data-filter="prestasi">Prestasi</button>
+                <button class="news-filter" data-filter="kegiatan">Kegiatan</button>
+            </div>
+        </div>
+
+        <div class="news-grid" id="newsGrid">
+
+            <div id="newsLoading" style="grid-column:1/-1;padding:48px;text-align:center;color:rgba(255,255,255,0.4);">
+                <i class="fas fa-spinner fa-spin" style="font-size:24px;"></i>
+            </div>
+        </div>
+
+        <div class="news-footer">
+            <a href="berita.html" class="news-all-btn">
+                <span>Lihat Semua Berita</span>
+                <i class="fas fa-arrow-right"></i>
+            </a>
+        </div>
+
+    </section>
+
+    <script>
+
+        const INDEX_BERITA_CSV = "https://docs.google.com/spreadsheets/d/e/2PACX-1vRx_pImd28cyYnmmseB7CbMesjiATYiEdkyq-tC0h7pCX-VmAwXoOc8IN2diJx6CQD0cWzr27n_7KPu/pub?output=csv";
+        const PLACEHOLDER_IMG = "https://santoandreas.sch.id/wp-content/uploads/slider/cache/414549754177bf3a942a6d7bff3dafc8/DSC00475-new-scaled.jpg";
+
+        function indexParseCSV(text) {
+            const results = [];
+            let cols = [], cur = '', inQ = false;
+            const t = text.trim();
+            for (let i = 0; i < t.length; i++) {
+                const ch = t[i];
+                if (ch === '"') {
+                    if (inQ && t[i + 1] === '"') { cur += '"'; i++; }
+                    else inQ = !inQ;
+                } else if (ch === ',' && !inQ) {
+                    cols.push(cur); cur = '';
+                } else if ((ch === '\n' || ch === '\r') && !inQ) {
+                    if (ch === '\r' && t[i + 1] === '\n') i++;
+                    cols.push(cur); cur = '';
+                    if (cols.some(c => c)) results.push(cols);
+                    cols = [];
+                } else {
+                    cur += ch;
+                }
+            }
+            cols.push(cur);
+            if (cols.some(c => c)) results.push(cols);
+            const first = (results[0] && results[0][0]) ? results[0][0].trim().toLowerCase() : "";
+            const isHeader = first === "judul" || first === "title" || first === "no";
+            return isHeader ? results.slice(1) : results;
+        }
+
+        function indexCardHTML(r, featured, idx) {
+            const cat = (r[1] || 'event').toLowerCase();
+            const label = cat.charAt(0).toUpperCase() + cat.slice(1);
+            const img = r[4] || PLACEHOLDER_IMG;
+            const href = `berita-artikel.html?id=${idx}`;
+            const cls = featured ? 'news-card news-card--featured' : 'news-card';
+            return `
+            <article class="${cls}" data-category="${cat}">
+                <div class="news-card-img-wrap">
+                    <img class="news-card-img" src="${img}" alt="${r[0] || ''}" loading="lazy">
+                    <div class="news-card-img-overlay"></div>
+                    <span class="news-badge">${label}</span>
+                    <div class="news-card-shine"></div>
+                </div>
+                <div class="news-card-body">
+                    <div class="news-meta">
+                        <span class="news-date"><i class="fas fa-calendar-alt"></i> ${r[2] || ''}</span>
+                        <span class="news-read-time"><i class="fas fa-user"></i> ${r[6] || 'Admin'}</span>
+                    </div>
+                    <h3 class="news-card-title">${r[0] || ''}</h3>
+                    <p class="news-card-excerpt">${r[3] || ''}</p>
+                    <a href="${href}" class="news-read-btn">
+                        Baca Selengkapnya
+                        <span class="news-read-arrow"><i class="fas fa-arrow-right"></i></span>
+                    </a>
+                </div>
+            </article>`;
+        }
+
+        function indexApplyFilter(cat) {
+            document.querySelectorAll('.news-filter').forEach(b => b.classList.toggle('active', b.dataset.filter === cat));
+            document.querySelectorAll('#newsGrid .news-card').forEach(card => {
+                const match = cat === 'all' || card.dataset.category === cat;
+                card.style.transition = 'opacity 0.35s ease, transform 0.35s ease';
+                card.style.opacity = match ? '1' : '0.15';
+                card.style.transform = match ? '' : 'scale(0.97)';
+                card.style.pointerEvents = match ? 'all' : 'none';
+            });
+        }
+
+        function indexWireShine() {
+            document.querySelectorAll('#newsGrid .news-card').forEach(card => {
+                const shine = card.querySelector('.news-card-shine');
+                card.addEventListener('mousemove', e => {
+                    const rect = card.getBoundingClientRect();
+                    const x = ((e.clientX - rect.left) / rect.width) * 100;
+                    const y = ((e.clientY - rect.top) / rect.height) * 100;
+                    shine.style.background = `radial-gradient(circle at ${x}% ${y}%, rgba(255,255,255,0.10) 0%, transparent 65%)`;
+                });
+                card.addEventListener('mouseleave', () => { shine.style.background = 'none'; });
+            });
+        }
+
+        async function loadBeritaIndex() {
+            try {
+                const res = await fetch(INDEX_BERITA_CSV);
+                const text = await res.text();
+                const rows = indexParseCSV(text);
+
+                const featuredIdx = rows.findIndex(r => (r[5] || '').toLowerCase() === 'true');
+                const featuredI = featuredIdx >= 0 ? featuredIdx : 0;
+                const featured = rows[featuredI];
+                const rest = rows.map((r, i) => ({ r, i })).filter(({ i }) => i !== featuredI).slice(0, 5);
+
+                let html = '';
+                if (featured) html += indexCardHTML(featured, true, featuredI);
+                rest.forEach(({ r, i }) => { html += indexCardHTML(r, false, i); });
+
+                const grid = document.getElementById('newsGrid');
+                grid.innerHTML = html || '<p style="color:#aaa;grid-column:1/-1;padding:32px;text-align:center;">Belum ada berita.</p>';
+
+                document.querySelectorAll('.news-filter').forEach(btn => {
+                    btn.addEventListener('click', () => indexApplyFilter(btn.dataset.filter));
+                });
+                indexWireShine();
+            } catch (e) {
+                document.getElementById('newsGrid').innerHTML =
+                    '<p style="color:#aaa;grid-column:1/-1;padding:32px;text-align:center;">Gagal memuat berita.</p>';
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', loadBeritaIndex);
+    </script>
+
+    <section class="faq-section">
+
+        <div class="faq-bg-ring ring-1"></div>
+        <div class="faq-bg-ring ring-2"></div>
+        <div class="faq-bg-dots"></div>
+
+        <div class="faq-header">
+            <p class="faq-eyebrow"><i class="fas fa-circle-question"></i> Pertanyaan Umum</p>
+            <h2 class="faq-title">Ada yang Ingin <span>Anda Tanyakan?</span></h2>
+            <p class="faq-desc">Kami kumpulkan pertanyaan yang paling sering ditanyakan oleh orang tua dan calon siswa
+                baru.</p>
+        </div>
+
+        <div class="faq-list">
+
+            <div class="faq-item">
+                <button class="faq-question" aria-expanded="false">
+                    <span class="faq-q-text">Kapan pendaftaran siswa baru dibuka?</span>
+                    <span class="faq-icon-wrap">
+                        <i class="fas fa-plus faq-icon"></i>
+                    </span>
+                </button>
+                <div class="faq-answer">
+                    <div class="faq-answer-inner">
+                        <p>Pendaftaran siswa baru umumnya dibuka pada bulan <strong>Januari – Maret</strong> setiap
+                            tahunnya untuk tahun ajaran berikutnya. Kami menyarankan Anda mendaftar lebih awal karena
+                            kuota terbatas. Pantau terus halaman Pendaftaran kami atau ikuti media sosial @sstandreas
+                            untuk pengumuman resmi.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question" aria-expanded="false">
+                    <span class="faq-q-text">Apa saja jenjang pendidikan yang tersedia di Santo Andreas?</span>
+                    <span class="faq-icon-wrap">
+                        <i class="fas fa-plus faq-icon"></i>
+                    </span>
+                </button>
+                <div class="faq-answer">
+                    <div class="faq-answer-inner">
+                        <p>Sekolah Santo Andreas menyelenggarakan pendidikan dari jenjang <strong>Nursery & Playground,
+                                TK, SD, hingga SMP</strong> — sehingga anak Anda dapat menempuh pendidikan dari usia
+                            dini hingga remaja dalam satu lingkungan yang konsisten dan penuh kasih.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question" aria-expanded="false">
+                    <span class="faq-q-text">Apakah sekolah ini hanya untuk siswa beragama Katolik?</span>
+                    <span class="faq-icon-wrap">
+                        <i class="fas fa-plus faq-icon"></i>
+                    </span>
+                </button>
+                <div class="faq-answer">
+                    <div class="faq-answer-inner">
+                        <p><strong>Tidak.</strong> Meskipun Santo Andreas adalah <strong>sekolah berlatar belakang
+                                Katolik</strong>, kami
+                            terbuka bagi siswa dari berbagai latar belakang agama dan kepercayaan. Kami percaya bahwa
+                            nilai-nilai seperti kasih, kejujuran, dan kepedulian bersifat universal dan relevan bagi
+                            semua.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question" aria-expanded="false">
+                    <span class="faq-q-text">Kurikulum apa yang digunakan di Santo Andreas?</span>
+                    <span class="faq-icon-wrap">
+                        <i class="fas fa-plus faq-icon"></i>
+                    </span>
+                </button>
+                <div class="faq-answer">
+                    <div class="faq-answer-inner">
+                        <p>Kami menggunakan <strong>Kurikulum Merdeka</strong> yang ditetapkan oleh Kemendikbud,
+                            dipadukan dengan pendekatan holistik berbasis nilai-nilai Kristiani. Selain akademik, kami
+                            sangat menekankan pengembangan karakter, kreativitas, dan kecerdasan emosional siswa.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question" aria-expanded="false">
+                    <span class="faq-q-text">Apa saja fasilitas yang tersedia di sekolah?</span>
+                    <span class="faq-icon-wrap">
+                        <i class="fas fa-plus faq-icon"></i>
+                    </span>
+                </button>
+                <div class="faq-answer">
+                    <div class="faq-answer-inner">
+                        <p>Santo Andreas dilengkapi dengan berbagai fasilitas modern, antara lain: <strong>laboratorium
+                                sains, laboratorium komputer, perpustakaan, lapangan olahraga, kolam renang TK, ruang
+                                osis, kantin, dan area bermain yang aman untuk siswa TK dan SD. </strong></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question" aria-expanded="false">
+                    <span class="faq-q-text">Apakah tersedia program ekstrakurikuler?</span>
+                    <span class="faq-icon-wrap">
+                        <i class="fas fa-plus faq-icon"></i>
+                    </span>
+                </button>
+                <div class="faq-answer">
+                    <div class="faq-answer-inner">
+                        <p><strong>Iya.</strong> Kami memiliki beragam pilihan ekstrakurikuler mencakup bidang
+                            <strong>olahraga</strong>
+                            (basket, futsal, taekwondo), <strong>seni</strong> (menggambar, paduan suara, fotografi,
+                            tari modern, tari tradisional, musik), hingga
+                            <strong>akademik</strong> (Science club, English club). Setiap siswa didorong untuk
+                            menemukan dan mengembangkan bakatnya.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question" aria-expanded="false">
+                    <span class="faq-q-text">Bagaimana cara menghubungi pihak sekolah?</span>
+                    <span class="faq-icon-wrap">
+                        <i class="fas fa-plus faq-icon"></i>
+                    </span>
+                </button>
+                <div class="faq-answer">
+                    <div class="faq-answer-inner">
+                        <p>Anda dapat menghubungi kami melalui telepon di <strong>021 – 580 4058</strong> pada jam
+                            operasional Senin–Jumat pukul 06.00–15.00. Kami juga aktif di media sosial Instagram dan
+                            Facebook <strong>@sstandreas</strong>, atau kunjungi langsung kami di Jl. Komplek Green
+                            Garden, Kedoya Selatan, Jakarta Barat.</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="faq-cta">
+            <p class="faq-cta-text">Masih punya pertanyaan lain?</p>
+            <a href="pendaftaran.html" class="faq-cta-btn">
+                <i class="fas fa-envelope"></i> Hubungi Kami
+            </a>
+        </div>
+
+    </section>
+
+    <script>
+        /* ── Accordion logic ── */
+        document.querySelectorAll(".faq-question").forEach(btn => {
+            btn.addEventListener("click", () => {
+                const item = btn.closest(".faq-item");
+                const answer = item.querySelector(".faq-answer");
+                const inner = item.querySelector(".faq-answer-inner");
+                const isOpen = item.classList.contains("open");
+
+                document.querySelectorAll(".faq-item.open").forEach(openItem => {
+                    openItem.classList.remove("open");
+                    openItem.querySelector(".faq-question").setAttribute("aria-expanded", "false");
+                    openItem.querySelector(".faq-answer").style.maxHeight = "0";
+                });
+
+                if (!isOpen) {
+                    item.classList.add("open");
+                    btn.setAttribute("aria-expanded", "true");
+                    answer.style.maxHeight = inner.scrollHeight + "px";
+                }
+            });
+        });
+    </script>
+
+    <div class="tb-section">
+
+        <div class="tb-bg">
+            <img class="tb-bg-img"
+                src="https://images.unsplash.com/photo-1536517305569-3300ec6a3ccc?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxMTc3M3wwfDF8c2VhcmNofDR8fGluZG9uZXNpYSUyMGZsYWd8ZW58MHx8fHwxNjU5NjI3ODA3&ixlib=rb-1.2.1&q=80&w=1600"
+                alt="Background">
+            <div class="tb-bg-overlay"></div>
+
+            <div class="tb-grain"></div>
+        </div>
+
+        <div class="tb-deco-quote">"</div>
+
+        <div class="tb-carousel">
+            <h1 style="color:rgb(127, 187, 226); font-family: 'Playfair Display', Sans Serif; padding-bottom: 5px;">
+                Testimoni
+                Orang Tua & Murid</h1>
+            <div class="tb-track" id="tbTrack">
+
+                <div class="tb-slide tb-slide--active">
+                    <div class="tb-slide-inner">
+                        <p class="tb-category"><i class="fas fa-star"></i> Orang Tua Murid TK</p>
+                        <blockquote class="tb-quote">
+                            Fasilitas sangat baik, lingkungan tidak terkontaminasi kebisingan,
+                            dan tim guru yang luar biasa supportif
+                        </blockquote>
+                        <div class="tb-author">
+                            <div class="tb-avatar">
+                                <img src="https://i.pinimg.com/236x/1d/ec/e2/1dece2c8357bdd7cee3b15036344faf5.jpg"
+                                    alt="Ibu Nikita">
+                            </div>
+                            <div class="tb-author-info">
+                                <span class="tb-author-name">Ibu Nikita</span>
+                                <span class="tb-author-role">Orang Tua Murid TK</span>
+                            </div>
+                            <div class="tb-stars">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tb-slide">
+                    <div class="tb-slide-inner">
+                        <p class="tb-category"><i class="fas fa-star"></i> Orang Tua Murid SD</p>
+                        <blockquote class="tb-quote">
+                            Salah satu sekolah Katolik terbaik di Jakarta Barat.
+                            Guru-gurunya kompeten, penuh dedikasi, dan sesuai dengan
+                            kurikulum yang modern
+                        </blockquote>
+                        <div class="tb-author">
+                            <div class="tb-avatar">
+                                <img src="https://i.pinimg.com/236x/1d/ec/e2/1dece2c8357bdd7cee3b15036344faf5.jpg"
+                                    alt="Orang Tua SD">
+                            </div>
+                            <div class="tb-author-info">
+                                <span class="tb-author-name">Bapak Raymond</span>
+                                <span class="tb-author-role">Orang Tua Murid SD</span>
+                            </div>
+                            <div class="tb-stars">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tb-slide">
+                    <div class="tb-slide-inner">
+                        <p class="tb-category"><i class="fas fa-graduation-cap"></i> Alumni SMP 2021</p>
+                        <blockquote class="tb-quote">
+                            Pengalamanku menempuh pendidikan selama kurang lebih dua belas
+                            tahun sungguh menyenangkan dan begitu berkesan
+                        </blockquote>
+                        <div class="tb-author">
+                            <div class="tb-avatar">
+                                <img src="https://i.pinimg.com/236x/1d/ec/e2/1dece2c8357bdd7cee3b15036344faf5.jpg"
+                                    alt="Ahza">
+                            </div>
+                            <div class="tb-author-info">
+                                <span class="tb-author-name">Ahza</span>
+                                <span class="tb-author-role">Alumni SMP · Lulus 2021</span>
+                            </div>
+                            <div class="tb-stars">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tb-slide">
+                    <div class="tb-slide-inner">
+                        <p class="tb-category"><i class="fas fa-star"></i> Orang Tua Murid TK</p>
+                        <blockquote class="tb-quote">
+                            Nilai-nilai keagamaan sangat ditanamkan oleh para guru dan
+                            suster pendamping!
+                        </blockquote>
+                        <div class="tb-author">
+                            <div class="tb-avatar">
+                                <img src="https://i.pinimg.com/236x/1d/ec/e2/1dece2c8357bdd7cee3b15036344faf5.jpg"
+                                    alt="Ibu Zach">
+                            </div>
+                            <div class="tb-author-info">
+                                <span class="tb-author-name">Ibu Zach</span>
+                                <span class="tb-author-role">Orang Tua Murid TK</span>
+                            </div>
+                            <div class="tb-stars">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tb-slide">
+                    <div class="tb-slide-inner">
+                        <p class="tb-category"><i class="fas fa-star"></i> Orang Tua Murid KB</p>
+                        <blockquote class="tb-quote">
+                            Perkembangan anak saya sangat baik dalam bidang kognitif,
+                            emosional, dan sosial — berkat tim guru yang kompeten dan
+                            penuh kasih
+                        </blockquote>
+                        <div class="tb-author">
+                            <div class="tb-avatar">
+                                <img src="https://i.pinimg.com/236x/1d/ec/e2/1dece2c8357bdd7cee3b15036344faf5.jpg"
+                                    alt="Bu Melissa">
+                            </div>
+                            <div class="tb-author-info">
+                                <span class="tb-author-name">Bu Melissa</span>
+                                <span class="tb-author-role">Orang Tua Murid KB</span>
+                            </div>
+                            <div class="tb-stars">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="tb-controls">
+
+                <button class="tb-btn tb-btn--prev" onclick="tbPrev()" aria-label="Previous">
+                    <i class="fas fa-arrow-left"></i>
+                </button>
+
+                <div class="tb-dots" id="tbDots"></div>
+
+                <button class="tb-btn tb-btn--next" onclick="tbNext()" aria-label="Next">
+                    <i class="fas fa-arrow-right"></i>
+                </button>
+            </div>
+
+            <div class="tb-progress-wrap">
+                <div class="tb-progress-bar" id="tbProgressBar"></div>
+            </div>
+
+        </div>
+
+        <div class="tb-stat-strip">
+            <div class="tb-stat">
+                <span class="tb-stat-num">1,000+</span>
+                <span class="tb-stat-lbl">Orang Tua Percaya</span>
+            </div>
+            <div class="tb-stat-divider"></div>
+            <div class="tb-stat">
+                <span class="tb-stat-num">2,500+</span>
+                <span class="tb-stat-lbl">Alumni</span>
+            </div>
+            <div class="tb-stat-divider"></div>
+            <div class="tb-stat">
+                <span class="tb-stat-num">35+</span>
+                <span class="tb-stat-lbl">Tahun Berdiri</span>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        (function () {
+            const slides = document.querySelectorAll(".tb-slide");
+            const dotsWrap = document.getElementById("tbDots");
+            const bar = document.getElementById("tbProgressBar");
+            let current = 0;
+            let timer;
+            const DURATION = 5000;
+
+            slides.forEach((_, i) => {
+                const d = document.createElement("button");
+                d.className = "tb-dot" + (i === 0 ? " tb-dot--active" : "");
+                d.setAttribute("aria-label", `Slide ${i + 1}`);
+                d.addEventListener("click", () => goTo(i));
+                dotsWrap.appendChild(d);
+            });
+
+            function goTo(index) {
+                slides[current].classList.remove("tb-slide--active");
+                slides[current].classList.add("tb-slide--exit");
+                setTimeout(() => slides[current < slides.length ? current : 0].classList.remove("tb-slide--exit"), 700);
+
+                current = (index + slides.length) % slides.length;
+                slides[current].classList.add("tb-slide--active");
+
+                document.querySelectorAll(".tb-dot").forEach((d, i) => {
+                    d.classList.toggle("tb-dot--active", i === current);
+                });
+
+                bar.style.transition = "none";
+                bar.style.width = "0%";
+                bar.offsetHeight;
+                bar.style.transition = `width ${DURATION}ms linear`;
+                bar.style.width = "100%";
+
+                clearInterval(timer);
+                timer = setInterval(() => goTo(current + 1), DURATION);
+            }
+
+            bar.style.transition = `width ${DURATION}ms linear`;
+            bar.style.width = "100%";
+            timer = setInterval(() => goTo(current + 1), DURATION);
+
+            window.tbPrev = () => goTo(current - 1);
+            window.tbNext = () => goTo(current + 1);
+        })();
+    </script>
+
+    <footer class="site-footer">
+
+        <div class="footer-bg-ring ring-a"></div>
+        <div class="footer-bg-ring ring-b"></div>
+
+        <div class="footer-inner">
+
+            <div class="footer-col footer-col--brand">
+                <img src="logo-landscape-ssantoandreas.png" alt="Logo Sekolah Santo Andreas" class="footer-logo">
+                <p class="footer-about">Lembaga pendidikan Katolik di Jakarta Barat yang telah membentuk generasi unggul
+                    sejak 1990 — dari Nursery hingga SMP.</p>
+
+                <div class="footer-socials">
+                    <a href="https://www.facebook.com/sstandreas" class="footer-social" aria-label="Facebook">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="https://www.instagram.com/sstandreas/" class="footer-social" aria-label="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://www.youtube.com/channel/UC2fmVdeHtxnXl1LMYu7WAAQ" class="footer-social"
+                        aria-label="YouTube">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="footer-col">
+                <h4 class="footer-col-title">Tentang Kami</h4>
+                <ul class="footer-links">
+                    <li><a href="tentang-kami.html" class="footer-link footer-link--parent">
+                            <i class="fas fa-chevron-right"></i> Tentang Kami
+                        </a></li>
+                    <li><a href="tentang-kami.html#visi-misi" class="footer-link footer-link--child">
+                            <i class="fas fa-minus"></i> Visi &amp; Misi
+                        </a></li>
+                    <li><a href="tentang-kami.html#sejarah" class="footer-link footer-link--child">
+                            <i class="fas fa-minus"></i> Sejarah
+                        </a></li>
+                    <li><a href="tentang-kami.html#fasilitas" class="footer-link footer-link--child">
+                            <i class="fas fa-minus"></i> Fasilitas
+                        </a></li>
+                </ul>
+
+                <h4 class="footer-col-title" style="margin-top: 28px;">Jenjang Pendidikan</h4>
+                <ul class="footer-links">
+                    <li><a href="jenjang.html" class="footer-link footer-link--parent">
+                            <i class="fas fa-chevron-right"></i> Jenjang Pendidikan
+                        </a></li>
+                    <li><a href="tk.html" class="footer-link footer-link--child">
+                            <i class="fas fa-minus"></i> TK
+                        </a></li>
+                    <li><a href="sd.html" class="footer-link footer-link--child">
+                            <i class="fas fa-minus"></i> SD
+                        </a></li>
+                    <li><a href="smp.html" class="footer-link footer-link--child">
+                            <i class="fas fa-minus"></i> SMP
+                        </a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4 class="footer-col-title">Portal</h4>
+                <ul class="footer-links">
+                    <li><a href="portal-guru.html" class="footer-link footer-link--parent">
+                            <i class="fas fa-chevron-right"></i> Portal Guru
+                        </a></li>
+                    <li><a href="login.html" class="footer-link footer-link--parent">
+                            <i class="fas fa-chevron-right"></i> Portal Siswa
+                        </a></li>
+                </ul>
+
+                <h4 class="footer-col-title" style="margin-top: 28px;">Informasi</h4>
+                <ul class="footer-links">
+                    <li><a href="pendaftaran.html" class="footer-link footer-link--parent">
+                            <i class="fas fa-chevron-right"></i> Pendaftaran
+                        </a></li>
+                    <li><a href="kalendar-akademik.html" class="footer-link footer-link--parent">
+                            <i class="fas fa-chevron-right"></i> Kalender Akademik
+                        </a></li>
+                    <li><a href="berita.html" class="footer-link footer-link--parent">
+                            <i class="fas fa-chevron-right"></i> Berita
+                        </a></li>
+                    <li><a href="prestasi.html" class="footer-link footer-link--parent">
+                            <i class="fas fa-chevron-right"></i> Prestasi
+                        </a></li>
+                    <li><a href="contact.html" class="footer-link footer-link--parent">
+                            <i class="fas fa-chevron-right"></i> Hubungi Kami
+                        </a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col footer-col--contact">
+                <h4 class="footer-col-title">Hubungi Kami</h4>
+
+                <ul class="footer-contact-list">
+                    <li class="footer-contact-item">
+                        <div class="footer-contact-icon"><i class="fas fa-location-dot"></i></div>
+                        <p>Jl. Komplek Green Garden,<br>Kedoya Selatan, Kebon Jeruk<br>Jakarta Barat 11520</p>
+                    </li>
+                    <li class="footer-contact-item">
+                        <div class="footer-contact-icon"><i class="fas fa-phone"></i></div>
+                        <p>021 – 580 4058</p>
+                    </li>
+                    <li class="footer-contact-item">
+                        <div class="footer-contact-icon"><i class="fas fa-clock"></i></div>
+                        <p>Senin – Jumat<br>06.00 – 15.00 WIB</p>
+                    </li>
+                    <li class="footer-contact-item">
+                        <div class="footer-contact-icon"><i class="fas fa-envelope"></i></div>
+                        <p>info@sstandreas.sch.id</p>
+                    </li>
+                </ul>
+
+                <a href="pendaftaran.html" class="footer-cta-btn">
+                    Daftar Sekarang <i class="fas fa-paper-plane"></i>
+                </a>
+            </div>
+
+        </div>
+
+        <div class="footer-divider"></div>
+
+        <div class="footer-bottom">
+            <p class="footer-copyright">© 2026 Sekolah Santo Andreas. All Rights Reserved.</p>
+            <p class="footer-credit"><i class="fas fa-code"></i> Dikembangkan oleh Raylika L.</p>
+        </div>
+
+    </footer>
+    <script src="session-banner.js"></script>
+
+    <script>
+
+        const hamburgerBtn = document.getElementById('hamburgerBtn');
+        const mobileNav = document.getElementById('mobileNav');
+
+        hamburgerBtn.addEventListener('click', () => {
+            hamburgerBtn.classList.toggle('open');
+            mobileNav.classList.toggle('open');
+        });
+
+        mobileNav.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburgerBtn.classList.remove('open');
+                mobileNav.classList.remove('open');
+            });
+        });
+
+        document.addEventListener('click', e => {
+            if (!hamburgerBtn.contains(e.target) && !mobileNav.contains(e.target)) {
+                hamburgerBtn.classList.remove('open');
+                mobileNav.classList.remove('open');
+            }
+        });
+
+        (function () {
+            const navbar = document.querySelector('.nav-bar');
+            const mobileHero = document.querySelector('.mobile-hero');
+
+            function updateMobileNavbar() {
+                if (window.innerWidth > 768) {
+
+                    navbar.classList.remove('nav-mobile-visible');
+                    return;
+                }
+                if (!mobileHero) { navbar.classList.add('nav-mobile-visible'); return; }
+
+                const heroRect = mobileHero.getBoundingClientRect();
+                const halfwayOut = heroRect.bottom <= heroRect.height / 2;
+
+                if (halfwayOut) {
+
+                    navbar.classList.add('nav-mobile-visible', 'nav-scrolled');
+                } else {
+
+                    navbar.classList.remove('nav-mobile-visible', 'nav-scrolled');
+
+                    hamburgerBtn.classList.remove('open');
+                    mobileNav.classList.remove('open');
+                }
+            }
+
+            window.addEventListener('scroll', updateMobileNavbar, { passive: true });
+            window.addEventListener('resize', updateMobileNavbar);
+            updateMobileNavbar();
+        })();
+    </script>
+    <!--Made with ❤️ from Jakarta - Raylika L. :)-->
+</body>
+<script src="script.js"></script>

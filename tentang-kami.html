@@ -1,0 +1,931 @@
+﻿<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tentang Kami — Sekolah Santo Andreas</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="tentang-kami.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.7.2/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <nav class="nav-bar nav-scrolled">
+        <div class="nav-container">
+            <div class="logo">
+                <a href="index.html"><img src="logo-landscape-ssantoandreas.png" alt="St-Andreas-Logo" width="290px"
+                        height="70px"></a>
+            </div>
+            <ul class="nav-links">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link">Halaman Utama</a>
+                </li>
+                <li class="nav-item">
+                    <a href="tentang-kami.html" class="nav-link">Tentang Kami<i class="fas fa-chevron-down"></i></a>
+                    <div class="dropdown-menu">
+                        <a href="tentang-kami.html#visi-misi">Visi &amp; Misi</a>
+                        <a href="tentang-kami.html#sejarah">Sejarah</a>
+                        <a href="tentang-kami.html#fasilitas">Fasilitas</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a href="jenjang.html" class="nav-link">Jenjang Pendidikan<i class="fas fa-chevron-down"></i></a>
+                    <div class="dropdown-menu">
+                        <a href="tk.html">TK / Nursery</a>
+                        <a href="sd.html">SD</a>
+                        <a href="smp.html">SMP</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a href="#" onclick="event.preventDefault()" class="nav-link">Portal<i class="fas fa-chevron-down"></i></a>
+                    <div class="dropdown-menu">
+                        <a href="login.html">Portal Siswa</a>
+                        <a href="login-teacher.html">Portal Guru</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a href="pendaftaran.html" class="nav-link">Pendaftaran</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" onclick="event.preventDefault()" class="nav-link">Informasi<i class="fas fa-chevron-down"></i></a>
+                    <div class="dropdown-menu">
+                        <a href="berita.html">Berita</a>
+                        <a href="kalendar-akademik.html">Kalender Akademik</a>
+                        <a href="prestasi.html">Prestasi</a>
+                        <a href="contact.html">Hubungi Kami</a>
+                    </div>
+                </li>
+            </ul>
+            <div class="social-links">
+                <a href="https://www.facebook.com/sstandreas" class="social-link"><i class="fab fa-facebook"></i></a>
+                <a href="https://www.instagram.com/sstandreas/" class="social-link"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.youtube.com/channel/UC2fmVdeHtxnXl1LMYu7WAAQ" class="social-link"><i
+                        class="fab fa-youtube"></i></a>
+            </div>
+
+            <button class="hamburger" id="hamburgerBtn" aria-label="Menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+
+        <div class="mobile-nav" id="mobileNav">
+            <ul class="mobile-nav-links">
+                <li><a href="index.html">Halaman Utama</a></li>
+                <li class="mobile-dropdown">
+                    <a href="tentang-kami.html">Tentang Kami</a>
+                    <div class="mobile-sub">
+                        <a href="tentang-kami.html#visi-misi">Visi &amp; Misi</a>
+                        <a href="tentang-kami.html#sejarah">Sejarah</a>
+                        <a href="tentang-kami.html#fasilitas">Fasilitas</a>
+                    </div>
+                </li>
+                <li class="mobile-dropdown">
+                    <a href="jenjang.html">Jenjang Pendidikan</a>
+                    <div class="mobile-sub">
+                        <a href="tk.html">TK / Nursery</a>
+                        <a href="sd.html">SD</a>
+                        <a href="smp.html">SMP</a>
+                    </div>
+                </li>
+                <li class="mobile-dropdown">
+                    <a href="#">Portal</a>
+                    <div class="mobile-sub">
+                        <a href="login.html">Portal Siswa</a>
+                        <a href="login-teacher.html">Portal Guru</a>
+                    </div>
+                </li>
+                <li><a href="pendaftaran.html">Pendaftaran</a></li>
+                <li class="mobile-dropdown">
+                    <a href="#">Informasi</a>
+                    <div class="mobile-sub">
+                        <a href="berita.html">Berita</a>
+                        <a href="kalendar-akademik.html">Kalender Akademik</a>
+                        <a href="prestasi.html">Prestasi</a>
+                        <a href="contact.html">Hubungi Kami</a>
+                    </div>
+                </li>
+            </ul>
+            <div class="mobile-nav-social">
+                <a href="https://www.facebook.com/sstandreas" aria-label="Facebook"><i
+                        class="fab fa-facebook-f"></i></a>
+                <a href="https://www.instagram.com/sstandreas/" aria-label="Instagram"><i
+                        class="fab fa-instagram"></i></a>
+                <a href="https://www.youtube.com/channel/UC2fmVdeHtxnXl1LMYu7WAAQ" aria-label="YouTube"><i
+                        class="fab fa-youtube"></i></a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="tk-body">
+
+        <header class="tk-hero">
+            <div class="tk-hero-bg">
+                <img src="tentang-kami-hero-ssantoandreas.jpg">
+                <div class="tk-hero-overlay"></div>
+            </div>
+
+            <div class="tk-hero-content">
+                <div class="tk-hero-badge">
+                    <span class="tk-hero-badge-dot"></span>
+                    Est. 1990 · Jakarta Barat
+                </div>
+                <h1 class="tk-hero-title">
+                    <span class="tk-hero-title-sub">Mengenal</span>
+                    Sekolah<br><em> Santo Andreas</em>
+                </h1>
+                <p class="tk-hero-sub">Tiga dekade mendidik generasi yang gembira, cerdas, dan peduli — dengan iman
+                    sebagai
+                    fondasi dan keunggulan sebagai tujuan.</p>
+
+                <div class="tk-hero-anchors">
+                    <a href="#visi-misi" class="tk-anchor"><i class="fas fa-star"></i><span>Visi &amp; Misi</span></a>
+                    <a href="#sejarah" class="tk-anchor"><i class="fas fa-landmark"></i><span>Sejarah</span></a>
+                    <a href="#fasilitas" class="tk-anchor"><i class="fas fa-building"></i><span>Fasilitas</span></a>
+                </div>
+            </div>
+
+            <div class="tk-hero-accent"></div>
+            <div class="tk-hero-cut"></div>
+        </header>
+
+        <section class="tk-section tk-vm-section" id="visi-misi">
+            <div class="tk-section-inner">
+
+                <div class="tk-section-header tk-section-header--left">
+                    <div class="tk-section-tag">
+                        <span class="tk-tag-bar"></span> 01 · Visi &amp; Misi
+                    </div>
+                    <h2 class="tk-section-title">Iman &amp; Pengetahuan<br>Membentuk <em>Keluhuran Budi</em></h2>
+                </div>
+
+                <div class="tk-visi-wrap">
+                    <div class="tk-visi-text-col">
+                        <p class="tk-label-sm">Visi Sekolah</p>
+                        <div class="tk-visi-latin-stack">
+                            <div class="tk-visi-word" data-delay="0">
+                                <span class="tk-visi-word-en">FIDES</span>
+                                <span class="tk-visi-word-id">Iman</span>
+                            </div>
+                            <div class="tk-visi-sep-line"></div>
+                            <div class="tk-visi-word" data-delay="150">
+                                <span class="tk-visi-word-en">SCIENTIA</span>
+                                <span class="tk-visi-word-id">Pengetahuan</span>
+                            </div>
+                            <div class="tk-visi-sep-line"></div>
+                            <div class="tk-visi-word" data-delay="300">
+                                <span class="tk-visi-word-en">EXCELLENTIA</span>
+                                <span class="tk-visi-word-id">Keluhuran Budi</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tk-visi-card-col">
+                        <div class="tk-visi-card">
+                            <div class="tk-visi-card-accent"></div>
+                            <div class="tk-visi-card-body">
+                                <div class="tk-visi-quote">"</div>
+                                <p class="tk-visi-quote-text">
+                                    Iman yang kokoh, pengetahuan yang mendalam, dan keunggulan dalam segala bidang
+                                    adalah
+                                    tiga pilar yang tidak terpisahkan dalam membentuk manusia seutuhnya.
+                                </p>
+                                <div class="tk-visi-pillars">
+                                    <div class="tk-visi-pillar">
+                                        <i class="fas fa-cross"></i>
+                                        <span>Fides</span>
+                                        <small>Iman</small>
+                                    </div>
+                                    <div class="tk-visi-pillar">
+                                        <i class="fas fa-book-open"></i>
+                                        <span>Scientia</span>
+                                        <small>Pengetahuan</small>
+                                    </div>
+                                    <div class="tk-visi-pillar">
+                                        <i class="fas fa-star"></i>
+                                        <span>Excellentia</span>
+                                        <small>Keluhuran</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tk-misi-wrap">
+                    <p class="tk-label-sm" style="text-align:center; margin-bottom: 8px;">Misi Sekolah</p>
+                    <h3 class="tk-misi-subheading">Menghasilkan Pribadi yang <em>Utuh &amp; Unggul</em></h3>
+
+                    <div class="tk-misi-grid">
+
+                        <div class="tk-misi-card">
+                            <div class="tk-misi-card-number">01</div>
+                            <div class="tk-misi-icon-box">
+                                <i class="fas fa-cross"></i>
+                            </div>
+                            <h4 class="tk-misi-card-title">Pribadi Beriman &amp; Berkarakter</h4>
+                            <p class="tk-misi-card-desc">Menanamkan nilai-nilai Kristiani, integritas, dan budi pekerti
+                                luhur sebagai fondasi kehidupan yang tak tergoyahkan.</p>
+                            <div class="tk-misi-card-footer">
+                                <span>Iman</span><span>Integritas</span><span>Karakter</span>
+                            </div>
+                        </div>
+
+                        <div class="tk-misi-card">
+                            <div class="tk-misi-card-number">02</div>
+                            <div class="tk-misi-icon-box">
+                                <i class="fas fa-graduation-cap"></i>
+                            </div>
+                            <h4 class="tk-misi-card-title">Pribadi Unggul Akademik</h4>
+                            <p class="tk-misi-card-desc">Mendorong pencapaian akademik tertinggi melalui kurikulum yang
+                                dinamis, guru kompeten, dan semangat belajar tanpa henti.</p>
+                            <div class="tk-misi-card-footer">
+                                <span>Akademik</span><span>Prestasi</span><span>Inovasi</span>
+                            </div>
+                        </div>
+
+                        <div class="tk-misi-card">
+                            <div class="tk-misi-card-number">03</div>
+                            <div class="tk-misi-icon-box">
+                                <i class="fas fa-users"></i>
+                            </div>
+                            <h4 class="tk-misi-card-title">Pribadi dengan Kecerdasan Sosial</h4>
+                            <p class="tk-misi-card-desc">Membangun kemampuan berempati, berkomunikasi, dan berkolaborasi
+                                —
+                                karena kecerdasan sejati mencakup kepekaan terhadap sesama.</p>
+                            <div class="tk-misi-card-footer">
+                                <span>Empati</span><span>Kolaborasi</span><span>Sosial</span>
+                            </div>
+                        </div>
+
+                        <div class="tk-misi-card">
+                            <div class="tk-misi-card-number">04</div>
+                            <div class="tk-misi-icon-box">
+                                <i class="fas fa-leaf"></i>
+                            </div>
+                            <h4 class="tk-misi-card-title">Pribadi yang Peduli Lingkungan</h4>
+                            <p class="tk-misi-card-desc">Menumbuhkan rasa tanggung jawab terhadap bumi dan lingkungan,
+                                karena generasi masa depan adalah penjaga ciptaan Tuhan.</p>
+                            <div class="tk-misi-card-footer">
+                                <span>Lingkungan</span><span>Berkelanjutan</span><span>Peduli</span>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="tk-section tk-sejarah-section" id="sejarah">
+            <div class="tk-section-inner">
+
+                <div class="tk-section-header tk-section-header--center">
+                    <div class="tk-section-tag tk-section-tag--center">
+                        <span class="tk-tag-bar"></span> 02 · Sejarah <span class="tk-tag-bar"></span>
+                    </div>
+                    <h2 class="tk-section-title tk-section-title--center">Perjalanan Panjang<br>Menuju
+                        <em>Keunggulan</em>
+                    </h2>
+                    <p class="tk-section-desc">Sejak 1990, Santo Andreas telah menorehkan sejarah panjang dalam dunia
+                        pendidikan Katolik di Jakarta Barat.</p>
+                </div>
+
+                <div class="tk-timeline">
+
+                    <div class="tk-tl-item tk-tl-item--left">
+                        <div class="tk-tl-content">
+                            <span class="tk-tl-year">1990</span>
+                            <h4 class="tk-tl-title">Pendirian Sekolah</h4>
+                            <p class="tk-tl-desc">Sekolah Santo Andreas resmi berdiri di kawasan Kedoya Selatan, Jakarta
+                                Barat, dengan tekad untuk menghadirkan pendidikan Katolik berkualitas bagi masyarakat
+                                sekitar.</p>
+                        </div>
+                        <div class="tk-tl-node">
+                            <div class="tk-tl-node-inner"><i class="fas fa-school"></i></div>
+                        </div>
+                        <div class="tk-tl-spacer"></div>
+                    </div>
+
+                    <div class="tk-tl-item tk-tl-item--right">
+                        <div class="tk-tl-spacer"></div>
+                        <div class="tk-tl-node">
+                            <div class="tk-tl-node-inner"><i class="fas fa-child"></i></div>
+                        </div>
+                        <div class="tk-tl-content">
+                            <span class="tk-tl-year">1995</span>
+                            <h4 class="tk-tl-title">Pembukaan Jenjang TK</h4>
+                            <p class="tk-tl-desc">Menyambut antusiasme orang tua yang semakin besar, Santo Andreas
+                                membuka
+                                jenjang Taman Kanak-Kanak untuk mendampingi tumbuh kembang anak sejak usia dini.</p>
+                        </div>
+                    </div>
+
+                    <div class="tk-tl-item tk-tl-item--left">
+                        <div class="tk-tl-content">
+                            <span class="tk-tl-year">2003</span>
+                            <h4 class="tk-tl-title">Pembukaan Jenjang SMP</h4>
+                            <p class="tk-tl-desc">Merespons kebutuhan alumni SD yang ingin melanjutkan di lingkungan
+                                yang
+                                sama, SMP Santo Andreas resmi dibuka dan melengkapi jenjang pendidikan yang ditawarkan.
+                            </p>
+                        </div>
+                        <div class="tk-tl-node">
+                            <div class="tk-tl-node-inner"><i class="fas fa-book"></i></div>
+                        </div>
+                        <div class="tk-tl-spacer"></div>
+                    </div>
+
+                    <div class="tk-tl-item tk-tl-item--right">
+                        <div class="tk-tl-spacer"></div>
+                        <div class="tk-tl-node">
+                            <div class="tk-tl-node-inner"><i class="fas fa-trophy"></i></div>
+                        </div>
+                        <div class="tk-tl-content">
+                            <span class="tk-tl-year">2010</span>
+                            <h4 class="tk-tl-title">Akreditasi A Nasional</h4>
+                            <p class="tk-tl-desc">Sekolah Santo Andreas meraih akreditasi A dari Badan Akreditasi
+                                Nasional —
+                                pengakuan resmi atas kualitas pendidikan, manajemen, dan fasilitas yang terus
+                                berkembang.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="tk-tl-item tk-tl-item--left">
+                        <div class="tk-tl-content">
+                            <span class="tk-tl-year">2018</span>
+                            <h4 class="tk-tl-title">Renovasi &amp; Modernisasi</h4>
+                            <p class="tk-tl-desc">Gedung sekolah direnovasi secara menyeluruh, lab komputer dan sains
+                                diperbarui, dan ruang-ruang belajar modern dihadirkan untuk mendukung generasi digital.
+                            </p>
+                        </div>
+                        <div class="tk-tl-node">
+                            <div class="tk-tl-node-inner"><i class="fas fa-tools"></i></div>
+                        </div>
+                        <div class="tk-tl-spacer"></div>
+                    </div>
+
+                    <div class="tk-tl-item tk-tl-item--right">
+                        <div class="tk-tl-spacer"></div>
+                        <div class="tk-tl-node tk-tl-node--active">
+                            <div class="tk-tl-node-inner"><i class="fas fa-star"></i></div>
+                        </div>
+                        <div class="tk-tl-content tk-tl-content--active">
+                            <span class="tk-tl-year">2026</span>
+                            <h4 class="tk-tl-title">Melangkah ke Era Baru</h4>
+                            <p class="tk-tl-desc">Dengan lebih dari 2.500 alumni dan ribuan orang tua yang telah
+                                mempercayakan pendidikan putra-putrinya, Santo Andreas terus melangkah maju dengan
+                                semangat
+                                Gembira · Cerdas · Peduli.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section class="tk-section tk-fac-section" id="fasilitas">
+            <div class="tk-section-inner">
+
+                <div class="tk-section-header tk-section-header--left">
+                    <div class="tk-section-tag">
+                        <span class="tk-tag-bar"></span> 03 · Fasilitas
+                    </div>
+                    <h2 class="tk-section-title">Lingkungan Belajar yang<br><em>Modern &amp; Lengkap</em></h2>
+                    <p class="tk-section-desc" style="max-width:520px;">Setiap ruang di Santo Andreas dirancang untuk
+                        memaksimalkan potensi dan kenyamanan siswa dalam belajar, berkreasi, dan bertumbuh.</p>
+                </div>
+
+                <div class="tk-fac-grid">
+
+                    <div class="tk-fac-card" data-fac="0">
+                        <div class="tk-fac-card-img">
+                            <img src="lab-science-ssantoandreas.jpg" alt="Lab Sains">
+                            <div class="tk-fac-card-overlay"></div>
+                        </div>
+                        <div class="tk-fac-card-body">
+                            <div class="tk-fac-icon"><i class="fas fa-flask"></i></div>
+                            <h4 class="tk-fac-title">Laboratorium Sains</h4>
+                            <p class="tk-fac-desc">Dilengkapi peralatan modern untuk eksperimen kimia, fisika, dan
+                                biologi.
+                                Mendorong rasa ingin tahu ilmiah sejak dini.</p>
+                            <div class="tk-fac-tags">
+                                <span>Kimia</span><span>Fisika</span><span>Biologi</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tk-fac-card" data-fac="1">
+                        <div class="tk-fac-card-img">
+                            <img src="lab-komputer-ssantoandreas.jpg" alt="Lab Komputer">
+                            <div class="tk-fac-card-overlay"></div>
+                        </div>
+                        <div class="tk-fac-card-body">
+                            <div class="tk-fac-icon"><i class="fas fa-laptop"></i></div>
+                            <h4 class="tk-fac-title">Laboratorium Komputer</h4>
+                            <p class="tk-fac-desc">Komputer terbaru dengan koneksi internet cepat, mendukung
+                                pembelajaran
+                                digital, coding, dan literasi teknologi.</p>
+                            <div class="tk-fac-tags">
+                                <span>IT</span><span>Coding</span><span>Digital</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tk-fac-card" data-fac="5">
+                        <div class="tk-fac-card-img">
+                            <img src="lapangan-olahraga-ssantoandreas.jpg" alt="Lapangan Olahraga">
+                            <div class="tk-fac-card-overlay"></div>
+                        </div>
+                        <div class="tk-fac-card-body">
+                            <div class="tk-fac-icon"><i class="fa-solid fa-person-running"></i></div>
+                            <h4 class="tk-fac-title">Lapangan Olahraga</h4>
+                            <p class="tk-fac-desc">Lapangan yang digunakan untuk senam pagi bersama, jogging, futsal dan
+                                tempat
+                                pelaksanaan pelajaran PJOK.</p>
+                            <div class="tk-fac-tags">
+                                <span>Kebugaran</span><span>Senam dan Jogging</span><span>Futsal</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tk-fac-card" data-fac="5">
+                        <div class="tk-fac-card-img">
+                            <img src="lapangan-olahraga-ssantoandreas.jpg" alt="Lapangan Basket">
+                            <div class="tk-fac-card-overlay"></div>
+                        </div>
+                        <div class="tk-fac-card-body">
+                            <div class="tk-fac-icon"><i class="fa-solid fa-basketball"></i></div>
+                            <h4 class="tk-fac-title">Lapangan Basket</h4>
+                            <p class="tk-fac-desc">Lapangan khusus untuk pelaksanaan permainan ekskul basket.</p>
+                            <div class="tk-fac-tags">
+                                <span>Ekskul</span><span>Basket</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tk-fac-card" data-fac="2">
+                        <div class="tk-fac-card-img">
+                            <img src="perpustakaan-ssantoandreas.jpg" alt="Perpustakaan">
+                            <div class="tk-fac-card-overlay"></div>
+                        </div>
+                        <div class="tk-fac-card-body">
+                            <div class="tk-fac-icon"><i class="fas fa-book"></i></div>
+                            <h4 class="tk-fac-title">Perpustakaan</h4>
+                            <p class="tk-fac-desc">Koleksi ratusan buku, majalah, dan referensi digital. Ruang baca
+                                nyaman
+                                yang membangun budaya literasi dari usia dini.</p>
+                            <div class="tk-fac-tags">
+                                <span>Literasi</span><span>Referensi</span><span>Digital</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tk-fac-card" data-fac="3">
+                        <div class="tk-fac-card-img">
+                            <img src="pool-ssantoandreas.jpg" alt="Kolam Renang">
+                            <div class="tk-fac-card-overlay"></div>
+                        </div>
+                        <div class="tk-fac-card-body">
+                            <div class="tk-fac-icon"><i class="fa-solid fa-person-swimming"></i></div>
+                            <h4 class="tk-fac-title">Kolam Renang</h4>
+                            <p class="tk-fac-desc">Kolam Kecil yang terbuka bagi para murid TK St. Andreas, bertujuan
+                                untuk
+                                melatih sportivitas siswa mulai dari usia dini.</p>
+                            <div class="tk-fac-tags">
+                                <span>Sports</span><span>Water</span><span>Swimming</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tk-fac-card" data-fac="4">
+                        <div class="tk-fac-card-img">
+                            <img src="gereja-paroki-ssantoandreas.png" alt="Gereja St. Andreas">
+                            <div class="tk-fac-card-overlay"></div>
+                        </div>
+                        <div class="tk-fac-card-body">
+                            <div class="tk-fac-icon"><i class="fas fa-church"></i></div>
+                            <h4 class="tk-fac-title">Gereja St. Andreas</h4>
+                            <p class="tk-fac-desc">Tempat ibadah yang tenang dan sakral, tempat komunitas sekolah
+                                bertemu
+                                dalam doa, misa, dan pembinaan rohani bersama.</p>
+                            <div class="tk-fac-tags">
+                                <span>Ibadah</span><span>Rohani</span><span>Misa</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tk-fac-card" data-fac="4">
+                        <div class="tk-fac-card-img">
+                            <img src="gua-maria-ssantoandreas.png" alt="Gua Maria">
+                            <div class="tk-fac-card-overlay"></div>
+                        </div>
+                        <div class="tk-fac-card-body">
+                            <div class="tk-fac-icon"><i class="fa-solid fa-dove"></i></div>
+                            <h4 class="tk-fac-title">Gua Maria</h4>
+                            <p class="tk-fac-desc">Tempat rohani sakral untuk doa rosario di depan hadapan patung Bunda
+                                Maria.</p>
+                            <div class="tk-fac-tags">
+                                <span>Bunda Maria</span><span>Rosario</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tk-fac-card" data-fac="5">
+                        <div class="tk-fac-card-img">
+                            <img src="aula-bethlehem-ssantoandreas.jpg" alt="Aula Bethlehem">
+                            <div class="tk-fac-card-overlay"></div>
+                        </div>
+                        <div class="tk-fac-card-body">
+                            <div class="tk-fac-icon"><i class="fas fa-palette"></i></div>
+                            <h4 class="tk-fac-title">Aula Bethlehem</h4>
+                            <p class="tk-fac-desc">Aula Luas yang digunakan untuk acara-acara tertentu sekolah, dan
+                                panggung
+                                pertunjukan untuk mengembangkan bakat kreatif siswa.</p>
+                            <div class="tk-fac-tags">
+                                <span>Seni</span><span>Musik</span><span>Pentas</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tk-fac-card" data-fac="5">
+                        <div class="tk-fac-card-img">
+                            <img src="aula-101-ssantoandreas.jpg" alt="Aula 101">
+                            <div class="tk-fac-card-overlay"></div>
+                        </div>
+                        <div class="tk-fac-card-body">
+                            <div class="tk-fac-icon"><i class="fa-solid fa-microphone"></i></div>
+                            <h4 class="tk-fac-title">Aula 101</h4>
+                            <p class="tk-fac-desc">Aula terbesar di sekolah yang umumnya digunakan untuk acara-acara
+                                besar.</p>
+                            <div class="tk-fac-tags">
+                                <span>Acara Besar</span><span>Pensi</span><span>Perayaan</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tk-fac-card" data-fac="5">
+                        <div class="tk-fac-card-img">
+                            <img src="ruangosis-ssantoandreas.jpg" alt="Ruang OSIS">
+                            <div class="tk-fac-card-overlay"></div>
+                        </div>
+                        <div class="tk-fac-card-body">
+                            <div class="tk-fac-icon"><i class="fa-solid fa-star"></i></div>
+                            <h4 class="tk-fac-title">Ruang OSIS SMP</h4>
+                            <p class="tk-fac-desc">Ruang OSIS yang diselenggarakan bagi siswa-siswi yang mengikuti
+                                kegiatan-kegiatan OSIS.</p>
+                            <div class="tk-fac-tags">
+                                <span>Kegiatan</span><span>Kerjasama</span><span>Komunitas</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tk-fac-card" data-fac="5">
+                        <div class="tk-fac-card-img">
+                            <img src="playground-ssantoandreas.jpg" alt="Playground TK">
+                            <div class="tk-fac-card-overlay"></div>
+                        </div>
+                        <div class="tk-fac-card-body">
+                            <div class="tk-fac-icon"><i class="fa-solid fa-cubes-stacked"></i></div>
+                            <h4 class="tk-fac-title">Playground</h4>
+                            <p class="tk-fac-desc">Fasilitas yang bersedia bagi siswa-siswi TK yang bertujuan untuk
+                                "bermain" dengan
+                                menumbuhkan kreativitas dan eksplorasi</p>
+                            <div class="tk-fac-tags">
+                                <span>Belajar</span><span>Bermain</span><span>Eksplorasi</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tk-fac-card" data-fac="5">
+                        <div class="tk-fac-card-img">
+                            <img src="ruangbk-placeholder-ssantoandreas.jpeg" alt="Ruang BK">
+                            <div class="tk-fac-card-overlay"></div>
+                        </div>
+                        <div class="tk-fac-card-body">
+                            <div class="tk-fac-icon"><i class="fa-regular fa-user"></i></div>
+                            <h4 class="tk-fac-title">Ruang BK</h4>
+                            <p class="tk-fac-desc">Ruang BK St. Andreas hadir sebagai tempat yang aman dan nyaman bagi
+                                siswa untuk berkonsultasi</p>
+                            <div class="tk-fac-tags">
+                                <span>Konseling</span><span>Pembentukan Pribadi</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tk-fac-card" data-fac="5">
+                        <div class="tk-fac-card-img">
+                            <img src="ruangmusik-placeholder-ssantoandreas.jpeg" alt=" Ruang Musik">
+                            <div class="tk-fac-card-overlay"></div>
+                        </div>
+                        <div class="tk-fac-card-body">
+                            <div class="tk-fac-icon"><i class="fa-solid fa-music"></i></div>
+                            <h4 class="tk-fac-title">Ruang Musik</h4>
+                            <p class="tk-fac-desc">tempat melatih, memproduksi, mengekspresikan, dan menampilkan karya
+                                musik secara optimal bagi siswa-siswi</p>
+                            <div class="tk-fac-tags">
+                                <span>Musik</span><span>Seni & Pementasan</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tk-fac-card" data-fac="5">
+                        <div class="tk-fac-card-img">
+                            <img src="kantin-ssantoandreas.jpg" alt="Kantin Sekolah">
+                            <div class="tk-fac-card-overlay"></div>
+                        </div>
+                        <div class="tk-fac-card-body">
+                            <div class="tk-fac-icon"><i class="fa-solid fa-bowl-food"></i></div>
+                            <h4 class="tk-fac-title">Kantin Sekolah</h4>
+                            <p class="tk-fac-desc">Menyediakan akses bagi siswa-siswi untuk membelikan makanan dan
+                                minuman
+                                secara langsung di Sekolah</p>
+                            <div class="tk-fac-tags">
+                                <span>Aksesibilitas</span><span>Makanan Bergizi</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section class="tk-cta-section">
+            <div class="tk-cta-inner">
+                <div class="tk-cta-text">
+                    <h2 class="tk-cta-title">Siap Bergabung dengan<br>Keluarga <em>Santo Andreas?</em></h2>
+                    <p class="tk-cta-sub">Daftarkan putra-putri Anda dan mulailah perjalanan luar biasa bersama kami.
+                    </p>
+                </div>
+                <div class="tk-cta-actions">
+                    <a href="pendaftaran.html" class="tk-cta-btn tk-cta-btn--primary">
+                        <i class="fas fa-paper-plane"></i> Daftar Sekarang
+                    </a>
+                    <a href="tel:0215804058" class="tk-cta-btn tk-cta-btn--outline">
+                        <i class="fas fa-phone"></i> Hubungi Kami
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <footer class="site-footer">
+
+            <div class="footer-bg-ring ring-a"></div>
+            <div class="footer-bg-ring ring-b"></div>
+
+            <div class="footer-inner">
+
+                <div class="footer-col footer-col--brand">
+                    <img src="logo-landscape-ssantoandreas.png" alt="Logo Sekolah Santo Andreas" class="footer-logo">
+                    <p class="footer-about">Lembaga pendidikan Katolik di Jakarta Barat yang telah membentuk generasi
+                        unggul
+                        sejak 1990 — dari Nursery hingga SMP.</p>
+
+                    <div class="footer-socials">
+                        <a href="https://www.facebook.com/sstandreas" class="footer-social" aria-label="Facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="https://www.instagram.com/sstandreas/" class="footer-social" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://www.youtube.com/channel/UC2fmVdeHtxnXl1LMYu7WAAQ" class="footer-social"
+                            aria-label="YouTube">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="footer-col">
+                    <h4 class="footer-col-title">Tentang Kami</h4>
+                    <ul class="footer-links">
+                        <li><a href="tentang-kami.html" class="footer-link footer-link--parent">
+                                <i class="fas fa-chevron-right"></i> Tentang Kami
+                            </a></li>
+                        <li><a href="tentang-kami.html#visi-misi" class="footer-link footer-link--child">
+                                <i class="fas fa-minus"></i> Visi &amp; Misi
+                            </a></li>
+                        <li><a href="tentang-kami.html#sejarah" class="footer-link footer-link--child">
+                                <i class="fas fa-minus"></i> Sejarah
+                            </a></li>
+                        <li><a href="tentang-kami.html#fasilitas" class="footer-link footer-link--child">
+                                <i class="fas fa-minus"></i> Fasilitas
+                            </a></li>
+                    </ul>
+
+                    <h4 class="footer-col-title" style="margin-top: 28px;">Jenjang Pendidikan</h4>
+                    <ul class="footer-links">
+                        <li><a href="jenjang.html" class="footer-link footer-link--parent">
+                                <i class="fas fa-chevron-right"></i> Jenjang Pendidikan
+                            </a></li>
+                        <li><a href="tk.html" class="footer-link footer-link--child">
+                                <i class="fas fa-minus"></i> TK
+                            </a></li>
+                        <li><a href="sd.html" class="footer-link footer-link--child">
+                                <i class="fas fa-minus"></i> SD
+                            </a></li>
+                        <li><a href="smp.html" class="footer-link footer-link--child">
+                                <i class="fas fa-minus"></i> SMP
+                            </a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4 class="footer-col-title">Portal</h4>
+                    <ul class="footer-links">
+                        <li><a href="portal-guru.html" class="footer-link footer-link--parent">
+                                <i class="fas fa-chevron-right"></i> Portal Guru
+                            </a></li>
+                        <li><a href="login.html" class="footer-link footer-link--parent">
+                                <i class="fas fa-chevron-right"></i> Portal Siswa
+                            </a></li>
+                    </ul>
+
+                    <h4 class="footer-col-title" style="margin-top: 28px;">Informasi</h4>
+                    <ul class="footer-links">
+                        <li><a href="pendaftaran.html" class="footer-link footer-link--parent">
+                                <i class="fas fa-chevron-right"></i> Pendaftaran
+                            </a></li>
+                        <li><a href="kalendar-akademik.html" class="footer-link footer-link--parent">
+                                <i class="fas fa-chevron-right"></i> Kalender Akademik
+                            </a></li>
+                        <li><a href="berita.html" class="footer-link footer-link--parent">
+                                <i class="fas fa-chevron-right"></i> Berita
+                            </a></li>
+                        <li><a href="prestasi.html" class="footer-link footer-link--parent">
+                                <i class="fas fa-chevron-right"></i> Prestasi
+                            </a></li>
+                        <li><a href="contact.html" class="footer-link footer-link--parent">
+                                <i class="fas fa-chevron-right"></i> Hubungi Kami
+                            </a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col footer-col--contact">
+                    <h4 class="footer-col-title">Hubungi Kami</h4>
+
+                    <ul class="footer-contact-list">
+                        <li class="footer-contact-item">
+                            <div class="footer-contact-icon"><i class="fas fa-location-dot"></i></div>
+                            <p>Jl. Komplek Green Garden,<br>Kedoya Selatan, Kebon Jeruk<br>Jakarta Barat 11520</p>
+                        </li>
+                        <li class="footer-contact-item">
+                            <div class="footer-contact-icon"><i class="fas fa-phone"></i></div>
+                            <p>021 – 580 4058</p>
+                        </li>
+                        <li class="footer-contact-item">
+                            <div class="footer-contact-icon"><i class="fas fa-clock"></i></div>
+                            <p>Senin – Jumat<br>06.00 – 15.00 WIB</p>
+                        </li>
+                        <li class="footer-contact-item">
+                            <div class="footer-contact-icon"><i class="fas fa-envelope"></i></div>
+                            <p>info@sstandreas.sch.id</p>
+                        </li>
+                    </ul>
+
+                    <a href="pendaftaran.html" class="footer-cta-btn">
+                        Daftar Sekarang <i class="fas fa-paper-plane"></i>
+                    </a>
+                </div>
+
+            </div>
+
+            <div class="footer-divider"></div>
+
+            <div class="footer-bottom">
+                <p class="footer-copyright">© 2026 Sekolah Santo Andreas. All Rights Reserved.</p>
+                <p class="footer-credit"><i class="fas fa-code"></i> Dikembangkan oleh Raylika L.</p>
+            </div>
+
+        </footer>
+        <script>
+
+            document.querySelectorAll('a[href^="#"]').forEach(a => {
+                a.addEventListener('click', e => {
+                    e.preventDefault();
+                    const t = document.querySelector(a.getAttribute('href'));
+                    if (t) t.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                });
+            });
+
+            (function () {
+                const hash = window.location.hash;
+                if (!hash) return;
+                const target = document.querySelector(hash);
+                if (!target) return;
+
+                target.classList.add('tk-section--arrived');
+
+                const glow = document.createElement('div');
+                glow.className = 'tk-arrive-glow';
+                target.insertBefore(glow, target.firstChild);
+
+                const bar = document.createElement('div');
+                bar.style.cssText = [
+                    'position:absolute', 'top:0', 'left:0', 'right:0', 'height:3px',
+                    'background:linear-gradient(90deg,transparent 0%,#ffcc00 30%,#0088e3 70%,transparent 100%)',
+                    'transform-origin:left center',
+                    'animation:tk-arrive-bar 2.4s cubic-bezier(0.4,0,0.2,1) forwards',
+                    'z-index:10', 'pointer-events:none'
+                ].join(';');
+
+                const pos = getComputedStyle(target).position;
+                if (pos === 'static') target.style.position = 'relative';
+                target.appendChild(bar);
+
+                setTimeout(function () {
+                    bar.remove();
+                    glow.remove();
+                    target.classList.remove('tk-section--arrived');
+                    if (pos === 'static') target.style.position = '';
+                }, 2500);
+            })();
+
+            const counters = document.querySelectorAll('.tk-stat-num');
+            let counted = false;
+            const countObs = new IntersectionObserver(entries => {
+                if (entries[0].isIntersecting && !counted) {
+                    counted = true;
+                    counters.forEach(el => {
+                        const target = +el.dataset.target;
+                        const dur = 1800;
+                        const step = target / (dur / 16);
+                        let cur = 0;
+                        const t = setInterval(() => {
+                            cur += step;
+                            if (cur >= target) { el.textContent = target.toLocaleString(); clearInterval(t); }
+                            else el.textContent = Math.floor(cur).toLocaleString();
+                        }, 16);
+                    });
+                }
+            }, { threshold: 0.4 });
+            if (counters[0]) countObs.observe(counters[0].closest('.tk-stats-strip'));
+
+            document.querySelectorAll('.tk-misi-card').forEach(card => {
+                card.addEventListener('mousemove', e => {
+                    const r = card.getBoundingClientRect();
+                    const x = e.clientX - r.left, y = e.clientY - r.top;
+                    const rx = ((y - r.height / 2) / r.height) * -8;
+                    const ry = ((x - r.width / 2) / r.width) * 8;
+                    card.style.transform = `perspective(700px) rotateX(${rx}deg) rotateY(${ry}deg) translateY(-6px)`;
+                });
+                card.addEventListener('mouseleave', () => card.style.transform = '');
+            });
+
+            document.querySelectorAll('.tk-fac-card').forEach(card => {
+                card.addEventListener('mousemove', e => {
+                    const r = card.getBoundingClientRect();
+                    const x = ((e.clientX - r.left) / r.width - 0.5) * 12;
+                    const y = ((e.clientY - r.top) / r.height - 0.5) * 12;
+                    card.querySelector('.tk-fac-card-img img').style.transform = `scale(1.08) translate(${x * 0.3}px, ${y * 0.3}px)`;
+                });
+                card.addEventListener('mouseleave', () => {
+                    card.querySelector('.tk-fac-card-img img').style.transform = '';
+                });
+            });
+
+            const revealObs = new IntersectionObserver(entries => {
+                entries.forEach(e => {
+                    if (e.isIntersecting) e.target.classList.add('tk-revealed');
+                });
+            }, { threshold: 0.12 });
+
+            document.querySelectorAll(
+                '.tk-misi-card, .tk-tl-item, .tk-fac-card, .tk-visi-word'
+            ).forEach(el => revealObs.observe(el));
+        </script>
+
+        <script src="session-banner.js"></script>
+        <script>
+            (function () {
+                var btn = document.getElementById('hamburgerBtn');
+                var nav = document.getElementById('mobileNav');
+                if (!btn || !nav) return;
+                btn.addEventListener('click', function () {
+                    btn.classList.toggle('open');
+                    nav.classList.toggle('open');
+                });
+                nav.querySelectorAll('a').forEach(function (a) {
+                    a.addEventListener('click', function () {
+                        btn.classList.remove('open');
+                        nav.classList.remove('open');
+                    });
+                });
+                document.addEventListener('click', function (e) {
+                    if (!btn.contains(e.target) && !nav.contains(e.target)) {
+                        btn.classList.remove('open');
+                        nav.classList.remove('open');
+                    }
+                });
+            })();
+        </script>
+
+    </div>
+</body>
+
+</html>

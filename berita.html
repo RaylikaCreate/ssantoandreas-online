@@ -1,0 +1,1581 @@
+﻿<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Berita — Sekolah Santo Andreas</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.7.2/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <style>
+        
+        :root {
+            --blue: #0162a6;
+            --yellow: #ffcc00;
+            --red: #da251e;
+            --accent: #0088e3;
+            --dark: #04111f;
+            --dark2: #0a1929;
+            --white: #ffffff;
+            --off: #f4f7fb;
+            --muted: #6b8caa;
+            --display: 'Times New Roman', Georgia, serif;
+            --sans: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background: var(--dark);
+            font-family: var(--sans);
+        }
+
+        p,
+        h1,
+        h2,
+        h3,
+        h4 {
+            text-shadow: none;
+        }
+
+.bn-hero {
+            position: relative;
+            height: 52vh;
+            min-height: 380px;
+            display: flex;
+            align-items: flex-end;
+            overflow: hidden;
+            padding-bottom: 70px;
+        }
+
+        .bn-hero-bg {
+            position: absolute;
+            inset: 0;
+        }
+
+        .bn-hero-bg img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center 45%;
+            filter: brightness(0.22) saturate(0.5);
+            animation: hero-zoom 16s ease-out forwards;
+        }
+
+        @keyframes hero-zoom {
+            from {
+                transform: scale(1.06);
+            }
+
+            to {
+                transform: scale(1.00);
+            }
+        }
+
+        .bn-hero-overlay {
+            position: absolute;
+            inset: 0;
+            background:
+                linear-gradient(110deg, rgba(1, 98, 166, 0.68) 0%, rgba(0, 136, 227, 0.15) 55%, transparent 100%),
+                linear-gradient(180deg, transparent 30%, rgba(4, 17, 31, 0.98) 100%);
+        }
+
+        .bn-hero-accent {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 5px;
+            height: 100%;
+            background: var(--yellow);
+            z-index: 3;
+        }
+
+        .bn-hero-content {
+            position: relative;
+            z-index: 4;
+            padding: 0 80px;
+            max-width: 1200px;
+            width: 100%;
+            margin: 0 auto;
+            animation: fade-up 0.8s ease both;
+        }
+
+        @keyframes fade-up {
+            from {
+                opacity: 0;
+                transform: translateY(28px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .bn-hero-eyebrow {
+            font-family: var(--sans);
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 0.24em;
+            text-transform: uppercase;
+            color: var(--yellow);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 14px;
+        }
+
+        .bn-hero-eyebrow::before {
+            content: '';
+            display: inline-block;
+            width: 32px;
+            height: 2px;
+            background: var(--yellow);
+            border-radius: 2px;
+        }
+
+        .bn-hero-title {
+            font-family: var(--display);
+            font-size: clamp(36px, 5.5vw, 68px);
+            font-weight: 900;
+            color: var(--white);
+            line-height: 1.05;
+            margin: 0 0 14px;
+            letter-spacing: -0.02em;
+        }
+
+        .bn-hero-title em {
+            font-style: italic;
+            font-weight: 400;
+            color: var(--yellow);
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        .bn-hero-sub {
+            font-family: var(--sans);
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.45);
+            margin: 0;
+        }
+
+.bn-bar {
+            background: var(--dark2);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            position: sticky;
+            top: 88px;
+            z-index: 100;
+        }
+
+        .bn-bar-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 80px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 24px;
+            height: 68px;
+        }
+
+        .bn-filters {
+            display: flex;
+            gap: 6px;
+        }
+
+        .bn-filter {
+            font-family: var(--sans);
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 0.06em;
+            padding: 8px 18px;
+            border-radius: 50px;
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            background: transparent;
+            color: rgba(255, 255, 255, 0.45);
+            cursor: pointer;
+            transition: all 0.25s ease;
+        }
+
+        .bn-filter:hover {
+            background: rgba(255, 255, 255, 0.06);
+            color: rgba(255, 255, 255, 0.75);
+        }
+
+        .bn-filter.active {
+            background: var(--yellow);
+            border-color: var(--yellow);
+            color: var(--dark);
+        }
+
+        .bn-search-wrap {
+            position: relative;
+            flex-shrink: 0;
+        }
+
+        .bn-search {
+            font-family: var(--sans);
+            font-size: 13px;
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-radius: 50px;
+            color: rgba(255, 255, 255, 0.8);
+            padding: 9px 18px 9px 42px;
+            outline: none;
+            width: 220px;
+            transition: all 0.3s ease;
+        }
+
+        .bn-search::placeholder {
+            color: rgba(255, 255, 255, 0.3);
+        }
+
+        .bn-search:focus {
+            border-color: rgba(0, 136, 227, 0.5);
+            background: rgba(0, 136, 227, 0.08);
+            width: 270px;
+        }
+
+        .bn-search-icon {
+            position: absolute;
+            left: 16px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: rgba(255, 255, 255, 0.3);
+            font-size: 12px;
+            pointer-events: none;
+        }
+
+.bn-main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 72px 80px 100px;
+            display: grid;
+            grid-template-columns: 1fr 320px;
+            gap: 60px;
+            align-items: start;
+        }
+
+.bn-featured {
+            margin-bottom: 52px;
+        }
+
+        .bn-featured-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-family: var(--sans);
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--yellow);
+            margin-bottom: 16px;
+        }
+
+        .bn-featured-label i {
+            font-size: 9px;
+        }
+
+        .bn-featured-card {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            border-radius: 20px;
+            overflow: hidden;
+            background: var(--dark2);
+            border: 1px solid rgba(255, 255, 255, 0.07);
+            transition: all 0.35s ease;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .bn-featured-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 24px 60px rgba(0, 0, 0, 0.4);
+            border-color: rgba(0, 136, 227, 0.25);
+        }
+
+        .bn-featured-img-wrap {
+            position: relative;
+            overflow: hidden;
+            min-height: 340px;
+        }
+
+        .bn-featured-img-wrap img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.6s ease;
+        }
+
+        .bn-featured-card:hover .bn-featured-img-wrap img {
+            transform: scale(1.07);
+        }
+
+        .bn-featured-img-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to right, transparent 60%, rgba(10, 25, 41, 0.5));
+        }
+
+        .bn-category-badge {
+            position: absolute;
+            top: 18px;
+            left: 18px;
+            font-family: var(--sans);
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            padding: 5px 14px;
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+        }
+
+        .badge--event {
+            background: rgba(1, 98, 166, 0.75);
+            color: #fff;
+            border: 1px solid rgba(1, 98, 166, 0.5);
+        }
+
+        .badge--prestasi {
+            background: rgba(255, 204, 0, 0.8);
+            color: #1a1000;
+            border: 1px solid rgba(255, 204, 0, 0.5);
+        }
+
+        .badge--kegiatan {
+            background: rgba(218, 37, 30, 0.75);
+            color: #fff;
+            border: 1px solid rgba(218, 37, 30, 0.5);
+        }
+
+        .bn-featured-body {
+            padding: 44px 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .bn-featured-meta {
+            display: flex;
+            align-items: center;
+            gap: 18px;
+            margin-bottom: 18px;
+        }
+
+        .bn-meta-item {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-family: var(--sans);
+            font-size: 11px;
+            color: var(--muted);
+        }
+
+        .bn-meta-item i {
+            font-size: 10px;
+        }
+
+        .bn-featured-title {
+            font-family: var(--display);
+            font-size: clamp(22px, 2.4vw, 30px);
+            font-weight: 700;
+            color: var(--white);
+            line-height: 1.25;
+            margin: 0 0 16px;
+        }
+
+        .bn-featured-excerpt {
+            font-family: var(--sans);
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.5);
+            line-height: 1.8;
+            margin-bottom: 32px;
+            display: -webkit-box;
+            -webkit-line-clamp: 4;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .bn-read-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            font-family: var(--sans);
+            font-size: 12px;
+            font-weight: 700;
+            color: var(--yellow);
+            text-decoration: none;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            transition: gap 0.25s ease;
+            align-self: flex-start;
+        }
+
+        .bn-read-btn:hover {
+            gap: 16px;
+        }
+
+        .bn-read-btn i {
+            font-size: 11px;
+        }
+
+.bn-articles-head {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 32px;
+        }
+
+        .bn-articles-title {
+            font-family: var(--display);
+            font-size: 22px;
+            font-weight: 700;
+            color: var(--white);
+            margin: 0;
+        }
+
+        .bn-count {
+            font-family: var(--sans);
+            font-size: 12px;
+            color: var(--muted);
+        }
+
+.bn-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+        }
+
+.bn-card {
+            background: var(--dark2);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 16px;
+            overflow: hidden;
+            text-decoration: none;
+            color: inherit;
+            display: flex;
+            flex-direction: column;
+            transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+            position: relative;
+        }
+
+        .bn-card:hover {
+            transform: translateY(-7px);
+            border-color: rgba(0, 136, 227, 0.25);
+            box-shadow: 0 18px 48px rgba(0, 0, 0, 0.35);
+        }
+
+        .bn-card-img-wrap {
+            position: relative;
+            height: 190px;
+            overflow: hidden;
+        }
+
+        .bn-card-img-wrap img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+            display: block;
+        }
+
+        .bn-card:hover .bn-card-img-wrap img {
+            transform: scale(1.08);
+        }
+
+        .bn-card-img-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to bottom, transparent 50%, rgba(10, 25, 41, 0.6));
+        }
+
+        .bn-card-shine {
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+        }
+
+        .bn-card-body {
+            padding: 22px 24px 26px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .bn-card-meta {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-bottom: 12px;
+        }
+
+        .bn-card-title {
+            font-family: var(--display);
+            font-size: 17px;
+            font-weight: 700;
+            color: var(--white);
+            line-height: 1.35;
+            margin: 0 0 10px;
+            flex: 1;
+        }
+
+        .bn-card-excerpt {
+            font-family: var(--sans);
+            font-size: 12.5px;
+            color: rgba(255, 255, 255, 0.42);
+            line-height: 1.75;
+            margin-bottom: 18px;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .bn-card-footer {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
+            padding-top: 14px;
+            margin-top: auto;
+        }
+
+        .bn-card-more {
+            font-family: var(--sans);
+            font-size: 11px;
+            font-weight: 700;
+            color: var(--accent);
+            text-decoration: none;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            transition: gap 0.25s ease;
+        }
+
+        .bn-card-more:hover {
+            gap: 10px;
+        }
+
+.bn-load-wrap {
+            text-align: center;
+            margin-top: 48px;
+        }
+
+        .bn-load-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            font-family: var(--sans);
+            font-size: 13px;
+            font-weight: 700;
+            color: var(--white);
+            background: transparent;
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            border-radius: 50px;
+            padding: 14px 36px;
+            cursor: pointer;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        .bn-load-btn:hover {
+            background: var(--yellow);
+            border-color: var(--yellow);
+            color: var(--dark);
+            transform: translateY(-3px);
+        }
+
+.bn-sidebar {
+            display: flex;
+            flex-direction: column;
+            gap: 28px;
+        }
+
+        .bn-widget {
+            background: var(--dark2);
+            border: 1px solid rgba(255, 255, 255, 0.07);
+            border-radius: 16px;
+            padding: 28px 26px;
+        }
+
+        .bn-widget-title {
+            font-family: var(--display);
+            font-size: 17px;
+            font-weight: 700;
+            color: var(--white);
+            margin: 0 0 20px;
+            padding-bottom: 14px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .bn-widget-title i {
+            font-size: 14px;
+            color: var(--yellow);
+        }
+
+.bn-cat-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .bn-cat-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .bn-cat-link {
+            font-family: var(--sans);
+            font-size: 13px;
+            color: rgba(255, 255, 255, 0.55);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: color 0.2s ease;
+        }
+
+        .bn-cat-link:hover {
+            color: var(--yellow);
+        }
+
+        .bn-cat-link i {
+            font-size: 9px;
+            color: var(--muted);
+        }
+
+        .bn-cat-count {
+            font-family: var(--sans);
+            font-size: 11px;
+            font-weight: 700;
+            color: rgba(255, 255, 255, 0.22);
+            background: rgba(255, 255, 255, 0.06);
+            padding: 2px 10px;
+            border-radius: 20px;
+        }
+
+.bn-recent-list {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .bn-recent-item {
+            display: flex;
+            gap: 14px;
+            text-decoration: none;
+            align-items: center;
+            transition: opacity 0.2s ease;
+        }
+
+        .bn-recent-item:hover {
+            opacity: 0.75;
+        }
+
+        .bn-recent-thumb {
+            width: 60px;
+            height: 60px;
+            border-radius: 10px;
+            overflow: hidden;
+            flex-shrink: 0;
+        }
+
+        .bn-recent-thumb img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .bn-recent-info {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .bn-recent-title {
+            font-family: var(--sans);
+            font-size: 12.5px;
+            font-weight: 600;
+            color: rgba(255, 255, 255, 0.72);
+            line-height: 1.4;
+            margin: 0 0 5px;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .bn-recent-date {
+            font-family: var(--sans);
+            font-size: 11px;
+            color: var(--muted);
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .bn-recent-date i {
+            font-size: 9px;
+        }
+
+.bn-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .bn-tag {
+            font-family: var(--sans);
+            font-size: 11px;
+            font-weight: 600;
+            color: rgba(255, 255, 255, 0.45);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 50px;
+            padding: 5px 14px;
+            text-decoration: none;
+            letter-spacing: 0.04em;
+            transition: all 0.25s ease;
+        }
+
+        .bn-tag:hover {
+            background: var(--yellow);
+            border-color: var(--yellow);
+            color: var(--dark);
+        }
+
+.bn-cta-widget {
+            background: linear-gradient(135deg, var(--blue) 0%, var(--accent) 100%);
+            border: none;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .bn-cta-widget::before {
+            content: '"';
+            position: absolute;
+            top: -20px;
+            right: 10px;
+            font-family: var(--display);
+            font-size: 160px;
+            font-weight: 900;
+            color: rgba(255, 255, 255, 0.06);
+            line-height: 1;
+            pointer-events: none;
+        }
+
+        .bn-cta-widget-title {
+            font-family: var(--display);
+            font-size: 20px;
+            font-weight: 700;
+            color: #fff;
+            margin: 0 0 10px;
+            position: relative;
+        }
+
+        .bn-cta-widget-sub {
+            font-family: var(--sans);
+            font-size: 13px;
+            color: rgba(255, 255, 255, 0.65);
+            line-height: 1.7;
+            margin-bottom: 22px;
+            position: relative;
+        }
+
+        .bn-cta-widget-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--yellow);
+            color: var(--dark);
+            font-family: var(--sans);
+            font-size: 12px;
+            font-weight: 700;
+            padding: 11px 24px;
+            border-radius: 50px;
+            text-decoration: none;
+            letter-spacing: 0.04em;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .bn-cta-widget-btn:hover {
+            background: #fff;
+            transform: translateY(-2px);
+        }
+
+.bn-no-results {
+            display: none;
+            text-align: center;
+            padding: 60px 20px;
+            grid-column: 1 / -1;
+        }
+
+        .bn-no-results i {
+            font-size: 42px;
+            color: rgba(255, 255, 255, 0.12);
+            margin-bottom: 18px;
+            display: block;
+        }
+
+        .bn-no-results p {
+            font-family: var(--sans);
+            font-size: 14px;
+            color: var(--muted);
+        }
+
+        @media (max-width: 768px) {
+            .bn-hero {
+                height: auto;
+                min-height: 52vh;
+                padding-bottom: 60px;
+            }
+
+            .bn-hero-content {
+                padding: 0 16px;
+            }
+
+            .bn-hero-title {
+                font-size: clamp(28px, 8vw, 52px);
+            }
+
+            .bn-bar-inner {
+                padding: 0 12px;
+                height: auto;
+                flex-direction: column;
+                gap: 10px;
+                padding: 12px;
+            }
+
+            .bn-filters {
+                flex-wrap: wrap;
+                gap: 6px;
+            }
+
+            .bn-filter {
+                font-size: 11px;
+                padding: 7px 12px;
+            }
+
+            .bn-search {
+                width: 100%;
+            }
+
+            .bn-main {
+                grid-template-columns: 1fr;
+                padding: 36px 16px 60px;
+                gap: 32px;
+            }
+
+            .bn-sidebar {
+                order: -1;
+            }
+
+            .bn-featured-card {
+                grid-template-columns: 1fr;
+            }
+
+            .bn-featured-img-wrap {
+                min-height: 200px;
+            }
+
+            .bn-featured-body {
+                padding: 24px 20px;
+            }
+
+            .bn-grid {
+                grid-template-columns: 1fr;
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+
+<nav class="nav-bar nav-scrolled">
+        <div class="nav-container">
+            <div class="logo">
+                <a href="index.html"><img src="https://i.ibb.co.com/V033MvMm/St-Andreas-Logo.png" alt="St-Andreas-Logo"
+                        width="290px" height="70px"></a>
+            </div>
+            <ul class="nav-links">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link">Halaman Utama</a>
+                </li>
+                <li class="nav-item">
+                    <a href="tentang-kami.html" class="nav-link">Tentang Kami<i class="fas fa-chevron-down"></i></a>
+                    <div class="dropdown-menu">
+                        <a href="tentang-kami.html#visi-misi">Visi &amp; Misi</a>
+                        <a href="tentang-kami.html#sejarah">Sejarah</a>
+                        <a href="tentang-kami.html#fasilitas">Fasilitas</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a href="jenjang.html" class="nav-link">Jenjang Pendidikan<i class="fas fa-chevron-down"></i></a>
+                    <div class="dropdown-menu">
+                        <a href="tk.html">TK / Nursery</a>
+                        <a href="sd.html">SD</a>
+                        <a href="smp.html">SMP</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a href="#" onclick="event.preventDefault()" class="nav-link">Portal<i class="fas fa-chevron-down"></i></a>
+                    <div class="dropdown-menu">
+                        <a href="login.html">Portal Siswa</a>
+                        <a href="login-teacher.html">Portal Guru</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a href="pendaftaran.html" class="nav-link">Pendaftaran</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" onclick="event.preventDefault()" class="nav-link">Informasi<i class="fas fa-chevron-down"></i></a>
+                    <div class="dropdown-menu">
+                        <a href="berita.html">Berita</a>
+                        <a href="kalendar-akademik.html">Kalender Akademik</a>
+                        <a href="prestasi.html">Prestasi</a>
+                        <a href="contact.html">Hubungi Kami</a>
+                    </div>
+                </li>
+            </ul>
+            <div class="social-links">
+                <a href="https://www.facebook.com/sstandreas" class="social-link"><i class="fab fa-facebook"></i></a>
+                <a href="https://www.instagram.com/sstandreas/" class="social-link"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.youtube.com/channel/UC2fmVdeHtxnXl1LMYu7WAAQ" class="social-link"><i
+                        class="fab fa-youtube"></i></a>
+            </div>
+            
+            <button class="hamburger" id="hamburgerBtn" aria-label="Menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+        
+        <div class="mobile-nav" id="mobileNav">
+            <ul class="mobile-nav-links">
+                <li><a href="index.html">Halaman Utama</a></li>
+                <li class="mobile-dropdown">
+                    <a href="tentang-kami.html">Tentang Kami</a>
+                    <div class="mobile-sub">
+                        <a href="tentang-kami.html#visi-misi">Visi &amp; Misi</a>
+                        <a href="tentang-kami.html#sejarah">Sejarah</a>
+                        <a href="tentang-kami.html#fasilitas">Fasilitas</a>
+                    </div>
+                </li>
+                <li class="mobile-dropdown">
+                    <a href="jenjang.html">Jenjang Pendidikan</a>
+                    <div class="mobile-sub">
+                        <a href="tk.html">TK / Nursery</a>
+                        <a href="sd.html">SD</a>
+                        <a href="smp.html">SMP</a>
+                    </div>
+                </li>
+                <li class="mobile-dropdown">
+                    <a href="#">Portal</a>
+                    <div class="mobile-sub">
+                        <a href="login.html">Portal Siswa</a>
+                        <a href="login-teacher.html">Portal Guru</a>
+                    </div>
+                </li>
+                <li><a href="pendaftaran.html">Pendaftaran</a></li>
+                <li class="mobile-dropdown">
+                    <a href="#">Informasi</a>
+                    <div class="mobile-sub">
+                        <a href="berita.html">Berita</a>
+                        <a href="kalendar-akademik.html">Kalender Akademik</a>
+                        <a href="prestasi.html">Prestasi</a>
+                        <a href="contact.html">Hubungi Kami</a>
+                    </div>
+                </li>
+            </ul>
+            <div class="mobile-nav-social">
+                <a href="https://www.facebook.com/sstandreas" aria-label="Facebook"><i
+                        class="fab fa-facebook-f"></i></a>
+                <a href="https://www.instagram.com/sstandreas/" aria-label="Instagram"><i
+                        class="fab fa-instagram"></i></a>
+                <a href="https://www.youtube.com/channel/UC2fmVdeHtxnXl1LMYu7WAAQ" aria-label="YouTube"><i
+                        class="fab fa-youtube"></i></a>
+            </div>
+        </div>
+    </nav>
+
+<header class="bn-hero">
+        <div class="bn-hero-bg">
+            <img src="https://santoandreas.sch.id/wp-content/uploads/slider/cache/414549754177bf3a942a6d7bff3dafc8/DSC00475-new-scaled.jpg"
+                alt="Berita Santo Andreas">
+            <div class="bn-hero-overlay"></div>
+        </div>
+        <div class="bn-hero-accent"></div>
+        <div class="bn-hero-content">
+            <p class="bn-hero-eyebrow">Kabar Terbaru</p>
+            <h1 class="bn-hero-title">Berita <em>St. Andreas</em></h1>
+            <p class="bn-hero-sub">Momen, pencapaian, dan cerita inspiratif dari keluarga besar Santo Andreas.</p>
+        </div>
+    </header>
+
+<div class="bn-bar">
+        <div class="bn-bar-inner">
+            <div class="bn-filters">
+                <button class="bn-filter active" data-filter="all">Semua</button>
+                <button class="bn-filter" data-filter="event">Event</button>
+                <button class="bn-filter" data-filter="prestasi">Prestasi</button>
+                <button class="bn-filter" data-filter="kegiatan">Kegiatan</button>
+            </div>
+            <div class="bn-search-wrap">
+                <i class="fas fa-search bn-search-icon"></i>
+                <input type="text" class="bn-search" id="searchInput" placeholder="Cari berita…">
+            </div>
+        </div>
+    </div>
+
+<div class="bn-main">
+
+<div class="bn-content">
+
+<div class="bn-featured" id="featuredSection">
+                <div style="padding:48px;text-align:center;color:rgba(255,255,255,0.25);">
+                    <i class="fas fa-spinner fa-spin" style="font-size:24px;"></i>
+                </div>
+            </div>
+
+<div class="bn-articles-head">
+                <h3 class="bn-articles-title">Semua Artikel</h3>
+                <span class="bn-count" id="articleCount">Menampilkan 8 artikel</span>
+            </div>
+
+            <div class="bn-grid" id="articlesGrid">
+                
+                <div style="grid-column:1/-1;text-align:center;padding:40px;color:rgba(255,255,255,0.25);">
+                    <i class="fas fa-spinner fa-spin" style="font-size:20px;"></i>
+                </div>
+
+<div class="bn-no-results" id="noResults" style="display:none;">
+                    <i class="fas fa-newspaper"></i>
+                    <p>Tidak ada berita ditemukan untuk pencarian ini.</p>
+                </div>
+
+            </div>
+
+<div class="bn-load-wrap" id="loadMoreWrap">
+                <button class="bn-load-btn" id="loadMoreBtn">
+                    <i class="fas fa-plus"></i> Muat Lebih Banyak
+                </button>
+            </div>
+
+        </div>
+
+<aside class="bn-sidebar">
+
+<div class="bn-widget">
+                <h4 class="bn-widget-title"><i class="fas fa-layer-group"></i> Kategori</h4>
+                <ul class="bn-cat-list">
+                    <li class="bn-cat-item">
+                        <a href="#" class="bn-cat-link" data-filter-sidebar="all">
+                            <i class="fas fa-chevron-right"></i> Semua Berita
+                        </a>
+                        <span class="bn-cat-count" id="count-all">—</span>
+                    </li>
+                    <li class="bn-cat-item">
+                        <a href="#" class="bn-cat-link" data-filter-sidebar="event">
+                            <i class="fas fa-chevron-right"></i> Event
+                        </a>
+                        <span class="bn-cat-count" id="count-event">—</span>
+                    </li>
+                    <li class="bn-cat-item">
+                        <a href="#" class="bn-cat-link" data-filter-sidebar="prestasi">
+                            <i class="fas fa-chevron-right"></i> Prestasi
+                        </a>
+                        <span class="bn-cat-count" id="count-prestasi">—</span>
+                    </li>
+                    <li class="bn-cat-item">
+                        <a href="#" class="bn-cat-link" data-filter-sidebar="kegiatan">
+                            <i class="fas fa-chevron-right"></i> Kegiatan
+                        </a>
+                        <span class="bn-cat-count" id="count-kegiatan">—</span>
+                    </li>
+                </ul>
+            </div>
+
+<div class="bn-widget">
+                <h4 class="bn-widget-title"><i class="fas fa-clock"></i> Terbaru</h4>
+                <div class="bn-recent-list" id="recentList">
+                    <div style="padding:16px;color:rgba(255,255,255,0.25);text-align:center;">
+                        <i class="fas fa-spinner fa-spin"></i>
+                    </div>
+                </div>
+            </div>
+
+<div class="bn-widget">
+                <h4 class="bn-widget-title"><i class="fas fa-tags"></i> Tag</h4>
+                <div class="bn-tags">
+                    <a href="#" class="bn-tag">PPDB</a>
+                    <a href="#" class="bn-tag">OSIS</a>
+                    <a href="#" class="bn-tag">Pramuka</a>
+                    <a href="#" class="bn-tag">Olimpiade</a>
+                    <a href="#" class="bn-tag">Seni</a>
+                    <a href="#" class="bn-tag">Olahraga</a>
+                    <a href="#" class="bn-tag">Field Trip</a>
+                    <a href="#" class="bn-tag">Program Baru</a>
+                    <a href="#" class="bn-tag">Prestasi</a>
+                    <a href="#" class="bn-tag">SMP</a>
+                    <a href="#" class="bn-tag">SD</a>
+                    <a href="#" class="bn-tag">TK</a>
+                </div>
+            </div>
+
+<div class="bn-widget bn-cta-widget">
+                <h4 class="bn-cta-widget-title">Tertarik Bergabung?</h4>
+                <p class="bn-cta-widget-sub">Daftarkan putra-putri Anda ke Sekolah Santo Andreas sekarang.</p>
+                <a href="pendaftaran.html" class="bn-cta-widget-btn">
+                    <i class="fas fa-paper-plane"></i> Daftar Sekarang
+                </a>
+            </div>
+
+        </aside>
+
+    </div>
+
+<footer class="site-footer">
+
+<div class="footer-bg-ring ring-a"></div>
+        <div class="footer-bg-ring ring-b"></div>
+
+        <div class="footer-inner">
+
+<div class="footer-col footer-col--brand">
+                <img src="logo-landscape-ssantoandreas.png" alt="Logo Sekolah Santo Andreas" class="footer-logo">
+                <p class="footer-about">Lembaga pendidikan Katolik di Jakarta Barat yang telah membentuk generasi unggul
+                    sejak 1990 — dari Nursery hingga SMP.</p>
+                
+                <div class="footer-socials">
+                    <a href="https://www.facebook.com/sstandreas" class="footer-social" aria-label="Facebook">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="https://www.instagram.com/sstandreas/" class="footer-social" aria-label="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://www.youtube.com/channel/UC2fmVdeHtxnXl1LMYu7WAAQ" class="footer-social"
+                        aria-label="YouTube">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                </div>
+            </div>
+
+<div class="footer-col">
+                <h4 class="footer-col-title">Tentang Kami</h4>
+                <ul class="footer-links">
+                    <li><a href="tentang-kami.html" class="footer-link footer-link--parent">
+                            <i class="fas fa-chevron-right"></i> Tentang Kami
+                        </a></li>
+                    <li><a href="tentang-kami.html#visi-misi" class="footer-link footer-link--child">
+                            <i class="fas fa-minus"></i> Visi &amp; Misi
+                        </a></li>
+                    <li><a href="tentang-kami.html#sejarah" class="footer-link footer-link--child">
+                            <i class="fas fa-minus"></i> Sejarah
+                        </a></li>
+                    <li><a href="tentang-kami.html#fasilitas" class="footer-link footer-link--child">
+                            <i class="fas fa-minus"></i> Fasilitas
+                        </a></li>
+                </ul>
+
+                <h4 class="footer-col-title" style="margin-top: 28px;">Jenjang Pendidikan</h4>
+                <ul class="footer-links">
+                    <li><a href="jenjang.html" class="footer-link footer-link--parent">
+                            <i class="fas fa-chevron-right"></i> Jenjang Pendidikan
+                        </a></li>
+                    <li><a href="tk.html" class="footer-link footer-link--child">
+                            <i class="fas fa-minus"></i> TK
+                        </a></li>
+                    <li><a href="sd.html" class="footer-link footer-link--child">
+                            <i class="fas fa-minus"></i> SD
+                        </a></li>
+                    <li><a href="smp.html" class="footer-link footer-link--child">
+                            <i class="fas fa-minus"></i> SMP
+                        </a></li>
+                </ul>
+            </div>
+
+<div class="footer-col">
+                <h4 class="footer-col-title">Portal</h4>
+                <ul class="footer-links">
+                    <li><a href="portal-guru.html" class="footer-link footer-link--parent">
+                            <i class="fas fa-chevron-right"></i> Portal Guru
+                        </a></li>
+                    <li><a href="login.html" class="footer-link footer-link--parent">
+                            <i class="fas fa-chevron-right"></i> Portal Siswa
+                        </a></li>
+                </ul>
+
+                <h4 class="footer-col-title" style="margin-top: 28px;">Informasi</h4>
+                <ul class="footer-links">
+                    <li><a href="pendaftaran.html" class="footer-link footer-link--parent">
+                            <i class="fas fa-chevron-right"></i> Pendaftaran
+                        </a></li>
+                    <li><a href="kalendar-akademik.html" class="footer-link footer-link--parent">
+                            <i class="fas fa-chevron-right"></i> Kalender Akademik
+                        </a></li>
+                    <li><a href="berita.html" class="footer-link footer-link--parent">
+                            <i class="fas fa-chevron-right"></i> Berita
+                        </a></li>
+                    <li><a href="prestasi.html" class="footer-link footer-link--parent">
+                            <i class="fas fa-chevron-right"></i> Prestasi
+                        </a></li>
+                    <li><a href="contact.html" class="footer-link footer-link--parent">
+                            <i class="fas fa-chevron-right"></i> Hubungi Kami
+                        </a></li>
+                </ul>
+            </div>
+
+<div class="footer-col footer-col--contact">
+                <h4 class="footer-col-title">Hubungi Kami</h4>
+
+                <ul class="footer-contact-list">
+                    <li class="footer-contact-item">
+                        <div class="footer-contact-icon"><i class="fas fa-location-dot"></i></div>
+                        <p>Jl. Komplek Green Garden,<br>Kedoya Selatan, Kebon Jeruk<br>Jakarta Barat 11520</p>
+                    </li>
+                    <li class="footer-contact-item">
+                        <div class="footer-contact-icon"><i class="fas fa-phone"></i></div>
+                        <p>021 – 580 4058</p>
+                    </li>
+                    <li class="footer-contact-item">
+                        <div class="footer-contact-icon"><i class="fas fa-clock"></i></div>
+                        <p>Senin – Jumat<br>06.00 – 15.00 WIB</p>
+                    </li>
+                    <li class="footer-contact-item">
+                        <div class="footer-contact-icon"><i class="fas fa-envelope"></i></div>
+                        <p>info@sstandreas.sch.id</p>
+                    </li>
+                </ul>
+
+                <a href="pendaftaran.html" class="footer-cta-btn">
+                    Daftar Sekarang <i class="fas fa-paper-plane"></i>
+                </a>
+            </div>
+
+        </div>
+
+<div class="footer-divider"></div>
+
+<div class="footer-bottom">
+            <p class="footer-copyright">© 2026 Sekolah Santo Andreas. All Rights Reserved.</p>
+            <p class="footer-credit"><i class="fas fa-code"></i> Dikembangkan oleh Raylika L.</p>
+        </div>
+
+    </footer>
+
+    <script>
+
+        const BERITA_CSV_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vRx_pImd28cyYnmmseB7CbMesjiATYiEdkyq-tC0h7pCX-VmAwXoOc8IN2diJx6CQD0cWzr27n_7KPu/pub?output=csv";
+
+        const PLACEHOLDER_IMG = "https://santoandreas.sch.id/wp-content/uploads/slider/cache/414549754177bf3a942a6d7bff3dafc8/DSC00475-new-scaled.jpg";
+
+        const DEMO_ARTICLES = [
+            { id: 0, judul: "Pembukaan PPDB 2026", kategori: "event", tanggal: "28 Oktober 2025", excerpt: "Sekolah Santo Andreas resmi membuka pendaftaran siswa baru tahun ajaran 2026/2027. Kuota terbatas tersedia untuk jenjang TK, SD, dan SMP.", img: "https://santoandreas.sch.id/wp-content/uploads/2024/09/SMP-3.jpg", featured: true, penulis: "Redaksi", konten: "" },
+            { id: 1, judul: "Pelantikan OSIS 2025", kategori: "prestasi", tanggal: "28 Oktober 2025", excerpt: "Generasi pemimpin baru SMP Santo Andreas resmi dilantik di momen Sumpah Pemuda.", img: "", featured: false, penulis: "Redaksi", konten: "" },
+        ];
+
+        const BADGE = {
+            event: 'badge--event',
+            prestasi: 'badge--prestasi',
+            kegiatan: 'badge--kegiatan',
+        };
+
+        let allArticles = [];
+        let featuredArticle = null;
+
+function parseCSV(text) {
+            const results = [];
+            let cols = [], cur = "", inQ = false;
+            const t = text.trim();
+            for (let i = 0; i < t.length; i++) {
+                const ch = t[i];
+                if (ch === '"') {
+                    if (inQ && t[i + 1] === '"') { cur += '"'; i++; }
+                    else inQ = !inQ;
+                } else if (ch === ',' && !inQ) {
+                    cols.push(cur); cur = "";
+                } else if ((ch === '\n' || ch === '\r') && !inQ) {
+                    if (ch === '\r' && t[i + 1] === '\n') i++;
+                    cols.push(cur); cur = "";
+                    if (cols.some(c => c)) results.push(cols);
+                    cols = [];
+                } else {
+                    cur += ch;
+                }
+            }
+            cols.push(cur);
+            if (cols.some(c => c)) results.push(cols);
+
+            const first = (results[0] && results[0][0]) ? results[0][0].trim().toLowerCase() : "";
+            const isHeader = first === "judul" || first === "title" || first === "no";
+            return isHeader ? results.slice(1) : results;
+        }
+
+function articleURL(a) {
+            return `berita-artikel.html?id=${a.id}`;
+        }
+
+function cardHTML(a) {
+            const img = a.img || PLACEHOLDER_IMG;
+            const bcls = BADGE[a.kategori] || 'badge--kegiatan';
+            const cat = a.kategori.charAt(0).toUpperCase() + a.kategori.slice(1);
+            return `
+            <a href="${articleURL(a)}" class="bn-card" data-category="${a.kategori}" data-title="${a.judul}">
+                <div class="bn-card-img-wrap">
+                    <img src="${img}" alt="${a.judul}" loading="lazy">
+                    <div class="bn-card-img-overlay"></div>
+                    <span class="bn-category-badge ${bcls}">${cat}</span>
+                    <div class="bn-card-shine"></div>
+                </div>
+                <div class="bn-card-body">
+                    <div class="bn-card-meta">
+                        <span class="bn-meta-item"><i class="fas fa-calendar-alt"></i> ${a.tanggal}</span>
+                        ${a.penulis ? `<span class="bn-meta-item"><i class="fas fa-user"></i> ${a.penulis}</span>` : ""}
+                    </div>
+                    <h3 class="bn-card-title">${a.judul}</h3>
+                    <p class="bn-card-excerpt">${a.excerpt}</p>
+                    <div class="bn-card-footer">
+                        <span></span>
+                        <span class="bn-card-more">Baca <i class="fas fa-arrow-right"></i></span>
+                    </div>
+                </div>
+            </a>`;
+        }
+
+function renderFeatured(a) {
+            const el = document.getElementById('featuredSection');
+            if (!el) return;
+            if (!a) { el.style.display = 'none'; return; }
+            const img = a.img || PLACEHOLDER_IMG;
+            const bcls = BADGE[a.kategori] || 'badge--kegiatan';
+            const cat = a.kategori.charAt(0).toUpperCase() + a.kategori.slice(1);
+            el.dataset.category = a.kategori;
+            el.style.display = '';
+            el.innerHTML = `
+            <p class="bn-featured-label"><i class="fas fa-bookmark"></i> Artikel Unggulan</p>
+            <a href="${articleURL(a)}" class="bn-featured-card">
+                <div class="bn-featured-img-wrap">
+                    <img src="${img}" alt="${a.judul}">
+                    <div class="bn-featured-img-overlay"></div>
+                    <span class="bn-category-badge ${bcls}">${cat}</span>
+                </div>
+                <div class="bn-featured-body">
+                    <div class="bn-featured-meta">
+                        <span class="bn-meta-item"><i class="fas fa-calendar-alt"></i> ${a.tanggal}</span>
+                        ${a.penulis ? `<span class="bn-meta-item"><i class="fas fa-user"></i> ${a.penulis}</span>` : ""}
+                    </div>
+                    <h2 class="bn-featured-title">${a.judul}</h2>
+                    <p class="bn-featured-excerpt">${a.excerpt}</p>
+                    <span class="bn-read-btn">Baca Selengkapnya <i class="fas fa-arrow-right"></i></span>
+                </div>
+            </a>`;
+        }
+
+function renderGrid(articles) {
+            const grid = document.getElementById('articlesGrid');
+            if (!grid) return;
+
+            const noResults = document.getElementById('noResults');
+            grid.innerHTML = articles.map(a => cardHTML(a)).join("") +
+                `<div class="bn-no-results" id="noResults" style="display:none;">
+                    <i class="fas fa-newspaper"></i>
+                    <p>Tidak ada berita ditemukan untuk pencarian ini.</p>
+                </div>`;
+
+            document.getElementById('articleCount').textContent = `Menampilkan ${articles.length} artikel`;
+
+grid.querySelectorAll('.bn-card').forEach(card => {
+                const shine = card.querySelector('.bn-card-shine');
+                if (!shine) return;
+                card.addEventListener('mousemove', e => {
+                    const r = card.getBoundingClientRect();
+                    const x = ((e.clientX - r.left) / r.width) * 100;
+                    const y = ((e.clientY - r.top) / r.height) * 100;
+                    shine.style.background = `radial-gradient(circle at ${x}% ${y}%, rgba(255,255,255,0.08) 0%, transparent 60%)`;
+                });
+                card.addEventListener('mouseleave', () => { shine.style.background = 'none'; });
+            });
+
+const io = new IntersectionObserver(entries => {
+                entries.forEach(e => {
+                    if (e.isIntersecting) { e.target.style.opacity = '1'; e.target.style.transform = 'translateY(0)'; io.unobserve(e.target); }
+                });
+            }, { threshold: 0.08 });
+
+            grid.querySelectorAll('.bn-card').forEach((el, i) => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(22px)';
+                el.style.transition = `opacity 0.5s ease ${(i % 4) * 0.07}s, transform 0.5s ease ${(i % 4) * 0.07}s`;
+                io.observe(el);
+            });
+        }
+
+function renderRecent(articles) {
+            const el = document.getElementById('recentList');
+            if (!el) return;
+            el.innerHTML = articles.slice(0, 4).map(a => `
+            <a href="${articleURL(a)}" class="bn-recent-item">
+                <div class="bn-recent-thumb"><img src="${a.img || PLACEHOLDER_IMG}" alt="" loading="lazy"></div>
+                <div class="bn-recent-info">
+                    <p class="bn-recent-title">${a.judul}</p>
+                    <span class="bn-recent-date"><i class="fas fa-calendar-alt"></i> ${a.tanggal}</span>
+                </div>
+            </a>`).join("");
+        }
+
+function updateCounts(articles) {
+            const set = (id, n) => { const el = document.getElementById(id); if (el) el.textContent = n; };
+            set('count-all', articles.length);
+            set('count-event', articles.filter(a => a.kategori === 'event').length);
+            set('count-prestasi', articles.filter(a => a.kategori === 'prestasi').length);
+            set('count-kegiatan', articles.filter(a => a.kategori === 'kegiatan').length);
+        }
+
+function applyFilters() {
+            const activeFilter = document.querySelector('.bn-filter.active')?.dataset.filter || 'all';
+            const query = (document.getElementById('searchInput')?.value || '').trim().toLowerCase();
+
+const featEl = document.getElementById('featuredSection');
+            if (featEl) {
+                const match = activeFilter === 'all' || featEl.dataset.category === activeFilter;
+                featEl.style.display = match ? '' : 'none';
+            }
+
+const grid = document.getElementById('articlesGrid');
+            const gridCards = grid?.querySelectorAll('.bn-card') || [];
+            let visible = 0;
+            gridCards.forEach(card => {
+                const matchCat = activeFilter === 'all' || card.dataset.category === activeFilter;
+                const matchQ = !query || (card.dataset.title || '').toLowerCase().includes(query)
+                    || (card.querySelector('.bn-card-excerpt')?.textContent || '').toLowerCase().includes(query);
+                const show = matchCat && matchQ;
+                card.style.display = show ? '' : 'none';
+                if (show) visible++;
+            });
+
+            const noR = document.getElementById('noResults');
+            if (noR) noR.style.display = visible === 0 && gridCards.length > 0 ? 'block' : 'none';
+
+            const countEl = document.getElementById('articleCount');
+            if (countEl) countEl.textContent = `Menampilkan ${visible} artikel`;
+        }
+
+async function loadBerita() {
+            try {
+                const res = await fetch(BERITA_CSV_URL);
+                if (!res.ok) throw new Error("HTTP " + res.status);
+                const text = await res.text();
+                const rows = parseCSV(text);
+                const data = rows.map((r, i) => ({
+                    id: i,
+                    judul: r[0] || "",
+                    kategori: (r[1] || "kegiatan").toLowerCase(),
+                    tanggal: r[2] || "",
+                    excerpt: r[3] || "",
+                    img: r[4] || "",
+                    featured: r[5] === "true",
+                    penulis: r[6] || "",
+                    konten: r[7] || ""
+                })).filter(a => a.judul);
+                allArticles = data;
+            } catch (e) {
+                console.warn("Gagal memuat berita CSV.", e);
+                allArticles = [];
+            }
+
+            featuredArticle = allArticles.find(a => a.featured) || allArticles[0] || null;
+            const gridArticles = featuredArticle
+                ? allArticles.filter(a => a !== featuredArticle)
+                : allArticles;
+
+            renderFeatured(featuredArticle);
+            renderGrid(gridArticles);
+            renderRecent(allArticles);
+            updateCounts(allArticles);
+        }
+
+document.querySelectorAll('.bn-filter').forEach(btn => {
+            btn.addEventListener('click', () => {
+                document.querySelectorAll('.bn-filter').forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                applyFilters();
+            });
+        });
+
+        document.getElementById('searchInput')?.addEventListener('input', applyFilters);
+
+        document.querySelectorAll('[data-filter-sidebar]').forEach(link => {
+            link.addEventListener('click', e => {
+                e.preventDefault();
+                const val = link.dataset.filterSidebar;
+                document.querySelectorAll('.bn-filter').forEach(b => b.classList.toggle('active', b.dataset.filter === val));
+                applyFilters();
+                document.querySelector('.bn-bar')?.scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+
+        document.getElementById('loadMoreBtn')?.addEventListener('click', function () {
+            this.innerHTML = '<i class="fas fa-check"></i> Semua Artikel Sudah Ditampilkan';
+            this.disabled = true; this.style.opacity = '0.5'; this.style.cursor = 'default';
+        });
+
+document.querySelectorAll('.bn-widget').forEach((el, i) => {
+            el.style.opacity = '0'; el.style.transform = 'translateY(18px)';
+            el.style.transition = `opacity 0.5s ease ${i * 0.1}s, transform 0.5s ease ${i * 0.1}s`;
+        });
+        const ioSide = new IntersectionObserver(entries => {
+            entries.forEach(e => { if (e.isIntersecting) { e.target.style.opacity = '1'; e.target.style.transform = 'translateY(0)'; ioSide.unobserve(e.target); } });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('.bn-widget').forEach(el => ioSide.observe(el));
+
+        loadBerita();
+    </script>
+
+    <script src="session-banner.js"></script>
+    <script>
+        (function () {
+            var btn = document.getElementById('hamburgerBtn');
+            var nav = document.getElementById('mobileNav');
+            if (!btn || !nav) return;
+            btn.addEventListener('click', function () {
+                btn.classList.toggle('open');
+                nav.classList.toggle('open');
+            });
+            nav.querySelectorAll('a').forEach(function (a) {
+                a.addEventListener('click', function () {
+                    btn.classList.remove('open');
+                    nav.classList.remove('open');
+                });
+            });
+            document.addEventListener('click', function (e) {
+                if (!btn.contains(e.target) && !nav.contains(e.target)) {
+                    btn.classList.remove('open');
+                    nav.classList.remove('open');
+                }
+            });
+        })();
+    </script>
+</body>
+
+</html>

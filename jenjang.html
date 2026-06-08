@@ -1,0 +1,790 @@
+﻿<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jenjang Pendidikan — Sekolah Santo Andreas</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.7.2/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --dark: #04111f;
+            --dark2: #0a1929;
+            --white: #ffffff;
+            --tk: #4bbde8;
+            --tk-dk: #1982be;
+            --tk-lt: #9ee0f7;
+            --sd: #c8171c;
+            --sd-dk: #8a0f12;
+            --sd-lt: #e84545;
+            --smp: #0162a6;
+            --smp-dk: #013d6e;
+            --smp-lt: #0088e3;
+            --gold: #ffcc00;
+            --sans: 'Plus Jakarta Sans', sans-serif;
+            --display: 'Playfair Display', Georgia, serif;
+        }
+
+        *,
+        *::before,
+        *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--sans);
+            background: var(--dark);
+            color: var(--white);
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+.jj-bg {
+            position: fixed;
+            inset: 0;
+            z-index: 0;
+            pointer-events: none;
+            background:
+                radial-gradient(ellipse at 15% 50%, rgba(75, 189, 232, 0.06) 0%, transparent 55%),
+                radial-gradient(ellipse at 85% 50%, rgba(1, 98, 166, 0.08) 0%, transparent 55%),
+                radial-gradient(ellipse at 50% 90%, rgba(200, 23, 28, 0.05) 0%, transparent 50%);
+        }
+
+.jj-page {
+            position: relative;
+            z-index: 1;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 120px 40px 80px;
+        }
+
+.jj-eyebrow {
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 0.26em;
+            text-transform: uppercase;
+            color: var(--gold);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 16px;
+            animation: jj-fade 0.6s ease both;
+        }
+
+        .jj-eyebrow::before,
+        .jj-eyebrow::after {
+            content: '';
+            display: block;
+            width: 28px;
+            height: 1.5px;
+            background: var(--gold);
+            border-radius: 2px;
+        }
+
+        .jj-title {
+            font-family: var(--display);
+            font-size: clamp(32px, 5vw, 58px);
+            font-weight: 900;
+            text-align: center;
+            line-height: 1.1;
+            letter-spacing: -0.02em;
+            margin-bottom: 12px;
+            animation: jj-fade 0.6s 0.08s ease both;
+        }
+
+        .jj-title em {
+            font-style: italic;
+            font-weight: 400;
+            color: var(--gold);
+        }
+
+        .jj-sub {
+            font-size: 15px;
+            color: rgba(255, 255, 255, 0.45);
+            text-align: center;
+            max-width: 480px;
+            line-height: 1.7;
+            margin-bottom: 64px;
+            animation: jj-fade 0.6s 0.14s ease both;
+        }
+
+.jj-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            width: 100%;
+            max-width: 1060px;
+        }
+
+.jj-card {
+            position: relative;
+            border-radius: 28px;
+            overflow: hidden;
+            text-decoration: none;
+            color: var(--white);
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            min-height: 420px;
+            transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1),
+                box-shadow 0.4s ease;
+            animation: jj-rise 0.65s ease both;
+        }
+
+        .jj-card:nth-child(1) {
+            animation-delay: 0.18s;
+        }
+
+        .jj-card:nth-child(2) {
+            animation-delay: 0.26s;
+        }
+
+        .jj-card:nth-child(3) {
+            animation-delay: 0.34s;
+        }
+
+        .jj-card:hover {
+            transform: translateY(-12px) scale(1.01);
+        }
+
+.jj-card--tk {
+            background: linear-gradient(160deg, var(--tk-dk) 0%, #0d3d5c 40%, var(--dark2) 100%);
+            box-shadow: 0 24px 60px rgba(75, 189, 232, 0.18);
+        }
+
+        .jj-card--tk:hover {
+            box-shadow: 0 36px 80px rgba(75, 189, 232, 0.32);
+        }
+
+        .jj-card--sd {
+            background: linear-gradient(160deg, var(--sd-dk) 0%, #4a0a0b 40%, var(--dark2) 100%);
+            box-shadow: 0 24px 60px rgba(200, 23, 28, 0.18);
+        }
+
+        .jj-card--sd:hover {
+            box-shadow: 0 36px 80px rgba(200, 23, 28, 0.32);
+        }
+
+        .jj-card--smp {
+            background: linear-gradient(160deg, var(--smp-dk) 0%, #021e36 40%, var(--dark2) 100%);
+            box-shadow: 0 24px 60px rgba(1, 98, 166, 0.20);
+        }
+
+        .jj-card--smp:hover {
+            box-shadow: 0 36px 80px rgba(1, 98, 166, 0.35);
+        }
+
+.jj-card-orb {
+            position: absolute;
+            top: -60px;
+            right: -60px;
+            width: 220px;
+            height: 220px;
+            border-radius: 50%;
+            pointer-events: none;
+            transition: transform 0.5s ease;
+        }
+
+        .jj-card--tk .jj-card-orb {
+            background: radial-gradient(circle, rgba(75, 189, 232, 0.25) 0%, transparent 70%);
+        }
+
+        .jj-card--sd .jj-card-orb {
+            background: radial-gradient(circle, rgba(200, 23, 28, 0.25) 0%, transparent 70%);
+        }
+
+        .jj-card--smp .jj-card-orb {
+            background: radial-gradient(circle, rgba(0, 136, 227, 0.22) 0%, transparent 70%);
+        }
+
+        .jj-card:hover .jj-card-orb {
+            transform: scale(1.3);
+        }
+
+.jj-card-accent {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+        }
+
+        .jj-card--tk .jj-card-accent {
+            background: linear-gradient(90deg, transparent, var(--tk), transparent);
+        }
+
+        .jj-card--sd .jj-card-accent {
+            background: linear-gradient(90deg, transparent, var(--sd-lt), transparent);
+        }
+
+        .jj-card--smp .jj-card-accent {
+            background: linear-gradient(90deg, transparent, var(--smp-lt), transparent);
+        }
+
+.jj-card-inner {
+            position: relative;
+            z-index: 2;
+            padding: 44px 36px 40px;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            flex: 1;
+        }
+
+.jj-icon {
+            width: 72px;
+            height: 72px;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 30px;
+            margin-bottom: 28px;
+            transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        .jj-card:hover .jj-icon {
+            transform: scale(1.1) rotate(-4deg);
+        }
+
+        .jj-card--tk .jj-icon {
+            background: rgba(75, 189, 232, 0.20);
+            color: var(--tk);
+            border: 1px solid rgba(75, 189, 232, 0.3);
+        }
+
+        .jj-card--sd .jj-icon {
+            background: rgba(200, 23, 28, 0.20);
+            color: var(--sd-lt);
+            border: 1px solid rgba(200, 23, 28, 0.35);
+        }
+
+        .jj-card--smp .jj-icon {
+            background: rgba(0, 136, 227, 0.20);
+            color: var(--smp-lt);
+            border: 1px solid rgba(0, 136, 227, 0.30);
+        }
+
+.jj-label {
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            padding: 4px 12px;
+            border-radius: 20px;
+            display: inline-block;
+            margin-bottom: 12px;
+            align-self: flex-start;
+        }
+
+        .jj-card--tk .jj-label {
+            background: rgba(75, 189, 232, 0.15);
+            color: var(--tk-lt);
+            border: 1px solid rgba(75, 189, 232, 0.25);
+        }
+
+        .jj-card--sd .jj-label {
+            background: rgba(200, 23, 28, 0.15);
+            color: var(--sd-lt);
+            border: 1px solid rgba(200, 23, 28, 0.30);
+        }
+
+        .jj-card--smp .jj-label {
+            background: rgba(0, 136, 227, 0.15);
+            color: var(--smp-lt);
+            border: 1px solid rgba(0, 136, 227, 0.25);
+        }
+
+        .jj-name {
+            font-family: var(--display);
+            font-size: clamp(28px, 3.2vw, 38px);
+            font-weight: 900;
+            line-height: 1.1;
+            margin-bottom: 14px;
+            letter-spacing: -0.01em;
+        }
+
+        .jj-desc {
+            font-size: 13.5px;
+            color: rgba(255, 255, 255, 0.52);
+            line-height: 1.75;
+            flex: 1;
+        }
+
+.jj-cta {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: 32px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.07);
+        }
+
+        .jj-cta-text {
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            transition: gap 0.25s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .jj-card--tk .jj-cta-text {
+            color: var(--tk);
+        }
+
+        .jj-card--sd .jj-cta-text {
+            color: var(--sd-lt);
+        }
+
+        .jj-card--smp .jj-cta-text {
+            color: var(--smp-lt);
+        }
+
+        .jj-card:hover .jj-cta-text {
+            gap: 14px;
+        }
+
+        .jj-cta-arrow {
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 13px;
+            transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        .jj-card--tk .jj-cta-arrow {
+            background: rgba(75, 189, 232, 0.15);
+            color: var(--tk);
+        }
+
+        .jj-card--sd .jj-cta-arrow {
+            background: rgba(200, 23, 28, 0.18);
+            color: var(--sd-lt);
+        }
+
+        .jj-card--smp .jj-cta-arrow {
+            background: rgba(0, 136, 227, 0.15);
+            color: var(--smp-lt);
+        }
+
+        .jj-card:hover .jj-cta-arrow {
+            transform: translate(4px, -4px);
+        }
+
+@keyframes jj-fade {
+            from {
+                opacity: 0;
+                transform: translateY(16px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes jj-rise {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+.jj-back {
+            margin-top: 52px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 12px;
+            font-weight: 600;
+            color: rgba(255, 255, 255, 0.35);
+            text-decoration: none;
+            letter-spacing: 0.06em;
+            transition: color 0.2s;
+            animation: jj-fade 0.6s 0.5s ease both;
+        }
+
+        .jj-back:hover {
+            color: rgba(255, 255, 255, 0.75);
+        }
+
+@media (max-width: 860px) {
+            .jj-grid {
+                grid-template-columns: 1fr;
+                max-width: 420px;
+            }
+
+            .jj-card {
+                min-height: 300px;
+            }
+
+            .jj-page {
+                padding: 100px 24px 60px;
+            }
+        }
+
+        @media (min-width: 861px) and (max-width: 1060px) {
+            .jj-grid {
+                gap: 18px;
+            }
+
+            .jj-card-inner {
+                padding: 36px 28px 32px;
+            }
+        }
+
+        @media (min-width: 861px) {}
+    </style>
+</head>
+
+<body>
+
+<nav class="nav-bar nav-scrolled">
+        <div class="nav-container">
+            <div class="logo">
+                <a href="index.html"><img src="https://i.ibb.co.com/V033MvMm/St-Andreas-Logo.png" alt="St-Andreas-Logo"
+                        width="290px" height="70px"></a>
+            </div>
+            <ul class="nav-links">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link">Halaman Utama</a>
+                </li>
+                <li class="nav-item">
+                    <a href="tentang-kami.html" class="nav-link">Tentang Kami<i class="fas fa-chevron-down"></i></a>
+                    <div class="dropdown-menu">
+                        <a href="tentang-kami.html#visi-misi">Visi &amp; Misi</a>
+                        <a href="tentang-kami.html#sejarah">Sejarah</a>
+                        <a href="tentang-kami.html#fasilitas">Fasilitas</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a href="jenjang.html" class="nav-link">Jenjang Pendidikan<i class="fas fa-chevron-down"></i></a>
+                    <div class="dropdown-menu">
+                        <a href="tk.html">TK / Nursery</a>
+                        <a href="sd.html">SD</a>
+                        <a href="smp.html">SMP</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a href="#" onclick="event.preventDefault()" class="nav-link">Portal<i class="fas fa-chevron-down"></i></a>
+                    <div class="dropdown-menu">
+                        <a href="login.html">Portal Siswa</a>
+                        <a href="login-teacher.html">Portal Guru</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a href="pendaftaran.html" class="nav-link">Pendaftaran</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" onclick="event.preventDefault()" class="nav-link">Informasi<i class="fas fa-chevron-down"></i></a>
+                    <div class="dropdown-menu">
+                        <a href="berita.html">Berita</a>
+                        <a href="kalendar-akademik.html">Kalender Akademik</a>
+                        <a href="prestasi.html">Prestasi</a>
+                        <a href="contact.html">Hubungi Kami</a>
+                    </div>
+                </li>
+            </ul>
+            <div class="social-links">
+                <a href="https://www.facebook.com/sstandreas" class="social-link"><i class="fab fa-facebook"></i></a>
+                <a href="https://www.instagram.com/sstandreas/" class="social-link"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.youtube.com/channel/UC2fmVdeHtxnXl1LMYu7WAAQ" class="social-link"><i
+                        class="fab fa-youtube"></i></a>
+            </div>
+            
+            <button class="hamburger" id="hamburgerBtn" aria-label="Menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+        
+        <div class="mobile-nav" id="mobileNav">
+            <ul class="mobile-nav-links">
+                <li><a href="index.html">Halaman Utama</a></li>
+                <li class="mobile-dropdown">
+                    <a href="tentang-kami.html">Tentang Kami</a>
+                    <div class="mobile-sub">
+                        <a href="tentang-kami.html#visi-misi">Visi &amp; Misi</a>
+                        <a href="tentang-kami.html#sejarah">Sejarah</a>
+                        <a href="tentang-kami.html#fasilitas">Fasilitas</a>
+                    </div>
+                </li>
+                <li class="mobile-dropdown">
+                    <a href="jenjang.html">Jenjang Pendidikan</a>
+                    <div class="mobile-sub">
+                        <a href="tk.html">TK / Nursery</a>
+                        <a href="sd.html">SD</a>
+                        <a href="smp.html">SMP</a>
+                    </div>
+                </li>
+                <li class="mobile-dropdown">
+                    <a href="#">Portal</a>
+                    <div class="mobile-sub">
+                        <a href="login.html">Portal Siswa</a>
+                        <a href="login-teacher.html">Portal Guru</a>
+                    </div>
+                </li>
+                <li><a href="pendaftaran.html">Pendaftaran</a></li>
+                <li class="mobile-dropdown">
+                    <a href="#">Informasi</a>
+                    <div class="mobile-sub">
+                        <a href="berita.html">Berita</a>
+                        <a href="kalendar-akademik.html">Kalender Akademik</a>
+                        <a href="prestasi.html">Prestasi</a>
+                        <a href="contact.html">Hubungi Kami</a>
+                    </div>
+                </li>
+            </ul>
+            <div class="mobile-nav-social">
+                <a href="https://www.facebook.com/sstandreas" aria-label="Facebook"><i
+                        class="fab fa-facebook-f"></i></a>
+                <a href="https://www.instagram.com/sstandreas/" aria-label="Instagram"><i
+                        class="fab fa-instagram"></i></a>
+                <a href="https://www.youtube.com/channel/UC2fmVdeHtxnXl1LMYu7WAAQ" aria-label="YouTube"><i
+                        class="fab fa-youtube"></i></a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="jj-bg"></div>
+
+    <main class="jj-page">
+
+        <p class="jj-eyebrow">Pilih Jenjang</p>
+        <h1 class="jj-title">Jenjang <em>Pendidikan</em></h1>
+        <p class="jj-sub">Sekolah Santo Andreas mendidik generasi unggul dari usia dini hingga remaja — pilih jenjang
+            untuk mengetahui lebih lanjut.</p>
+
+        <div class="jj-grid">
+
+<a href="tk.html" class="jj-card jj-card--tk">
+                <div class="jj-card-orb"></div>
+                <div class="jj-card-accent"></div>
+                <div class="jj-card-inner">
+                    <div class="jj-icon"><i class="fas fa-star"></i></div>
+                    <span class="jj-label">Nursery · TK A · TK B</span>
+                    <h2 class="jj-name">TK &<br>Nursery</h2>
+                    <p class="jj-desc">Fondasi pertama dalam bermain, belajar, dan bertumbuh dengan penuh kasih sayang
+                        dalam lingkungan yang aman dan menyenangkan.</p>
+                    <div class="jj-cta">
+                        <span class="jj-cta-text">Jelajahi <i class="fas fa-arrow-right"></i></span>
+                        <div class="jj-cta-arrow"><i class="fas fa-arrow-right"></i></div>
+                    </div>
+                </div>
+            </a>
+
+<a href="sd.html" class="jj-card jj-card--sd">
+                <div class="jj-card-orb"></div>
+                <div class="jj-card-accent"></div>
+                <div class="jj-card-inner">
+                    <div class="jj-icon"><i class="fas fa-book-open"></i></div>
+                    <span class="jj-label">Kelas 1 — 6</span>
+                    <h2 class="jj-name">Sekolah<br>Dasar</h2>
+                    <p class="jj-desc">Membangun karakter, keingintahuan, dan kemampuan akademik yang kuat sebagai bekal
+                        menuju jenjang berikutnya.</p>
+                    <div class="jj-cta">
+                        <span class="jj-cta-text">Jelajahi <i class="fas fa-arrow-right"></i></span>
+                        <div class="jj-cta-arrow"><i class="fas fa-arrow-right"></i></div>
+                    </div>
+                </div>
+            </a>
+
+<a href="smp.html" class="jj-card jj-card--smp">
+                <div class="jj-card-orb"></div>
+                <div class="jj-card-accent"></div>
+                <div class="jj-card-inner">
+                    <div class="jj-icon"><i class="fas fa-graduation-cap"></i></div>
+                    <span class="jj-label">Kelas 7 — 9</span>
+                    <h2 class="jj-name">Sekolah Menengah<br>Pertama</h2>
+                    <p class="jj-desc">Mengembangkan potensi, kepemimpinan, dan prestasi siswa menuju masa depan yang
+                        gemilang bersama Santo Andreas.</p>
+                    <div class="jj-cta">
+                        <span class="jj-cta-text">Jelajahi <i class="fas fa-arrow-right"></i></span>
+                        <div class="jj-cta-arrow"><i class="fas fa-arrow-right"></i></div>
+                    </div>
+                </div>
+            </a>
+
+        </div>
+
+        <a href="index.html" class="jj-back">
+            <i class="fas fa-arrow-left"></i> Kembali ke Halaman Utama
+        </a>
+
+    </main>
+
+    <script src="script.js"></script>
+    <footer class="site-footer">
+
+<div class="footer-bg-ring ring-a"></div>
+        <div class="footer-bg-ring ring-b"></div>
+
+        <div class="footer-inner">
+
+<div class="footer-col footer-col--brand">
+                <img src="logo-landscape-ssantoandreas.png" alt="Logo Sekolah Santo Andreas" class="footer-logo">
+                <p class="footer-about">Lembaga pendidikan Katolik di Jakarta Barat yang telah membentuk generasi unggul
+                    sejak 1990 — dari Nursery hingga SMP.</p>
+                
+                <div class="footer-socials">
+                    <a href="https://www.facebook.com/sstandreas" class="footer-social" aria-label="Facebook">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="https://www.instagram.com/sstandreas/" class="footer-social" aria-label="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://www.youtube.com/channel/UC2fmVdeHtxnXl1LMYu7WAAQ" class="footer-social"
+                        aria-label="YouTube">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                </div>
+            </div>
+
+<div class="footer-col">
+                <h4 class="footer-col-title">Tentang Kami</h4>
+                <ul class="footer-links">
+                    <li><a href="tentang-kami.html" class="footer-link footer-link--parent">
+                            <i class="fas fa-chevron-right"></i> Tentang Kami
+                        </a></li>
+                    <li><a href="tentang-kami.html#visi-misi" class="footer-link footer-link--child">
+                            <i class="fas fa-minus"></i> Visi &amp; Misi
+                        </a></li>
+                    <li><a href="tentang-kami.html#sejarah" class="footer-link footer-link--child">
+                            <i class="fas fa-minus"></i> Sejarah
+                        </a></li>
+                    <li><a href="tentang-kami.html#fasilitas" class="footer-link footer-link--child">
+                            <i class="fas fa-minus"></i> Fasilitas
+                        </a></li>
+                </ul>
+
+                <h4 class="footer-col-title" style="margin-top: 28px;">Jenjang Pendidikan</h4>
+                <ul class="footer-links">
+                    <li><a href="jenjang.html" class="footer-link footer-link--parent">
+                            <i class="fas fa-chevron-right"></i> Jenjang Pendidikan
+                        </a></li>
+                    <li><a href="tk.html" class="footer-link footer-link--child">
+                            <i class="fas fa-minus"></i> TK
+                        </a></li>
+                    <li><a href="sd.html" class="footer-link footer-link--child">
+                            <i class="fas fa-minus"></i> SD
+                        </a></li>
+                    <li><a href="smp.html" class="footer-link footer-link--child">
+                            <i class="fas fa-minus"></i> SMP
+                        </a></li>
+                </ul>
+            </div>
+
+<div class="footer-col">
+                <h4 class="footer-col-title">Portal</h4>
+                <ul class="footer-links">
+                    <li><a href="portal-guru.html" class="footer-link footer-link--parent">
+                            <i class="fas fa-chevron-right"></i> Portal Guru
+                        </a></li>
+                    <li><a href="login.html" class="footer-link footer-link--parent">
+                            <i class="fas fa-chevron-right"></i> Portal Siswa
+                        </a></li>
+                </ul>
+
+                <h4 class="footer-col-title" style="margin-top: 28px;">Informasi</h4>
+                <ul class="footer-links">
+                    <li><a href="pendaftaran.html" class="footer-link footer-link--parent">
+                            <i class="fas fa-chevron-right"></i> Pendaftaran
+                        </a></li>
+                    <li><a href="kalendar-akademik.html" class="footer-link footer-link--parent">
+                            <i class="fas fa-chevron-right"></i> Kalender Akademik
+                        </a></li>
+                    <li><a href="berita.html" class="footer-link footer-link--parent">
+                            <i class="fas fa-chevron-right"></i> Berita
+                        </a></li>
+                    <li><a href="prestasi.html" class="footer-link footer-link--parent">
+                            <i class="fas fa-chevron-right"></i> Prestasi
+                        </a></li>
+                    <li><a href="contact.html" class="footer-link footer-link--parent">
+                            <i class="fas fa-chevron-right"></i> Hubungi Kami
+                        </a></li>
+                </ul>
+            </div>
+
+<div class="footer-col footer-col--contact">
+                <h4 class="footer-col-title">Hubungi Kami</h4>
+
+                <ul class="footer-contact-list">
+                    <li class="footer-contact-item">
+                        <div class="footer-contact-icon"><i class="fas fa-location-dot"></i></div>
+                        <p>Jl. Komplek Green Garden,<br>Kedoya Selatan, Kebon Jeruk<br>Jakarta Barat 11520</p>
+                    </li>
+                    <li class="footer-contact-item">
+                        <div class="footer-contact-icon"><i class="fas fa-phone"></i></div>
+                        <p>021 – 580 4058</p>
+                    </li>
+                    <li class="footer-contact-item">
+                        <div class="footer-contact-icon"><i class="fas fa-clock"></i></div>
+                        <p>Senin – Jumat<br>06.00 – 15.00 WIB</p>
+                    </li>
+                    <li class="footer-contact-item">
+                        <div class="footer-contact-icon"><i class="fas fa-envelope"></i></div>
+                        <p>info@sstandreas.sch.id</p>
+                    </li>
+                </ul>
+
+                <a href="pendaftaran.html" class="footer-cta-btn">
+                    Daftar Sekarang <i class="fas fa-paper-plane"></i>
+                </a>
+            </div>
+
+        </div>
+
+<div class="footer-divider"></div>
+
+<div class="footer-bottom">
+            <p class="footer-copyright">© 2026 Sekolah Santo Andreas. All Rights Reserved.</p>
+            <p class="footer-credit"><i class="fas fa-code"></i> Dikembangkan oleh Raylika L.</p>
+        </div>
+
+    </footer>
+    <script>
+        (function () {
+            var btn = document.getElementById('hamburgerBtn');
+            var nav = document.getElementById('mobileNav');
+            if (!btn || !nav) return;
+            btn.addEventListener('click', function () {
+                btn.classList.toggle('open');
+                nav.classList.toggle('open');
+            });
+            nav.querySelectorAll('a').forEach(function (a) {
+                a.addEventListener('click', function () {
+                    btn.classList.remove('open');
+                    nav.classList.remove('open');
+                });
+            });
+            document.addEventListener('click', function (e) {
+                if (!btn.contains(e.target) && !nav.contains(e.target)) {
+                    btn.classList.remove('open');
+                    nav.classList.remove('open');
+                }
+            });
+        })();
+    </script>
+</body>
+
+</html>

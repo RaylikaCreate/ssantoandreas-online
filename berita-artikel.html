@@ -1,0 +1,503 @@
+﻿<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Berita — Sekolah Santo Andreas</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.7.2/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --blue: #0162a6; --yellow: #ffcc00; --red: #da251e; --accent: #0088e3;
+            --dark: #04111f; --dark2: #0a1929; --dark3: #0d2137;
+            --white: #ffffff; --muted: #6b8caa;
+            --display: 'Playfair Display', Georgia, serif;
+            --sans: 'Plus Jakarta Sans', sans-serif;
+        }
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        body { background: var(--dark); font-family: var(--sans); color: var(--white); }
+        p, h1, h2, h3, h4 { text-shadow: none; }
+
+.ar-hero {
+            position: relative; height: 58vh; min-height: 400px;
+            display: flex; align-items: flex-end; overflow: hidden; padding-bottom: 60px;
+            padding-top: 68px; 
+        }
+        .ar-hero-bg { position: absolute; inset: 0; }
+        .ar-hero-bg img { width: 100%; height: 100%; object-fit: cover; object-position: center 40%; filter: brightness(0.25) saturate(0.5); }
+        .ar-hero-overlay {
+            position: absolute; inset: 0;
+            background:
+                linear-gradient(110deg, rgba(1,98,166,0.65) 0%, transparent 60%),
+                linear-gradient(180deg, transparent 20%, rgba(4,17,31,0.99) 100%);
+        }
+        .ar-hero-accent { position: absolute; top: 0; right: 0; width: 5px; height: 100%; background: var(--yellow); }
+        .ar-hero-content {
+            position: relative; z-index: 4;
+            padding: 0 60px; max-width: 1200px; width: 100%; margin: 0 auto;
+            animation: fade-up 0.7s ease both;
+        }
+        @keyframes fade-up { from { opacity:0; transform:translateY(24px) } to { opacity:1; transform:translateY(0) } }
+
+        .ar-breadcrumb {
+            display: flex; align-items: center; gap: 8px;
+            font-size: 11px; font-weight: 600; letter-spacing: 0.1em;
+            text-transform: uppercase; color: rgba(255,255,255,0.4); margin-bottom: 18px;
+        }
+        .ar-breadcrumb a { color: var(--yellow); text-decoration: none; }
+        .ar-breadcrumb a:hover { text-decoration: underline; }
+        .ar-breadcrumb i { font-size: 9px; }
+
+        .ar-category-badge {
+            display: inline-block; font-size: 10px; font-weight: 700;
+            letter-spacing: 0.14em; text-transform: uppercase;
+            padding: 5px 14px; border-radius: 20px; margin-bottom: 16px;
+            backdrop-filter: blur(10px);
+        }
+        .badge--event    { background: rgba(1,98,166,0.75); color: #fff; border: 1px solid rgba(1,98,166,0.5); }
+        .badge--prestasi { background: rgba(255,204,0,0.80); color: #1a1000; border: 1px solid rgba(255,204,0,0.5); }
+        .badge--kegiatan { background: rgba(218,37,30,0.75); color: #fff; border: 1px solid rgba(218,37,30,0.5); }
+
+        .ar-title {
+            font-family: var(--display); font-size: clamp(28px, 4.5vw, 52px);
+            font-weight: 900; color: var(--white); line-height: 1.1;
+            letter-spacing: -0.02em; margin-bottom: 18px;
+        }
+        .ar-meta {
+            display: flex; align-items: center; gap: 20px; flex-wrap: wrap;
+        }
+        .ar-meta-item {
+            display: flex; align-items: center; gap: 6px;
+            font-size: 12px; color: rgba(255,255,255,0.45);
+        }
+        .ar-meta-item i { font-size: 10px; }
+
+.ar-body-wrap {
+            max-width: 1200px; margin: 0 auto; padding: 60px 60px 100px;
+            display: grid; grid-template-columns: 1fr 300px; gap: 60px; align-items: start;
+        }
+
+        .ar-article {}
+
+.ar-lead {
+            font-size: 18px; font-weight: 400; color: rgba(255,255,255,0.65);
+            line-height: 1.8; margin-bottom: 36px; padding-bottom: 36px;
+            border-bottom: 1px solid rgba(255,255,255,0.07);
+            font-family: var(--display); font-style: italic;
+        }
+
+.ar-content { color: rgba(255,255,255,0.78); line-height: 1.9; font-size: 15.5px; }
+        .ar-content p { margin-bottom: 22px; }
+        .ar-content p:last-child { margin-bottom: 0; }
+        .ar-content h2 { font-family: var(--display); font-size: 24px; font-weight: 700; color: var(--white); margin: 36px 0 16px; }
+        .ar-content h3 { font-family: var(--display); font-size: 19px; font-weight: 700; color: var(--white); margin: 28px 0 12px; }
+        .ar-content strong { color: var(--white); font-weight: 700; }
+        .ar-content em { color: var(--yellow); font-style: italic; }
+        .ar-content ul, .ar-content ol { padding-left: 24px; margin-bottom: 22px; }
+        .ar-content li { margin-bottom: 8px; }
+        .ar-content a { color: var(--accent); text-decoration: none; border-bottom: 1px solid rgba(0,136,227,0.35); transition: border-color 0.2s; }
+        .ar-content a:hover { border-color: var(--accent); }
+        .ar-content blockquote {
+            border-left: 3px solid var(--yellow); padding: 16px 24px; margin: 28px 0;
+            background: rgba(255,204,0,0.05); border-radius: 0 12px 12px 0;
+            font-style: italic; color: rgba(255,255,255,0.6); font-size: 15px;
+        }
+
+.ar-no-content {
+            padding: 40px 0; text-align: center; color: var(--muted); font-size: 14px;
+        }
+        .ar-no-content i { display: block; font-size: 32px; margin-bottom: 12px; color: rgba(255,255,255,0.1); }
+
+.ar-actions {
+            display: flex; align-items: center; justify-content: space-between;
+            flex-wrap: wrap; gap: 12px; margin-top: 52px; padding-top: 32px;
+            border-top: 1px solid rgba(255,255,255,0.07);
+        }
+        .ar-back-btn {
+            display: inline-flex; align-items: center; gap: 9px;
+            background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.10);
+            color: rgba(255,255,255,0.65); border-radius: 50px;
+            padding: 10px 22px; font-size: 13px; font-weight: 600;
+            text-decoration: none; transition: all 0.2s;
+        }
+        .ar-back-btn:hover { background: rgba(255,255,255,0.12); color: var(--white); }
+        .ar-share { display: flex; align-items: center; gap: 10px; }
+        .ar-share-label { font-size: 12px; color: var(--muted); }
+        .ar-share-btn {
+            width: 34px; height: 34px; border-radius: 50%; display: flex; align-items: center; justify-content: center;
+            font-size: 13px; text-decoration: none; transition: transform 0.2s, opacity 0.2s;
+        }
+        .ar-share-btn:hover { transform: scale(1.15); opacity: 0.85; }
+        .ar-share-wa  { background: #25d366; color: #fff; }
+        .ar-share-fb  { background: #1877f2; color: #fff; }
+        .ar-share-copy{ background: rgba(255,255,255,0.1); color: rgba(255,255,255,0.7); border: 1px solid rgba(255,255,255,0.15); }
+
+.ar-sidebar { display: flex; flex-direction: column; gap: 24px; }
+        .ar-widget {
+            background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.07);
+            border-radius: 16px; padding: 24px 22px;
+        }
+        .ar-widget-title {
+            font-family: var(--display); font-size: 15px; font-weight: 700; color: var(--white);
+            margin-bottom: 16px; padding-bottom: 12px; border-bottom: 1px solid rgba(255,255,255,0.06);
+            display: flex; align-items: center; gap: 8px;
+        }
+        .ar-widget-title i { font-size: 12px; color: var(--yellow); }
+
+        .ar-recent-list { display: flex; flex-direction: column; gap: 14px; }
+        .ar-recent-item { display: flex; gap: 12px; text-decoration: none; align-items: center; transition: opacity 0.2s; }
+        .ar-recent-item:hover { opacity: 0.72; }
+        .ar-recent-thumb { width: 54px; height: 54px; border-radius: 8px; overflow: hidden; flex-shrink: 0; }
+        .ar-recent-thumb img { width: 100%; height: 100%; object-fit: cover; }
+        .ar-recent-info { flex: 1; min-width: 0; }
+        .ar-recent-title { font-size: 12px; font-weight: 600; color: rgba(255,255,255,0.70); line-height: 1.4; margin-bottom: 4px; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+        .ar-recent-date  { font-size: 10px; color: var(--muted); display: flex; align-items: center; gap: 5px; }
+        .ar-recent-date i { font-size: 8px; }
+
+.ar-loading {
+            min-height: 60vh; display: flex; flex-direction: column;
+            align-items: center; justify-content: center; gap: 16px;
+            color: rgba(255,255,255,0.3); font-size: 14px;
+        }
+        .ar-loading i { font-size: 28px; }
+
+@media (max-width: 1024px) {
+            .ar-hero-content { padding: 0 32px; }
+            .ar-body-wrap    { padding: 40px 32px 80px; grid-template-columns: 1fr; gap: 40px; }
+            .ar-sidebar      { order: -1; }
+        }
+        @media (max-width: 560px) {
+            .ar-hero { min-height: 340px; }
+            .ar-title { font-size: 26px; }
+            .ar-lead  { font-size: 15px; }
+            .ar-content { font-size: 14px; }
+        }
+    </style>
+</head>
+
+<body>
+
+<nav class="nav-bar nav-scrolled">
+        <div class="nav-container">
+            <div class="logo">
+                <a href="index.html"><img src="https://i.ibb.co.com/V033MvMm/St-Andreas-Logo.png" alt="St-Andreas-Logo"
+                        width="290px" height="70px"></a>
+            </div>
+            <ul class="nav-links">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link">Halaman Utama</a>
+                </li>
+                <li class="nav-item">
+                    <a href="tentang-kami.html" class="nav-link">Tentang Kami<i class="fas fa-chevron-down"></i></a>
+                    <div class="dropdown-menu">
+                        <a href="tentang-kami.html#visi-misi">Visi &amp; Misi</a>
+                        <a href="tentang-kami.html#sejarah">Sejarah</a>
+                        <a href="tentang-kami.html#fasilitas">Fasilitas</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a href="jenjang.html" class="nav-link">Jenjang Pendidikan<i class="fas fa-chevron-down"></i></a>
+                    <div class="dropdown-menu">
+                        <a href="tk.html">TK / Nursery</a>
+                        <a href="sd.html">SD</a>
+                        <a href="smp.html">SMP</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a href="#" onclick="event.preventDefault()" class="nav-link">Portal<i class="fas fa-chevron-down"></i></a>
+                    <div class="dropdown-menu">
+                        <a href="login.html">Portal Siswa</a>
+                        <a href="login-teacher.html">Portal Guru</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a href="pendaftaran.html" class="nav-link">Pendaftaran</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" onclick="event.preventDefault()" class="nav-link">Informasi<i class="fas fa-chevron-down"></i></a>
+                    <div class="dropdown-menu">
+                        <a href="berita.html">Berita</a>
+                        <a href="kalendar-akademik.html">Kalender Akademik</a>
+                        <a href="prestasi.html">Prestasi</a>
+                        <a href="contact.html">Hubungi Kami</a>
+                    </div>
+                </li>
+            </ul>
+            <div class="social-links">
+                <a href="https://www.facebook.com/sstandreas" class="social-link"><i class="fab fa-facebook"></i></a>
+                <a href="https://www.instagram.com/sstandreas/" class="social-link"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.youtube.com/channel/UC2fmVdeHtxnXl1LMYu7WAAQ" class="social-link"><i class="fab fa-youtube"></i></a>
+            </div>
+            
+            <button class="hamburger" id="hamburgerBtn" aria-label="Menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+        
+        <div class="mobile-nav" id="mobileNav">
+            <ul class="mobile-nav-links">
+                <li><a href="index.html">Halaman Utama</a></li>
+                <li class="mobile-dropdown">
+                    <a href="tentang-kami.html">Tentang Kami</a>
+                    <div class="mobile-sub">
+                        <a href="tentang-kami.html#visi-misi">Visi &amp; Misi</a>
+                        <a href="tentang-kami.html#sejarah">Sejarah</a>
+                        <a href="tentang-kami.html#fasilitas">Fasilitas</a>
+                    </div>
+                </li>
+                <li class="mobile-dropdown">
+                    <a href="jenjang.html">Jenjang Pendidikan</a>
+                    <div class="mobile-sub">
+                        <a href="tk.html">TK / Nursery</a>
+                        <a href="sd.html">SD</a>
+                        <a href="smp.html">SMP</a>
+                    </div>
+                </li>
+                <li class="mobile-dropdown">
+                    <a href="#">Portal</a>
+                    <div class="mobile-sub">
+                        <a href="login.html">Portal Siswa</a>
+                        <a href="login-teacher.html">Portal Guru</a>
+                    </div>
+                </li>
+                <li><a href="pendaftaran.html">Pendaftaran</a></li>
+                <li class="mobile-dropdown">
+                    <a href="#">Informasi</a>
+                    <div class="mobile-sub">
+                        <a href="berita.html">Berita</a>
+                        <a href="kalendar-akademik.html">Kalender Akademik</a>
+                        <a href="prestasi.html">Prestasi</a>
+                        <a href="contact.html">Hubungi Kami</a>
+                    </div>
+                </li>
+            </ul>
+            <div class="mobile-nav-social">
+                <a href="https://www.facebook.com/sstandreas" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.instagram.com/sstandreas/" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.youtube.com/channel/UC2fmVdeHtxnXl1LMYu7WAAQ" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+            </div>
+        </div>
+    </nav>
+
+<header class="ar-hero" id="arHero">
+        <div class="ar-hero-bg" id="arHeroBg">
+            <img id="arHeroImg" src="" alt="">
+        </div>
+        <div class="ar-hero-overlay"></div>
+        <div class="ar-hero-accent"></div>
+        <div class="ar-hero-content" id="arHeroContent">
+            <div class="ar-loading"><i class="fas fa-spinner fa-spin"></i> Memuat artikel...</div>
+        </div>
+    </header>
+
+<div class="ar-body-wrap">
+        <article class="ar-article" id="arArticle">
+            <div class="ar-loading"><i class="fas fa-spinner fa-spin"></i></div>
+        </article>
+        <aside class="ar-sidebar" id="arSidebar"></aside>
+    </div>
+
+    <script>
+        const BERITA_CSV_URL  = "https://docs.google.com/spreadsheets/d/e/2PACX-1vRx_pImd28cyYnmmseB7CbMesjiATYiEdkyq-tC0h7pCX-VmAwXoOc8IN2diJx6CQD0cWzr27n_7KPu/pub?output=csv";
+        const PLACEHOLDER_IMG = "https://santoandreas.sch.id/wp-content/uploads/slider/cache/414549754177bf3a942a6d7bff3dafc8/DSC00475-new-scaled.jpg";
+
+        const BADGE = {
+            event:    'badge--event',
+            prestasi: 'badge--prestasi',
+            kegiatan: 'badge--kegiatan',
+        };
+
+function parseCSV(text) {
+            const results = [];
+            let cols = [], cur = "", inQ = false;
+            const t = text.trim();
+            for (let i = 0; i < t.length; i++) {
+                const ch = t[i];
+                if (ch === '"') {
+                    if (inQ && t[i + 1] === '"') { cur += '"'; i++; }
+                    else inQ = !inQ;
+                } else if (ch === ',' && !inQ) {
+                    cols.push(cur); cur = "";
+                } else if ((ch === '\n' || ch === '\r') && !inQ) {
+                    if (ch === '\r' && t[i + 1] === '\n') i++;
+                    cols.push(cur); cur = "";
+                    if (cols.some(c => c)) results.push(cols);
+                    cols = [];
+                } else {
+                    cur += ch;
+                }
+            }
+            cols.push(cur);
+            if (cols.some(c => c)) results.push(cols);
+            const first = (results[0] && results[0][0]) ? results[0][0].trim().toLowerCase() : "";
+            const isHeader = first === "judul" || first === "title" || first === "no";
+            return isHeader ? results.slice(1) : results;
+        }
+
+function textToHTML(text) {
+            if (!text) return "";
+
+            if (/<[a-z][\s\S]*>/i.test(text)) return text;
+
+            return text.split(/\n\s*\n/)
+                .map(p => p.trim())
+                .filter(p => p)
+                .map(p => `<p>${p.replace(/\n/g, '<br>')}</p>`)
+                .join("");
+        }
+
+function renderArticle(article, allArticles) {
+
+            document.title = `${article.judul} — Sekolah Santo Andreas`;
+
+const img = article.img || PLACEHOLDER_IMG;
+            document.getElementById("arHeroImg").src = img;
+            document.getElementById("arHeroImg").alt = article.judul;
+
+            const bcls = BADGE[article.kategori] || 'badge--kegiatan';
+            const cat  = article.kategori.charAt(0).toUpperCase() + article.kategori.slice(1);
+            document.getElementById("arHeroContent").innerHTML = `
+                <div class="ar-breadcrumb">
+                    <a href="berita.html">Berita</a>
+                    <i class="fas fa-chevron-right"></i>
+                    <span>${cat}</span>
+                </div>
+                <span class="ar-category-badge ${bcls}">${cat}</span>
+                <h1 class="ar-title">${article.judul}</h1>
+                <div class="ar-meta">
+                    ${article.tanggal ? `<span class="ar-meta-item"><i class="fas fa-calendar-alt"></i> ${article.tanggal}</span>` : ""}
+                    ${article.penulis ? `<span class="ar-meta-item"><i class="fas fa-user"></i> ${article.penulis}</span>` : ""}
+                </div>`;
+
+const contentHTML = textToHTML(article.konten);
+            const pageURL     = encodeURIComponent(window.location.href);
+            const pageTitle   = encodeURIComponent(article.judul);
+
+            document.getElementById("arArticle").innerHTML = `
+                ${article.excerpt ? `<p class="ar-lead">${article.excerpt}</p>` : ""}
+                <div class="ar-content">
+                    ${contentHTML || `<div class="ar-no-content"><i class="fas fa-file-alt"></i>Konten artikel belum tersedia.</div>`}
+                </div>
+                <div class="ar-actions">
+                    <a href="berita.html" class="ar-back-btn"><i class="fas fa-arrow-left"></i> Kembali ke Berita</a>
+                    <div class="ar-share">
+                        <span class="ar-share-label">Bagikan:</span>
+                        <a href="https://wa.me/?text=${pageTitle}%20${pageURL}" target="_blank" class="ar-share-btn ar-share-wa" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                        <a href="https://www.facebook.com/sharer/sharer.php?u=${pageURL}" target="_blank" class="ar-share-btn ar-share-fb" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <button onclick="copyLink()" class="ar-share-btn ar-share-copy" title="Salin link"><i class="fas fa-link"></i></button>
+                    </div>
+                </div>`;
+
+const others = allArticles.filter((_, i) => i !== article.id).slice(0, 5);
+            document.getElementById("arSidebar").innerHTML = `
+                <div class="ar-widget">
+                    <h4 class="ar-widget-title"><i class="fas fa-clock"></i> Artikel Lainnya</h4>
+                    <div class="ar-recent-list">
+                        ${others.map(a => `
+                        <a href="berita-artikel.html?id=${a.id}" class="ar-recent-item">
+                            <div class="ar-recent-thumb"><img src="${a.img || PLACEHOLDER_IMG}" alt="" loading="lazy"></div>
+                            <div class="ar-recent-info">
+                                <p class="ar-recent-title">${a.judul}</p>
+                                <span class="ar-recent-date"><i class="fas fa-calendar-alt"></i> ${a.tanggal}</span>
+                            </div>
+                        </a>`).join("")}
+                    </div>
+                </div>
+                <div class="ar-widget">
+                    <h4 class="ar-widget-title"><i class="fas fa-tag"></i> Kategori</h4>
+                    <div style="display:flex;flex-direction:column;gap:8px;">
+                        ${['event','prestasi','kegiatan'].map(k => `
+                        <a href="berita.html" style="display:flex;align-items:center;justify-content:space-between;font-size:13px;color:rgba(255,255,255,0.55);text-decoration:none;padding:6px 0;border-bottom:1px solid rgba(255,255,255,0.05);" onclick="sessionStorage.setItem('beritaFilter','${k}')">
+                            <span><i class="fas fa-chevron-right" style="font-size:9px;margin-right:8px;color:var(--muted)"></i>${k.charAt(0).toUpperCase()+k.slice(1)}</span>
+                            <span style="font-size:11px;background:rgba(255,255,255,0.06);padding:2px 10px;border-radius:20px;">${allArticles.filter(a=>a.kategori===k).length}</span>
+                        </a>`).join("")}
+                    </div>
+                </div>`;
+        }
+
+        function showError(msg) {
+            document.getElementById("arHeroContent").innerHTML = `
+                <p class="ar-breadcrumb"><a href="berita.html">Berita</a> <i class="fas fa-chevron-right"></i> Tidak ditemukan</p>
+                <h1 class="ar-title" style="font-size:32px;">${msg}</h1>`;
+            document.getElementById("arArticle").innerHTML = `
+                <div class="ar-no-content">
+                    <i class="fas fa-exclamation-circle"></i>
+                    <p>${msg}</p>
+                    <a href="berita.html" class="ar-back-btn" style="margin-top:20px;display:inline-flex;"><i class="fas fa-arrow-left"></i> Kembali ke Berita</a>
+                </div>`;
+        }
+
+        function copyLink() {
+            navigator.clipboard.writeText(window.location.href).then(() => {
+                const btn = document.querySelector('.ar-share-copy');
+                btn.innerHTML = '<i class="fas fa-check"></i>';
+                setTimeout(() => { btn.innerHTML = '<i class="fas fa-link"></i>'; }, 2000);
+            });
+        }
+
+async function init() {
+            const params    = new URLSearchParams(window.location.search);
+            const articleId = parseInt(params.get("id") ?? "-1", 10);
+
+            if (isNaN(articleId) || articleId < 0) {
+                showError("Artikel tidak ditemukan."); return;
+            }
+
+            try {
+                const res  = await fetch(BERITA_CSV_URL);
+                const text = await res.text();
+                const rows = parseCSV(text);
+                const all  = rows.map((r, i) => ({
+                    id:       i,
+                    judul:    r[0] || "",
+                    kategori: (r[1] || "kegiatan").toLowerCase(),
+                    tanggal:  r[2] || "",
+                    excerpt:  r[3] || "",
+                    img:      r[4] || "",
+                    featured: r[5] === "true",
+                    penulis:  r[6] || "",
+                    konten:   r[7] || ""
+                })).filter(a => a.judul);
+
+                const article = all[articleId];
+                if (!article) { showError("Artikel tidak ditemukan."); return; }
+                renderArticle(article, all);
+
+            } catch (e) {
+                console.error(e);
+                showError("Gagal memuat artikel. Periksa koneksi Anda.");
+            }
+        }
+
+        init();
+    </script>
+
+    <script src="session-banner.js"></script>
+    <script>
+        (function() {
+            var btn = document.getElementById('hamburgerBtn');
+            var nav = document.getElementById('mobileNav');
+            if (!btn || !nav) return;
+            btn.addEventListener('click', function() {
+                btn.classList.toggle('open');
+                nav.classList.toggle('open');
+            });
+            nav.querySelectorAll('a').forEach(function(a) {
+                a.addEventListener('click', function() {
+                    btn.classList.remove('open');
+                    nav.classList.remove('open');
+                });
+            });
+            document.addEventListener('click', function(e) {
+                if (!btn.contains(e.target) && !nav.contains(e.target)) {
+                    btn.classList.remove('open');
+                    nav.classList.remove('open');
+                }
+            });
+        })();
+    </script>
+</body>
+</html>
